@@ -2,7 +2,8 @@ module.exports = {
     entry: "./src/toolkit.js",
     output: {
         path:"./dist",
-        filename: "toolkit.js"
+        filename: "toolkit.js",
+        libraryTarget: "commonjs2"
     },
     module: {
       loaders: [

@@ -1,7 +1,5 @@
 import React from 'react';
 
-import styles from './Button.sass'
-
 class Button extends React.Component {
     render() {
         return (
