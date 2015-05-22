@@ -7,8 +7,7 @@ module.exports = {
     },
     module: {
       loaders: [
-          { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
-          { test: /\.sass$/, loader: "style!css!sass?indentedSyntax"}
+          { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
       ]
     }
 }
