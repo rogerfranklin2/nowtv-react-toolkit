@@ -172,6 +172,13 @@ module.exports =
 
 	var React = _interopRequire(__webpack_require__(3));
 
+	var styles = {
+	    borderRadius: "5px",
+	    border: 0,
+	    padding: 0,
+	    color: "black"
+	};
+
 	var Input = (function (_React$Component) {
 	    function Input() {
 	        _classCallCheck(this, Input);
@@ -186,7 +193,7 @@ module.exports =
 	    _createClass(Input, {
 	        render: {
 	            value: function render() {
-	                return React.createElement("input", { className: "testInput" });
+	                return React.createElement("input", { style: styles, className: "testInput" });
 	            }
 	        }
 	    });
@@ -12466,6 +12473,14 @@ module.exports =
 
 	var React = _interopRequire(__webpack_require__(3));
 
+	var styles = {
+	    borderRadius: "5px",
+	    backgroundColor: "Green",
+	    border: 0,
+	    padding: 0,
+	    color: "black"
+	};
+
 	var Button = (function (_React$Component) {
 	    function Button() {
 	        _classCallCheck(this, Button);
@@ -12480,7 +12495,11 @@ module.exports =
 	    _createClass(Button, {
 	        render: {
 	            value: function render() {
-	                return React.createElement(Button, { className: "test" });
+	                return React.createElement(
+	                    "button",
+	                    { style: styles, className: "toolkit" },
+	                    this.props.children
+	                );
 	            }
 	        }
 	    });

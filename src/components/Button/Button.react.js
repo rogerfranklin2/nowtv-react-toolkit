@@ -13,7 +13,7 @@ let styles = {
 class Button extends React.Component {
     render() {
         return (
-            <button style={styles} className={"toolkit"}>{this.props.children}</button>
+            <button style={styles} className={"now-button"}>{this.props.children}</button>
         )
     }
 }
