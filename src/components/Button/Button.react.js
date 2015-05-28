@@ -2,44 +2,49 @@ import React from 'react';
 import assign from 'object-assign';
 import classNames from 'classnames'
 
-let styles = {
-	nowButton: {
-		borderRadius: '20px',
-		backgroundColor: 'white',
-		border: '1px solid white',
-		padding: '10px 35px',
-		color: 'black',
-		margin: '10px',
-		outline: '0'
-	},
-	inverted: {
-	  	backgroundColor: 'transparent',
-	  	color: 'white'
-	},
-	green: {
-		backgroundColor: 'green',
-		color: 'green'
-	}
-}
+import styles from './ButtonStyles'
 
-function buildStyles(propStyles){
+function buildStyles(propStyles,hovered){
 	let x = {}
-	let stylesArray = propStyles.split(" ");
 	assign(x, styles.nowButton)
-	for(var i = 0; i < stylesArray.length; i++){
-		assign(x, styles[stylesArray[i]]);	
+	if(propStyles != undefined){
+		let stylesArray = propStyles.split(" ");
+		for(var i = 0; i < stylesArray.length; i++){
+			assign(x, styles[stylesArray[i]]);	
+		}
+	}
+	if(hovered){
+		assign(x, styles.hovered)
 	}
 	return x;
-
 }
 
-
 class Button extends React.Component {
-    render() {
-        return (
-            <button style={buildStyles(this.props.styles)} className={classNames('now-button', this.props.type)}>{this.props.children}</button>
-        )
-    }
+  constructor(props) {
+    super(props);
+    this.state = {hovered: false};
+
+    this.mouseEnterHandler = this.mouseEnterHandler.bind(this);
+    this.mouseExitHandler = this.mouseExitHandler.bind(this);
+  }
+
+  mouseEnterHandler() {
+	this.setState({
+      hovered: true
+	});
+  }
+
+  mouseExitHandler() {
+	this.setState({
+      hovered: false
+	});
+  }
+
+	render() {
+		return (
+			<button style={buildStyles(this.props.styles,this.state.hovered)} onMouseLeave={this.mouseExitHandler} onMouseEnter={this.mouseEnterHandler} className={classNames('now-button', this.props.type)}>{this.props.children}</button>
+		)
+	}
 }
 
 export default Button;
