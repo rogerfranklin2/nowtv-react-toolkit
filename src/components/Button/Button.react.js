@@ -4,21 +4,6 @@ import classNames from 'classnames'
 
 import styles from './ButtonStyles'
 
-function buildStyles(propStyles,hovered){
-	let x = {}
-	assign(x, styles.nowButton)
-	if(propStyles != undefined){
-		let stylesArray = propStyles.split(" ");
-		for(var i = 0; i < stylesArray.length; i++){
-			assign(x, styles[stylesArray[i]]);	
-		}
-	}
-	if(hovered){
-		assign(x, styles.hovered)
-	}
-	return x;
-}
-
 class Button extends React.Component {
   constructor(props) {
     super(props);
