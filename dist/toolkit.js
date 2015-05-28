@@ -74,7 +74,7 @@ module.exports =
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
-		value: true
+	  value: true
 	});
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -103,60 +103,45 @@ module.exports =
 
 	var _ButtonStyles2 = _interopRequireDefault(_ButtonStyles);
 
-	function buildStyles(propStyles, hovered) {
-		var x = {};
-		(0, _objectAssign2['default'])(x, _ButtonStyles2['default'].nowButton);
-		if (propStyles != undefined) {
-			var stylesArray = propStyles.split(' ');
-			for (var i = 0; i < stylesArray.length; i++) {
-				(0, _objectAssign2['default'])(x, _ButtonStyles2['default'][stylesArray[i]]);
-			}
-		}
-		if (hovered) {
-			(0, _objectAssign2['default'])(x, _ButtonStyles2['default'].hovered);
-		}
-		return x;
-	}
-
 	var Button = (function (_React$Component) {
-		function Button(props) {
-			_classCallCheck(this, Button);
+	  function Button(props) {
+	    _classCallCheck(this, Button);
 
-			_get(Object.getPrototypeOf(Button.prototype), 'constructor', this).call(this, props);
-			this.state = { hovered: false };
+	    _get(Object.getPrototypeOf(Button.prototype), 'constructor', this).call(this, props);
+	    this.state = { hovered: false };
 
-			this.mouseEnterHandler = this.mouseEnterHandler.bind(this);
-			this.mouseExitHandler = this.mouseExitHandler.bind(this);
-		}
+	    this.mouseEnterHandler = this.mouseEnterHandler.bind(this);
+	    this.mouseExitHandler = this.mouseExitHandler.bind(this);
+	  }
 
-		_inherits(Button, _React$Component);
+	  _inherits(Button, _React$Component);
 
-		_createClass(Button, [{
-			key: 'mouseEnterHandler',
-			value: function mouseEnterHandler() {
-				this.setState({
-					hovered: true
-				});
-			}
-		}, {
-			key: 'mouseExitHandler',
-			value: function mouseExitHandler() {
-				this.setState({
-					hovered: false
-				});
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				return _react2['default'].createElement(
-					'button',
-					{ style: buildStyles(this.props.styles, this.state.hovered), onMouseLeave: this.mouseExitHandler, onMouseEnter: this.mouseEnterHandler, className: (0, _classnames2['default'])('now-button', this.props.type) },
-					this.props.children
-				);
-			}
-		}]);
+	  _createClass(Button, [{
+	    key: 'mouseEnterHandler',
+	    value: function mouseEnterHandler() {
+	      this.setState({
+	        hovered: true
+	      });
+	    }
+	  }, {
+	    key: 'mouseExitHandler',
+	    value: function mouseExitHandler() {
+	      this.setState({
+	        hovered: false
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'button',
+	        { style: buildStyles(this.props.styles, this.state.hovered), onMouseLeave: this.mouseExitHandler, onMouseEnter: this.mouseEnterHandler, className: (0, _classnames2['default'])('now-button', this.props.type) },
+	        this.props.children
+	      );
+	    }
+	  }]);
 
-		return Button;
+	  return Button;
 	})(_react2['default'].Component);
 
 	exports['default'] = Button;
