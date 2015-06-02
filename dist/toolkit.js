@@ -57,9 +57,13 @@ module.exports =
 
 	var _ComponentsButtonButtonReact2 = _interopRequireDefault(_ComponentsButtonButtonReact);
 
-	var _ComponentsInputInputReact = __webpack_require__(162);
+	var _ComponentsInputInputReact = __webpack_require__(160);
 
 	var _ComponentsInputInputReact2 = _interopRequireDefault(_ComponentsInputInputReact);
+
+	var _toolkitSass = __webpack_require__(161);
+
+	var _toolkitSass2 = _interopRequireDefault(_toolkitSass);
 
 	exports['default'] = {
 		Button: _ComponentsButtonButtonReact2['default'],
@@ -76,6 +80,8 @@ module.exports =
 	Object.defineProperty(exports, '__esModule', {
 		value: true
 	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -99,10 +105,6 @@ module.exports =
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _ButtonStylesSass = __webpack_require__(160);
-
-	var _ButtonStylesSass2 = _interopRequireDefault(_ButtonStylesSass);
-
 	var Button = (function (_React$Component) {
 		function Button(props) {
 			_classCallCheck(this, Button);
@@ -117,7 +119,7 @@ module.exports =
 			value: function render() {
 				return _react2['default'].createElement(
 					'button',
-					{ className: (0, _classnames2['default'])('now-button', this.props.classes) },
+					_extends({}, this.props, { className: (0, _classnames2['default'])('now-button', this.props.classes) }),
 					this.props.children
 				);
 			}
@@ -20555,13 +20557,6 @@ module.exports =
 /* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 161 */,
-/* 162 */
-/***/ function(module, exports, __webpack_require__) {
-
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
@@ -20612,6 +20607,12 @@ module.exports =
 
 	exports["default"] = Input;
 	module.exports = exports["default"];
+
+/***/ },
+/* 161 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);

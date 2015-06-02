@@ -1,23 +1,27 @@
-var React = require('react/addons');
 var assert = require('assert');
 var should = require('chai').should();
-var NowButton = require('../../src/components/Button/Button.react');
-var TestUtils = React.addons.TestUtils;
 
 describe('Button component', function() {
+    var React;
+    var TestUtils;
+    var NowButton;
 
     before('render and locate element', function() {
+        React = require('react/addons');
+        TestUtils = React.addons.TestUtils
+        NowButton = require('../../src/components/Button/Button.react');
+    });
+
+
+    it('should display text', function() {
         var renderedComponent = TestUtils.renderIntoDocument(
             <NowButton>Now Button</NowButton>
         );
 
         var pComponent = TestUtils.findRenderedDOMComponentWithClass( renderedComponent, 'now-button' );
-        this.pElement = pComponent.getDOMNode();
-    });
+        var pElement = pComponent.getDOMNode();
 
-
-    it('should display text', function() {
-        assert.equal(this.pElement.textContent, 'Now Button');
+        assert.equal(pElement.textContent, 'Now Button');
     });
 
 
