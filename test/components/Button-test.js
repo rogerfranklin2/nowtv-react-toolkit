@@ -23,10 +23,19 @@ describe('Button component', function() {
 
     it('should be inverted', function(){
         var transparentButton = TestUtils.renderIntoDocument(
-      <NowButton type="inverted">Build your bundle</NowButton>
-    );
+            <NowButton classes="inverted">Build your bundle</NowButton>
+        );
 
     var renderedButton = TestUtils.findRenderedDOMComponentWithClass(transparentButton, 'inverted');
+    should.exist(renderedButton)
+    })
+
+    it('should be inverted and green', function(){
+        var transparentButton = TestUtils.renderIntoDocument(
+            <NowButton classes="inverted green">Build your bundle</NowButton>
+        );
+
+    var renderedButton = TestUtils.findRenderedDOMComponentWithClass(transparentButton, 'inverted green');
     should.exist(renderedButton)
     })
 

@@ -57,7 +57,7 @@ module.exports =
 
 	var _ComponentsButtonButtonReact2 = _interopRequireDefault(_ComponentsButtonButtonReact);
 
-	var _ComponentsInputInputReact = __webpack_require__(161);
+	var _ComponentsInputInputReact = __webpack_require__(160);
 
 	var _ComponentsInputInputReact2 = _interopRequireDefault(_ComponentsInputInputReact);
 
@@ -74,7 +74,7 @@ module.exports =
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
-	  value: true
+		value: true
 	});
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -99,49 +99,29 @@ module.exports =
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _ButtonStyles = __webpack_require__(160);
-
-	var _ButtonStyles2 = _interopRequireDefault(_ButtonStyles);
+	// import styles from './ButtonStyles'
 
 	var Button = (function (_React$Component) {
-	  function Button(props) {
-	    _classCallCheck(this, Button);
+		function Button(props) {
+			_classCallCheck(this, Button);
 
-	    _get(Object.getPrototypeOf(Button.prototype), 'constructor', this).call(this, props);
-	    this.state = { hovered: false };
+			_get(Object.getPrototypeOf(Button.prototype), 'constructor', this).call(this, props);
+		}
 
-	    this.mouseEnterHandler = this.mouseEnterHandler.bind(this);
-	    this.mouseExitHandler = this.mouseExitHandler.bind(this);
-	  }
+		_inherits(Button, _React$Component);
 
-	  _inherits(Button, _React$Component);
+		_createClass(Button, [{
+			key: 'render',
+			value: function render() {
+				return _react2['default'].createElement(
+					'button',
+					{ className: (0, _classnames2['default'])('now-button', this.props.classes) },
+					this.props.children
+				);
+			}
+		}]);
 
-	  _createClass(Button, [{
-	    key: 'mouseEnterHandler',
-	    value: function mouseEnterHandler() {
-	      this.setState({
-	        hovered: true
-	      });
-	    }
-	  }, {
-	    key: 'mouseExitHandler',
-	    value: function mouseExitHandler() {
-	      this.setState({
-	        hovered: false
-	      });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2['default'].createElement(
-	        'button',
-	        { style: buildStyles(this.props.styles, this.state.hovered), onMouseLeave: this.mouseExitHandler, onMouseEnter: this.mouseEnterHandler, className: (0, _classnames2['default'])('now-button', this.props.type) },
-	        this.props.children
-	      );
-	    }
-	  }]);
-
-	  return Button;
+		return Button;
 	})(_react2['default'].Component);
 
 	exports['default'] = Button;
@@ -20571,87 +20551,79 @@ module.exports =
 /* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
-	Object.defineProperty(exports, '__esModule', {
-		value: true
-	});
-	exports['default'] = {
-		nowButton: {
-			borderRadius: '20px',
-			backgroundColor: 'white',
-			border: '1px solid white',
-			padding: '10px 35px',
-			color: 'black',
-			margin: '10px',
-			outline: '0'
-		},
-		inverted: {
-			backgroundColor: 'transparent',
-			color: 'white'
-		},
-		green: {
-			backgroundColor: 'green',
-			color: 'white'
-		},
-		hovered: {
-			backgroundColor: 'purple'
-		}
-	};
-	module.exports = exports['default'];
-
-/***/ },
-/* 161 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
+	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var styles = {
-	    borderRadius: '5px',
-	    border: 0,
-	    padding: 0,
-	    color: 'black'
-	};
-
 	var Input = (function (_React$Component) {
-	    function Input() {
+	    function Input(props) {
 	        _classCallCheck(this, Input);
 
-	        if (_React$Component != null) {
-	            _React$Component.apply(this, arguments);
-	        }
+	        _get(Object.getPrototypeOf(Input.prototype), "constructor", this).call(this, props);
+	        this.handleChange = this.handleChange.bind(this);
+
+	        this.state = {
+	            requiredError: false
+	        };
 	    }
 
 	    _inherits(Input, _React$Component);
 
 	    _createClass(Input, [{
-	        key: 'render',
+	        key: "handleChange",
+	        value: function handleChange(event) {
+	            console.log("HANDLE ", event.target.value.length == 0);
+	            if (event.target.value.length == 0) {
+	                this.setState({ requiredError: true });
+	            }
+	        }
+	    }, {
+	        key: "render",
 	        value: function render() {
-	            return _react2['default'].createElement('input', { style: styles, className: 'testInput' });
+	            var required;
+	            if (this.state.requiredError) {
+	                required = _react2["default"].createElement(
+	                    "span",
+	                    null,
+	                    "This element is required"
+	                );
+	            }
+
+	            return _react2["default"].createElement(
+	                "span",
+	                null,
+	                _react2["default"].createElement(
+	                    "label",
+	                    { "for": this.props.name },
+	                    this.props.name
+	                ),
+	                _react2["default"].createElement("input", { id: this.props.name, name: this.props.name, onChange: this.handleChange, placeholder: this.props.placeholder, className: "testInput" }),
+	                required
+	            );
 	        }
 	    }]);
 
 	    return Input;
-	})(_react2['default'].Component);
+	})(_react2["default"].Component);
 
-	exports['default'] = Input;
-	module.exports = exports['default'];
+	exports["default"] = Input;
+	module.exports = exports["default"];
 
 /***/ }
 /******/ ]);
