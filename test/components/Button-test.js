@@ -26,17 +26,27 @@ describe('Button component', function() {
             <NowButton classes="inverted">Build your bundle</NowButton>
         );
 
-    var renderedButton = TestUtils.findRenderedDOMComponentWithClass(transparentButton, 'inverted');
-    should.exist(renderedButton)
-    })
+        var renderedButton = TestUtils.findRenderedDOMComponentWithClass(transparentButton, 'inverted');
+        should.exist(renderedButton)
+    });
+
 
     it('should be inverted and green', function(){
         var transparentButton = TestUtils.renderIntoDocument(
             <NowButton classes="inverted green">Build your bundle</NowButton>
         );
 
-    var renderedButton = TestUtils.findRenderedDOMComponentWithClass(transparentButton, 'inverted green');
-    should.exist(renderedButton)
-    })
+        var renderedButton = TestUtils.findRenderedDOMComponentWithClass(transparentButton, 'inverted green');
+        should.exist(renderedButton)
+    });
 
+
+    it('should accept any props', function() {
+        var buttonWithName = TestUtils.renderIntoDocument(
+            <NowButton name="build-your-bundle">Build your bundle</NowButton>
+        );
+
+        var renderedButton = TestUtils.findRenderedDOMComponentWithTag(buttonWithName, 'button');
+        assert.equal(renderedButton.props.name, 'build-your-bundle');
+    });
 });
