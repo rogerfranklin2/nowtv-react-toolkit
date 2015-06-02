@@ -57,7 +57,7 @@ module.exports =
 
 	var _ComponentsButtonButtonReact2 = _interopRequireDefault(_ComponentsButtonButtonReact);
 
-	var _ComponentsInputInputReact = __webpack_require__(160);
+	var _ComponentsInputInputReact = __webpack_require__(162);
 
 	var _ComponentsInputInputReact2 = _interopRequireDefault(_ComponentsInputInputReact);
 
@@ -99,7 +99,9 @@ module.exports =
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	// import styles from './ButtonStyles'
+	var _ButtonStylesSass = __webpack_require__(160);
+
+	var _ButtonStylesSass2 = _interopRequireDefault(_ButtonStylesSass);
 
 	var Button = (function (_React$Component) {
 		function Button(props) {
@@ -20498,57 +20500,66 @@ module.exports =
 /* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	  Copyright (c) 2015 Jed Watson.
 	  Licensed under the MIT License (MIT), see
 	  http://jedwatson.github.io/classnames
 	*/
 
-	function classNames () {
+	(function () {
 		'use strict';
 
-		var classes = '';
+		function classNames () {
 
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
+			var classes = '';
 
-			var argType = typeof arg;
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (!arg) continue;
 
-			if ('string' === argType || 'number' === argType) {
-				classes += ' ' + arg;
+				var argType = typeof arg;
 
-			} else if (Array.isArray(arg)) {
-				classes += ' ' + classNames.apply(null, arg);
+				if ('string' === argType || 'number' === argType) {
+					classes += ' ' + arg;
 
-			} else if ('object' === argType) {
-				for (var key in arg) {
-					if (arg.hasOwnProperty(key) && arg[key]) {
-						classes += ' ' + key;
+				} else if (Array.isArray(arg)) {
+					classes += ' ' + classNames.apply(null, arg);
+
+				} else if ('object' === argType) {
+					for (var key in arg) {
+						if (arg.hasOwnProperty(key) && arg[key]) {
+							classes += ' ' + key;
+						}
 					}
 				}
 			}
+
+			return classes.substr(1);
 		}
 
-		return classes.substr(1);
-	}
+		if (true) {
+			// AMD. Register as an anonymous module.
+			!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+				return classNames;
+			}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else {
+			window.classNames = classNames;
+		}
 
-	// safely export classNames for node / browserify
-	if (typeof module !== 'undefined' && module.exports) {
-		module.exports = classNames;
-	}
-
-	/* global define */
-	// safely export classNames for RequireJS
-	if (true) {
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
-			return classNames;
-		}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}
+	}());
 
 
 /***/ },
 /* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 161 */,
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -20576,35 +20587,13 @@ module.exports =
 	        _classCallCheck(this, Input);
 
 	        _get(Object.getPrototypeOf(Input.prototype), "constructor", this).call(this, props);
-	        this.handleChange = this.handleChange.bind(this);
-
-	        this.state = {
-	            requiredError: false
-	        };
 	    }
 
 	    _inherits(Input, _React$Component);
 
 	    _createClass(Input, [{
-	        key: "handleChange",
-	        value: function handleChange(event) {
-	            console.log("HANDLE ", event.target.value.length == 0);
-	            if (event.target.value.length == 0) {
-	                this.setState({ requiredError: true });
-	            }
-	        }
-	    }, {
 	        key: "render",
 	        value: function render() {
-	            var required;
-	            if (this.state.requiredError) {
-	                required = _react2["default"].createElement(
-	                    "span",
-	                    null,
-	                    "This element is required"
-	                );
-	            }
-
 	            return _react2["default"].createElement(
 	                "span",
 	                null,
@@ -20613,8 +20602,7 @@ module.exports =
 	                    { "for": this.props.name },
 	                    this.props.name
 	                ),
-	                _react2["default"].createElement("input", { id: this.props.name, name: this.props.name, onChange: this.handleChange, placeholder: this.props.placeholder, className: "testInput" }),
-	                required
+	                _react2["default"].createElement("input", { id: this.props.name, name: this.props.name, className: "testInput" })
 	            );
 	        }
 	    }]);
