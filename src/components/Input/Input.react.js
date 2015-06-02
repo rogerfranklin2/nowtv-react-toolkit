@@ -1,18 +1,20 @@
 import React from 'react';
+import classNames from 'classnames';
+
+import styles from './InputStyles.sass'
 
 class Input extends React.Component {
-	constructor(props){
-		super(props)
-	}
+  constructor(props){
+    super(props)
+  }
 
-    render() {
-        return (
-        	<span>
-				<label for={this.props.name}>{this.props.name}</label>
-				<input id={this.props.name} name={this.props.name}  className={"testInput"}/>
-            </span>
-        )
-    }
+  render() {
+    return (
+        <span>
+            <input {...this.props} className={classNames("now-input", this.props.classes)} />
+        </span>
+    )
+  }
 }
 
 export default Input;
