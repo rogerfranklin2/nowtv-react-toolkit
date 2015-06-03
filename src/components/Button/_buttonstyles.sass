@@ -1,13 +1,31 @@
+@import '../../colours'
+
 .now-button
+  font: bold 15px nowtv-bold, sans-serif
+  color: white
+  min-width: 200px
+  padding: 10px 32px
   border-radius: 20px
-  background-color: white
-  border: 1px solid white
-  padding: 10px 35px
-  color: black
-  margin: 10px
-  outline: 0
+  border: 0
+
   &.inverted
-    background-color: transparent
-    color: white
+    background-color: #fff
+
+  &.i-blue
+    color: #2B3F71
+
   &.green
-    background-color: green
+    background-color: #30AF3F
+
+    &:hover
+      opacity: 0.9
+
+    &:active
+      opacity: 0.7
+
+  &[disabled=disabled], &:disabled
+    background-color: #AAADB2
+    opacity: 0.3
+
+    &:hover
+      opacity: 0.3

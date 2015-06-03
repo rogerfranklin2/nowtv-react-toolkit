@@ -4,7 +4,6 @@ module.exports = {
     entry: "./src/toolkit.js",
     output: {
         path:"./dist",
-        context: __dirname,
         filename: "toolkit.js",
         libraryTarget: "commonjs2"
     },

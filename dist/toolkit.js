@@ -120,7 +120,11 @@ module.exports =
 				return _react2['default'].createElement(
 					'button',
 					_extends({}, this.props, { className: (0, _classnames2['default'])('now-button', this.props.classes) }),
-					this.props.children
+					_react2['default'].createElement(
+						'span',
+						null,
+						this.props.children
+					)
 				);
 			}
 		}]);
