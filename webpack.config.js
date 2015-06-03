@@ -10,6 +10,7 @@ module.exports = {
     module: {
       loaders: [
           { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+          { test: /\.svg$/, loader: 'url-loader' },
           { test: /\.sass$/, loader: ExtractTextPlugin.extract("css!sass?indentedSyntax") }
       ]
     },

@@ -1,5 +1,12 @@
 @import '../../colours'
 
+=input_icon($icon)
+  background-image: url(assets/icons/#{$icon}.svg)
+  background-repeat: no-repeat
+  background-size: 7%
+  background-position: 95% 
+  padding-right: 40px
+
 .now-input
   background-color: $light_grey
   border: 1px solid $dark_grey
@@ -14,16 +21,24 @@
 
   &:focus
     background-color: $white
+    +input_icon("double-chevron") 
     border-color: $green
     color: $black
+    background-size: 5%
 
   &.error
     background-color: $white
+    +input_icon("error") 
     color: $red
     border-color: $red
 
   &:disabled
     background-color: $dark_grey
+
+  &.confirmation
+    +input_icon("green-tick") 
+    color: $black
+
 
 
 
