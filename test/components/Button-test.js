@@ -45,6 +45,16 @@ describe('Button component', function() {
     });
 
 
+    it('should be a secondary button', function(){
+        var secondaryButton = TestUtils.renderIntoDocument(
+            <NowButton classes="secondary green">Build your bundle</NowButton>
+        );
+
+        var renderedButton = TestUtils.findRenderedDOMComponentWithClass(secondaryButton, 'secondary green');
+        should.exist(renderedButton)
+    });
+
+
     it('should accept any props', function() {
         var buttonWithName = TestUtils.renderIntoDocument(
             <NowButton name="build-your-bundle">Build your bundle</NowButton>
