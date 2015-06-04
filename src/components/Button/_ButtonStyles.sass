@@ -1,5 +1,14 @@
 @import '../../colours'
 
+@mixin states($color)
+  &.primary
+    background-color: $color
+  &.inverted
+    color: $color
+    background-color: $white
+  &.secondary
+    color: $color
+
 .now-button
   font: bold 15px nowtv-bold, sans-serif
   background-color: transparent
@@ -13,8 +22,6 @@
     opacity: 0.7
   &:focus
     outline: 0
-  &.inverted
-    color: $white
   &.primary
     color: $white
     &:disabled
@@ -24,14 +31,9 @@
     &:disabled
       color: $button_grey
   &.green
-    &.primary
-      background-color: $green
-    &.secondary
-      color: $green
+    +states($green)
   &.blue
-    color: #2B3F71
-    &.inverted
-      background-color: $white
+    +states(#2B3F71)
   border: 2px solid currentColor
 
 [disabled=disabled], :disabled
