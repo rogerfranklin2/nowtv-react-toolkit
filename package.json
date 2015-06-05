@@ -4,6 +4,7 @@
   "description": "NowTV React ui-toolkit",
   "main": "./dist/toolkit.js",
   "scripts": {
+    "start": "node serve | webpack --watch",
     "test": "./node_modules/.bin/mocha --compilers js:babel/register --recursive"
   },
   "author": "",
@@ -25,6 +26,11 @@
     "sass-loader": "^1.0.2",
     "style-loader": "^0.12.3",
     "url-loader": "^0.5.6",
-    "webpack": "^1.7.3"
+    "webpack": "^1.7.3",
+    "webpack-dev-server": "^1.9.0"
+  },
+  "dependencies": {
+    "connect": "^3.3.5",
+    "serve-static": "^1.9.3"
   }
 }
