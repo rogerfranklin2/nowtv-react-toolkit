@@ -1,27 +1,44 @@
 .now-button {
   font: bold 15px nowtv-bold, sans-serif;
-  color: white;
+  background-color: transparent;
   min-width: 200px;
   padding: 10px 32px;
+  box-sizing: border-box;
   border-radius: 20px;
-  border: 0; }
+  cursor: pointer;
+  border: 2px solid currentColor; }
   .now-button:hover {
     opacity: 0.9; }
-  .now-button:focus {
-    outline: 0px; }
   .now-button:active {
     opacity: 0.7; }
-  .now-button.inverted {
-    background-color: #fff; }
-  .now-button.i-blue {
-    color: #2B3F71; }
-  .now-button.green {
+  .now-button:focus {
+    outline: 0; }
+  .now-button.primary {
+    color: #FFF; }
+    .now-button.primary:disabled {
+      background-color: #AAADB2; }
+  .now-button.secondary {
+    color: #FFF; }
+    .now-button.secondary:disabled {
+      color: #AAADB2; }
+  .now-button.green.primary {
     background-color: #30AF3F; }
-  .now-button[disabled=disabled], .now-button:disabled {
-    background-color: #AAADB2;
-    opacity: 0.3; }
-    .now-button[disabled=disabled]:hover, .now-button:disabled:hover {
-      opacity: 0.3; }
+  .now-button.green.inverted {
+    color: #30AF3F;
+    background-color: #FFF; }
+  .now-button.green.secondary {
+    color: #30AF3F; }
+  .now-button.blue.primary {
+    background-color: #2B3F71; }
+  .now-button.blue.inverted {
+    color: #2B3F71;
+    background-color: #FFF; }
+  .now-button.blue.secondary {
+    color: #2B3F71; }
+
+[disabled=disabled], :disabled {
+  cursor: default;
+  opacity: 0.3 !important; }
 
 .now-input {
   background-color: #F7F7F9;
@@ -93,15 +110,70 @@
     background-size: 5%; }
 
 .now-checkbox {
-  display: none; }
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  box-sizing: border-box;
+  margin: 10px 0;
+  cursor: pointer;
+  text-align: left; }
+  .now-checkbox:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: " ";
+    background-color: #F7F7F9;
+    border: 1px solid #E6E8ED;
+    border-radius: 4px;
+    width: 18px;
+    height: 18px; }
+  .now-checkbox.checked:after {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4xLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAxMiAxMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTIgMTAiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iIzMwQjgwMyIgZD0iTTEyLDFjMC0wLjYtMC40LTEtMS0xYy0wLjMsMC0wLjYsMC4yLTAuNiwwLjJDOCwxLjYsNCw2LjMsNCw2LjNjLTAuMy0wLjMtMi4xLTItMi4xLTJoMGwwLDANCglDMS42LDQuMSwxLjQsNCwxLjEsNEMwLjUsNCwwLDQuNSwwLDUuMUMwLDUuNSwwLjIsNS44LDAuNCw2YzEuMSwxLjEsMi40LDIuNiwyLjgsMy4zQzMuNCw5LjcsMy43LDEwLDQuMiwxMEM0LjYsMTAsNC44LDkuOCw1LDkuNg0KCWMwLjEtMC4xLDAuMi0wLjIsMC4yLTAuM2MwLjctMS4yLDMuMS01LDYtNy4zQzExLjcsMS43LDEyLDEuNCwxMiwxIi8+DQo8L3N2Zz4NCg==);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%; }
+  .now-checkbox input {
+    display: none; }
+
+h1 {
+  font: 40px/48px nowtv-light, Helvetica, Arial, sans-serif;
+  margin: 0 0 20px; }
+
+h2 {
+  font: 30px/34px nowtv-regular, Helvetica, Arial, sans-serif;
+  margin: 0 0 20px; }
+
+h3 {
+  font: 20px/26px nowtv-regular, Helvetica, Arial, sans-serif;
+  margin: 0 0 20px; }
+
+h4 {
+  font: 18px/24px nowtv-bold, Helvetica, Arial, sans-serif;
+  margin: 0 0 10px; }
+
+h5 {
+  font: 16px/16px nowtv-bold, Helvetica, Arial, sans-serif;
+  margin: 0; }
+
+p {
+  font: 14px/18px nowtv-regular, Helvetica, Arial, sans-serif;
+  margin: 0 0 10px; }
+  p.smaller {
+    font: 12px/16px;
+    margin: 0 0 5px; }
+
+@font-face {
+  font-family: nowtv-light;
+  src: url("http://localhost:8080/nowtvtext-light.woff"); }
 
 @font-face {
   font-family: nowtv-regular;
-  src: url("http://web.static.nowtv.com/assets/fonts/NOWTVText_W_Rg.woff2"); }
+  src: url("http://localhost:8080/NOWTVText_W_Rg.woff2"); }
 
 @font-face {
   font-family: nowtv-bold;
-  src: url("http://web.static.nowtv.com/assets/fonts/NOWTVText_W_Bd.woff2"); }
+  src: url("http://localhost:8080/NOWTVText_W_Bd.woff2"); }
 
 body {
   font-family: nowtv-regular, Helvetica, Arial, sans-serif; }

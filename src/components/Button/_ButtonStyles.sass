@@ -1,0 +1,42 @@
+@import '../../colours'
+
+@mixin states($color)
+  &.primary
+    background-color: $color
+  &.inverted
+    color: $color
+    background-color: $white
+  &.secondary
+    color: $color
+
+.now-button
+  font: bold 15px nowtv-bold, sans-serif
+  background-color: transparent
+  min-width: 200px
+  padding: 10px 32px
+  box-sizing: border-box
+  border-radius: 20px
+  cursor: pointer
+  &:hover
+    opacity: 0.9
+  &:active
+    opacity: 0.7
+  &:focus
+    outline: 0
+  &.primary
+    color: $white
+    &:disabled
+      background-color: $button_grey
+  &.secondary
+    color: $white
+    &:disabled
+      color: $button_grey
+  &.green
+    +states($green)
+  &.blue
+    +states(#2B3F71)
+  border: 2px solid currentColor
+
+[disabled=disabled], :disabled
+  cursor: default
+  opacity: 0.3 !important

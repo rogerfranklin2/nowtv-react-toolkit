@@ -4,20 +4,41 @@ body {
 	background-color: white;
 }
 
-.container {
+#toolkit {
   @include center;
 }
 
 section {
   @include center;
-}
-
-section.checkbox, section.inputs {
-  @include col(1/2);
+  @include cf;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .inverted {
   margin: 10px 0;
   padding: 10px;
   background-color: #2B3F71
+}
+
+.half {
+  @include col(1/2);
+  text-align: center;
+}
+
+pre {
+  text-align: left;
+}
+
+.clearfix {
+  @include cf;
+}
+
+.bg-blue {
+  background-color: #2B3F71;
+}
+
+.bg-green {
+  background-color: #30AF3F;
 }
