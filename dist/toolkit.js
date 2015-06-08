@@ -53,51 +53,36 @@ module.exports =
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _ComponentsButtonButtonReact = __webpack_require__(159);
+	var _componentsButtonButtonReact = __webpack_require__(159);
 
-	var _ComponentsButtonButtonReact2 = _interopRequireDefault(_ComponentsButtonButtonReact);
+	var _componentsButtonButtonReact2 = _interopRequireDefault(_componentsButtonButtonReact);
 
-	var _ComponentsInputInputReact = __webpack_require__(161);
+	var _componentsInputInputReact = __webpack_require__(161);
 
-	var _ComponentsInputInputReact2 = _interopRequireDefault(_ComponentsInputInputReact);
+	var _componentsInputInputReact2 = _interopRequireDefault(_componentsInputInputReact);
 
-	var _ComponentsDropdownDropdownReact = __webpack_require__(162);
+	var _componentsDropdownDropdownReact = __webpack_require__(162);
 
-	var _ComponentsDropdownDropdownReact2 = _interopRequireDefault(_ComponentsDropdownDropdownReact);
+	var _componentsDropdownDropdownReact2 = _interopRequireDefault(_componentsDropdownDropdownReact);
 
-<<<<<<< HEAD
-	var _ComponentsCheckboxCheckboxReact = __webpack_require__(162);
+	var _componentsCheckboxCheckboxReact = __webpack_require__(1);
 
-	var _ComponentsCheckboxCheckboxReact2 = _interopRequireDefault(_ComponentsCheckboxCheckboxReact);
+	var _componentsCheckboxCheckboxReact2 = _interopRequireDefault(_componentsCheckboxCheckboxReact);
 
-	var _toolkitSass = __webpack_require__(163);
-=======
-	var _ComponentsCheckboxCheckboxReact = __webpack_require__(1);
+	var _componentsTicketTicketReact = __webpack_require__(163);
 
-	var _ComponentsCheckboxCheckboxReact2 = _interopRequireDefault(_ComponentsCheckboxCheckboxReact);
-
-	var _ComponentsTicketTicketReact = __webpack_require__(163);
-
-	var _ComponentsTicketTicketReact2 = _interopRequireDefault(_ComponentsTicketTicketReact);
+	var _componentsTicketTicketReact2 = _interopRequireDefault(_componentsTicketTicketReact);
 
 	var _toolkitSass = __webpack_require__(164);
->>>>>>> @{-1}
 
 	var _toolkitSass2 = _interopRequireDefault(_toolkitSass);
 
 	exports['default'] = {
-<<<<<<< HEAD
-	  Button: _ComponentsButtonButtonReact2['default'],
-	  Input: _ComponentsInputInputReact2['default'],
-	  Dropdown: _ComponentsDropdownDropdownReact2['default'],
-	  Checkbox: _ComponentsCheckboxCheckboxReact2['default']
-=======
-	   Button: _ComponentsButtonButtonReact2['default'],
-	   Input: _ComponentsInputInputReact2['default'],
-	   Dropdown: _ComponentsDropdownDropdownReact2['default'],
-	   Checkbox: _ComponentsCheckboxCheckboxReact2['default'],
-	   Ticket: _ComponentsTicketTicketReact2['default']
->>>>>>> @{-1}
+	   Button: _componentsButtonButtonReact2['default'],
+	   Input: _componentsInputInputReact2['default'],
+	   Dropdown: _componentsDropdownDropdownReact2['default'],
+	   Checkbox: _componentsCheckboxCheckboxReact2['default'],
+	   Ticket: _componentsTicketTicketReact2['default']
 	};
 	module.exports = exports['default'];
 
@@ -20807,21 +20792,6 @@ module.exports =
 	        _classCallCheck(this, Ticket);
 
 	        _get(Object.getPrototypeOf(Ticket.prototype), 'constructor', this).call(this, props);
-
-	        this.nowTicketStyle = {
-	            backgroundColor: '#2C3E72',
-	            color: '#FFF',
-	            width: '179px' };
-
-	        this.contentStyle = {
-	            padding: '10%',
-	            boxSizing: 'border-box'
-	        };
-
-	        this.ticketTearoffStyle = {
-	            fill: 'blue',
-	            background: 'url(\'../../assets/icons/ticket-tearoff.svg\')'
-	        };
 	    }
 
 	    _inherits(Ticket, _React$Component);
@@ -20829,24 +20799,30 @@ module.exports =
 	    _createClass(Ticket, [{
 	        key: 'render',
 	        value: function render() {
+	            var classes = [this.props.classes];
+
 	            return _react2['default'].createElement(
 	                'div',
-	                { className: 'now-ticket', style: this.nowTicketStyle },
+	                null,
 	                _react2['default'].createElement(
 	                    'div',
-	                    { className: 'content', style: this.contentStyle },
+	                    { className: (0, _classnames2['default'])('now-ticket', classes) },
 	                    _react2['default'].createElement(
-	                        'h3',
-	                        null,
-	                        this.props.title
-	                    ),
-	                    _react2['default'].createElement(
-	                        'p',
-	                        null,
-	                        this.props.children
+	                        'div',
+	                        { className: (0, _classnames2['default'])('content') },
+	                        _react2['default'].createElement(
+	                            'h3',
+	                            null,
+	                            this.props.title
+	                        ),
+	                        _react2['default'].createElement(
+	                            'p',
+	                            null,
+	                            this.props.children
+	                        )
 	                    )
 	                ),
-	                _react2['default'].createElement('div', { className: 'ticket-tearoff', style: this.ticketTearoffStyle })
+	                _react2['default'].createElement('div', { className: (0, _classnames2['default'])('tearoff') })
 	            );
 	        }
 	    }]);
@@ -20859,81 +20835,6 @@ module.exports =
 
 /***/ },
 /* 164 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-	    value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _classnames = __webpack_require__(159);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	var Checkbox = (function (_React$Component) {
-	    function Checkbox(props) {
-	        _classCallCheck(this, Checkbox);
-
-	        _get(Object.getPrototypeOf(Checkbox.prototype), 'constructor', this).call(this, props);
-	        this.state = { checked: this.props.checked || false };
-	        this.toggleChecked = this.toggleChecked.bind(this);
-	    }
-
-	    _inherits(Checkbox, _React$Component);
-
-	    _createClass(Checkbox, [{
-	        key: 'toggleChecked',
-	        value: function toggleChecked() {
-	            this.setState({
-	                checked: !this.state.checked
-	            });
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            var classes = [this.props.classes];
-
-	            if (this.state.checked) {
-	                classes.push('checked');
-	            }
-
-	            return _react2['default'].createElement(
-	                'label',
-	                { className: (0, _classnames2['default'])('now-checkbox', classes) },
-	                _react2['default'].createElement('input', _extends({
-	                    onChange: this.toggleChecked,
-	                    checked: this.state.checked,
-	                    type: 'checkbox'
-	                }, this.props))
-	            );
-	        }
-	    }]);
-
-	    return Checkbox;
-	})(_react2['default'].Component);
-
-	exports['default'] = Checkbox;
-	module.exports = exports['default'];
-
-/***/ },
-/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// removed by extract-text-webpack-plugin

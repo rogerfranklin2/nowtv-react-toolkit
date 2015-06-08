@@ -4,7 +4,7 @@ var should = require('chai').should();
 var NowTicket = require('../../src/components/Ticket/Ticket.react');
 var TestUtils = React.addons.TestUtils;
 
-describe('Input component', function() {
+describe('Ticket component', function() {
     it('should render a ticket', function() {
         var renderComponent = TestUtils.renderIntoDocument(<NowTicket/>);
         var component = TestUtils.findRenderedDOMComponentWithClass(renderComponent, 'now-ticket');
@@ -13,7 +13,7 @@ describe('Input component', function() {
 
     it('should contain a title', function() {
         var renderComponent = TestUtils.renderIntoDocument(<NowTicket title="HelloIamATitle"/>);
-        var component = TestUtils.findRenderedDOMComponentWithTag(renderComponent, 'h5');
+        var component = TestUtils.findRenderedDOMComponentWithTag(renderComponent, 'h3');
         assert.equal(React.findDOMNode(component).textContent, "HelloIamATitle");
         should.exist(component);
     });

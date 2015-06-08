@@ -1,8 +1,8 @@
-import Button from './Components/Button/Button.react';
-import Input from './Components/Input/Input.react';
-import Dropdown from './Components/Dropdown/Dropdown.react'
-import Checkbox from './Components/Checkbox/Checkbox.react'
-import Ticket from './Components/Ticket/Ticket.react'
+import Button from './components/Button/Button.react';
+import Input from './components/Input/Input.react';
+import Dropdown from './components/Dropdown/Dropdown.react'
+import Checkbox from './components/Checkbox/Checkbox.react'
+import Ticket from './components/Ticket/Ticket.react'
 
 import Styles from './toolkit.sass'
 
