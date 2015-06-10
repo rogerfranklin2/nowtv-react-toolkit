@@ -9,7 +9,6 @@ body {
 }
 
 section {
-  @include center;
   @include cf;
   border-bottom: 1px solid black;
   margin-bottom: 20px;
@@ -23,8 +22,15 @@ section {
 }
 
 .half {
-  @include col(1/2);
+  @include cf;
   text-align: center;
+  @media screen and (min-width: 600px) {
+    @include col(1/1, $cycle: 1);
+   }
+                    
+  @media screen and (min-width: 900px) {
+    @include col(1/2, $cycle: 2, $uncycle: 1);
+  }
 }
 
 pre {
