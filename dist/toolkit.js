@@ -20822,7 +20822,7 @@ module.exports =
 	                        )
 	                    )
 	                ),
-	                _react2['default'].createElement('div', { className: (0, _classnames2['default'])('tearoff') })
+	                _react2['default'].createElement('div', { className: (0, _classnames2['default'])('tearoff', classes) })
 	            );
 	        }
 	    }]);

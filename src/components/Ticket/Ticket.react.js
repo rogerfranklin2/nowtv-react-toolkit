@@ -19,7 +19,7 @@ class Ticket extends React.Component {
                         <p>{this.props.children}</p>
                     </div>
                 </div>
-                <div className={classNames('tearoff')}></div>
+                <div className={classNames('tearoff', classes)}></div>
             </div>
         )
     }
