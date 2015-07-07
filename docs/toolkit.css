@@ -1,11 +1,13 @@
 .now-button {
-  font: bold 15px nowtv-bold, sans-serif;
+  font: bold 16px nowtv-bold, sans-serif;
   background-color: transparent;
   min-width: 200px;
-  padding: 10px 32px;
+  padding: 12px 32px;
   box-sizing: border-box;
   border-radius: 20px;
   cursor: pointer;
+  color: #FFF;
+  min-height: 40px;
   border: 2px solid currentColor; }
   .now-button:hover {
     opacity: 0.9; }
@@ -13,14 +15,10 @@
     opacity: 0.7; }
   .now-button:focus {
     outline: 0; }
-  .now-button.primary {
-    color: #FFF; }
-    .now-button.primary:disabled {
-      background-color: #AAADB2; }
-  .now-button.secondary {
-    color: #FFF; }
-    .now-button.secondary:disabled {
-      color: #AAADB2; }
+  .now-button.primary:disabled {
+    background-color: #AAADB2; }
+  .now-button.secondary:disabled {
+    color: #AAADB2; }
   .now-button.green.primary {
     background-color: #30AF3F; }
   .now-button.green.inverted {

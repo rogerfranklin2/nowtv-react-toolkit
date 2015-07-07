@@ -30,11 +30,12 @@ module.exports = [
         module: {
           loaders: [
               { test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
-              { test: /\.scss$/, loader: ExtractTextPlugin.extract("css!sass") }
+              { test: /\.scss$/, loader: ExtractTextPlugin.extract("css!sass") },
+              { test: /\.css$/, loader: "file?name=../toolkit.css" }
           ]
         },
         plugins: [
             new ExtractTextPlugin("/css/app.css")
         ]
     }
-]
+];
