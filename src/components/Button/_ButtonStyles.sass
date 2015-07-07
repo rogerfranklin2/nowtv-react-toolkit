@@ -1,6 +1,6 @@
 @import '../../colours'
 
-@mixin states($color)
+=states($color)
   &.primary
     background-color: $color
   &.inverted
@@ -10,13 +10,15 @@
     color: $color
 
 .now-button
-  font: bold 15px nowtv-bold, sans-serif
+  font: 16px nowtv-bold, sans-serif
   background-color: transparent
   min-width: 200px
   padding: 10px 32px
   box-sizing: border-box
   border-radius: 20px
   cursor: pointer
+  color: $white
+  height: 40px
   &:hover
     opacity: 0.9
   &:active
@@ -24,11 +26,9 @@
   &:focus
     outline: 0
   &.primary
-    color: $white
     &:disabled
       background-color: $button_grey
   &.secondary
-    color: $white
     &:disabled
       color: $button_grey
   &.green

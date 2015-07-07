@@ -1,24 +1,16 @@
-var assert = require('assert');
-var should = require('chai').should();
+const assert = require('assert'),
+      should = require('chai').should(),
+      React = require('react/addons'),
+      TestUtils = React.addons.TestUtils,
+      NowButton = require('../../src/components/Button/Button.react');
 
 describe('Button component', function() {
-    var React;
-    var TestUtils;
-    var NowButton;
-
-    before('render and locate element', function() {
-        React = require('react/addons');
-        TestUtils = React.addons.TestUtils
-        NowButton = require('../../src/components/Button/Button.react');
-    });
-
-
     it('should display text', function() {
         var renderedComponent = TestUtils.renderIntoDocument(
             <NowButton>Now Button</NowButton>
         );
 
-        var pComponent = TestUtils.findRenderedDOMComponentWithClass( renderedComponent, 'now-button' );
+        var pComponent = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-button');
         var pElement = pComponent.getDOMNode();
 
         assert.equal(pElement.textContent, 'Now Button');
@@ -63,4 +55,5 @@ describe('Button component', function() {
         var renderedButton = TestUtils.findRenderedDOMComponentWithTag(buttonWithName, 'button');
         assert.equal(renderedButton.props.name, 'build-your-bundle');
     });
+
 });

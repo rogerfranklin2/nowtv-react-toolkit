@@ -12,12 +12,12 @@ class Buttons extends React.Component {
                 <div className="clearfix">
                     <div className="clearfix">
                         <div className="half">
-                            <Toolkit.Button classes="primary green">Build your bundle</Toolkit.Button>
+                            <Toolkit.Button classes="primary green">Inactive state</Toolkit.Button>
                         </div>
                         <div className="half">
                                     <pre>
                                         <code className="jsx">
-                                            {"<Toolkit.Button classes='primary green'>Build your bundle</Toolkit.Button>"}
+                                            {"<Toolkit.Button classes='primary green'>Inactive state</Toolkit.Button>"}
                                         </code>
                                     </pre>
                         </div>
@@ -25,12 +25,12 @@ class Buttons extends React.Component {
 
                     <div className="clearfix">
                         <div className="half">
-                            <Toolkit.Button classes='primary' disabled>Build your bundle</Toolkit.Button>
+                            <Toolkit.Button classes='primary' disabled>Disabled state</Toolkit.Button>
                         </div>
                         <div className="half">
                                     <pre>
                                         <code className="jsx">
-                                            {"<Toolkit.Button classes='primary' disabled>Build your bundle</Toolkit.Button>"}
+                                            {"<Toolkit.Button classes='primary' disabled>Disabled state</Toolkit.Button>"}
                                         </code>
                                     </pre>
                         </div>
