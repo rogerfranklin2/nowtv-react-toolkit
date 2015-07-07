@@ -17,11 +17,11 @@ class App extends React.Component {
                 <hr/>
                 <GettingStarted/>
                 <Buttons/>
+                <Links />
                 <Inputs/>
                 <Dropdowns/>
                 <Checkboxes/>
                 <Tickets/>
-                <Links />
             </div>
 
         )
