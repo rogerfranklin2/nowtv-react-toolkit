@@ -20870,6 +20870,8 @@ module.exports =
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
+	var supportedPositions = ['top-centre', 'bottom-right'];
+
 	var Tip = (function (_React$Component) {
 	    function Tip(props) {
 	        _classCallCheck(this, Tip);
@@ -20880,13 +20882,21 @@ module.exports =
 	    _inherits(Tip, _React$Component);
 
 	    _createClass(Tip, [{
+	        key: 'isPositionSupported',
+	        value: function isPositionSupported(position) {
+	            return supportedPositions.indexOf(position) < 0;
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
-	            var classes = [this.props.classes];
+	            var classes = [this.props.classes],
+	                position = this.props['arrow-position'],
+	                arrowPosition = this.isPositionSupported(position) ? 'top-centre' : position;
 
 	            return _react2['default'].createElement(
 	                'div',
-	                { className: (0, _classnames2['default'])('now-tip', classes) },
+	                { className: (0, _classnames2['default'])('now-tip', classes, arrowPosition) },
+	                _react2['default'].createElement('div', { className: 'arrow-' + arrowPosition }),
 	                _react2['default'].createElement(
 	                    'p',
 	                    { className: 'content' },
