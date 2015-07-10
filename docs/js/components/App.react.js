@@ -6,6 +6,7 @@ import Dropdowns from './DropdownComponents.react';
 import Checkboxes from './CheckboxComponents.react';
 import GettingStarted from './GettingStarted.react';
 import Tickets from './TicketComponents.react';
+import Tips from './TipComponents.react';
 import Links from './LinksComponents.react';
 
 class App extends React.Component {
@@ -22,6 +23,7 @@ class App extends React.Component {
                 <Dropdowns/>
                 <Checkboxes/>
                 <Tickets/>
+                <Tips/>
             </div>
 
         )
