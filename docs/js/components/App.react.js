@@ -16,14 +16,14 @@ class App extends React.Component {
             <div className="container">
                 <h1>Now TV Ark UI Toolkit</h1>
                 <hr/>
-                <GettingStarted/>
-                <Buttons/>
-                <Links />
-                <Inputs/>
-                <Dropdowns/>
-                <Checkboxes/>
-                <Tickets/>
-                <Tips/>
+                <GettingStarted className="gettingstarted-doc"/>
+                <Buttons className="buttons-doc"/>
+                <Links className="links-doc" />
+                <Inputs className="inputs-doc"/>
+                <Dropdowns className="dropdowns-doc"/>
+                <Checkboxes className="checkboxes-doc"/>
+                <Tickets className="tickets-doc"/>
+                <Tips className="tips-doc"/>
             </div>
 
         )
