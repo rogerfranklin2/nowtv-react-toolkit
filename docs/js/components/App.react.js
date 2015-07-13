@@ -8,6 +8,7 @@ import GettingStarted from './GettingStarted.react';
 import Tickets from './TicketComponents.react';
 import Tips from './TipComponents.react';
 import Links from './LinksComponents.react';
+import RadioButtons from './RadioButtonComponents.react';
 
 class App extends React.Component {
 
@@ -22,6 +23,7 @@ class App extends React.Component {
                 <Inputs className="inputs-doc"/>
                 <Dropdowns className="dropdowns-doc"/>
                 <Checkboxes className="checkboxes-doc"/>
+                <RadioButtons className="radio-buttons-doc"/>
                 <Tickets className="tickets-doc"/>
                 <Tips className="tips-doc"/>
             </div>

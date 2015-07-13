@@ -1,0 +1,44 @@
+@import '../../colours'
+
+.now-radio-button
+  display: block
+  position: relative
+  padding-left: 30px
+  box-sizing: border-box
+  margin: 10px 0
+  cursor: pointer
+  text-align: left
+
+  &.disabled
+    color: $grey
+    cursor: default
+
+    &:hover:after
+      background-image: none
+
+  input
+    display: none
+
+  &:hover:after
+    background-image: url(assets/icons/hover-radio-no-bg.svg)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: 70%
+
+  &:after
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    content: " "
+    background-color: $light_grey
+    border: 1px solid $dark_grey
+    border-radius: 50%
+    width: 18px
+    height: 18px
+
+  &.checked:after
+    background-image: url(assets/icons/green-radio-no-bg.svg)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: 70%

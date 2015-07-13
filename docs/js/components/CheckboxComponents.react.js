@@ -20,7 +20,7 @@ class Checkboxes extends React.Component {
                         <div className="half">
                             <pre>
                                 <code className="jsx">
-                                    {"<Toolkit.Checkbox name='avilable' value='available'>Available</Toolkit.Checkbox>"}<br/>
+                                    {"<Toolkit.Checkbox name='available' value='available'>Available</Toolkit.Checkbox>"}<br/>
                                     {"<Toolkit.Checkbox name='hover' value='hover'>Hover</Toolkit.Checkbox>"}<br/>
                                     {"<Toolkit.Checkbox name='selected' checked={true} value='selected'>Selected - Pre checked</Toolkit.Checkbox>"}<br/>
                                     {"<Toolkit.Checkbox name='disabled' value='disabled' disabled>Disabled</Toolkit.Checkbox>"}<br/>
