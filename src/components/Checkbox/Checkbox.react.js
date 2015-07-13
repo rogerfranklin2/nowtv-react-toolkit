@@ -21,6 +21,10 @@ class Checkbox extends React.Component {
             classes.push("checked");
         }
 
+        if(this.props.disabled) {
+            classes.push("disabled");
+        }
+
         return (
           <label className={classNames('now-checkbox', classes)}>
               <input

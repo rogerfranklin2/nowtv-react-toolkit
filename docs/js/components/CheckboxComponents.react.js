@@ -12,16 +12,18 @@ class Checkboxes extends React.Component {
                     <h3>Active</h3>
                     <div className="clearfix">
                         <div className="half">
-                            <Toolkit.Checkbox name="checkbox1" value="checkbox1">Checkbox 1</Toolkit.Checkbox>
-                            <Toolkit.Checkbox name="checkbox2" value="checkbox2">Checkbox 2</Toolkit.Checkbox>
-                            <Toolkit.Checkbox name="checkbox3" checked={true} value="checkbox3">Checkbox 3 - Pre checked</Toolkit.Checkbox>
+                            <Toolkit.Checkbox name="Available" value="available">Available</Toolkit.Checkbox>
+                            <Toolkit.Checkbox className="hover" name="Available" value="available">Hover</Toolkit.Checkbox>
+                            <Toolkit.Checkbox name="Selected" checked={true} value="selected">Selected - Pre checked</Toolkit.Checkbox>
+                            <Toolkit.Checkbox name="Disabled" value="disabled" disabled>Disabled</Toolkit.Checkbox>
                         </div>
                         <div className="half">
                             <pre>
                                 <code className="jsx">
-                                    {"<Toolkit.Checkbox name='checkbox1' value='checkbox1'>Checkbox 1</Toolkit.Checkbox>"}<br/>
-                                    {"<Toolkit.Checkbox name='checkbox2' value='checkbox2'>Checkbox 2</Toolkit.Checkbox>"}<br/>
-                                    {"<Toolkit.Checkbox name='checkbox3' checked={true} value='checkbox3'>Checkbox 3 - Pre checked</Toolkit.Checkbox>"}<br/>
+                                    {"<Toolkit.Checkbox name='avilable' value='available'>Available</Toolkit.Checkbox>"}<br/>
+                                    {"<Toolkit.Checkbox name='hover' value='hover'>Hover</Toolkit.Checkbox>"}<br/>
+                                    {"<Toolkit.Checkbox name='selected' checked={true} value='selected'>Selected - Pre checked</Toolkit.Checkbox>"}<br/>
+                                    {"<Toolkit.Checkbox name='disabled' value='disabled' disabled>Disabled</Toolkit.Checkbox>"}<br/>
                                 </code>
                             </pre>
                         </div>
