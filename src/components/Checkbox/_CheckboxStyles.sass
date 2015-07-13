@@ -9,6 +9,22 @@
   cursor: pointer
   text-align: left
 
+  &.disabled
+    color: $grey
+    cursor: default
+
+    &:hover:after
+      background-image: none
+
+  input
+    display: none
+
+  &:hover:after
+    background-image: url(assets/icons/hover-tick-no-bg.svg)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: 80%
+
   &:after
     display: block
     position: absolute
@@ -27,7 +43,7 @@
     background-position: center
     background-size: 80%
 
-  input
-    display: none
+
+
 
 
