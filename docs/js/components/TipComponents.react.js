@@ -29,7 +29,7 @@ class Tips extends React.Component {
                 <div className="clearfix">
                     <div className="half">
                         <div className="half">
-                            <Toolkit.Tip arrow-position='top-centre'>
+                            <Toolkit.Tip arrow-position='top-centre' classes='blue' >
                                 Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.
                             </Toolkit.Tip>
                         </div>
@@ -37,7 +37,7 @@ class Tips extends React.Component {
                     <div className="half">
                         <pre>
                             <code className="jsx">
-                                {"<Toolkit.Tip arrow-position='top-centre'>Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.</Toolkit.Tip>"}
+                                {"<Toolkit.Tip arrow-position='top-centre' classes='blue'>Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.</Toolkit.Tip>"}
                             </code>
                         </pre>
                     </div>
@@ -47,7 +47,7 @@ class Tips extends React.Component {
                 <div className="clearfix">
                     <div className="half">
                         <div className="half">
-                            <Toolkit.Tip arrow-position='bottom-right'>
+                            <Toolkit.Tip arrow-position='bottom-right' classes='red'>
                                 Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.
                             </Toolkit.Tip>
                         </div>
@@ -55,7 +55,7 @@ class Tips extends React.Component {
                     <div className="half">
                         <pre>
                             <code className="jsx">
-                                {"<Toolkit.Tip arrow-position='bottom-right'>Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.</Toolkit.Tip>"}
+                                {"<Toolkit.Tip arrow-position='bottom-right' classes='red'>Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.</Toolkit.Tip>"}
                             </code>
                         </pre>
                     </div>

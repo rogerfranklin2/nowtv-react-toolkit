@@ -1,5 +1,14 @@
 @import '../../colours'
 
+@mixin tipcolor($backcolor, $color)
+  &.now-tip
+    background-color: $backcolor
+    color: $color
+    .arrow-top-centre
+      border-bottom-color: $backcolor
+    .arrow-bottom-right
+      border-top-color: $backcolor
+
 .now-tip
   position: relative
   background-color: $dark_grey
@@ -31,3 +40,11 @@
     border-top: solid 30px $dark_grey
     border-left: solid 30px transparent
     border-right: solid 0px transparent
+  &.red
+    +tipcolor($red, $white)
+  &.blue
+    +tipcolor($dark_blue, $white)
+  &.green
+    +tipcolor($green, $white)
+  &.purple
+    +tipcolor($purple, $white)
