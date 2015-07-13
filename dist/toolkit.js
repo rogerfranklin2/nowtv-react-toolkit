@@ -69,19 +69,23 @@ module.exports =
 
 	var _componentsCheckboxCheckboxReact2 = _interopRequireDefault(_componentsCheckboxCheckboxReact);
 
-	var _componentsRadioButtonRadioButtonReact = __webpack_require__(174);
+	var _componentsRadioButtonRadioButtonReact = __webpack_require__(163);
 
 	var _componentsRadioButtonRadioButtonReact2 = _interopRequireDefault(_componentsRadioButtonRadioButtonReact);
 
-	var _componentsTicketTicketReact = __webpack_require__(163);
+	var _componentsToggleButtonToggleButtonReact = __webpack_require__(164);
+
+	var _componentsToggleButtonToggleButtonReact2 = _interopRequireDefault(_componentsToggleButtonToggleButtonReact);
+
+	var _componentsTicketTicketReact = __webpack_require__(165);
 
 	var _componentsTicketTicketReact2 = _interopRequireDefault(_componentsTicketTicketReact);
 
-	var _componentsTipTipReact = __webpack_require__(164);
+	var _componentsTipTipReact = __webpack_require__(166);
 
 	var _componentsTipTipReact2 = _interopRequireDefault(_componentsTipTipReact);
 
-	var _toolkitSass = __webpack_require__(165);
+	var _toolkitSass = __webpack_require__(167);
 
 	var _toolkitSass2 = _interopRequireDefault(_toolkitSass);
 
@@ -91,6 +95,7 @@ module.exports =
 	   Dropdown: _componentsDropdownDropdownReact2['default'],
 	   Checkbox: _componentsCheckboxCheckboxReact2['default'],
 	   RadioButton: _componentsRadioButtonRadioButtonReact2['default'],
+	   ToggleButton: _componentsToggleButtonToggleButtonReact2['default'],
 	   Ticket: _componentsTicketTicketReact2['default'],
 	   Tip: _componentsTipTipReact2['default']
 	};
@@ -20779,6 +20784,180 @@ module.exports =
 	    value: true
 	});
 
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(159);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var RadioButton = (function (_React$Component) {
+	    function RadioButton(props) {
+	        _classCallCheck(this, RadioButton);
+
+	        _get(Object.getPrototypeOf(RadioButton.prototype), 'constructor', this).call(this, props);
+	        this.state = { checked: this.props.checked || false };
+	        this.toggleChecked = this.toggleChecked.bind(this);
+	    }
+
+	    _inherits(RadioButton, _React$Component);
+
+	    _createClass(RadioButton, [{
+	        key: 'toggleChecked',
+	        value: function toggleChecked() {
+	            this.setState({
+	                checked: !this.state.checked
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var classes = [this.props.classes];
+
+	            if (this.state.checked) {
+	                classes.push('checked');
+	            }
+
+	            if (this.props.disabled) {
+	                classes.push('disabled');
+	            }
+
+	            return _react2['default'].createElement(
+	                'label',
+	                { className: (0, _classnames2['default'])('now-radio-button', classes) },
+	                _react2['default'].createElement('input', _extends({
+	                    onChange: this.toggleChecked,
+	                    checked: this.state.checked,
+	                    type: 'radio'
+	                }, this.props))
+	            );
+	        }
+	    }]);
+
+	    return RadioButton;
+	})(_react2['default'].Component);
+
+	exports['default'] = RadioButton;
+	module.exports = exports['default'];
+
+/***/ },
+/* 164 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(159);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var ToggleButton = (function (_React$Component) {
+	    function ToggleButton(props) {
+	        _classCallCheck(this, ToggleButton);
+
+	        _get(Object.getPrototypeOf(ToggleButton.prototype), 'constructor', this).call(this, props);
+	        this.state = { checked: this.props.checked || false };
+	        this.toggleChecked = this.toggleChecked.bind(this);
+	        this.offText = this.props.offText || 'Off';
+	        this.onText = this.props.onText || 'On';
+	    }
+
+	    _inherits(ToggleButton, _React$Component);
+
+	    _createClass(ToggleButton, [{
+	        key: 'toggleChecked',
+	        value: function toggleChecked() {
+	            this.setState({
+	                checked: !this.state.checked
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var classes = [this.props.classes];
+
+	            if (this.state.checked) {
+	                classes.push('checked');
+	            }
+
+	            if (this.props.disabled) {
+	                classes.push('disabled');
+	            }
+
+	            return _react2['default'].createElement(
+	                'div',
+	                { className: (0, _classnames2['default'])('now-toggle-container', classes) },
+	                _react2['default'].createElement(
+	                    'span',
+	                    { className: 'toggle-label off' },
+	                    this.offText
+	                ),
+	                _react2['default'].createElement(
+	                    'label',
+	                    { className: 'now-toggle-button' },
+	                    _react2['default'].createElement('input', _extends({
+	                        onClick: this.toggleChecked,
+	                        checked: this.state.checked,
+	                        type: 'button'
+	                    }, this.props))
+	                ),
+	                _react2['default'].createElement(
+	                    'span',
+	                    { className: 'toggle-label on' },
+	                    this.onText
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ToggleButton;
+	})(_react2['default'].Component);
+
+	exports['default'] = ToggleButton;
+	module.exports = exports['default'];
+
+/***/ },
+/* 165 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
@@ -20848,7 +21027,7 @@ module.exports =
 	module.exports = exports['default'];
 
 /***/ },
-/* 164 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20922,97 +21101,10 @@ module.exports =
 	module.exports = exports['default'];
 
 /***/ },
-/* 165 */
+/* 167 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-	    value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _classnames = __webpack_require__(159);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	var RadioButton = (function (_React$Component) {
-	    function RadioButton(props) {
-	        _classCallCheck(this, RadioButton);
-
-	        _get(Object.getPrototypeOf(RadioButton.prototype), 'constructor', this).call(this, props);
-	        this.state = { checked: this.props.checked || false };
-	        this.toggleChecked = this.toggleChecked.bind(this);
-	    }
-
-	    _inherits(RadioButton, _React$Component);
-
-	    _createClass(RadioButton, [{
-	        key: 'toggleChecked',
-	        value: function toggleChecked() {
-	            this.setState({
-	                checked: !this.state.checked
-	            });
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            var classes = [this.props.classes];
-
-	            if (this.state.checked) {
-	                classes.push('checked');
-	            }
-
-	            if (this.props.disabled) {
-	                classes.push('disabled');
-	            }
-
-	            return _react2['default'].createElement(
-	                'label',
-	                { className: (0, _classnames2['default'])('now-radio-button', classes) },
-	                _react2['default'].createElement('input', _extends({
-	                    onChange: this.toggleChecked,
-	                    checked: this.state.checked,
-	                    type: 'radio'
-	                }, this.props))
-	            );
-	        }
-	    }]);
-
-	    return RadioButton;
-	})(_react2['default'].Component);
-
-	exports['default'] = RadioButton;
-	module.exports = exports['default'];
 
 /***/ }
 /******/ ]);

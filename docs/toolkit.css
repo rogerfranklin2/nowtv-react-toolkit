@@ -181,6 +181,51 @@
     background-position: center;
     background-size: 70%; }
 
+.now-toggle-container {
+  text-align: left; }
+  .now-toggle-container .toggle-label {
+    display: inline-block;
+    margin: 0 10px; }
+  .now-toggle-container.disabled {
+    color: #E5E8ED; }
+    .now-toggle-container.disabled .now-toggle-button {
+      cursor: default; }
+      .now-toggle-container.disabled .now-toggle-button:after {
+        background-color: #E5E8ED; }
+  .now-toggle-container.checked .now-toggle-button:after {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4xLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAxMiAxNiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTIgMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KCTxnPg0KICAJCTxjaXJjbGUgZmlsbD0iI0ZGRkZGRiIgY3g9IjYiIGN5PSI4IiByPSI1IiBpZD0ic3ZnXzQiLz4NCiAJPC9nPg0KPC9zdmc+);
+    background-repeat: no-repeat;
+    background-position: 90%;
+    background-color: #30AF3F;
+    border: 1px solid #30AF3F; }
+  .now-toggle-container .now-toggle-button {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    box-sizing: border-box;
+    margin: 14px 0;
+    cursor: pointer;
+    text-align: left; }
+    .now-toggle-container .now-toggle-button input {
+      display: none; }
+    .now-toggle-container .now-toggle-button:after {
+      top: 0;
+      left: 0;
+      content: " ";
+      width: 26px;
+      height: 14px;
+      display: block;
+      position: absolute;
+      border-radius: 15px;
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4xLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAxMiAxNiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTIgMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KCTxnPg0KICAJCTxjaXJjbGUgZmlsbD0iI0NDQ0VEMyIgY3g9IjYiIGN5PSI4IiByPSI1IiBpZD0ic3ZnXzQiLz4NCiAJPC9nPg0KPC9zdmc+);
+      background-repeat: no-repeat;
+      background-position: 13%;
+      background-color: #F7F7F9;
+      border: 1px solid #E5E8ED;
+      -webkit-transition: background-color 0.1s, border 0.1s, background-position 0.3s;
+      -moz-transition: background-color 0.1s, border 0.1s, background-position 0.3s;
+      transition: background-color 0.1s, border 0.1s, background-position 0.3s; }
+
 .now-ticket {
   background-color: #2C3E72;
   color: #FFF;

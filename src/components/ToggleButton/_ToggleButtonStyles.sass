@@ -1,0 +1,58 @@
+@import '../../colours'
+
+=background-icon($url, $position, $color, $border-color)
+  background-image: $url
+  background-repeat: no-repeat
+  background-position: $position
+  background-color: $color
+  border: 1px solid $border-color
+
+.now-toggle-container
+
+  text-align: left
+
+  .toggle-label
+    display: inline-block
+    margin: 0 10px
+
+  &.disabled
+    color: $grey
+
+    .now-toggle-button
+      cursor: default
+
+      &:after
+        background-color: $grey
+
+  &.checked
+    .now-toggle-button
+      &:after
+        +background-icon(url(assets/icons/white-toggle-no-bg.svg), 90%, $green, $green)
+
+  .now-toggle-button
+    display: inline-block
+    position: relative
+    padding-left: 30px
+    box-sizing: border-box
+    margin: 14px 0
+    cursor: pointer
+    text-align: left
+
+    input
+      display: none
+
+    &:after
+      top: 0
+      left: 0
+      content: " "
+      width: 26px
+      height: 14px
+      display: block
+      position: absolute
+      border-radius: 15px
+
+      +background-icon(url(assets/icons/grey-toggle-no-bg.svg), 13%, $light_grey, $grey)
+
+      -webkit-transition: background-color 0.1s, border 0.1s, background-position 0.3s
+      -moz-transition: background-color 0.1s, border 0.1s, background-position 0.3s
+      transition: background-color 0.1s, border 0.1s, background-position 0.3s
