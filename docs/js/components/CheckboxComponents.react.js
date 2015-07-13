@@ -9,7 +9,6 @@ class Checkboxes extends React.Component {
                 <h2>Checkboxes</h2>
 
                 <div className="clearfix">
-                    <h3>Active</h3>
                     <div className="clearfix">
                         <div className="half">
                             <Toolkit.Checkbox name="Available" value="available">Available</Toolkit.Checkbox>

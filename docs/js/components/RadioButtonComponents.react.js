@@ -9,7 +9,6 @@ class RadioButtons extends React.Component {
                 <h2>RadioButtons</h2>
 
                 <div className="clearfix">
-                    <h3>Active</h3>
                     <div className="clearfix">
                         <div className="half">
                             <Toolkit.RadioButton name="Available" value="available">Available</Toolkit.RadioButton>
