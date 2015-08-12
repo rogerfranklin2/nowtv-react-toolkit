@@ -85,7 +85,11 @@ module.exports =
 
 	var _componentsTipTipReact2 = _interopRequireDefault(_componentsTipTipReact);
 
-	var _toolkitSass = __webpack_require__(167);
+	var _componentsNotificationNotificationReactJs = __webpack_require__(167);
+
+	var _componentsNotificationNotificationReactJs2 = _interopRequireDefault(_componentsNotificationNotificationReactJs);
+
+	var _toolkitSass = __webpack_require__(168);
 
 	var _toolkitSass2 = _interopRequireDefault(_toolkitSass);
 
@@ -97,7 +101,8 @@ module.exports =
 	   RadioButton: _componentsRadioButtonRadioButtonReact2['default'],
 	   ToggleButton: _componentsToggleButtonToggleButtonReact2['default'],
 	   Ticket: _componentsTicketTicketReact2['default'],
-	   Tip: _componentsTipTipReact2['default']
+	   Tip: _componentsTipTipReact2['default'],
+	   Notification: _componentsNotificationNotificationReactJs2['default']
 	};
 	module.exports = exports['default'];
 
@@ -21102,6 +21107,98 @@ module.exports =
 
 /***/ },
 /* 167 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _objectAssign = __webpack_require__(158);
+
+	var _objectAssign2 = _interopRequireDefault(_objectAssign);
+
+	var _classnames = __webpack_require__(159);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var Notification = (function (_React$Component) {
+	  _inherits(Notification, _React$Component);
+
+	  function Notification(props) {
+	    _classCallCheck(this, Notification);
+
+	    _get(Object.getPrototypeOf(Notification.prototype), 'constructor', this).call(this, props);
+
+	    this._closeNotification = this._closeNotification.bind(this);
+
+	    this.state = {
+	      showNotification: true
+	    };
+	  }
+
+	  _createClass(Notification, [{
+	    key: 'render',
+	    value: function render() {
+	      var classes = [this.props.classes];
+
+	      if (!this.state.showNotification) {
+	        return null;
+	      }
+
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: (0, _classnames2['default'])('now-notification', classes) },
+	        _react2['default'].createElement('div', { className: 'notificationIcon' }),
+	        _react2['default'].createElement('div', { onClick: this._closeNotification, className: 'close' }),
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'notificationBody' },
+	          _react2['default'].createElement(
+	            'h3',
+	            null,
+	            this.props.title
+	          ),
+	          _react2['default'].createElement(
+	            'p',
+	            { className: 'content' },
+	            this.props.children
+	          )
+	        )
+	      );
+	    }
+	  }, {
+	    key: '_closeNotification',
+	    value: function _closeNotification() {
+	      this.setState({
+	        showNotification: !this.state.showNotification
+	      });
+	    }
+	  }]);
+
+	  return Notification;
+	})(_react2['default'].Component);
+
+	exports['default'] = Notification;
+	module.exports = exports['default'];
+
+/***/ },
+/* 168 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

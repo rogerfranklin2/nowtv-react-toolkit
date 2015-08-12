@@ -10,6 +10,7 @@ import Tips from './TipComponents.react';
 import Links from './LinksComponents.react';
 import RadioButtons from './RadioButtonComponents.react';
 import ToggleButtons from './ToggleButtonComponents.react';
+import Notifications from './NotificationComponents.react.js';
 
 class App extends React.Component {
 
@@ -28,6 +29,7 @@ class App extends React.Component {
                 <ToggleButtons className="toggle-buttons-doc"/>
                 <Tickets className="tickets-doc"/>
                 <Tips className="tips-doc"/>
+                <Notifications className="notifications-doc"/>
             </div>
 
         )

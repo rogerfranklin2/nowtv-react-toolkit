@@ -6,6 +6,7 @@ import RadioButton from './components/RadioButton/RadioButton.react'
 import ToggleButton from './components/ToggleButton/ToggleButton.react'
 import Ticket from './components/Ticket/Ticket.react'
 import Tip from './components/Tip/Tip.react'
+import Notification from './components/Notification/Notification.react.js'
 
 import Styles from './toolkit.sass'
 
@@ -17,5 +18,6 @@ export default {
     RadioButton,
     ToggleButton,
     Ticket,
-    Tip
+    Tip,
+  Notification
 };
