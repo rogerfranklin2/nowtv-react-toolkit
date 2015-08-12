@@ -1,6 +1,6 @@
 {
   "name": "nowtv-toolkit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NowTV React ui-toolkit",
   "main": "./dist/toolkit.js",
   "scripts": {
