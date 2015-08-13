@@ -1,10 +1,17 @@
-var React = require('react/addons');
 var assert = require('chai').assert;
 var should = require('chai').should();
-var NowNotification = require('../../src/components/Notification/Notification.react');
-var TestUtils = React.addons.TestUtils;
+var React;
+var TestUtils;
 
 describe('Notification component', function(){
+  var NowNotification;
+
+  beforeEach(function() {
+    React = require('react/addons');
+    TestUtils = React.addons.TestUtils;
+    NowNotification = require('../../src/components/Notification/Notification.react');
+  });
+
   it('should render a notification', function () {
     var renderedComponent = TestUtils.renderIntoDocument(<NowNotification/>);
     var component = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-notification');
@@ -29,4 +36,20 @@ describe('Notification component', function(){
     assert.include(React.findDOMNode(component).className, "green");
   });
 
+  it('should close the notification', function () {
+    var renderedComponent = TestUtils.renderIntoDocument(<NowNotification>Close me, close me</NowNotification>);
+    var component = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-notification');
+    var closeButton = TestUtils.findRenderedDOMComponentWithClass(component, 'close');
+
+    TestUtils.Simulate.click(React.findDOMNode(closeButton));
+
+    let err;
+    try {
+      TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-notification')
+    } catch (e) {
+      err = e;
+    }
+
+    assert.isDefined(err);
+  });
 });
