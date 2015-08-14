@@ -2,5 +2,6 @@ deployment:
   staging:
     branch: master
     commands:
+      - webpack
       - npm install -g divshot-cli
       - divshot push development --token $DIVSHOT_TOKEN
