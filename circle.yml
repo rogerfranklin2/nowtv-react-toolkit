@@ -3,5 +3,4 @@ deployment:
     branch: master
     commands:
       - webpack && webpack
-      - npm install -g divshot-cli
-      - divshot push development --token $DIVSHOT_TOKEN
+      - ./node_modules/.bin/divshot push development --token $DIVSHOT_TOKEN

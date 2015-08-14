@@ -16,6 +16,7 @@
     "chai": "^2.3.0",
     "classnames": "^2.1.1",
     "css-loader": "^0.14.4",
+    "divshot-cli": "^1.10.5",
     "extract-text-webpack-plugin": "^0.8.1",
     "file-loader": "^0.8.4",
     "jsdom": "^3.0.0",
