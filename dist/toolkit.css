@@ -8,6 +8,7 @@
   cursor: pointer;
   color: #FFF;
   height: 50px;
+  line-height: 28px;
   border: 2px solid currentColor; }
   .now-button:hover {
     opacity: 0.9; }
