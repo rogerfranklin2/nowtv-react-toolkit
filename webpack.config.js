@@ -13,7 +13,8 @@ module.exports = [
           loaders: [
               { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
               { test: /\.svg$/, loader: 'url-loader' },
-              { test: /\.sass$/, loader: ExtractTextPlugin.extract("css!sass?indentedSyntax") }
+              { test: /\.sass$/, loader: ExtractTextPlugin.extract("css!sass?indentedSyntax") },
+              { test: /\.woff(2)?$/, loader: "file-loader?name=[name].[ext]" }
           ]
         },
         plugins: [
