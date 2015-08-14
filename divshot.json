@@ -1,0 +1,11 @@
+{
+  "name": "toolkit",
+  "root": "./",
+  "routes": {},
+  "exclude": [
+    "/src/*",
+    "/test/*",
+    "/node_modules/*",
+    ".git/*"
+  ]
+}
