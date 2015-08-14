@@ -19,13 +19,20 @@ class App extends React.Component {
                     <pre>
                         <code className="javascript">
                             import Toolkit from 'nowtv-toolkit'
-
-
                         </code>
                     </pre>
+
+                    <h3>Assets</h3>
+                    <p>To obtain the toolkit css and js, include the following:</p>
+                    <pre>
+                      <code className="html">
+                        http://development.toolkit.divshot.io/dist/toolkit.js
+                      </code>
+                      <code className="html">
+                        http://development.toolkit.divshot.io/dist/toolkit.css
+                      </code>
+                    </pre>
                 </section>
-
-
         )
     }
 }
