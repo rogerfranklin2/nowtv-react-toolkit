@@ -1,7 +1,10 @@
 {
   "name": "toolkit",
   "root": "./",
-  "routes": {},
+  "routes": {
+    "/toolkit.css": "/dist/toolkit.css",
+    "/toolkit.js": "/dist/toolkit.js"
+  },
   "exclude": [
     "/src/*",
     "/test/*",
