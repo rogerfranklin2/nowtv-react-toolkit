@@ -5,5 +5,9 @@
     "/toolkit.css": "/dist/toolkit.css",
     "/toolkit.js": "/dist/toolkit.js"
   },
-  "exclude": []
+  "headers": {
+    "/**": {
+      "Access-Control-Allow-Origin": "*"
+    }
+  }
 }
