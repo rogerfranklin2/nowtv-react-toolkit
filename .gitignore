@@ -4,4 +4,5 @@ node_modules/
 .swp
 dist/
 toolkit.css
+.divshot-cache/
 *.iml
