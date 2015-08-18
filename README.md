@@ -43,7 +43,7 @@ var Toolkit = require('nowtv-toolkit')
 More info at http://development.toolkit.divshot.io/docs/
 
 
-### Bundle the Toolkit into your Sass project with Webpack
+#### Bundle the Toolkit into your Sass project with Webpack
 
 ```bash
 npm install git://github.com/nowtv/toolkit.git
