@@ -14,7 +14,8 @@ module.exports = [
               { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
               { test: /\.svg$/, loader: 'url-loader' },
               { test: /\.sass$/, loader: ExtractTextPlugin.extract("css!sass?indentedSyntax") },
-              { test: /\.woff(2)?$/, loader: "file-loader?name=[name].[ext]" }
+              { test: /\.woff(2)?$/, loader: "url-loader?mimetype=application/font-woff" },
+              { test: /\.ttf?$/, loader: "url-loader?limit=100000&mimetype=application/x-font-ttf" },
           ]
         },
         plugins: [
