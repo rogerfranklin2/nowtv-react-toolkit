@@ -1,3 +1,4 @@
+@import url(/Users/noahark/projects/toolkit/src/vendor/bootstrap-grid.css);
 .now-button {
   font: 16px nowtv-regular, sans-serif;
   background-color: transparent;
@@ -445,3 +446,6 @@ p {
   p.smaller {
     font: 12px/16px nowtv-regular, Helvetica, Arial, sans-serif;
     margin: 0 0 5px; }
+
+strong {
+  font-family: nowtv-bold, Helvetica, Arial, sans-serif; }

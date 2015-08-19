@@ -53,27 +53,27 @@ module.exports =
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _componentsButtonButtonReact = __webpack_require__(159);
+	var _componentsButtonButtonReact = __webpack_require__(1);
 
 	var _componentsButtonButtonReact2 = _interopRequireDefault(_componentsButtonButtonReact);
 
-	var _componentsInputInputReact = __webpack_require__(161);
+	var _componentsInputInputReact = __webpack_require__(160);
 
 	var _componentsInputInputReact2 = _interopRequireDefault(_componentsInputInputReact);
 
-	var _componentsDropdownDropdownReact = __webpack_require__(162);
+	var _componentsDropdownDropdownReact = __webpack_require__(161);
 
 	var _componentsDropdownDropdownReact2 = _interopRequireDefault(_componentsDropdownDropdownReact);
 
-	var _componentsCheckboxCheckboxReact = __webpack_require__(163);
+	var _componentsCheckboxCheckboxReact = __webpack_require__(162);
 
 	var _componentsCheckboxCheckboxReact2 = _interopRequireDefault(_componentsCheckboxCheckboxReact);
 
-	var _componentsRadioButtonRadioButtonReact = __webpack_require__(164);
+	var _componentsRadioButtonRadioButtonReact = __webpack_require__(163);
 
 	var _componentsRadioButtonRadioButtonReact2 = _interopRequireDefault(_componentsRadioButtonRadioButtonReact);
 
-	var _componentsToggleButtonToggleButtonReact = __webpack_require__(1);
+	var _componentsToggleButtonToggleButtonReact = __webpack_require__(164);
 
 	var _componentsToggleButtonToggleButtonReact2 = _interopRequireDefault(_componentsToggleButtonToggleButtonReact);
 
@@ -113,7 +113,7 @@ module.exports =
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
-	    value: true
+		value: true
 	});
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -126,79 +126,44 @@ module.exports =
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(158);
+	var _objectAssign = __webpack_require__(158);
+
+	var _objectAssign2 = _interopRequireDefault(_objectAssign);
+
+	var _classnames = __webpack_require__(159);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var ToggleButton = (function (_React$Component) {
-	    _inherits(ToggleButton, _React$Component);
+	var Button = (function (_React$Component) {
+		_inherits(Button, _React$Component);
 
-	    function ToggleButton(props) {
-	        _classCallCheck(this, ToggleButton);
+		function Button(props) {
+			_classCallCheck(this, Button);
 
-	        _get(Object.getPrototypeOf(ToggleButton.prototype), 'constructor', this).call(this, props);
-	        this.state = { checked: this.props.checked || false };
-	        this.toggleChecked = this.toggleChecked.bind(this);
-	        this.offText = this.props.offText || 'Off';
-	        this.onText = this.props.onText || 'On';
-	    }
+			_get(Object.getPrototypeOf(Button.prototype), 'constructor', this).call(this, props);
+		}
 
-	    _createClass(ToggleButton, [{
-	        key: 'toggleChecked',
-	        value: function toggleChecked() {
-	            this.setState({
-	                checked: !this.state.checked
-	            });
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            var classes = [this.props.classes];
+		_createClass(Button, [{
+			key: 'render',
+			value: function render() {
+				return _react2['default'].createElement(
+					'button',
+					_extends({}, this.props, { className: (0, _classnames2['default'])('now-button', this.props.classes) }),
+					this.props.children
+				);
+			}
+		}]);
 
-	            if (this.state.checked) {
-	                classes.push('checked');
-	            }
-
-	            if (this.props.disabled) {
-	                classes.push('disabled');
-	            }
-
-	            return _react2['default'].createElement(
-	                'div',
-	                { className: (0, _classnames2['default'])('now-toggle-container', classes) },
-	                _react2['default'].createElement(
-	                    'span',
-	                    { className: 'toggle-label off' },
-	                    this.offText
-	                ),
-	                _react2['default'].createElement(
-	                    'label',
-	                    { className: 'now-toggle-button' },
-	                    _react2['default'].createElement('input', _extends({
-	                        onClick: this.toggleChecked,
-	                        checked: this.state.checked,
-	                        type: 'button'
-	                    }, this.props))
-	                ),
-	                _react2['default'].createElement(
-	                    'span',
-	                    { className: 'toggle-label on' },
-	                    this.onText
-	                )
-	            );
-	        }
-	    }]);
-
-	    return ToggleButton;
+		return Button;
 	})(_react2['default'].Component);
 
-	exports['default'] = ToggleButton;
+	exports['default'] = Button;
 	module.exports = exports['default'];
 
 /***/ },
@@ -234,15 +199,15 @@ module.exports =
 	var ReactContext = __webpack_require__(13);
 	var ReactCurrentOwner = __webpack_require__(18);
 	var ReactElement = __webpack_require__(12);
-	var ReactElementValidator = __webpack_require__(31);
+	var ReactElementValidator = __webpack_require__(33);
 	var ReactDOM = __webpack_require__(41);
 	var ReactDOMTextComponent = __webpack_require__(43);
 	var ReactDefaultInjection = __webpack_require__(92);
-	var ReactInstanceHandles = __webpack_require__(21);
+	var ReactInstanceHandles = __webpack_require__(20);
 	var ReactMount = __webpack_require__(68);
-	var ReactPerf = __webpack_require__(27);
+	var ReactPerf = __webpack_require__(29);
 	var ReactPropTypes = __webpack_require__(123);
-	var ReactReconciler = __webpack_require__(28);
+	var ReactReconciler = __webpack_require__(30);
 	var ReactServerRendering = __webpack_require__(155);
 
 	var assign = __webpack_require__(14);
@@ -1973,9 +1938,9 @@ module.exports =
 
 	var ReactElement = __webpack_require__(12);
 	var ReactFragment = __webpack_require__(11);
-	var ReactInstanceHandles = __webpack_require__(21);
+	var ReactInstanceHandles = __webpack_require__(20);
 
-	var getIteratorFn = __webpack_require__(20);
+	var getIteratorFn = __webpack_require__(22);
 	var invariant = __webpack_require__(8);
 	var warning = __webpack_require__(16);
 
@@ -2212,54 +2177,6 @@ module.exports =
 
 /***/ },
 /* 20 */
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule getIteratorFn
-	 * @typechecks static-only
-	 */
-
-	'use strict';
-
-	/* global Symbol */
-	var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
-	var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
-
-	/**
-	 * Returns the iterator method function contained on the iterable object.
-	 *
-	 * Be sure to invoke the function with the iterable as context:
-	 *
-	 *     var iteratorFn = getIteratorFn(myIterable);
-	 *     if (iteratorFn) {
-	 *       var iterator = iteratorFn.call(myIterable);
-	 *       ...
-	 *     }
-	 *
-	 * @param {?object} maybeIterable
-	 * @return {?function}
-	 */
-	function getIteratorFn(maybeIterable) {
-	  var iteratorFn = maybeIterable && (
-	    (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL])
-	  );
-	  if (typeof iteratorFn === 'function') {
-	    return iteratorFn;
-	  }
-	}
-
-	module.exports = getIteratorFn;
-
-
-/***/ },
-/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -2276,7 +2193,7 @@ module.exports =
 
 	'use strict';
 
-	var ReactRootIndex = __webpack_require__(22);
+	var ReactRootIndex = __webpack_require__(21);
 
 	var invariant = __webpack_require__(8);
 
@@ -2598,7 +2515,7 @@ module.exports =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 22 */
+/* 21 */
 /***/ function(module, exports) {
 
 	/**
@@ -2630,6 +2547,54 @@ module.exports =
 	};
 
 	module.exports = ReactRootIndex;
+
+
+/***/ },
+/* 22 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule getIteratorFn
+	 * @typechecks static-only
+	 */
+
+	'use strict';
+
+	/* global Symbol */
+	var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+	var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+
+	/**
+	 * Returns the iterator method function contained on the iterable object.
+	 *
+	 * Be sure to invoke the function with the iterable as context:
+	 *
+	 *     var iteratorFn = getIteratorFn(myIterable);
+	 *     if (iteratorFn) {
+	 *       var iterator = iteratorFn.call(myIterable);
+	 *       ...
+	 *     }
+	 *
+	 * @param {?object} maybeIterable
+	 * @return {?function}
+	 */
+	function getIteratorFn(maybeIterable) {
+	  var iteratorFn = maybeIterable && (
+	    (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL])
+	  );
+	  if (typeof iteratorFn === 'function') {
+	    return iteratorFn;
+	  }
+	}
+
+	module.exports = getIteratorFn;
 
 
 /***/ },
@@ -2788,11 +2753,11 @@ module.exports =
 
 	'use strict';
 
-	var ReactLifeCycle = __webpack_require__(36);
+	var ReactLifeCycle = __webpack_require__(25);
 	var ReactCurrentOwner = __webpack_require__(18);
 	var ReactElement = __webpack_require__(12);
-	var ReactInstanceMap = __webpack_require__(37);
-	var ReactUpdates = __webpack_require__(25);
+	var ReactInstanceMap = __webpack_require__(26);
+	var ReactUpdates = __webpack_require__(27);
 
 	var assign = __webpack_require__(14);
 	var invariant = __webpack_require__(8);
@@ -3075,6 +3040,100 @@ module.exports =
 
 /***/ },
 /* 25 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule ReactLifeCycle
+	 */
+
+	'use strict';
+
+	/**
+	 * This module manages the bookkeeping when a component is in the process
+	 * of being mounted or being unmounted. This is used as a way to enforce
+	 * invariants (or warnings) when it is not recommended to call
+	 * setState/forceUpdate.
+	 *
+	 * currentlyMountingInstance: During the construction phase, it is not possible
+	 * to trigger an update since the instance is not fully mounted yet. However, we
+	 * currently allow this as a convenience for mutating the initial state.
+	 *
+	 * currentlyUnmountingInstance: During the unmounting phase, the instance is
+	 * still mounted and can therefore schedule an update. However, this is not
+	 * recommended and probably an error since it's about to be unmounted.
+	 * Therefore we still want to trigger in an error for that case.
+	 */
+
+	var ReactLifeCycle = {
+	  currentlyMountingInstance: null,
+	  currentlyUnmountingInstance: null
+	};
+
+	module.exports = ReactLifeCycle;
+
+
+/***/ },
+/* 26 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule ReactInstanceMap
+	 */
+
+	'use strict';
+
+	/**
+	 * `ReactInstanceMap` maintains a mapping from a public facing stateful
+	 * instance (key) and the internal representation (value). This allows public
+	 * methods to accept the user facing instance as an argument and map them back
+	 * to internal methods.
+	 */
+
+	// TODO: Replace this with ES6: var ReactInstanceMap = new Map();
+	var ReactInstanceMap = {
+
+	  /**
+	   * This API should be called `delete` but we'd have to make sure to always
+	   * transform these to strings for IE support. When this transform is fully
+	   * supported we can rename it.
+	   */
+	  remove: function(key) {
+	    key._reactInternalInstance = undefined;
+	  },
+
+	  get: function(key) {
+	    return key._reactInternalInstance;
+	  },
+
+	  has: function(key) {
+	    return key._reactInternalInstance !== undefined;
+	  },
+
+	  set: function(key, value) {
+	    key._reactInternalInstance = value;
+	  }
+
+	};
+
+	module.exports = ReactInstanceMap;
+
+
+/***/ },
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -3090,12 +3149,12 @@ module.exports =
 
 	'use strict';
 
-	var CallbackQueue = __webpack_require__(26);
+	var CallbackQueue = __webpack_require__(28);
 	var PooledClass = __webpack_require__(10);
 	var ReactCurrentOwner = __webpack_require__(18);
-	var ReactPerf = __webpack_require__(27);
-	var ReactReconciler = __webpack_require__(28);
-	var Transaction = __webpack_require__(35);
+	var ReactPerf = __webpack_require__(29);
+	var ReactReconciler = __webpack_require__(30);
+	var Transaction = __webpack_require__(37);
 
 	var assign = __webpack_require__(14);
 	var invariant = __webpack_require__(8);
@@ -3359,7 +3418,7 @@ module.exports =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 26 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -3462,7 +3521,7 @@ module.exports =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 27 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -3569,7 +3628,7 @@ module.exports =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 28 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -3585,8 +3644,8 @@ module.exports =
 
 	'use strict';
 
-	var ReactRef = __webpack_require__(29);
-	var ReactElementValidator = __webpack_require__(31);
+	var ReactRef = __webpack_require__(31);
+	var ReactElementValidator = __webpack_require__(33);
 
 	/**
 	 * Helper to call ReactRef.attachRefs with this composite component, split out
@@ -3696,7 +3755,7 @@ module.exports =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 29 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3712,7 +3771,7 @@ module.exports =
 
 	'use strict';
 
-	var ReactOwner = __webpack_require__(30);
+	var ReactOwner = __webpack_require__(32);
 
 	var ReactRef = {};
 
@@ -3771,7 +3830,7 @@ module.exports =
 
 
 /***/ },
-/* 30 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -3886,7 +3945,7 @@ module.exports =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 31 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -3911,12 +3970,12 @@ module.exports =
 
 	var ReactElement = __webpack_require__(12);
 	var ReactFragment = __webpack_require__(11);
-	var ReactPropTypeLocations = __webpack_require__(32);
-	var ReactPropTypeLocationNames = __webpack_require__(33);
+	var ReactPropTypeLocations = __webpack_require__(34);
+	var ReactPropTypeLocationNames = __webpack_require__(35);
 	var ReactCurrentOwner = __webpack_require__(18);
-	var ReactNativeComponent = __webpack_require__(34);
+	var ReactNativeComponent = __webpack_require__(36);
 
-	var getIteratorFn = __webpack_require__(20);
+	var getIteratorFn = __webpack_require__(22);
 	var invariant = __webpack_require__(8);
 	var warning = __webpack_require__(16);
 
@@ -4354,7 +4413,7 @@ module.exports =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 32 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -4382,7 +4441,7 @@ module.exports =
 
 
 /***/ },
-/* 33 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -4413,7 +4472,7 @@ module.exports =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 34 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -4523,7 +4582,7 @@ module.exports =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 35 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -4767,100 +4826,6 @@ module.exports =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 36 */
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule ReactLifeCycle
-	 */
-
-	'use strict';
-
-	/**
-	 * This module manages the bookkeeping when a component is in the process
-	 * of being mounted or being unmounted. This is used as a way to enforce
-	 * invariants (or warnings) when it is not recommended to call
-	 * setState/forceUpdate.
-	 *
-	 * currentlyMountingInstance: During the construction phase, it is not possible
-	 * to trigger an update since the instance is not fully mounted yet. However, we
-	 * currently allow this as a convenience for mutating the initial state.
-	 *
-	 * currentlyUnmountingInstance: During the unmounting phase, the instance is
-	 * still mounted and can therefore schedule an update. However, this is not
-	 * recommended and probably an error since it's about to be unmounted.
-	 * Therefore we still want to trigger in an error for that case.
-	 */
-
-	var ReactLifeCycle = {
-	  currentlyMountingInstance: null,
-	  currentlyUnmountingInstance: null
-	};
-
-	module.exports = ReactLifeCycle;
-
-
-/***/ },
-/* 37 */
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule ReactInstanceMap
-	 */
-
-	'use strict';
-
-	/**
-	 * `ReactInstanceMap` maintains a mapping from a public facing stateful
-	 * instance (key) and the internal representation (value). This allows public
-	 * methods to accept the user facing instance as an argument and map them back
-	 * to internal methods.
-	 */
-
-	// TODO: Replace this with ES6: var ReactInstanceMap = new Map();
-	var ReactInstanceMap = {
-
-	  /**
-	   * This API should be called `delete` but we'd have to make sure to always
-	   * transform these to strings for IE support. When this transform is fully
-	   * supported we can rename it.
-	   */
-	  remove: function(key) {
-	    key._reactInternalInstance = undefined;
-	  },
-
-	  get: function(key) {
-	    return key._reactInternalInstance;
-	  },
-
-	  has: function(key) {
-	    return key._reactInternalInstance !== undefined;
-	  },
-
-	  set: function(key, value) {
-	    key._reactInternalInstance = value;
-	  }
-
-	};
-
-	module.exports = ReactInstanceMap;
-
-
-/***/ },
 /* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -4881,10 +4846,10 @@ module.exports =
 	var ReactCurrentOwner = __webpack_require__(18);
 	var ReactElement = __webpack_require__(12);
 	var ReactErrorUtils = __webpack_require__(39);
-	var ReactInstanceMap = __webpack_require__(37);
-	var ReactLifeCycle = __webpack_require__(36);
-	var ReactPropTypeLocations = __webpack_require__(32);
-	var ReactPropTypeLocationNames = __webpack_require__(33);
+	var ReactInstanceMap = __webpack_require__(26);
+	var ReactLifeCycle = __webpack_require__(25);
+	var ReactPropTypeLocations = __webpack_require__(34);
+	var ReactPropTypeLocationNames = __webpack_require__(35);
 	var ReactUpdateQueue = __webpack_require__(24);
 
 	var assign = __webpack_require__(14);
@@ -5904,7 +5869,7 @@ module.exports =
 	'use strict';
 
 	var ReactElement = __webpack_require__(12);
-	var ReactElementValidator = __webpack_require__(31);
+	var ReactElementValidator = __webpack_require__(33);
 
 	var mapObject = __webpack_require__(42);
 
@@ -6892,7 +6857,7 @@ module.exports =
 	var DOMChildrenOperations = __webpack_require__(59);
 	var DOMPropertyOperations = __webpack_require__(44);
 	var ReactMount = __webpack_require__(68);
-	var ReactPerf = __webpack_require__(27);
+	var ReactPerf = __webpack_require__(29);
 
 	var invariant = __webpack_require__(8);
 	var setInnerHTML = __webpack_require__(67);
@@ -8570,15 +8535,15 @@ module.exports =
 	var ReactBrowserEventEmitter = __webpack_require__(69);
 	var ReactCurrentOwner = __webpack_require__(18);
 	var ReactElement = __webpack_require__(12);
-	var ReactElementValidator = __webpack_require__(31);
+	var ReactElementValidator = __webpack_require__(33);
 	var ReactEmptyComponent = __webpack_require__(77);
-	var ReactInstanceHandles = __webpack_require__(21);
-	var ReactInstanceMap = __webpack_require__(37);
+	var ReactInstanceHandles = __webpack_require__(20);
+	var ReactInstanceMap = __webpack_require__(26);
 	var ReactMarkupChecksum = __webpack_require__(78);
-	var ReactPerf = __webpack_require__(27);
-	var ReactReconciler = __webpack_require__(28);
+	var ReactPerf = __webpack_require__(29);
+	var ReactReconciler = __webpack_require__(30);
 	var ReactUpdateQueue = __webpack_require__(24);
-	var ReactUpdates = __webpack_require__(25);
+	var ReactUpdates = __webpack_require__(27);
 
 	var emptyObject = __webpack_require__(15);
 	var containsNode = __webpack_require__(80);
@@ -10642,7 +10607,7 @@ module.exports =
 	'use strict';
 
 	var ReactElement = __webpack_require__(12);
-	var ReactInstanceMap = __webpack_require__(37);
+	var ReactInstanceMap = __webpack_require__(26);
 
 	var invariant = __webpack_require__(8);
 
@@ -10979,7 +10944,7 @@ module.exports =
 
 	var ReactCompositeComponent = __webpack_require__(85);
 	var ReactEmptyComponent = __webpack_require__(77);
-	var ReactNativeComponent = __webpack_require__(34);
+	var ReactNativeComponent = __webpack_require__(36);
 
 	var assign = __webpack_require__(14);
 	var invariant = __webpack_require__(8);
@@ -11121,15 +11086,15 @@ module.exports =
 	var ReactContext = __webpack_require__(13);
 	var ReactCurrentOwner = __webpack_require__(18);
 	var ReactElement = __webpack_require__(12);
-	var ReactElementValidator = __webpack_require__(31);
-	var ReactInstanceMap = __webpack_require__(37);
-	var ReactLifeCycle = __webpack_require__(36);
-	var ReactNativeComponent = __webpack_require__(34);
-	var ReactPerf = __webpack_require__(27);
-	var ReactPropTypeLocations = __webpack_require__(32);
-	var ReactPropTypeLocationNames = __webpack_require__(33);
-	var ReactReconciler = __webpack_require__(28);
-	var ReactUpdates = __webpack_require__(25);
+	var ReactElementValidator = __webpack_require__(33);
+	var ReactInstanceMap = __webpack_require__(26);
+	var ReactLifeCycle = __webpack_require__(25);
+	var ReactNativeComponent = __webpack_require__(36);
+	var ReactPerf = __webpack_require__(29);
+	var ReactPropTypeLocations = __webpack_require__(34);
+	var ReactPropTypeLocationNames = __webpack_require__(35);
+	var ReactReconciler = __webpack_require__(30);
+	var ReactUpdates = __webpack_require__(27);
 
 	var assign = __webpack_require__(14);
 	var emptyObject = __webpack_require__(15);
@@ -12200,7 +12165,7 @@ module.exports =
 	  __webpack_require__(48);
 	var ReactMount = __webpack_require__(68);
 	var ReactMultiChild = __webpack_require__(89);
-	var ReactPerf = __webpack_require__(27);
+	var ReactPerf = __webpack_require__(29);
 
 	var assign = __webpack_require__(14);
 	var escapeTextContentForBrowser = __webpack_require__(47);
@@ -12704,7 +12669,7 @@ module.exports =
 	var ReactComponentEnvironment = __webpack_require__(86);
 	var ReactMultiChildUpdateTypes = __webpack_require__(65);
 
-	var ReactReconciler = __webpack_require__(28);
+	var ReactReconciler = __webpack_require__(30);
 	var ReactChildReconciler = __webpack_require__(90);
 
 	/**
@@ -13135,7 +13100,7 @@ module.exports =
 
 	'use strict';
 
-	var ReactReconciler = __webpack_require__(28);
+	var ReactReconciler = __webpack_require__(30);
 
 	var flattenChildren = __webpack_require__(91);
 	var instantiateReactComponent = __webpack_require__(84);
@@ -13353,7 +13318,7 @@ module.exports =
 	var ReactElement = __webpack_require__(12);
 	var ReactEventListener = __webpack_require__(127);
 	var ReactInjection = __webpack_require__(130);
-	var ReactInstanceHandles = __webpack_require__(21);
+	var ReactInstanceHandles = __webpack_require__(20);
 	var ReactMount = __webpack_require__(68);
 	var ReactReconcileTransaction = __webpack_require__(131);
 	var SelectEventPlugin = __webpack_require__(137);
@@ -14576,7 +14541,7 @@ module.exports =
 	var EventPluginHub = __webpack_require__(70);
 	var EventPropagators = __webpack_require__(94);
 	var ExecutionEnvironment = __webpack_require__(52);
-	var ReactUpdates = __webpack_require__(25);
+	var ReactUpdates = __webpack_require__(27);
 	var SyntheticEvent = __webpack_require__(98);
 
 	var isEventSupported = __webpack_require__(76);
@@ -15737,7 +15702,7 @@ module.exports =
 	'use strict';
 
 	var ReactCurrentOwner = __webpack_require__(18);
-	var ReactInstanceMap = __webpack_require__(37);
+	var ReactInstanceMap = __webpack_require__(26);
 	var ReactMount = __webpack_require__(68);
 
 	var invariant = __webpack_require__(8);
@@ -15811,8 +15776,8 @@ module.exports =
 
 	'use strict';
 
-	var ReactUpdates = __webpack_require__(25);
-	var Transaction = __webpack_require__(35);
+	var ReactUpdates = __webpack_require__(27);
+	var Transaction = __webpack_require__(37);
 
 	var assign = __webpack_require__(14);
 	var emptyFunction = __webpack_require__(17);
@@ -16239,7 +16204,7 @@ module.exports =
 	var ReactClass = __webpack_require__(38);
 	var ReactElement = __webpack_require__(12);
 	var ReactMount = __webpack_require__(68);
-	var ReactUpdates = __webpack_require__(25);
+	var ReactUpdates = __webpack_require__(27);
 
 	var assign = __webpack_require__(14);
 	var invariant = __webpack_require__(8);
@@ -16573,7 +16538,7 @@ module.exports =
 
 	var ReactElement = __webpack_require__(12);
 	var ReactFragment = __webpack_require__(11);
-	var ReactPropTypeLocationNames = __webpack_require__(33);
+	var ReactPropTypeLocationNames = __webpack_require__(35);
 
 	var emptyFunction = __webpack_require__(17);
 
@@ -16984,7 +16949,7 @@ module.exports =
 	var ReactBrowserComponentMixin = __webpack_require__(111);
 	var ReactClass = __webpack_require__(38);
 	var ReactElement = __webpack_require__(12);
-	var ReactUpdates = __webpack_require__(25);
+	var ReactUpdates = __webpack_require__(27);
 
 	var assign = __webpack_require__(14);
 
@@ -17167,7 +17132,7 @@ module.exports =
 	var ReactBrowserComponentMixin = __webpack_require__(111);
 	var ReactClass = __webpack_require__(38);
 	var ReactElement = __webpack_require__(12);
-	var ReactUpdates = __webpack_require__(25);
+	var ReactUpdates = __webpack_require__(27);
 
 	var assign = __webpack_require__(14);
 	var invariant = __webpack_require__(8);
@@ -17308,9 +17273,9 @@ module.exports =
 	var EventListener = __webpack_require__(128);
 	var ExecutionEnvironment = __webpack_require__(52);
 	var PooledClass = __webpack_require__(10);
-	var ReactInstanceHandles = __webpack_require__(21);
+	var ReactInstanceHandles = __webpack_require__(20);
 	var ReactMount = __webpack_require__(68);
-	var ReactUpdates = __webpack_require__(25);
+	var ReactUpdates = __webpack_require__(27);
 
 	var assign = __webpack_require__(14);
 	var getEventTarget = __webpack_require__(99);
@@ -17634,11 +17599,11 @@ module.exports =
 	var ReactClass = __webpack_require__(38);
 	var ReactEmptyComponent = __webpack_require__(77);
 	var ReactBrowserEventEmitter = __webpack_require__(69);
-	var ReactNativeComponent = __webpack_require__(34);
+	var ReactNativeComponent = __webpack_require__(36);
 	var ReactDOMComponent = __webpack_require__(88);
-	var ReactPerf = __webpack_require__(27);
-	var ReactRootIndex = __webpack_require__(22);
-	var ReactUpdates = __webpack_require__(25);
+	var ReactPerf = __webpack_require__(29);
+	var ReactRootIndex = __webpack_require__(21);
+	var ReactUpdates = __webpack_require__(27);
 
 	var ReactInjection = {
 	  Component: ReactComponentEnvironment.injection,
@@ -17675,12 +17640,12 @@ module.exports =
 
 	'use strict';
 
-	var CallbackQueue = __webpack_require__(26);
+	var CallbackQueue = __webpack_require__(28);
 	var PooledClass = __webpack_require__(10);
 	var ReactBrowserEventEmitter = __webpack_require__(69);
 	var ReactInputSelection = __webpack_require__(132);
 	var ReactPutListenerQueue = __webpack_require__(136);
-	var Transaction = __webpack_require__(35);
+	var Transaction = __webpack_require__(37);
 
 	var assign = __webpack_require__(14);
 
@@ -18667,17 +18632,17 @@ module.exports =
 	var EventConstants = __webpack_require__(6);
 	var EventPluginUtils = __webpack_require__(5);
 	var EventPropagators = __webpack_require__(94);
-	var SyntheticClipboardEvent = __webpack_require__(142);
+	var SyntheticClipboardEvent = __webpack_require__(141);
 	var SyntheticEvent = __webpack_require__(98);
-	var SyntheticFocusEvent = __webpack_require__(143);
-	var SyntheticKeyboardEvent = __webpack_require__(144);
+	var SyntheticFocusEvent = __webpack_require__(142);
+	var SyntheticKeyboardEvent = __webpack_require__(143);
 	var SyntheticMouseEvent = __webpack_require__(106);
-	var SyntheticDragEvent = __webpack_require__(141);
+	var SyntheticDragEvent = __webpack_require__(146);
 	var SyntheticTouchEvent = __webpack_require__(147);
 	var SyntheticUIEvent = __webpack_require__(107);
 	var SyntheticWheelEvent = __webpack_require__(148);
 
-	var getEventCharCode = __webpack_require__(145);
+	var getEventCharCode = __webpack_require__(144);
 
 	var invariant = __webpack_require__(8);
 	var keyOf = __webpack_require__(40);
@@ -19090,49 +19055,6 @@ module.exports =
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
-	 * @providesModule SyntheticDragEvent
-	 * @typechecks static-only
-	 */
-
-	'use strict';
-
-	var SyntheticMouseEvent = __webpack_require__(106);
-
-	/**
-	 * @interface DragEvent
-	 * @see http://www.w3.org/TR/DOM-Level-3-Events/
-	 */
-	var DragEventInterface = {
-	  dataTransfer: null
-	};
-
-	/**
-	 * @param {object} dispatchConfig Configuration used to dispatch this event.
-	 * @param {string} dispatchMarker Marker identifying the event target.
-	 * @param {object} nativeEvent Native browser event.
-	 * @extends {SyntheticUIEvent}
-	 */
-	function SyntheticDragEvent(dispatchConfig, dispatchMarker, nativeEvent) {
-	  SyntheticMouseEvent.call(this, dispatchConfig, dispatchMarker, nativeEvent);
-	}
-
-	SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
-
-	module.exports = SyntheticDragEvent;
-
-
-/***/ },
-/* 142 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
 	 * @providesModule SyntheticClipboardEvent
 	 * @typechecks static-only
 	 */
@@ -19171,7 +19093,7 @@ module.exports =
 
 
 /***/ },
-/* 143 */
+/* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19214,7 +19136,7 @@ module.exports =
 
 
 /***/ },
-/* 144 */
+/* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19233,8 +19155,8 @@ module.exports =
 
 	var SyntheticUIEvent = __webpack_require__(107);
 
-	var getEventCharCode = __webpack_require__(145);
-	var getEventKey = __webpack_require__(146);
+	var getEventCharCode = __webpack_require__(144);
+	var getEventKey = __webpack_require__(145);
 	var getEventModifierState = __webpack_require__(108);
 
 	/**
@@ -19305,7 +19227,7 @@ module.exports =
 
 
 /***/ },
-/* 145 */
+/* 144 */
 /***/ function(module, exports) {
 
 	/**
@@ -19361,7 +19283,7 @@ module.exports =
 
 
 /***/ },
-/* 146 */
+/* 145 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19378,7 +19300,7 @@ module.exports =
 
 	'use strict';
 
-	var getEventCharCode = __webpack_require__(145);
+	var getEventCharCode = __webpack_require__(144);
 
 	/**
 	 * Normalization of deprecated HTML5 `key` values
@@ -19467,6 +19389,49 @@ module.exports =
 	}
 
 	module.exports = getEventKey;
+
+
+/***/ },
+/* 146 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule SyntheticDragEvent
+	 * @typechecks static-only
+	 */
+
+	'use strict';
+
+	var SyntheticMouseEvent = __webpack_require__(106);
+
+	/**
+	 * @interface DragEvent
+	 * @see http://www.w3.org/TR/DOM-Level-3-Events/
+	 */
+	var DragEventInterface = {
+	  dataTransfer: null
+	};
+
+	/**
+	 * @param {object} dispatchConfig Configuration used to dispatch this event.
+	 * @param {string} dispatchMarker Marker identifying the event target.
+	 * @param {object} nativeEvent Native browser event.
+	 * @extends {SyntheticUIEvent}
+	 */
+	function SyntheticDragEvent(dispatchConfig, dispatchMarker, nativeEvent) {
+	  SyntheticMouseEvent.call(this, dispatchConfig, dispatchMarker, nativeEvent);
+	}
+
+	SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
+
+	module.exports = SyntheticDragEvent;
 
 
 /***/ },
@@ -19768,7 +19733,7 @@ module.exports =
 	var DOMProperty = __webpack_require__(45);
 	var ReactDefaultPerfAnalysis = __webpack_require__(152);
 	var ReactMount = __webpack_require__(68);
-	var ReactPerf = __webpack_require__(27);
+	var ReactPerf = __webpack_require__(29);
 
 	var performanceNow = __webpack_require__(153);
 
@@ -20309,7 +20274,7 @@ module.exports =
 	'use strict';
 
 	var ReactElement = __webpack_require__(12);
-	var ReactInstanceHandles = __webpack_require__(21);
+	var ReactInstanceHandles = __webpack_require__(20);
 	var ReactMarkupChecksum = __webpack_require__(78);
 	var ReactServerRenderingTransaction =
 	  __webpack_require__(156);
@@ -20395,9 +20360,9 @@ module.exports =
 	'use strict';
 
 	var PooledClass = __webpack_require__(10);
-	var CallbackQueue = __webpack_require__(26);
+	var CallbackQueue = __webpack_require__(28);
 	var ReactPutListenerQueue = __webpack_require__(136);
-	var Transaction = __webpack_require__(35);
+	var Transaction = __webpack_require__(37);
 
 	var assign = __webpack_require__(14);
 	var emptyFunction = __webpack_require__(17);
@@ -20538,6 +20503,38 @@ module.exports =
 
 /***/ },
 /* 158 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	function ToObject(val) {
+		if (val == null) {
+			throw new TypeError('Object.assign cannot be called with null or undefined');
+		}
+
+		return Object(val);
+	}
+
+	module.exports = Object.assign || function (target, source) {
+		var from;
+		var keys;
+		var to = ToObject(target);
+
+		for (var s = 1; s < arguments.length; s++) {
+			from = arguments[s];
+			keys = Object.keys(Object(from));
+
+			for (var i = 0; i < keys.length; i++) {
+				to[keys[i]] = from[keys[i]];
+			}
+		}
+
+		return to;
+	};
+
+
+/***/ },
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -20592,13 +20589,13 @@ module.exports =
 
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
-		value: true
+	  value: true
 	});
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -20611,77 +20608,41 @@ module.exports =
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _objectAssign = __webpack_require__(160);
-
-	var _objectAssign2 = _interopRequireDefault(_objectAssign);
-
-	var _classnames = __webpack_require__(158);
+	var _classnames = __webpack_require__(159);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var Button = (function (_React$Component) {
-		_inherits(Button, _React$Component);
+	var Input = (function (_React$Component) {
+	  _inherits(Input, _React$Component);
 
-		function Button(props) {
-			_classCallCheck(this, Button);
+	  function Input(props) {
+	    _classCallCheck(this, Input);
 
-			_get(Object.getPrototypeOf(Button.prototype), 'constructor', this).call(this, props);
-		}
+	    _get(Object.getPrototypeOf(Input.prototype), 'constructor', this).call(this, props);
+	  }
 
-		_createClass(Button, [{
-			key: 'render',
-			value: function render() {
-				return _react2['default'].createElement(
-					'button',
-					_extends({}, this.props, { className: (0, _classnames2['default'])('now-button', this.props.classes) }),
-					this.props.children
-				);
-			}
-		}]);
+	  _createClass(Input, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'span',
+	        null,
+	        _react2['default'].createElement('input', _extends({}, this.props, { className: (0, _classnames2['default'])("now-input", this.props.classes) }))
+	      );
+	    }
+	  }]);
 
-		return Button;
+	  return Input;
 	})(_react2['default'].Component);
 
-	exports['default'] = Button;
+	exports['default'] = Input;
 	module.exports = exports['default'];
-
-/***/ },
-/* 160 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	function ToObject(val) {
-		if (val == null) {
-			throw new TypeError('Object.assign cannot be called with null or undefined');
-		}
-
-		return Object(val);
-	}
-
-	module.exports = Object.assign || function (target, source) {
-		var from;
-		var keys;
-		var to = ToObject(target);
-
-		for (var s = 1; s < arguments.length; s++) {
-			from = arguments[s];
-			keys = Object.keys(Object(from));
-
-			for (var i = 0; i < keys.length; i++) {
-				to[keys[i]] = from[keys[i]];
-			}
-		}
-
-		return to;
-	};
-
 
 /***/ },
 /* 161 */
@@ -20703,69 +20664,13 @@ module.exports =
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(158);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	var Input = (function (_React$Component) {
-	  _inherits(Input, _React$Component);
-
-	  function Input(props) {
-	    _classCallCheck(this, Input);
-
-	    _get(Object.getPrototypeOf(Input.prototype), 'constructor', this).call(this, props);
-	  }
-
-	  _createClass(Input, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2['default'].createElement(
-	        'span',
-	        null,
-	        _react2['default'].createElement('input', _extends({}, this.props, { className: (0, _classnames2['default'])('now-input', this.props.classes) }))
-	      );
-	    }
-	  }]);
-
-	  return Input;
-	})(_react2['default'].Component);
-
-	exports['default'] = Input;
-	module.exports = exports['default'];
-
-/***/ },
-/* 162 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _classnames = __webpack_require__(158);
+	var _classnames = __webpack_require__(159);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -20796,7 +20701,7 @@ module.exports =
 	module.exports = exports['default'];
 
 /***/ },
-/* 163 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20815,13 +20720,13 @@ module.exports =
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(158);
+	var _classnames = __webpack_require__(159);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -20849,11 +20754,11 @@ module.exports =
 	            var classes = [this.props.classes];
 
 	            if (this.state.checked) {
-	                classes.push('checked');
+	                classes.push("checked");
 	            }
 
 	            if (this.props.disabled) {
-	                classes.push('disabled');
+	                classes.push("disabled");
 	            }
 
 	            return _react2['default'].createElement(
@@ -20875,7 +20780,7 @@ module.exports =
 	module.exports = exports['default'];
 
 /***/ },
-/* 164 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20894,13 +20799,13 @@ module.exports =
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(158);
+	var _classnames = __webpack_require__(159);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -20928,11 +20833,11 @@ module.exports =
 	            var classes = [this.props.classes];
 
 	            if (this.state.checked) {
-	                classes.push('checked');
+	                classes.push("checked");
 	            }
 
 	            if (this.props.disabled) {
-	                classes.push('disabled');
+	                classes.push("disabled");
 	            }
 
 	            return _react2['default'].createElement(
@@ -20954,6 +20859,101 @@ module.exports =
 	module.exports = exports['default'];
 
 /***/ },
+/* 164 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(159);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var ToggleButton = (function (_React$Component) {
+	    _inherits(ToggleButton, _React$Component);
+
+	    function ToggleButton(props) {
+	        _classCallCheck(this, ToggleButton);
+
+	        _get(Object.getPrototypeOf(ToggleButton.prototype), 'constructor', this).call(this, props);
+	        this.state = { checked: this.props.checked || false };
+	        this.toggleChecked = this.toggleChecked.bind(this);
+	        this.offText = this.props.offText || 'Off';
+	        this.onText = this.props.onText || 'On';
+	    }
+
+	    _createClass(ToggleButton, [{
+	        key: 'toggleChecked',
+	        value: function toggleChecked() {
+	            this.setState({
+	                checked: !this.state.checked
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var classes = [this.props.classes];
+
+	            if (this.state.checked) {
+	                classes.push("checked");
+	            }
+
+	            if (this.props.disabled) {
+	                classes.push("disabled");
+	            }
+
+	            return _react2['default'].createElement(
+	                'div',
+	                { className: (0, _classnames2['default'])('now-toggle-container', classes) },
+	                _react2['default'].createElement(
+	                    'span',
+	                    { className: 'toggle-label off' },
+	                    this.offText
+	                ),
+	                _react2['default'].createElement(
+	                    'label',
+	                    { className: 'now-toggle-button' },
+	                    _react2['default'].createElement('input', _extends({
+	                        onClick: this.toggleChecked,
+	                        checked: this.state.checked,
+	                        type: 'button'
+	                    }, this.props))
+	                ),
+	                _react2['default'].createElement(
+	                    'span',
+	                    { className: 'toggle-label on' },
+	                    this.onText
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ToggleButton;
+	})(_react2['default'].Component);
+
+	exports['default'] = ToggleButton;
+	module.exports = exports['default'];
+
+/***/ },
 /* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -20971,17 +20971,17 @@ module.exports =
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _objectAssign = __webpack_require__(160);
+	var _objectAssign = __webpack_require__(158);
 
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
-	var _classnames = __webpack_require__(158);
+	var _classnames = __webpack_require__(159);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -21049,17 +21049,17 @@ module.exports =
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _objectAssign = __webpack_require__(160);
+	var _objectAssign = __webpack_require__(158);
 
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
-	var _classnames = __webpack_require__(158);
+	var _classnames = __webpack_require__(159);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -21089,7 +21089,7 @@ module.exports =
 	            return _react2['default'].createElement(
 	                'div',
 	                { className: (0, _classnames2['default'])('now-tip', classes, arrowPosition) },
-	                _react2['default'].createElement('div', { className: 'arrow-' + arrowPosition }),
+	                _react2['default'].createElement('div', { className: "arrow-" + arrowPosition }),
 	                _react2['default'].createElement(
 	                    'p',
 	                    { className: 'content' },
@@ -21123,17 +21123,17 @@ module.exports =
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _objectAssign = __webpack_require__(160);
+	var _objectAssign = __webpack_require__(158);
 
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
-	var _classnames = __webpack_require__(158);
+	var _classnames = __webpack_require__(159);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
