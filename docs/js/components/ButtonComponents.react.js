@@ -9,7 +9,7 @@ class Buttons extends React.Component {
                 <h2>Buttons</h2>
                 <h3>Primary</h3>
 
-                <div className="clearfix">
+                <div className="clearfix category">
                     <div className="clearfix">
                         <div className="half">
                             <Toolkit.Button classes="primary green">Inactive state</Toolkit.Button>
@@ -66,7 +66,7 @@ class Buttons extends React.Component {
 
                 <h3>Secondary</h3>
 
-                <div className="clearfix">
+                <div className="clearfix category">
                     <div className="clearfix">
                         <div className="half">
                             <Toolkit.Button classes="secondary blue">Build your bundle</Toolkit.Button>
@@ -119,6 +119,25 @@ class Buttons extends React.Component {
                         </div>
                     </div>
                 </div>
+
+             <h3>Default</h3>
+
+              <div className="clearfix category">
+
+                <div className="clearfix">
+                  <div className="half">
+                    <Toolkit.Button classes="default">Default Button</Toolkit.Button>
+                  </div>
+                  <div className="half">
+                              <pre>
+                                  <code className="jsx">
+                                    {"<Toolkit.Button classes='default'>Default Button</Toolkit.Button>"}
+                                  </code>
+                              </pre>
+                  </div>
+                </div>
+
+              </div>
             </section>
 
         )
