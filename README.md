@@ -17,13 +17,6 @@ Reference it
 
    
 #### React
-React components can be brought in from http://development.toolkit.divshot.io/dist/toolkit.js
-```html
-<script src="http://development.toolkit.divshot.io/dist/toolkit.js"></script>
-```
-
-or
-
 ```bash
 npm install git://github.com/nowtv/toolkit.git
 ```
