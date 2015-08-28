@@ -34,17 +34,20 @@
     background-color: #FFF; }
   .now-button.blue.secondary {
     color: #2B3F71; }
+  .now-button.default {
+    background-color: #AAADB2;
+    color: #424247;
+    border: 2px solid #AAADB2; }
 
 [disabled=disabled], :disabled {
   cursor: default;
   opacity: 0.3 !important; }
 
 .now-input {
-  background-color: #F7F7F9;
   border: 1px solid #E6E8ED;
-  color: #CCCED3;
+  color: black;
   border-radius: 4px;
-  width: 300px;
+  width: 100%;
   padding: 10px;
   height: 36px;
   font-size: 14px;
@@ -80,9 +83,9 @@
     color: #424247; }
 
 .now-dropdown {
-  background-color: #F7F7F9;
+  background-color: white;
   border: 1px solid #E6E8ED;
-  color: #CCCED3;
+  color: black;
   border-radius: 4px;
   width: 300px;
   padding: 10px;
