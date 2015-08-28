@@ -10,7 +10,8 @@ import Tips from './TipComponents.react';
 import Links from './LinksComponents.react';
 import RadioButtons from './RadioButtonComponents.react';
 import ToggleButtons from './ToggleButtonComponents.react';
-import Notifications from './NotificationComponents.react.js';
+import Notifications from './NotificationComponents.react';
+import Typography from './Typography.react';
 
 class App extends React.Component {
 
@@ -20,6 +21,7 @@ class App extends React.Component {
                 <h1>Now TV Ark UI Toolkit</h1>
                 <hr/>
                 <GettingStarted className="gettingstarted-doc"/>
+                <Typography/>
                 <Buttons className="buttons-doc"/>
                 <Links className="links-doc" />
                 <Inputs className="inputs-doc"/>
