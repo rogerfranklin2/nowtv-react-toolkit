@@ -1,15 +1,13 @@
-@import 'jeet/index';
+@import "../../node_modules/nowtv-grid/dist/scss/nowtv_grid.scss";
 
 body {
 	background-color: white;
 }
 
 #toolkit {
-  @include center;
 }
 
 section {
-  @include cf;
   border-bottom: 1px solid black;
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -22,14 +20,11 @@ section {
 }
 
 .half {
-  @include cf;
   text-align: center;
   @media screen and (min-width: 600px) {
-    @include col(1/1, $cycle: 1);
    }
                     
   @media screen and (min-width: 900px) {
-    @include col(1/2, $cycle: 2, $uncycle: 1);
   }
 }
 
@@ -42,7 +37,6 @@ pre {
 }
 
 .clearfix {
-  @include cf;
 }
 
 .category {

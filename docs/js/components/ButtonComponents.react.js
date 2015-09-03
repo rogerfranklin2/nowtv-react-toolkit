@@ -6,137 +6,128 @@ class Buttons extends React.Component {
     render() {
         return (
             <section className="buttons">
-                <h2>Buttons</h2>
-                <h3>Primary</h3>
+              <h2>Buttons</h2>
+              <h3>Primary</h3>
 
-                <div className="clearfix category">
-                    <div className="clearfix">
-                        <div className="half">
-                            <Toolkit.Button classes="primary green">Inactive state</Toolkit.Button>
-                        </div>
-                        <div className="half">
-                                    <pre>
-                                        <code className="jsx">
-                                            {"<Toolkit.Button classes='primary green'>Inactive state</Toolkit.Button>"}
-                                        </code>
-                                    </pre>
-                        </div>
-                    </div>
-
-                    <div className="clearfix">
-                        <div className="half">
-                            <Toolkit.Button classes='primary' disabled>Disabled state</Toolkit.Button>
-                        </div>
-                        <div className="half">
-                                    <pre>
-                                        <code className="jsx">
-                                            {"<Toolkit.Button classes='primary' disabled>Disabled state</Toolkit.Button>"}
-                                        </code>
-                                    </pre>
-                        </div>
-                    </div>
-
-                    <div className="clearfix">
-                        <div className="half bg-green">
-                            <Toolkit.Button classes="primary green inverted">Build your bundle</Toolkit.Button>
-                        </div>
-                        <div className="half">
-                                    <pre>
-                                        <code className="jsx">
-                                            {"<Toolkit.Button classes='primary green inverted'>Build your bundle</Toolkit.Button>"}
-                                        </code>
-                                    </pre>
-                        </div>
-                    </div>
-
-                    <div className="clearfix">
-                        <div className="half bg-green">
-                            <Toolkit.Button classes="primary green inverted" disabled>Build your bundle</Toolkit.Button>
-                        </div>
-                        <div className="half">
-                                    <pre>
-                                        <code className="jsx">
-                                            {"<Toolkit.Button classes='primary green inverted' disabled>Build your bundle</Toolkit.Button>"}
-                                        </code>
-                                    </pre>
-                        </div>
-                    </div>
-
+              <div className="category row">
+                <div className="col-md-6">
+                    <Toolkit.Button classes="primary green">Inactive state</Toolkit.Button>
                 </div>
-
-                <h3>Secondary</h3>
-
-                <div className="clearfix category">
-                    <div className="clearfix">
-                        <div className="half">
-                            <Toolkit.Button classes="secondary blue">Build your bundle</Toolkit.Button>
-                        </div>
-                        <div className="half">
-                                    <pre>
-                                        <code className="jsx">
-                                            {"<Toolkit.Button classes='secondary blue'>Build your bundle</Toolkit.Button>"}
-                                        </code>
-                                    </pre>
-                        </div>
-                    </div>
-
-                    <div className="clearfix">
-                        <div className="half">
-                            <Toolkit.Button classes="secondary" disabled>Build your bundle</Toolkit.Button>
-                        </div>
-                        <div className="half">
-                                    <pre>
-                                        <code className="jsx">
-                                            {"<Toolkit.Button classes='secondary' disabled>Build your bundle</Toolkit.Button>"}
-                                        </code>
-                                    </pre>
-                        </div>
-                    </div>
-
-                    <div className="clearfix">
-                        <div className="half bg-blue">
-                            <Toolkit.Button classes="secondary inverted">Build your bundle</Toolkit.Button>
-                        </div>
-                        <div className="half">
-                                    <pre>
-                                        <code className="jsx">
-                                            {"<Toolkit.Button classes='secondary inverted'>Build your bundle</Toolkit.Button>"}
-                                        </code>
-                                    </pre>
-                        </div>
-                    </div>
-
-                    <div className="clearfix">
-                        <div className="half bg-blue">
-                            <Toolkit.Button classes="secondary inverted" disabled>Build your bundle</Toolkit.Button>
-                        </div>
-                        <div className="half">
-                                    <pre>
-                                        <code className="jsx">
-                                            {"<Toolkit.Button classes='secondary inverted' disabled>Build your bundle</Toolkit.Button>"}
-                                        </code>
-                                    </pre>
-                        </div>
-                    </div>
+                <div className="col-md-6">
+                  <pre>
+                    <code className="jsx">
+                      {"<Toolkit.Button classes='primary green'>Inactive state</Toolkit.Button>"}
+                    </code>
+                  </pre>
                 </div>
+              </div>
+
+              <div className="category row">
+                <div className="col-md-6">
+                  <Toolkit.Button classes='primary' disabled>Disabled state</Toolkit.Button>
+                </div>
+                <div className="col-md-6">
+                  <pre>
+                    <code className="jsx">
+                      {"<Toolkit.Button classes='primary' disabled>Disabled state</Toolkit.Button>"}
+                    </code>
+                  </pre>
+                </div>
+              </div>
+
+              <div className="category row">
+                <div className="col-md-6 bg-green">
+                  <Toolkit.Button classes="primary green inverted">Build your bundle</Toolkit.Button>
+                </div>
+                <div className="col-md-6">
+                  <pre>
+                    <code className="jsx">
+                      {"<Toolkit.Button classes='primary green inverted'>Build your bundle</Toolkit.Button>"}
+                    </code>
+                  </pre>
+                </div>
+              </div>
+
+              <div className="category row">
+                <div className="col-md-6 bg-green">
+                  <Toolkit.Button classes="primary green inverted" disabled>Build your bundle</Toolkit.Button>
+                </div>
+                <div className="col-md-6">
+                  <pre>
+                    <code className="jsx">
+                      {"<Toolkit.Button classes='primary green inverted' disabled>Build your bundle</Toolkit.Button>"}
+                    </code>
+                  </pre>
+                </div>
+              </div>
+
+              <h3>Secondary</h3>
+
+              <div className="category row">
+                <div className="col-md-6">
+                  <Toolkit.Button classes="secondary blue">Build your bundle</Toolkit.Button>
+                </div>
+                <div className="col-md-6">
+                  <pre>
+                    <code className="jsx">
+                      {"<Toolkit.Button classes='secondary blue'>Build your bundle</Toolkit.Button>"}
+                    </code>
+                  </pre>
+                </div>
+              </div>
+
+              <div className="category row">
+                <div className="col-md-6">
+                  <Toolkit.Button classes="secondary" disabled>Build your bundle</Toolkit.Button>
+                </div>
+                <div className="col-md-6">
+                  <pre>
+                    <code className="jsx">
+                      {"<Toolkit.Button classes='secondary' disabled>Build your bundle</Toolkit.Button>"}
+                    </code>
+                  </pre>
+                </div>
+              </div>
+
+              <div className="category row">
+                <div className="col-md-6 bg-blue">
+                  <Toolkit.Button classes="secondary inverted">Build your bundle</Toolkit.Button>
+                </div>
+                <div className="col-md-6">
+                  <pre>
+                    <code className="jsx">
+                      {"<Toolkit.Button classes='secondary inverted'>Build your bundle</Toolkit.Button>"}
+                    </code>
+                  </pre>
+                </div>
+              </div>
+
+              <div className="category row">
+                <div className="col-md-6 bg-blue">
+                  <Toolkit.Button classes="secondary inverted" disabled>Build your bundle</Toolkit.Button>
+                </div>
+                <div className="col-md-6">
+                  <pre>
+                    <code className="jsx">
+                      {"<Toolkit.Button classes='secondary inverted' disabled>Build your bundle</Toolkit.Button>"}
+                    </code>
+                  </pre>
+                </div>
+              </div>
 
              <h3>Default</h3>
 
-              <div className="clearfix category">
-
-                <div className="clearfix">
-                  <div className="half">
-                    <Toolkit.Button classes="default">Default Button</Toolkit.Button>
-                  </div>
-                  <div className="half">
-                              <pre>
-                                  <code className="jsx">
-                                    {"<Toolkit.Button classes='default'>Default Button</Toolkit.Button>"}
-                                  </code>
-                              </pre>
-                  </div>
+              <div className="category row">
+                <div className="col-md-6">
+                  <Toolkit.Button classes="default">Default Button</Toolkit.Button>
                 </div>
-
+                <div className="col-md-6">
+                  <pre>
+                    <code className="jsx">
+                      {"<Toolkit.Button classes='default'>Default Button</Toolkit.Button>"}
+                    </code>
+                  </pre>
+                </div>
               </div>
             </section>
 

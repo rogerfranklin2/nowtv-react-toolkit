@@ -7,31 +7,31 @@ class Links extends React.Component {
       <section>
         <h2>Text Links</h2>
         
-        <div className="clearfix">
-            <div className="half">
-                <a className="now-link">Standard Link</a>
-            </div>
-            <div className="half">
-                <pre>
-                    <code className="jsx">
-                        {"<a className='now-link'>Standard Link</a>"}
-                    </code>
-                </pre>
-            </div>
+        <div className="category row">
+          <div className="col-md-6">
+            <a className="now-link">Standard Link</a>
+          </div>
+          <div className="col-md-6">
+            <pre>
+              <code className="jsx">
+                {"<a className='now-link'>Standard Link</a>"}
+              </code>
+            </pre>
+          </div>
         </div>
 
-          <div className="clearfix">
-              <div className="half">
-                  <a className="now-link disabled">Disabled Link</a>
-              </div>
-              <div className="half">
-                <pre>
-                    <code className="jsx">
-                        {"<a className='now-link disabled'>Disabled Link</a>"}
-                    </code>
-                </pre>
-              </div>
+        <div className="category row">
+          <div className="col-md-6">
+            <a className="now-link disabled">Disabled Link</a>
           </div>
+          <div className="col-md-6">
+            <pre>
+              <code className="jsx">
+                {"<a className='now-link disabled'>Disabled Link</a>"}
+              </code>
+            </pre>
+          </div>
+        </div>
       </section>
      )
    }
