@@ -48,7 +48,7 @@ module.exports =
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
-	   value: true
+	  value: true
 	});
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -85,24 +85,29 @@ module.exports =
 
 	var _componentsTipTipReact2 = _interopRequireDefault(_componentsTipTipReact);
 
-	var _componentsNotificationNotificationReactJs = __webpack_require__(167);
+	var _componentsNotificationNotificationReact = __webpack_require__(167);
 
-	var _componentsNotificationNotificationReactJs2 = _interopRequireDefault(_componentsNotificationNotificationReactJs);
+	var _componentsNotificationNotificationReact2 = _interopRequireDefault(_componentsNotificationNotificationReact);
 
-	var _toolkitSass = __webpack_require__(168);
+	var _componentsModalModalReact = __webpack_require__(168);
+
+	var _componentsModalModalReact2 = _interopRequireDefault(_componentsModalModalReact);
+
+	var _toolkitSass = __webpack_require__(169);
 
 	var _toolkitSass2 = _interopRequireDefault(_toolkitSass);
 
 	exports['default'] = {
-	   Button: _componentsButtonButtonReact2['default'],
-	   Input: _componentsInputInputReact2['default'],
-	   Dropdown: _componentsDropdownDropdownReact2['default'],
-	   Checkbox: _componentsCheckboxCheckboxReact2['default'],
-	   RadioButton: _componentsRadioButtonRadioButtonReact2['default'],
-	   ToggleButton: _componentsToggleButtonToggleButtonReact2['default'],
-	   Ticket: _componentsTicketTicketReact2['default'],
-	   Tip: _componentsTipTipReact2['default'],
-	   Notification: _componentsNotificationNotificationReactJs2['default']
+	  Button: _componentsButtonButtonReact2['default'],
+	  Input: _componentsInputInputReact2['default'],
+	  Dropdown: _componentsDropdownDropdownReact2['default'],
+	  Checkbox: _componentsCheckboxCheckboxReact2['default'],
+	  RadioButton: _componentsRadioButtonRadioButtonReact2['default'],
+	  ToggleButton: _componentsToggleButtonToggleButtonReact2['default'],
+	  Ticket: _componentsTicketTicketReact2['default'],
+	  Tip: _componentsTipTipReact2['default'],
+	  Notification: _componentsNotificationNotificationReact2['default'],
+	  Modal: _componentsModalModalReact2['default']
 	};
 	module.exports = exports['default'];
 
@@ -287,7 +292,7 @@ module.exports =
 	      if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
 	        console.debug(
 	          'Download the React DevTools for a better development experience: ' +
-	          'http://fb.me/react-devtools'
+	          'https://fb.me/react-devtools'
 	        );
 	      }
 	    }
@@ -314,7 +319,7 @@ module.exports =
 	      if (!expectedFeatures[i]) {
 	        console.error(
 	          'One or more ES5 shim/shams expected by React are not available: ' +
-	          'http://fb.me/react-warning-polyfills'
+	          'https://fb.me/react-warning-polyfills'
 	        );
 	        break;
 	      }
@@ -322,7 +327,7 @@ module.exports =
 	  }
 	}
 
-	React.version = '0.13.2';
+	React.version = '0.13.3';
 
 	module.exports = React;
 
@@ -2703,20 +2708,38 @@ module.exports =
 	 */
 	if ("production" !== process.env.NODE_ENV) {
 	  var deprecatedAPIs = {
-	    getDOMNode: 'getDOMNode',
-	    isMounted: 'isMounted',
-	    replaceProps: 'replaceProps',
-	    replaceState: 'replaceState',
-	    setProps: 'setProps'
+	    getDOMNode: [
+	      'getDOMNode',
+	      'Use React.findDOMNode(component) instead.'
+	    ],
+	    isMounted: [
+	      'isMounted',
+	      'Instead, make sure to clean up subscriptions and pending requests in ' +
+	      'componentWillUnmount to prevent memory leaks.'
+	    ],
+	    replaceProps: [
+	      'replaceProps',
+	      'Instead, call React.render again at the top level.'
+	    ],
+	    replaceState: [
+	      'replaceState',
+	      'Refactor your code to use setState instead (see ' +
+	      'https://github.com/facebook/react/issues/3236).'
+	    ],
+	    setProps: [
+	      'setProps',
+	      'Instead, call React.render again at the top level.'
+	    ]
 	  };
-	  var defineDeprecationWarning = function(methodName, displayName) {
+	  var defineDeprecationWarning = function(methodName, info) {
 	    try {
 	      Object.defineProperty(ReactComponent.prototype, methodName, {
 	        get: function() {
 	          ("production" !== process.env.NODE_ENV ? warning(
 	            false,
-	            '%s(...) is deprecated in plain JavaScript React classes.',
-	            displayName
+	            '%s(...) is deprecated in plain JavaScript React classes. %s',
+	            info[0],
+	            info[1]
 	          ) : null);
 	          return undefined;
 	        }
@@ -4116,7 +4139,7 @@ module.exports =
 
 	  ("production" !== process.env.NODE_ENV ? warning(
 	    false,
-	    message + '%s%s See http://fb.me/react-warning-keys for more information.',
+	    message + '%s%s See https://fb.me/react-warning-keys for more information.',
 	    parentOrOwnerAddendum,
 	    childOwnerAddendum
 	  ) : null);
@@ -5665,7 +5688,7 @@ module.exports =
 	        ("production" !== process.env.NODE_ENV ? warning(
 	          this instanceof Constructor,
 	          'Something is calling a React component directly. Use a factory or ' +
-	          'JSX instead. See: http://fb.me/react-legacyfactory'
+	          'JSX instead. See: https://fb.me/react-legacyfactory'
 	        ) : null);
 	      }
 
@@ -6008,6 +6031,7 @@ module.exports =
 
 	  // SVG
 	  circle: 'circle',
+	  clipPath: 'clipPath',
 	  defs: 'defs',
 	  ellipse: 'ellipse',
 	  g: 'g',
@@ -8253,6 +8277,7 @@ module.exports =
 	  // Force wrapping for SVG elements because if they get created inside a <div>,
 	  // they will be initialized in the wrong namespace (and will not display).
 	  'circle': true,
+	  'clipPath': true,
 	  'defs': true,
 	  'ellipse': true,
 	  'g': true,
@@ -8295,6 +8320,7 @@ module.exports =
 	  'th': trWrap,
 
 	  'circle': svgWrap,
+	  'clipPath': svgWrap,
 	  'defs': svgWrap,
 	  'ellipse': svgWrap,
 	  'g': svgWrap,
@@ -11289,6 +11315,7 @@ module.exports =
 	    this._pendingReplaceState = false;
 	    this._pendingForceUpdate = false;
 
+	    var childContext;
 	    var renderedElement;
 
 	    var previouslyMounting = ReactLifeCycle.currentlyMountingInstance;
@@ -11303,7 +11330,8 @@ module.exports =
 	        }
 	      }
 
-	      renderedElement = this._renderValidatedComponent();
+	      childContext = this._getValidatedChildContext(context);
+	      renderedElement = this._renderValidatedComponent(childContext);
 	    } finally {
 	      ReactLifeCycle.currentlyMountingInstance = previouslyMounting;
 	    }
@@ -11317,7 +11345,7 @@ module.exports =
 	      this._renderedComponent,
 	      rootID,
 	      transaction,
-	      this._processChildContext(context)
+	      this._mergeChildContext(context, childContext)
 	    );
 	    if (inst.componentDidMount) {
 	      transaction.getReactMountReady().enqueue(inst.componentDidMount, inst);
@@ -11447,7 +11475,7 @@ module.exports =
 	   * @return {object}
 	   * @private
 	   */
-	  _processChildContext: function(currentContext) {
+	  _getValidatedChildContext: function(currentContext) {
 	    var inst = this._instance;
 	    var childContext = inst.getChildContext && inst.getChildContext();
 	    if (childContext) {
@@ -11472,6 +11500,13 @@ module.exports =
 	          name
 	        ) : invariant(name in inst.constructor.childContextTypes));
 	      }
+	      return childContext;
+	    }
+	    return null;
+	  },
+
+	  _mergeChildContext: function(currentContext, childContext) {
+	    if (childContext) {
 	      return assign({}, currentContext, childContext);
 	    }
 	    return currentContext;
@@ -11731,6 +11766,10 @@ module.exports =
 	      return inst.state;
 	    }
 
+	    if (replace && queue.length === 1) {
+	      return queue[0];
+	    }
+
 	    var nextState = assign({}, replace ? queue[0] : inst.state);
 	    for (var i = replace ? 1 : 0; i < queue.length; i++) {
 	      var partial = queue[i];
@@ -11800,13 +11839,14 @@ module.exports =
 	  _updateRenderedComponent: function(transaction, context) {
 	    var prevComponentInstance = this._renderedComponent;
 	    var prevRenderedElement = prevComponentInstance._currentElement;
-	    var nextRenderedElement = this._renderValidatedComponent();
+	    var childContext = this._getValidatedChildContext();
+	    var nextRenderedElement = this._renderValidatedComponent(childContext);
 	    if (shouldUpdateReactComponent(prevRenderedElement, nextRenderedElement)) {
 	      ReactReconciler.receiveComponent(
 	        prevComponentInstance,
 	        nextRenderedElement,
 	        transaction,
-	        this._processChildContext(context)
+	        this._mergeChildContext(context, childContext)
 	      );
 	    } else {
 	      // These two IDs are actually the same! But nothing should rely on that.
@@ -11822,7 +11862,7 @@ module.exports =
 	        this._renderedComponent,
 	        thisID,
 	        transaction,
-	        this._processChildContext(context)
+	        this._mergeChildContext(context, childContext)
 	      );
 	      this._replaceNodeWithMarkupByID(prevComponentID, nextMarkup);
 	    }
@@ -11860,11 +11900,12 @@ module.exports =
 	  /**
 	   * @private
 	   */
-	  _renderValidatedComponent: function() {
+	  _renderValidatedComponent: function(childContext) {
 	    var renderedComponent;
 	    var previousContext = ReactContext.current;
-	    ReactContext.current = this._processChildContext(
-	      this._currentElement._context
+	    ReactContext.current = this._mergeChildContext(
+	      this._currentElement._context,
+	      childContext
 	    );
 	    ReactCurrentOwner.current = this;
 	    try {
@@ -12204,11 +12245,13 @@ module.exports =
 	      'Can only set one of `children` or `props.dangerouslySetInnerHTML`.'
 	    ) : invariant(props.children == null));
 	    ("production" !== process.env.NODE_ENV ? invariant(
-	      props.dangerouslySetInnerHTML.__html != null,
+	      typeof props.dangerouslySetInnerHTML === 'object' &&
+	      '__html' in props.dangerouslySetInnerHTML,
 	      '`props.dangerouslySetInnerHTML` must be in the form `{__html: ...}`. ' +
-	      'Please visit http://fb.me/react-invariant-dangerously-set-inner-html ' +
+	      'Please visit https://fb.me/react-invariant-dangerously-set-inner-html ' +
 	      'for more information.'
-	    ) : invariant(props.dangerouslySetInnerHTML.__html != null));
+	    ) : invariant(typeof props.dangerouslySetInnerHTML === 'object' &&
+	    '__html' in props.dangerouslySetInnerHTML));
 	  }
 	  if ("production" !== process.env.NODE_ENV) {
 	    ("production" !== process.env.NODE_ENV ? warning(
@@ -19576,6 +19619,7 @@ module.exports =
 
 	var SVGDOMPropertyConfig = {
 	  Properties: {
+	    clipPath: MUST_USE_ATTRIBUTE,
 	    cx: MUST_USE_ATTRIBUTE,
 	    cy: MUST_USE_ATTRIBUTE,
 	    d: MUST_USE_ATTRIBUTE,
@@ -19621,6 +19665,7 @@ module.exports =
 	    y: MUST_USE_ATTRIBUTE
 	  },
 	  DOMAttributeNames: {
+	    clipPath: 'clip-path',
 	    fillOpacity: 'fill-opacity',
 	    fontFamily: 'font-family',
 	    fontSize: 'font-size',
@@ -21195,6 +21240,100 @@ module.exports =
 
 /***/ },
 /* 168 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _objectAssign = __webpack_require__(158);
+
+	var _objectAssign2 = _interopRequireDefault(_objectAssign);
+
+	var _classnames = __webpack_require__(159);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var Modals = (function (_React$Component) {
+	  _inherits(Modals, _React$Component);
+
+	  function Modals(props) {
+	    _classCallCheck(this, Modals);
+
+	    _get(Object.getPrototypeOf(Modals.prototype), 'constructor', this).call(this, props);
+	    this.toggle = this.toggle.bind(this);
+
+	    this.state = {
+	      visible: false
+	    };
+	  }
+
+	  _createClass(Modals, [{
+	    key: 'render',
+	    value: function render() {
+	      var classes = [this.props.classes];
+
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: (0, _classnames2['default'])('now-modal', { 'visible': this.state.visible }, classes) },
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'modal__content' },
+	          _react2['default'].createElement(
+	            'div',
+	            { className: 'close-container' },
+	            _react2['default'].createElement('div', { onClick: this.toggle, className: 'close-icon' })
+	          ),
+	          this.props.title ? _react2['default'].createElement(
+	            'div',
+	            { className: 'title' },
+	            _react2['default'].createElement(
+	              'h2',
+	              null,
+	              this.props.title
+	            )
+	          ) : null,
+	          _react2['default'].createElement(
+	            'p',
+	            null,
+	            this.props.children
+	          )
+	        )
+	      );
+	    }
+	  }, {
+	    key: 'toggle',
+	    value: function toggle() {
+	      this.setState({
+	        visible: !this.state.visible
+	      });
+	    }
+	  }]);
+
+	  return Modals;
+	})(_react2['default'].Component);
+
+	exports['default'] = Modals;
+	module.exports = exports['default'];
+
+/***/ },
+/* 169 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

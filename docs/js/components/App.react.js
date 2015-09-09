@@ -11,33 +11,34 @@ import Links from './LinksComponents.react';
 import RadioButtons from './RadioButtonComponents.react';
 import ToggleButtons from './ToggleButtonComponents.react';
 import Notifications from './NotificationComponents.react';
+import Modal from './ModalComponents.react';
 import Typography from './Typography.react';
 import Grid from './Grid.react';
 
 class App extends React.Component {
 
-    render() {
-        return (
-            <div className="container">
-                <h1>Now TV Ark UI Toolkit</h1>
-                <hr/>
-                <GettingStarted className="gettingstarted-doc"/>
-                <Grid/>
-                <Typography/>
-                <Buttons className="buttons-doc"/>
-                <Links className="links-doc" />
-                <Inputs className="inputs-doc"/>
-                <Dropdowns className="dropdowns-doc"/>
-                <Checkboxes className="checkboxes-doc"/>
-                <RadioButtons className="radio-buttons-doc"/>
-                <ToggleButtons className="toggle-buttons-doc"/>
-                <Tickets className="tickets-doc"/>
-                <Tips className="tips-doc"/>
-                <Notifications className="notifications-doc"/>
-            </div>
-
-        )
-    }
+  render() {
+    return (
+      <div className="container">
+        <h1>Now TV Ark UI Toolkit</h1>
+        <hr/>
+        <GettingStarted className="gettingstarted-doc"/>
+        <Grid/>
+        <Typography/>
+        <Buttons className="buttons-doc"/>
+        <Links className="links-doc" />
+        <Inputs className="inputs-doc"/>
+        <Dropdowns className="dropdowns-doc"/>
+        <Checkboxes className="checkboxes-doc"/>
+        <RadioButtons className="radio-buttons-doc"/>
+        <ToggleButtons className="toggle-buttons-doc"/>
+        <Tickets className="tickets-doc"/>
+        <Tips className="tips-doc"/>
+        <Notifications className="notifications-doc"/>
+        <Modal classNames="modals-doc" />
+      </div>
+    )
+  }
 }
 
 export default App;
