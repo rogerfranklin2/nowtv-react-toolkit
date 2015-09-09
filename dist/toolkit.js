@@ -21287,11 +21287,11 @@ module.exports =
 	  _createClass(Modals, [{
 	    key: 'render',
 	    value: function render() {
-	      var classes = [this.props.classes];
+	      var classes = (0, _classnames2['default'])('now-modal', [this.props.classes], { 'visible': this.state.visible });
 
 	      return _react2['default'].createElement(
 	        'div',
-	        { className: (0, _classnames2['default'])('now-modal', { 'visible': this.state.visible }, classes) },
+	        { className: classes },
 	        _react2['default'].createElement(
 	          'div',
 	          { className: 'modal__content' },

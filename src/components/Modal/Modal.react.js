@@ -13,10 +13,10 @@ class Modals extends React.Component {
   }
 
   render() {
-    const classes = [this.props.classes];
+    const classes = classNames('now-modal', [this.props.classes], { 'visible': this.state.visible });
 
     return (
-      <div className={classNames('now-modal', { 'visible': this.state.visible }, classes)}>
+      <div className={classes}>
 
         <div className="modal__content">
           <div className="close-container">
