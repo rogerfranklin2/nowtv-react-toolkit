@@ -9,14 +9,23 @@ class Buttons extends React.Component {
               <h2>Buttons</h2>
               <h3>Primary</h3>
 
+              <h4>Avaliable Colours</h4>
+              <p>green, yellow, red, blue</p>
+
               <div className="category row">
                 <div className="col-md-6">
                     <Toolkit.Button classes="primary green">Inactive state</Toolkit.Button>
+                    <Toolkit.Button classes="primary red">Inactive state</Toolkit.Button>
+                    <Toolkit.Button classes="primary yellow">Inactive state</Toolkit.Button>
+                    <Toolkit.Button classes="primary blue">Inactive state</Toolkit.Button>
                 </div>
                 <div className="col-md-6">
                   <pre>
                     <code className="jsx">
-                      {"<Toolkit.Button classes='primary green'>Inactive state</Toolkit.Button>"}
+                      {"<Toolkit.Button classes='primary green'>Inactive state</Toolkit.Button>"}<br/>
+                      {"<Toolkit.Button classes='primary red'>Inactive state</Toolkit.Button>"}<br/>
+                      {"<Toolkit.Button classes='primary yellow'>Inactive state</Toolkit.Button>"}<br/>
+                      {"<Toolkit.Button classes='primary blue'>Inactive state</Toolkit.Button>"}
                     </code>
                   </pre>
                 </div>
