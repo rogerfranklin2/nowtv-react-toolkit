@@ -3,7 +3,7 @@ var should = require('chai').should();
 var React;
 var TestUtils;
 
-describe.only('Modal component', function(){
+describe('Modal component', function(){
   var Modal;
 
   beforeEach(function() {

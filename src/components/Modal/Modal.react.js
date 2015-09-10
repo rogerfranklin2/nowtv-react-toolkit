@@ -1,6 +1,7 @@
 import React from 'react';
 import assign from 'object-assign';
 import classNames from 'classnames';
+import keymaster from 'keymaster';
 
 class Modals extends React.Component {
   constructor(props) {
@@ -10,6 +11,14 @@ class Modals extends React.Component {
     this.state = {
       visible: false
     }
+  }
+
+  componentDidMount() {
+    keymaster('esc', () => this.state.visible ? this.toggle() : null);
+  }
+
+  componentWillUnmount() {
+    key.unbind('esc');
   }
 
   render() {
