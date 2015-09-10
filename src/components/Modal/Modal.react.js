@@ -18,7 +18,7 @@ class Modals extends React.Component {
   }
 
   componentWillUnmount() {
-    key.unbind('esc');
+    keymaster.unbind('esc');
   }
 
   render() {

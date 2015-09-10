@@ -21300,7 +21300,7 @@ module.exports =
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
-	      key.unbind('esc');
+	      _keymaster2['default'].unbind('esc');
 	    }
 	  }, {
 	    key: 'render',
