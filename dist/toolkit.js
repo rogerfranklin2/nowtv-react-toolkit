@@ -20938,8 +20938,6 @@ module.exports =
 	        _get(Object.getPrototypeOf(ToggleButton.prototype), 'constructor', this).call(this, props);
 	        this.state = { checked: this.props.checked || false };
 	        this.toggleChecked = this.toggleChecked.bind(this);
-	        this.offText = this.props.offText || 'Off';
-	        this.onText = this.props.onText || 'On';
 	    }
 
 	    _createClass(ToggleButton, [{
@@ -20965,11 +20963,11 @@ module.exports =
 	            return _react2['default'].createElement(
 	                'div',
 	                { className: (0, _classnames2['default'])('now-toggle-container', classes) },
-	                _react2['default'].createElement(
+	                this.props.offText ? _react2['default'].createElement(
 	                    'span',
 	                    { className: 'toggle-label off' },
-	                    this.offText
-	                ),
+	                    this.props.offText
+	                ) : null,
 	                _react2['default'].createElement(
 	                    'label',
 	                    { className: 'now-toggle-button' },
@@ -20979,11 +20977,11 @@ module.exports =
 	                        type: 'button'
 	                    }, this.props))
 	                ),
-	                _react2['default'].createElement(
+	                this.props.onText ? _react2['default'].createElement(
 	                    'span',
 	                    { className: 'toggle-label on' },
-	                    this.onText
-	                )
+	                    this.props.onText
+	                ) : null
 	            );
 	        }
 	    }]);
