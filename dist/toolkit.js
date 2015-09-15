@@ -20974,7 +20974,7 @@ module.exports =
 	                    _react2['default'].createElement('input', _extends({
 	                        onClick: this.toggleChecked,
 	                        checked: this.state.checked,
-	                        type: 'button'
+	                        type: 'checkbox'
 	                    }, this.props))
 	                ),
 	                this.props.onText ? _react2['default'].createElement(

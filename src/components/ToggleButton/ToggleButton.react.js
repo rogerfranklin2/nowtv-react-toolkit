@@ -32,7 +32,7 @@ class ToggleButton extends React.Component {
                     <input
                         onClick={this.toggleChecked}
                         checked={this.state.checked}
-                        type="button"
+                        type="checkbox"
                         {...this.props}
                     />
                 </label>

@@ -213,13 +213,14 @@
   .now-toggle-container.checked .now-toggle-button:after {
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjEuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxMiAxNiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTIgMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiPgoJPGc+CiAgCQk8Y2lyY2xlIGZpbGw9IiNGRkZGRkYiIGN4PSI2IiBjeT0iOCIgcj0iNSIgaWQ9InN2Z180Ii8+CiAJPC9nPgo8L3N2Zz4=);
     background-repeat: no-repeat;
-    background-position: 90%;
+    background-position: 100%;
     background-color: #30AF3F;
+    background-size: 25px;
     border: 1px solid #30AF3F; }
   .now-toggle-container .now-toggle-button {
     display: inline-block;
     position: relative;
-    padding-left: 30px;
+    padding-left: 45px;
     box-sizing: border-box;
     margin: 14px 0;
     cursor: pointer;
@@ -230,15 +231,16 @@
       top: 0;
       left: 0;
       content: " ";
-      width: 26px;
-      height: 14px;
+      width: 45px;
+      height: 25px;
       display: block;
       position: absolute;
       border-radius: 15px;
       background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjEuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxMiAxNiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTIgMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiPgoJPGc+CiAgCQk8Y2lyY2xlIGZpbGw9IiNDQ0NFRDMiIGN4PSI2IiBjeT0iOCIgcj0iNSIgaWQ9InN2Z180Ii8+CiAJPC9nPgo8L3N2Zz4=);
       background-repeat: no-repeat;
-      background-position: 13%;
+      background-position: 0%;
       background-color: #F7F7F9;
+      background-size: 25px;
       border: 1px solid #E5E8ED;
       -webkit-transition: background-color 0.1s, border 0.1s, background-position 0.3s;
       -moz-transition: background-color 0.1s, border 0.1s, background-position 0.3s;
