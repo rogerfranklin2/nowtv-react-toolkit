@@ -2,6 +2,7 @@
   font: 16px nowtv-regular, sans-serif;
   background-color: transparent;
   width: 100%;
+  max-width: 345px;
   padding: 10px 32px;
   box-sizing: border-box;
   border-radius: 50000px;
