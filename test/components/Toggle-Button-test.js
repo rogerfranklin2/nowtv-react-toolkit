@@ -14,22 +14,24 @@ describe('ToggleButton component', function() {
             should.exist(element);
         });
 
-        it('should display a toggle label element with default off text', function() {
-            let renderedComponent = TestUtils.renderIntoDocument(<NowToggleButton />),
-                toggleLabel = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'toggle-label off'),
-                element = toggleLabel.getDOMNode();
+        it('should not display an off toggle label by default', function() {
+            const renderedComponent = TestUtils.renderIntoDocument(
+              <NowToggleButton />
+            );
 
-            should.exist(element);
-            assert.equal(element.textContent, "Off");
+            const toggleLabel = TestUtils.scryRenderedDOMComponentsWithClass(renderedComponent, 'toggle-label off');
+
+            assert.equal(toggleLabel.length, 0);
         });
 
-        it('should display a toggle label element with default on text', function() {
-            let renderedComponent = TestUtils.renderIntoDocument(<NowToggleButton />),
-                toggleLabel = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'toggle-label on'),
-                element = toggleLabel.getDOMNode();
+        it('should not display an on toggle label by default', function() {
+          const renderedComponent = TestUtils.renderIntoDocument(
+            <NowToggleButton />
+          );
 
-            should.exist(element);
-            assert.equal(element.textContent, "On");
+          const toggleLabel = TestUtils.scryRenderedDOMComponentsWithClass(renderedComponent, 'toggle-label on');
+
+          assert.equal(toggleLabel.length, 0);
         });
 
         it('should display a toggle label element with custom off text', function() {
