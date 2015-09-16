@@ -20973,6 +20973,7 @@ module.exports =
 	                    { className: 'now-toggle-button' },
 	                    _react2['default'].createElement('input', _extends({
 	                        onClick: this.toggleChecked,
+	                        onChange: this.toggleChecked,
 	                        defaultChecked: this.state.checked,
 	                        type: 'checkbox'
 	                    }, this.props))

@@ -31,6 +31,7 @@ class ToggleButton extends React.Component {
                 <label className='now-toggle-button'>
                     <input
                         onClick={this.toggleChecked}
+                        onChange={this.toggleChecked}
                         defaultChecked={this.state.checked}
                         type="checkbox"
                         {...this.props}
