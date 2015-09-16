@@ -44,7 +44,12 @@ class Modals extends React.Component {
     )
   }
 
-  toggle() {
+  toggle(e) {
+    if (e && e.currentTarget.className && e.currentTarget.className.includes("close-icon")) {
+      if (this.props.closeHandler) {
+        this.props.closeHandler();
+      }
+    }
     this.setState({
       visible: !this.state.visible
     });

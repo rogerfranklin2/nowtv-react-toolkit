@@ -73,6 +73,27 @@ describe('Modal component', function(){
     React.findDOMNode(modalComponent).className.should.not.include("visible");
   });
 
+  it('should call close handler when the x is clicked', function () {
+    let closeHandlerCalled = false;
+    const closeHandler = () => {
+      closeHandlerCalled = true;
+    };
+
+    class TestComponent extends React.Component {
+      render() {
+        return <Modal ref="modal" closeHandler={closeHandler}/>
+      }
+    }
+
+    var renderedComponent = TestUtils.renderIntoDocument(<TestComponent/>);
+    var xIcon = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'close-icon');
+
+    renderedComponent.refs.modal.toggle();
+    TestUtils.Simulate.click(React.findDOMNode(xIcon));
+
+    closeHandlerCalled.should.be.true;
+  });
+
   it('only open the selected modal', function () {
     class TestComponent extends React.Component {
       render() {

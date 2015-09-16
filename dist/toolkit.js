@@ -21335,7 +21335,12 @@ module.exports =
 	    }
 	  }, {
 	    key: 'toggle',
-	    value: function toggle() {
+	    value: function toggle(e) {
+	      if (e && e.currentTarget.className && e.currentTarget.className.includes("close-icon")) {
+	        if (this.props.closeHandler) {
+	          this.props.closeHandler();
+	        }
+	      }
 	      this.setState({
 	        visible: !this.state.visible
 	      });
