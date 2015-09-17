@@ -12,7 +12,7 @@ class ToggleButtons extends React.Component {
                 <div className="col-md-3">
                   <Toolkit.ToggleButton name='available' value='available' />
                   <Toolkit.ToggleButton name="Available" value="available" offText="Off" onText="On" />
-                  <Toolkit.ToggleButton name="Selected" checked={true} value="selected"  offText="Off" onText="On" />
+                  <Toolkit.ToggleButton name="Selected" checked={true} value="selected" offText="Off" onText="On" />
                   <Toolkit.ToggleButton name="Disabled" value="disabled" disabled  offText="Off" onText="On" />
                 </div>
                 <div className="col-md-9">

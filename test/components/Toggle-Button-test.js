@@ -63,6 +63,23 @@ describe('ToggleButton component', function() {
       React.findDOMNode(toggleButton).className.should.include("checked");
   });
 
+  it('should toggle component state on click event and call props click event', function() {
+    let myVar = false;
+    let setTrue = function() {
+      myVar = true;
+    };
+    const renderedComponent = TestUtils.renderIntoDocument(
+          <NowToggleButton onClick={setTrue()}/>
+      );
+
+      const toggleButton = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'toggle-button');
+
+      TestUtils.Simulate.click(toggleButton);
+
+      React.findDOMNode(toggleButton).className.should.include("checked");
+      myVar.should.be.true;
+  });
+
   it('should check the input if checked is passed', () => {
     const renderedComponent = TestUtils.renderIntoDocument(
       <NowToggleButton checked={true}/>
@@ -103,5 +120,12 @@ describe('ToggleButton component', function() {
     const toggleButton = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'toggle-button');
 
     React.findDOMNode(toggleButton).className.should.include("disabled");
+  });
+
+  it('should add any additional props to the input', function(){
+    let renderedComponent = TestUtils.renderIntoDocument(<NowToggleButton name="name"/>),
+    toggleInput = TestUtils.findRenderedDOMComponentWithTag(renderedComponent, 'input');
+
+    assert.equal(toggleInput.props.name, "name");
   });
 });
