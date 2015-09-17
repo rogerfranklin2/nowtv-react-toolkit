@@ -16,44 +16,34 @@
     display: inline-block
     margin: 0 10px
 
-  &.disabled
-    color: $grey
+  .toggle-button
+    content: " "
+    width: 45px
+    height: 25px
+    display: inline-block
+    border-radius: 15px
+    +background-icon(url('assets/icons/grey-toggle-no-bg.svg'), 0%, $light_grey, $grey)
+    -webkit-transition: background-color 0.1s, border 0.1s, background-position 0.3s
+    -moz-transition: background-color 0.1s, border 0.1s, background-position 0.3s
+    transition: background-color 0.1s, border 0.1s, background-position 0.3s
+    position: relative
+    top:  5px
+    cursor: pointer
 
-    .now-toggle-button
+    &.disabled
+      color: $grey
+      background-color: $grey
       cursor: default
 
-      &:after
-        background-color: $grey
-
-  &.checked
-    .now-toggle-button
-      &:after
-        +background-icon(url(assets/icons/white-toggle-no-bg.svg), 100%, $green, $green)
-
-  .now-toggle-button
-    display: inline-block
-    position: relative
-    padding-left: 45px
-    box-sizing: border-box
-    margin: 14px 0
-    cursor: pointer
-    text-align: left
+    &.checked
+      +background-icon(url('assets/icons/white-toggle-no-bg.svg'), 100%, $green, $green)
 
     input
-      display: none
-
-    &:after
-      top: 0
-      left: 0
-      content: " "
-      width: 45px
-      height: 25px
       display: block
+      width: 1px
+      height: 1px
       position: absolute
-      border-radius: 15px
+      top: 5px
+      left: 20px
+      z-index: -1
 
-      +background-icon(url(assets/icons/grey-toggle-no-bg.svg), 0%, $light_grey, $grey)
-
-      -webkit-transition: background-color 0.1s, border 0.1s, background-position 0.3s
-      -moz-transition: background-color 0.1s, border 0.1s, background-position 0.3s
-      transition: background-color 0.1s, border 0.1s, background-position 0.3s

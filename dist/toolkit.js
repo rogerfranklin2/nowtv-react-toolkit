@@ -20906,10 +20906,8 @@ module.exports =
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
-	    value: true
+	  value: true
 	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -20930,64 +20928,53 @@ module.exports =
 	var _classnames2 = _interopRequireDefault(_classnames);
 
 	var ToggleButton = (function (_React$Component) {
-	    _inherits(ToggleButton, _React$Component);
+	  _inherits(ToggleButton, _React$Component);
 
-	    function ToggleButton(props) {
-	        _classCallCheck(this, ToggleButton);
+	  function ToggleButton(props) {
+	    _classCallCheck(this, ToggleButton);
 
-	        _get(Object.getPrototypeOf(ToggleButton.prototype), 'constructor', this).call(this, props);
-	        this.state = { checked: this.props.checked || false };
-	        this.toggleChecked = this.toggleChecked.bind(this);
+	    _get(Object.getPrototypeOf(ToggleButton.prototype), 'constructor', this).call(this, props);
+	    this.state = { checked: this.props.checked || false };
+	    this.toggleChecked = this.toggleChecked.bind(this);
+	  }
+
+	  _createClass(ToggleButton, [{
+	    key: 'toggleChecked',
+	    value: function toggleChecked() {
+	      this.setState({
+	        checked: !this.state.checked
+	      });
 	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var classes = (0, _classnames2['default'])([this.props.classes]);
+	      var checkBoxClasses = (0, _classnames2['default'])({ disabled: this.props.disabled,
+	        checked: this.state.checked });
 
-	    _createClass(ToggleButton, [{
-	        key: 'toggleChecked',
-	        value: function toggleChecked() {
-	            this.setState({
-	                checked: !this.state.checked
-	            });
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            var classes = [this.props.classes];
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: (0, _classnames2['default'])('now-toggle-container', classes) },
+	        this.props.offText ? _react2['default'].createElement(
+	          'span',
+	          { className: 'toggle-label off' },
+	          this.props.offText
+	        ) : null,
+	        this.props.disabled ? _react2['default'].createElement('div', { className: 'toggle-button disabled' }) : _react2['default'].createElement(
+	          'div',
+	          { className: (0, _classnames2['default'])('toggle-button', checkBoxClasses), onClick: this.toggleChecked },
+	          _react2['default'].createElement('input', { defaultChecked: this.state.checked, type: 'checkbox' })
+	        ),
+	        this.props.onText ? _react2['default'].createElement(
+	          'span',
+	          { className: 'toggle-label on' },
+	          this.props.onText
+	        ) : null
+	      );
+	    }
+	  }]);
 
-	            if (this.state.checked) {
-	                classes.push("checked");
-	            }
-
-	            if (this.props.disabled) {
-	                classes.push("disabled");
-	            }
-
-	            return _react2['default'].createElement(
-	                'div',
-	                { className: (0, _classnames2['default'])('now-toggle-container', classes) },
-	                this.props.offText ? _react2['default'].createElement(
-	                    'span',
-	                    { className: 'toggle-label off' },
-	                    this.props.offText
-	                ) : null,
-	                _react2['default'].createElement(
-	                    'label',
-	                    { className: 'now-toggle-button' },
-	                    _react2['default'].createElement('input', _extends({
-	                        onClick: this.toggleChecked,
-	                        onChange: this.toggleChecked,
-	                        defaultChecked: this.state.checked,
-	                        type: 'checkbox'
-	                    }, this.props))
-	                ),
-	                this.props.onText ? _react2['default'].createElement(
-	                    'span',
-	                    { className: 'toggle-label on' },
-	                    this.props.onText
-	                ) : null
-	            );
-	        }
-	    }]);
-
-	    return ToggleButton;
+	  return ToggleButton;
 	})(_react2['default'].Component);
 
 	exports['default'] = ToggleButton;
