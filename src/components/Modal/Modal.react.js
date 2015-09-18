@@ -50,8 +50,15 @@ class Modals extends React.Component {
         this.props.closeHandler();
       }
     }
+
     this.setState({
       visible: !this.state.visible
+    });
+  }
+
+  hide() {
+    this.setState({
+      visible: false
     });
   }
 }

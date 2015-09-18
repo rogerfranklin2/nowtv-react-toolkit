@@ -21352,8 +21352,16 @@ module.exports =
 	          this.props.closeHandler();
 	        }
 	      }
+
 	      this.setState({
 	        visible: !this.state.visible
+	      });
+	    }
+	  }, {
+	    key: 'hide',
+	    value: function hide() {
+	      this.setState({
+	        visible: false
 	      });
 	    }
 	  }]);
