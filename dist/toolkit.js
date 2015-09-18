@@ -20940,6 +20940,7 @@ module.exports =
 	    _get(Object.getPrototypeOf(ToggleButton.prototype), 'constructor', this).call(this, props);
 	    this.state = { checked: this.props.checked || false };
 	    this.toggleChecked = this.toggleChecked.bind(this);
+	    this.onChange = this.onChange.bind(this);
 	  }
 
 	  _createClass(ToggleButton, [{
@@ -20954,11 +20955,20 @@ module.exports =
 	      }
 	    }
 	  }, {
+	    key: 'onChange',
+	    value: function onChange() {
+	      this.setState({
+	        checked: this.props
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var classes = (0, _classnames2['default'])([this.props.classes]);
-	      var checkBoxClasses = (0, _classnames2['default'])({ disabled: this.props.disabled,
-	        checked: this.state.checked });
+	      var checkBoxClasses = (0, _classnames2['default'])({
+	        disabled: this.props.disabled,
+	        checked: this.state.checked
+	      });
 
 	      var _props = this.props;
 	      var checked = _props.checked;
