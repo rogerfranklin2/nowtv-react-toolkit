@@ -129,9 +129,14 @@ describe('ToggleButton component', function() {
     assert.equal(toggleInput.props.name, "name");
   });
 
-  it('should not toggle when disableToggleOnClick is passed', () => {
+  it('should not toggle when disableToggleOnClick is passed but should still call the onClick handler', () => {
+    let myVar = false;
+    let setTrue = function() {
+      myVar = true;
+    };
+
     const renderedComponent = TestUtils.renderIntoDocument(
-      <NowToggleButton disableToggleOnClick={true}/>
+        <NowToggleButton disableToggleOnClick={true} onClick={setTrue}/>
     );
 
     const toggleButton = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'toggle-button');
@@ -139,5 +144,6 @@ describe('ToggleButton component', function() {
     TestUtils.Simulate.click(toggleButton);
 
     React.findDOMNode(toggleButton).className.should.not.include("checked");
+    myVar.should.be.true;
   });
 });
