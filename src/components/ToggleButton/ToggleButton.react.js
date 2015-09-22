@@ -10,12 +10,14 @@ class ToggleButton extends React.Component {
   }
 
   toggleChecked() {
-    this.setState({
-      checked: !this.state.checked
-    });
+    if (!this.props.disableToggleOnClick) {
+      this.setState({
+        checked: !this.state.checked
+      });
 
-    if (this.props.onClick) {
-      this.props.onClick();
+      if (this.props.onClick) {
+        this.props.onClick();
+      }
     }
   }
 

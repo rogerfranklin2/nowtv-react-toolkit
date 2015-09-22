@@ -128,4 +128,16 @@ describe('ToggleButton component', function() {
 
     assert.equal(toggleInput.props.name, "name");
   });
+
+  it('should not toggle when disableToggleOnClick is passed', () => {
+    const renderedComponent = TestUtils.renderIntoDocument(
+      <NowToggleButton disableToggleOnClick={true}/>
+    );
+
+    const toggleButton = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'toggle-button');
+
+    TestUtils.Simulate.click(toggleButton);
+
+    React.findDOMNode(toggleButton).className.should.not.include("checked");
+  });
 });
