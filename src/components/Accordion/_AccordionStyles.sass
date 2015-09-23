@@ -1,0 +1,54 @@
+.now-accordion 
+  .now-accordion-item
+    position: relative
+    padding-left: 27px
+
+    &:before
+      width: 16px
+      height: 16px
+      display: block
+      position: absolute
+      background: url(assets/icons/grey-chevron-down.svg)
+      background-repeat: no-repeat
+      background-position: center
+      content: ' '
+      left: 0
+      top: 2px
+      transition: transform 0.65s
+      transition-timing-function: ease-in-out
+
+    .accordion-item-title
+      font-family: nowtv-bold
+
+    .accordion-item-content
+      animation: accordionOut 0.85s normal ease-in-out both 1
+      transition: max-height 0.85s ease-in-out
+      max-height: 0px
+      overflow: hidden
+
+  .visible 
+    &.now-accordion-item:before
+      transform: rotate(-180deg)
+
+    .accordion-item-content
+      animation: accordionIn 0.65s normal ease-in-out both 1
+      display: block
+      max-height: 9999px;
+      margin-top: 5px;
+     
+@keyframes accordionIn
+  0%
+    opacity: 0
+    transform:scale(0.9) rotateX(-60deg)
+    transform-origin: 50% 0
+  100%
+    opacity:1
+    transform:scale(1)
+
+@keyframes accordionOut
+  0%
+    opacity: 1
+    transform:scale(1)
+  100%
+    opacity:0
+    transform:scale(0.9) rotateX(-60deg)

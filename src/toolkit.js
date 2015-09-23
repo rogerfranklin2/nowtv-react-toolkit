@@ -8,6 +8,8 @@ import Ticket from './components/Ticket/Ticket.react';
 import Tip from './components/Tip/Tip.react';
 import Notification from './components/Notification/Notification.react';
 import Modal from './components/Modal/Modal.react';
+import Accordion from './components/Accordion/Accordion.react';
+import AccordionItem from './components/Accordion/AccordionItem.react';
 
 import Styles from './toolkit.sass'
 
@@ -21,5 +23,7 @@ export default {
   Ticket,
   Tip,
   Notification,
-  Modal
+  Modal,
+  Accordion,
+  AccordionItem
 };

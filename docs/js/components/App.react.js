@@ -12,6 +12,7 @@ import RadioButtons from './RadioButtonComponents.react';
 import ToggleButtons from './ToggleButtonComponents.react';
 import Notifications from './NotificationComponents.react';
 import Modal from './ModalComponents.react';
+import Accordion from './AccordionComponents.react';
 import Typography from './Typography.react';
 import Grid from './Grid.react';
 
@@ -36,6 +37,7 @@ class App extends React.Component {
         <Tips className="tips-doc"/>
         <Notifications className="notifications-doc"/>
         <Modal classNames="modals-doc" />
+        <Accordion classNames="accordions-doc" />
       </div>
     )
   }
