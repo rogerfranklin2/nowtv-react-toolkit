@@ -23,7 +23,9 @@ class Accordions extends React.Component {
           </div>
           <div className="col-md-6">
             <pre>
-
+              <code className="jsx">
+                {"<Toolkit.Accordion><Toolkit.AccordionItem title='WOO'><p>Look at me</p></Toolkit.AccordionItem></Toolkit.Accordion>"}
+              </code>
             </pre>
           </div>
         </div>
