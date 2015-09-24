@@ -1,4 +1,3 @@
-var WebpackOnBuildPlugin = require('on-build-webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = [
@@ -20,11 +19,6 @@ module.exports = [
       ]
     },
     plugins: [
-      new WebpackOnBuildPlugin(function(stats) {
-        var exec = require('child_process').exec;
-        function puts(error, stdout, stderr) { console.log(stdout) }
-        exec("cp -fv dist/toolkit.css docs/", puts);
-      }),
       new ExtractTextPlugin("/toolkit.css"),
       new ExtractTextPlugin("/toolkit.scss")
     ]
