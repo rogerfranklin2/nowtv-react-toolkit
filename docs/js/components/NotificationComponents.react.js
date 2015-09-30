@@ -51,6 +51,36 @@ class Notifications extends React.Component {
             </pre>
           </div>
         </div>
+
+        <h3>Hey, look out!</h3>
+
+        <div className="category row">
+          <div className="col-md-6">
+            <Toolkit.Notification classes='yellow' title='Be careful!'>You made a warning notification.</Toolkit.Notification>
+          </div>
+          <div className="col-md-6">
+            <pre>
+              <code className="jsx">
+                {"<Toolkit.Notification classes='yellow' title='Be careful!'>You made a warning notification.</Toolkit.Notification>"}
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <h3>Icon override</h3>
+
+        <div className="category row">
+          <div className="col-md-6">
+            <Toolkit.Notification classes='blue success-icon' title='Overide Icon'>You made the most generic notification ever overriding the icon.</Toolkit.Notification>
+          </div>
+          <div className="col-md-6">
+            <pre>
+              <code className="jsx">
+                {"<Toolkit.Notification classes='blue success-icon' title='Overide Icon'>You made the most generic notification ever overriding the icon.</Toolkit.Notification>"}
+              </code>
+            </pre>
+          </div>
+        </div>
       </section>
     )
   }

@@ -38,13 +38,22 @@
 
   &.red
     +notificationColor($red, $white)
-    +notification_icon('warning')
+    +notification_icon('warning-notification')
   &.blue
     +notificationColor($dark_blue, $white)
-    +notification_icon('info')
+    +notification_icon('informative-notification')
   &.green
     +notificationColor($green, $white)
-    +notification_icon('success')
+    +notification_icon('positive-notification')
+  &.yellow
+    +notificationColor($yellow, $white)
+    +notification_icon('warning-notification')
+  &.success-icon
+    +notification_icon('positive-notification')
+  &.informative-icon
+    +notification_icon('informative-notification')
+  &.warning-icon
+    +notification_icon('warning-notification')
   .content
     box-sizing: border-box
   .notificationBody

@@ -36,6 +36,12 @@ describe('Notification component', function(){
     assert.include(React.findDOMNode(component).className, "green");
   });
 
+  it('should override the icon if the icon class is passed in', function () {
+    var renderedComponent = TestUtils.renderIntoDocument(<NowNotification classes='green warning-icon'>Some Content</NowNotification>);
+    var component = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-notification');
+    assert.include(React.findDOMNode(component).className, "warning-icon");
+  });
+
   it('should close the notification', function () {
     var renderedComponent = TestUtils.renderIntoDocument(<NowNotification>Close me, close me</NowNotification>);
     var component = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-notification');
