@@ -37,6 +37,9 @@ class Notification extends React.Component {
   }
 
   _closeNotification(){
+    if (this.props.onClose) {
+      return this.props.onClose()
+    }
     this.setState({
       showNotification: !this.state.showNotification  
     });

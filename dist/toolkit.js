@@ -21245,6 +21245,9 @@ module.exports =
 	  }, {
 	    key: '_closeNotification',
 	    value: function _closeNotification() {
+	      if (this.props.onClose) {
+	        return this.props.onClose();
+	      }
 	      this.setState({
 	        showNotification: !this.state.showNotification
 	      });
