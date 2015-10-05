@@ -520,15 +520,13 @@
     content: ' ';
     left: 0;
     top: 2px;
-    transition: -webkit-transform 0.65s;
-    transition: transform 0.65s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
     transition-timing-function: ease-in-out; }
   .now-accordion .now-accordion-item .accordion-item-title {
     font-family: nowtv-bold; }
   .now-accordion .now-accordion-item .accordion-item-content {
-    -webkit-animation: accordionOut 0.85s normal ease-in-out both 1;
-            animation: accordionOut 0.85s normal ease-in-out both 1;
-    transition: max-height 0.85s ease-in-out;
+    transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out;
     max-height: 0px;
     overflow: hidden; }
 
@@ -537,10 +535,9 @@
           transform: rotate(-180deg); }
 
 .now-accordion .visible .accordion-item-content {
-  -webkit-animation: accordionIn 0.85s normal ease-in-out both 1;
-          animation: accordionIn 0.85s normal ease-in-out both 1;
+  transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out;
   display: block;
-  max-height: 9999px;
+  max-height: 1000px;
   margin-top: 5px; }
 
 @-webkit-keyframes accordionIn {

@@ -520,13 +520,13 @@
     content: ' ';
     left: 0;
     top: 2px;
-    transition: -webkit-transform 0.25s;
-    transition: transform 0.25s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
     transition-timing-function: ease-in-out; }
   .now-accordion .now-accordion-item .accordion-item-title {
     font-family: nowtv-bold; }
   .now-accordion .now-accordion-item .accordion-item-content {
-    transition: max-height 0.25s ease-in-out, margin 0.25s ease-in-out;
+    transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out;
     max-height: 0px;
     overflow: hidden; }
 
@@ -535,10 +535,54 @@
           transform: rotate(-180deg); }
 
 .now-accordion .visible .accordion-item-content {
-  transition: max-height 0.25s ease-in-out, margin 0.25s ease-in-out;
+  transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out;
   display: block;
   max-height: 1000px;
   margin-top: 5px; }
+
+@-webkit-keyframes accordionIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.9) rotateX(-60deg);
+            transform: scale(0.9) rotateX(-60deg);
+    -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0; }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes accordionIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.9) rotateX(-60deg);
+            transform: scale(0.9) rotateX(-60deg);
+    -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0; }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@-webkit-keyframes accordionOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.9) rotateX(-60deg);
+            transform: scale(0.9) rotateX(-60deg); } }
+
+@keyframes accordionOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.9) rotateX(-60deg);
+            transform: scale(0.9) rotateX(-60deg); } }
 
 @font-face {
   font-family: nowtv-light;

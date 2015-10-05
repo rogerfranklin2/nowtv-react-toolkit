@@ -15,15 +15,14 @@
       content: ' '
       left: 0
       top: 2px
-      transition: transform 0.65s
+      transition: transform 0.3s
       transition-timing-function: ease-in-out
 
     .accordion-item-title
       font-family: nowtv-bold
 
     .accordion-item-content
-      animation: accordionOut 0.85s normal ease-in-out both 1
-      transition: max-height 0.85s ease-in-out
+      transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out
       max-height: 0px
       overflow: hidden
 
@@ -32,15 +31,15 @@
       transform: rotate(-180deg)
 
     .accordion-item-content
-      animation: accordionIn 0.85s normal ease-in-out both 1
+      transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out
       display: block
-      max-height: 9999px;
+      max-height: 1000px;
       margin-top: 5px;
      
 @keyframes accordionIn
   0%
     opacity: 0
-    transform:scale(0.9) rotateX(-60deg)
+    transform: scale(0.9) rotateX(-60deg)
     transform-origin: 50% 0
   100%
     opacity:1
