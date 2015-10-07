@@ -10,6 +10,7 @@ import Notification from './components/Notification/Notification.react';
 import Modal from './components/Modal/Modal.react';
 import Accordion from './components/Accordion/Accordion.react';
 import AccordionItem from './components/Accordion/AccordionItem.react';
+import Spinner from './components/Spinner/Spinner.react';
 
 import Styles from './toolkit.sass'
 
@@ -25,5 +26,6 @@ export default {
   Notification,
   Modal,
   Accordion,
-  AccordionItem
+  AccordionItem,
+  Spinner
 };

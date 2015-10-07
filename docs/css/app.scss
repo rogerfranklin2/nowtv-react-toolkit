@@ -52,6 +52,23 @@ pre {
   background-color: #30AF3F;
 }
 
+.spinner-container {
+  .spinner {
+    position: relative;
+  }
+  &.small {
+    height: 200px;
+  }
+
+  &.medium {
+    height: 300px;
+  }
+
+  &.large {
+    height: 500px;
+  }
+}
+
 .custom-modal {
   .header {
     background-color: #37AC47;

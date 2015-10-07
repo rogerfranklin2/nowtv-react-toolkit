@@ -13,6 +13,7 @@ import ToggleButtons from './ToggleButtonComponents.react';
 import Notifications from './NotificationComponents.react';
 import Modal from './ModalComponents.react';
 import Accordion from './AccordionComponents.react';
+import Spinner from './SpinnerComponents.react';
 import Typography from './Typography.react';
 import Grid from './Grid.react';
 
@@ -38,6 +39,7 @@ class App extends React.Component {
         <Notifications className="notifications-doc"/>
         <Modal classNames="modals-doc" />
         <Accordion classNames="accordions-doc" />
+        <Spinner classNames="spinner-doc" />
       </div>
     )
   }

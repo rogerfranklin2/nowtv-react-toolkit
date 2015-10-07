@@ -1,0 +1,77 @@
+.spinner
+  position: absolute
+  top: 50%
+  left: 50%
+  border-radius: 100%
+  animation: rotate linear 1.5s infinite
+  z-index: 9999
+
+.spinner-small
+  height: 150px
+  width: 150px
+  margin:  -75px 0 0 -75px
+
+.spinner-medium
+  height: 300px
+  width: 300px
+  margin:  -150px 0 0 -150px
+
+.spinner-large
+  height: 450px
+  width: 450px
+  margin:  -225px 0 0 -225px
+
+.ball1,
+.ball2,
+.ball3,
+.ball4
+  height: 30%
+  width: 30%
+  position: absolute
+  border-radius: 100%
+  animation: throb1 ease-in-out 1.5s infinite
+
+.ball1, .ball4
+  animation: throb2 ease-in-out 1.5s infinite
+
+.ball1
+  top: 22%
+  left: 22%
+  background: #660099
+
+.ball2
+  top: 22%
+  left: 48%
+  background: #FF6600
+
+.ball3
+  top: 48%
+  left: 22%
+  background: #1C5EEA
+
+.ball4
+  top: 48%
+  left: 48%
+  background: #30B803
+
+@keyframes throb1
+  50%
+    transform: scale(0.5)
+
+@keyframes throb2
+  0%, 100%
+    transform: scale(0.5)
+
+  50%
+    transform: scale(1)
+
+@keyframes rotate
+  0%
+    transform: rotateZ(0)
+
+  100%
+    transform: rotateZ(360deg)
+  
+
+
+	
