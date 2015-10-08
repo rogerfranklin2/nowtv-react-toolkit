@@ -1,43 +1,42 @@
-const React = require('react/addons'),
+const React = require('react'),
     assert = require('assert'),
     should = require('chai').should(),
     NowRadioButton= require('../../src/components/RadioButton/RadioButton.react'),
-    TestUtils = React.addons.TestUtils;
+    TestUtils = require('react-addons-test-utils');
 
 describe('RadioButton component', function() {
     it('should display a radioButton element', function() {
         var renderedComponent = TestUtils.renderIntoDocument(<NowRadioButton/>);
         var component = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-radio-button');
-        var element = component.getDOMNode();
-        should.exist(element);
+        should.exist(component);
     });
 
     it('should add addtional classes to the label', function(){
         var radioButtonWithClass = TestUtils.renderIntoDocument(<NowRadioButton classes="extraClass"/>);
         var renderedRadioButton = TestUtils.findRenderedDOMComponentWithTag(radioButtonWithClass, 'label');
 
-        assert.equal(renderedRadioButton.props.className, "now-radio-button extraClass");
+        assert.equal(renderedRadioButton.className, "now-radio-button extraClass");
     });
 
     it('should not add addtional classes to the input', function(){
         var radioButtonWithClass = TestUtils.renderIntoDocument(<NowRadioButton classes="extraClass"/>);
         var renderedRadioButton = TestUtils.findRenderedDOMComponentWithTag(radioButtonWithClass, 'input');
 
-        assert.equal(renderedRadioButton.props.className, null);
+        assert.equal(renderedRadioButton.className, "");
     });
 
     it('should add any additional props to the input', function(){
         var radioButtonWithAdditionalProp = TestUtils.renderIntoDocument(<NowRadioButton name="name"/>);
         var renderedRadioButton = TestUtils.findRenderedDOMComponentWithTag(radioButtonWithAdditionalProp, 'input');
 
-        assert.equal(renderedRadioButton.props.name, "name");
+        assert.equal(renderedRadioButton.name, "name");
     });
 
     it('should not add any additional props to the label', function(){
         var radioButtonWithAdditionalProp = TestUtils.renderIntoDocument(<NowRadioButton name="name"/>);
         var renderedRadioButton = TestUtils.findRenderedDOMComponentWithTag(radioButtonWithAdditionalProp, 'label');
 
-        assert.equal(renderedRadioButton.props.name, null);
+        assert.equal(renderedRadioButton.name, null);
     });
 
     it('should render its children', function() {
@@ -46,7 +45,7 @@ describe('RadioButton component', function() {
         );
         var renderedRadioButton = TestUtils.findRenderedDOMComponentWithClass(radioButtonWithChildren, 'now-radio-button');
 
-        assert.equal(React.findDOMNode(renderedRadioButton).textContent, "RadioButton 1");
+        assert.equal((renderedRadioButton).textContent, "RadioButton 1");
     });
 
     it('should check the radioButton if it is passed as a prop', function(){
@@ -56,8 +55,8 @@ describe('RadioButton component', function() {
         var renderedRadioButtonLabel = TestUtils.findRenderedDOMComponentWithTag(radioButtonWithProp, 'label');
         var renderedRadioButtonInput = TestUtils.findRenderedDOMComponentWithTag(radioButtonWithProp, 'input');
 
-        assert.equal(renderedRadioButtonLabel.props.className, "now-radio-button checked");
-        assert.equal(renderedRadioButtonInput.props.checked, true);
+        assert.equal(renderedRadioButtonLabel.className, "now-radio-button checked");
+        assert.equal(renderedRadioButtonInput.checked, true);
     });
 
     it('should add disabled class when disabled is passed as a prop', function(){
@@ -65,8 +64,8 @@ describe('RadioButton component', function() {
         var disabledRadioButtonLabel = TestUtils.findRenderedDOMComponentWithTag(radioButtonWithDisabled, 'label');
         var disabledRadioButtonInput = TestUtils.findRenderedDOMComponentWithTag(radioButtonWithDisabled, 'input');
 
-        assert.equal(disabledRadioButtonLabel.props.className, "now-radio-button disabled");
-        assert.equal(disabledRadioButtonInput.props.disabled, true);
+        assert.equal(disabledRadioButtonLabel.className, "now-radio-button disabled");
+        assert.equal(disabledRadioButtonInput.disabled, true);
     })
 
 });

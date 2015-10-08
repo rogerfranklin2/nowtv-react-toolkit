@@ -1,6 +1,7 @@
 import { expect } from 'chai';
-import React from 'react/addons';
-const TestUtils = React.addons.TestUtils;
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
+import ReactDOM from 'react-dom';
 import Accordion from '../../src/components/Accordion/Accordion.react';
 import AccordionItem from '../../src/components/Accordion/AccordionItem.react';
 
@@ -8,7 +9,7 @@ describe('Accordion component', () => {
   it('should display an accordion', () => {
     const renderedComponent = TestUtils.renderIntoDocument(<Accordion />);
     const accordion = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-accordion');
-    const element = React.findDOMNode(accordion);
+    const element = ReactDOM.findDOMNode(accordion);
 
     expect(element).to.exist;
   });
@@ -23,8 +24,8 @@ describe('Accordion component', () => {
     );
 
     const accordion = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-accordion');
-    const accordionItems = React.findDOMNode(accordion)._childNodes;
-    const accordionItem = React.findDOMNode(accordionItems[0]);
+    const accordionItems = ReactDOM.findDOMNode(accordion)._childNodes;
+    const accordionItem = ReactDOM.findDOMNode(accordionItems[0]);
 
     expect(accordionItems.length).to.equal(3);
     expect(accordionItem.className.trim()).to.equal('now-accordion-item');
@@ -40,10 +41,10 @@ describe('Accordion component', () => {
     );
 
     const accordion = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-accordion');
-    const accordionItems = React.findDOMNode(accordion)._childNodes;
-    const accordionItem = React.findDOMNode(accordionItems[0]);
-    const accordionItem2 = React.findDOMNode(accordionItems[1]);
-    const accordionItem3 = React.findDOMNode(accordionItems[2]);
+    const accordionItems = ReactDOM.findDOMNode(accordion)._childNodes;
+    const accordionItem = ReactDOM.findDOMNode(accordionItems[0]);
+    const accordionItem2 = ReactDOM.findDOMNode(accordionItems[1]);
+    const accordionItem3 = ReactDOM.findDOMNode(accordionItems[2]);
 
     TestUtils.Simulate.click(accordionItem);
     expect(accordionItem.className.trim()).to.include('visible');
@@ -61,10 +62,10 @@ describe('Accordion component', () => {
     );
 
     const accordion = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-accordion');
-    const accordionItems = React.findDOMNode(accordion)._childNodes;
-    const accordionItem = React.findDOMNode(accordionItems[0]);
-    const accordionItem2 = React.findDOMNode(accordionItems[1]);
-    const accordionItem3 = React.findDOMNode(accordionItems[2]);
+    const accordionItems = ReactDOM.findDOMNode(accordion)._childNodes;
+    const accordionItem = ReactDOM.findDOMNode(accordionItems[0]);
+    const accordionItem2 = ReactDOM.findDOMNode(accordionItems[1]);
+    const accordionItem3 = ReactDOM.findDOMNode(accordionItems[2]);
 
     TestUtils.Simulate.click(accordionItem);
     expect(accordionItem.className.trim()).to.include('visible');
