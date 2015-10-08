@@ -1,7 +1,7 @@
 const assert = require('assert'),
       should = require('chai').should(),
-      React = require('react/addons'),
-      TestUtils = React.addons.TestUtils,
+      React = require('react'),
+      TestUtils = require('react-addons-test-utils'),
       NowButton = require('../../src/components/Button/Button.react');
 
 describe('Button component', function() {
@@ -11,9 +11,8 @@ describe('Button component', function() {
         );
 
         var pComponent = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-button');
-        var pElement = pComponent.getDOMNode();
 
-        assert.equal(pElement.textContent, 'Now Button');
+        assert.equal(pComponent.textContent, 'Now Button');
     });
 
 
@@ -53,7 +52,7 @@ describe('Button component', function() {
         );
 
         var renderedButton = TestUtils.findRenderedDOMComponentWithTag(buttonWithName, 'button');
-        assert.equal(renderedButton.props.name, 'build-your-bundle');
+        assert.equal(renderedButton.name, 'build-your-bundle');
     });
 
 });

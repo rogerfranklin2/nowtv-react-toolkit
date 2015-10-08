@@ -1,14 +1,16 @@
 var assert = require('chai').assert;
 var should = require('chai').should();
 var React;
+var ReactDOM;
 var TestUtils;
 
 describe('Modal component', function(){
   var Modal;
 
   beforeEach(function() {
-    React = require('react/addons');
-    TestUtils = React.addons.TestUtils;
+    React = require('react');
+    ReactDOM = require('react-dom');
+    TestUtils = require('react-addons-test-utils');
     Modal = require('../../src/components/Modal/Modal.react');
   });
 
@@ -21,7 +23,7 @@ describe('Modal component', function(){
   it('should not be shown when first rendered', function () {
     var renderedComponent = TestUtils.renderIntoDocument(<Modal/>);
     var component = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-modal');
-    React.findDOMNode(component).className.should.not.include("visible");
+    component.className.should.not.include("visible");
   });
 
   it('should show modal when toggle is triggered', function () {
@@ -36,7 +38,7 @@ describe('Modal component', function(){
 
     renderedComponent.refs.modal.toggle();
 
-    React.findDOMNode(modalComponent).className.should.include("visible");
+    ReactDOM.findDOMNode(modalComponent).className.should.include("visible");
   });
 
   it('should hide modal when toggle is triggered twice', function () {
@@ -50,10 +52,10 @@ describe('Modal component', function(){
     var modalComponent = TestUtils.findRenderedComponentWithType(renderedComponent, Modal);
 
     renderedComponent.refs.modal.toggle();
-    React.findDOMNode(modalComponent).className.should.include("visible");
+    ReactDOM.findDOMNode(modalComponent).className.should.include("visible");
 
     renderedComponent.refs.modal.toggle();
-    React.findDOMNode(modalComponent).className.should.not.include("visible");
+    ReactDOM.findDOMNode(modalComponent).className.should.not.include("visible");
   });
 
   it('should hide the modal when the x is clicked', function () {
@@ -68,9 +70,9 @@ describe('Modal component', function(){
     var xIcon = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'close-icon');
 
     renderedComponent.refs.modal.toggle();
-    TestUtils.Simulate.click(React.findDOMNode(xIcon));
+    TestUtils.Simulate.click(ReactDOM.findDOMNode(xIcon));
 
-    React.findDOMNode(modalComponent).className.should.not.include("visible");
+    ReactDOM.findDOMNode(modalComponent).className.should.not.include("visible");
   });
 
   it('should call close handler when the x is clicked', function () {
@@ -89,7 +91,7 @@ describe('Modal component', function(){
     var xIcon = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'close-icon');
 
     renderedComponent.refs.modal.toggle();
-    TestUtils.Simulate.click(React.findDOMNode(xIcon));
+    TestUtils.Simulate.click(ReactDOM.findDOMNode(xIcon));
 
     closeHandlerCalled.should.be.true;
   });
@@ -112,7 +114,7 @@ describe('Modal component', function(){
 
     renderedComponent.refs.modal2.toggle();
 
-    React.findDOMNode(closedModalComponent).className.should.not.include("visible");
-    React.findDOMNode(openModalComponent).className.should.include("visible");
+    closedModalComponent.className.should.not.include("visible");
+    openModalComponent.className.should.include("visible");
   });
 });

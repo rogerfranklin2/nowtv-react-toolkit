@@ -1,16 +1,15 @@
-var React = require('react/addons');
+var React = require('react');
 var assert = require('assert');
 var should = require('chai').should();
 var NowDropdown = require('../../src/components/Dropdown/Dropdown.react');
-var TestUtils = React.addons.TestUtils;
+var TestUtils = require('react-addons-test-utils');
 
 describe('Dropdown component', function() {
 
     it('should display a dropdown element', function() {
         var renderedComponent = TestUtils.renderIntoDocument(<NowDropdown/>);
         var component = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-dropdown');
-        var element = component.getDOMNode();
-        should.exist(element);
+        should.exist(component);
     });
 
 
@@ -25,7 +24,7 @@ describe('Dropdown component', function() {
         var dropdownWithAdditionalProp = TestUtils.renderIntoDocument(<NowDropdown id="anId"/>);
         var renderedDropdown = TestUtils.findRenderedDOMComponentWithClass(dropdownWithAdditionalProp, 'now-dropdown');
 
-        assert.equal(renderedDropdown.props.id, "anId");
+        assert.equal(renderedDropdown.id, "anId");
     })
 
     it('should render its children', function() {
@@ -37,6 +36,6 @@ describe('Dropdown component', function() {
         );
         var renderedDropdown = TestUtils.findRenderedDOMComponentWithClass(dropdownWithChildren, 'now-dropdown');
        
-        assert.equal(renderedDropdown.props.children.length, 2); 
+        assert.equal(renderedDropdown.children.length, 2); 
     });
 });
