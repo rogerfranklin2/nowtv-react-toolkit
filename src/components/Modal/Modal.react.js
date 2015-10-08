@@ -39,7 +39,7 @@ class Modals extends React.Component {
             </div>
             : null
           }
-          <p>{this.props.children}</p>
+          <div>{this.props.children}</div>
         </div>
       </div>
     )
