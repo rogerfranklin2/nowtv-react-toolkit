@@ -25,14 +25,18 @@ class RadioButton extends React.Component {
             classes.push("disabled");
         }
 
+        const inputProps = Object.assign({}, this.props);
+        delete inputProps.children;
+
         return (
           <label className={classNames('now-radio-button', classes)}>
               <input
                 onChange={this.toggleChecked}
                 checked={this.state.checked}
                 type="radio"
-                {...this.props}
+                {...inputProps}
               />
+              {this.props.children}
           </label>
        );
     }

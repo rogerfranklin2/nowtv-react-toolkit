@@ -19980,6 +19980,9 @@ module.exports =
 	                classes.push("disabled");
 	            }
 
+	            var inputProps = Object.assign({}, this.props);
+	            delete inputProps.children;
+
 	            return _react2['default'].createElement(
 	                'label',
 	                { className: (0, _classnames2['default'])('now-checkbox', classes) },
@@ -19987,7 +19990,8 @@ module.exports =
 	                    onChange: this.toggleChecked,
 	                    checked: this.state.checked,
 	                    type: 'checkbox'
-	                }, this.props))
+	                }, inputProps)),
+	                this.props.children
 	            );
 	        }
 	    }]);
@@ -20059,6 +20063,9 @@ module.exports =
 	                classes.push("disabled");
 	            }
 
+	            var inputProps = Object.assign({}, this.props);
+	            delete inputProps.children;
+
 	            return _react2['default'].createElement(
 	                'label',
 	                { className: (0, _classnames2['default'])('now-radio-button', classes) },
@@ -20066,7 +20073,8 @@ module.exports =
 	                    onChange: this.toggleChecked,
 	                    checked: this.state.checked,
 	                    type: 'radio'
-	                }, this.props))
+	                }, inputProps)),
+	                this.props.children
 	            );
 	        }
 	    }]);

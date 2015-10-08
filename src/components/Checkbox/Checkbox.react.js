@@ -25,14 +25,18 @@ class Checkbox extends React.Component {
             classes.push("disabled");
         }
 
+        const inputProps = Object.assign({}, this.props);
+        delete inputProps.children;
+
         return (
           <label className={classNames('now-checkbox', classes)}>
               <input
                 onChange={this.toggleChecked}
                 checked={this.state.checked}
                 type="checkbox"
-                {...this.props}
+                {...inputProps}
               />
+              {this.props.children}
           </label>
        );
     }
