@@ -20249,7 +20249,7 @@ module.exports =
 	                            this.props.title
 	                        ),
 	                        _react2['default'].createElement(
-	                            'p',
+	                            'div',
 	                            null,
 	                            this.props.children
 	                        )
@@ -20525,7 +20525,7 @@ module.exports =
 	            )
 	          ) : null,
 	          _react2['default'].createElement(
-	            'p',
+	            'div',
 	            null,
 	            this.props.children
 	          )
