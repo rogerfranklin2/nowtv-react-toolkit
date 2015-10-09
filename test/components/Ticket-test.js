@@ -20,7 +20,7 @@ describe('Ticket component', function() {
 
     it('should contain some content', function() {
         var renderComponent = TestUtils.renderIntoDocument(<NowTicket title="HelloIamATitle">This is content woo!</NowTicket>);
-        var component = TestUtils.findRenderedDOMComponentWithTag(renderComponent, 'p');
+        var component = TestUtils.findRenderedDOMComponentWithTag(renderComponent, 'div');
         assert.equal((component).textContent, "This is content woo!");
         should.exist(component);
     });
