@@ -13,10 +13,10 @@ class Ticket extends React.Component {
         return (
             <div>
                 <div className={classNames('now-ticket', classes)}>
-                    <div className={classNames('content')}>
+                    <div className='content'>
                         <h3>{this.props.title}</h3>
 
-                        <div>{this.props.children}</div>
+                        <div className='children'>{this.props.children}</div>
                     </div>
                 </div>
                 <div className={classNames('tearoff', classes)}></div>
