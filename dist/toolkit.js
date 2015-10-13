@@ -21365,7 +21365,7 @@ module.exports =
 	  }, {
 	    key: 'toggle',
 	    value: function toggle(e) {
-	      if (e && e.currentTarget.className && e.currentTarget.className.includes("close-icon")) {
+	      if (e !== undefined && e.currentTarget.className && e.currentTarget.className.indexOf("close-icon") > -1) {
 	        if (this.props.closeHandler) {
 	          this.props.closeHandler();
 	        }
