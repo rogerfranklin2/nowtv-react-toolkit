@@ -459,6 +459,10 @@
     .now-notification .notificationBody p:last-child {
       margin-bottom: 0; }
 
+body.modal-open {
+  position: fixed;
+  overflow: hidden; }
+
 .now-modal {
   display: none;
   content: '';
@@ -485,7 +489,7 @@
     z-index: 11;
     width: 420px;
     padding: 20px 15px;
-    overflow: hidden; }
+    overflow-y: scroll; }
     .now-modal .modal__content .close-container {
       position: relative; }
     .now-modal .modal__content .close-icon {

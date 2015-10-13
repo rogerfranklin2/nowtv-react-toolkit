@@ -51,15 +51,31 @@ class Modals extends React.Component {
       }
     }
 
+    const { visible } = this.state;
+    if (!visible) {
+      this._giveModalFocus()
+    } else {
+      this._giveBodyFocusBack();
+    }
+
     this.setState({
-      visible: !this.state.visible
+      visible: !visible
     });
   }
 
   hide() {
+    this._giveBodyFocusBack();
     this.setState({
       visible: false
     });
+  }
+
+  _giveModalFocus() {
+    document.body.className += 'modal-open';
+  }
+
+  _giveBodyFocusBack() {
+    document.body.className = document.body.className.replace(/ ?modal-open/, '');
   }
 }
 

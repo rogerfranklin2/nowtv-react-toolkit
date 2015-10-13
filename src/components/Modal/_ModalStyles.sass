@@ -1,5 +1,9 @@
 @import '../../colours'
 
+body.modal-open
+  position: fixed
+  overflow: hidden
+
 .now-modal
   display: none
   content: ''
@@ -22,7 +26,7 @@
     z-index: 11
     width: 420px
     padding: 20px 15px
-    overflow: hidden
+    overflow-y: scroll
 
     .close-container
       position: relative

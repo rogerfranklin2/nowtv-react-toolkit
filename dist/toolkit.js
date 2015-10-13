@@ -21371,16 +21371,35 @@ module.exports =
 	        }
 	      }
 
+	      var visible = this.state.visible;
+
+	      if (!visible) {
+	        this._giveModalFocus();
+	      } else {
+	        this._giveBodyFocusBack();
+	      }
+
 	      this.setState({
-	        visible: !this.state.visible
+	        visible: !visible
 	      });
 	    }
 	  }, {
 	    key: 'hide',
 	    value: function hide() {
+	      this._giveBodyFocusBack();
 	      this.setState({
 	        visible: false
 	      });
+	    }
+	  }, {
+	    key: '_giveModalFocus',
+	    value: function _giveModalFocus() {
+	      document.body.className += 'modal-open';
+	    }
+	  }, {
+	    key: '_giveBodyFocusBack',
+	    value: function _giveBodyFocusBack() {
+	      document.body.className = document.body.className.replace(/ ?modal-open/, '');
 	    }
 	  }]);
 
