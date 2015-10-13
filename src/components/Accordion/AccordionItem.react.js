@@ -12,7 +12,7 @@ class AccordionItem extends React.Component {
 
     return (
       <div className={classes} onClick={ this.props.setVisible }>
-        <span className="accordion-item-title">{this.props.title}</span>
+        <span className="accordion-item-title">{ this.props.title }</span>
 
         <div className="accordion-item-content">
           { this.props.children }

@@ -20,7 +20,7 @@ class Accordion extends React.Component {
       let newProps = { setVisible: onItemClicked }
 
       if (index === this.state.openItem) {
-        newProps = Object.assign(newProps, { classes: 'visible' });
+        newProps['classes'] = 'visible';
       }
 
       return React.cloneElement(child, { ...newProps });

@@ -21773,7 +21773,7 @@ module.exports =
 	        var newProps = { setVisible: onItemClicked };
 
 	        if (index === _this.state.openItem) {
-	          newProps = Object.assign(newProps, { classes: 'visible' });
+	          newProps['classes'] = 'visible';
 	        }
 
 	        return _reactAddons2['default'].cloneElement(child, _extends({}, newProps));
