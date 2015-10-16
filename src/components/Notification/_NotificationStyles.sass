@@ -36,16 +36,16 @@
   padding: 20px
   box-sizing: border-box;
 
-  &.warning
+  &.warning, &.red
     +notificationColor($red, $white)
     +notification_icon('warning-notification')
-  &.info
+  &.info, &.blue
     +notificationColor($dark_blue, $white)
     +notification_icon('informative-notification')
-  &.success
+  &.success, &.green
     +notificationColor($green, $white)
     +notification_icon('positive-notification')
-  &.caution
+  &.caution, &.yellow
     +notificationColor($yellow, $white)
     +notification_icon('warning-notification')
   &.success-icon
