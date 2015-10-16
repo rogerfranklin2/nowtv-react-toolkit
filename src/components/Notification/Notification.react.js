@@ -15,7 +15,8 @@ class Notification extends React.Component {
   }
 
   render() {
-    var classes = [this.props.classes]
+    const classes = [this.props.classes]
+    const { dismissable } = this.props;
 
     if (!this.state.showNotification) {
       return null;
@@ -25,7 +26,7 @@ class Notification extends React.Component {
       <div className={classNames('now-notification', classes)}>
 
         <div className='notificationIcon'></div>
-        <div onClick={ this._closeNotification } className='close'></div>
+        { dismissable === undefined ? <div onClick={ this._closeNotification } className='close'></div> : null }
 
         <div className='notificationBody'>
           <h3>{this.props.title}</h3>
