@@ -21328,6 +21328,7 @@ module.exports =
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
+	      this._giveBodyFocusBack();
 	      _keymaster2['default'].unbind('esc');
 	    }
 	  }, {

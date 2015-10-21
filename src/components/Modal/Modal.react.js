@@ -18,6 +18,7 @@ class Modals extends React.Component {
   }
 
   componentWillUnmount() {
+    this._giveBodyFocusBack();
     keymaster.unbind('esc');
   }
 
