@@ -20243,7 +20243,7 @@ module.exports =
 	                    { className: (0, _classnames2['default'])('now-ticket', classes) },
 	                    _react2['default'].createElement(
 	                        'div',
-	                        { className: (0, _classnames2['default'])('content') },
+	                        { className: 'content' },
 	                        _react2['default'].createElement(
 	                            'h3',
 	                            null,
@@ -20251,7 +20251,7 @@ module.exports =
 	                        ),
 	                        _react2['default'].createElement(
 	                            'div',
-	                            null,
+	                            { className: 'children' },
 	                            this.props.children
 	                        )
 	                    )
