@@ -62,6 +62,8 @@ class Modals extends React.Component {
     this.setState({
       visible: !visible
     });
+
+    return this.state.visible;
   }
 
   hide() {

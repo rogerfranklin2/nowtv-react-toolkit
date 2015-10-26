@@ -34,9 +34,10 @@ describe('Modal component', function(){
     var renderedComponent = TestUtils.renderIntoDocument(<TestComponent/>);
     var modalComponent = TestUtils.findRenderedComponentWithType(renderedComponent, Modal);
 
-    renderedComponent.refs.modal.toggle();
+    var isVisible = renderedComponent.refs.modal.toggle();
 
     React.findDOMNode(modalComponent).className.should.include("visible");
+    isVisible.should.be.true
   });
 
   it('should hide modal when toggle is triggered twice', function () {
@@ -52,8 +53,10 @@ describe('Modal component', function(){
     renderedComponent.refs.modal.toggle();
     React.findDOMNode(modalComponent).className.should.include("visible");
 
-    renderedComponent.refs.modal.toggle();
+    var isVisible = renderedComponent.refs.modal.toggle();
+
     React.findDOMNode(modalComponent).className.should.not.include("visible");
+    isVisible.should.be.false
   });
 
   it('should hide the modal when the x is clicked', function () {
