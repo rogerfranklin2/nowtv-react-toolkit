@@ -555,7 +555,8 @@
             transform-origin: 50% 0; }
   100% {
     opacity: 1;
-    transform:scale(1) { } } }
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
 
 @keyframes accordionIn {
   0% {
@@ -566,23 +567,28 @@
             transform-origin: 50% 0; }
   100% {
     opacity: 1;
-    transform:scale(1) { } } }
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
 
 @-webkit-keyframes accordionOut {
   0% {
     opacity: 1;
-    transform:scale(1) { } }
+    -webkit-transform: scale(1);
+            transform: scale(1); }
   100% {
     opacity: 0;
-    transform:scale(0.9)rotateX(-60deg) { } } }
+    -webkit-transform: scale(0.9) rotateX(-60deg);
+            transform: scale(0.9) rotateX(-60deg); } }
 
 @keyframes accordionOut {
   0% {
     opacity: 1;
-    transform:scale(1) { } }
+    -webkit-transform: scale(1);
+            transform: scale(1); }
   100% {
     opacity: 0;
-    transform:scale(0.9)rotateX(-60deg) { } } }
+    -webkit-transform: scale(0.9) rotateX(-60deg);
+            transform: scale(0.9) rotateX(-60deg); } }
 
 .spinner {
   position: absolute;
