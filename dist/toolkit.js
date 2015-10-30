@@ -20422,23 +20422,25 @@ module.exports =
 	      var classes = [this.props.classes];
 	      var dismissable = this.props.dismissable;
 
+	      var hasTitle = this.props.title !== undefined;
+
 	      if (!this.state.showNotification) {
 	        return null;
 	      }
 
 	      return _react2['default'].createElement(
 	        'div',
-	        { className: (0, _classnames2['default'])('now-notification', classes) },
+	        { className: (0, _classnames2['default'])('now-notification', classes, { 'no-title': !hasTitle }) },
 	        _react2['default'].createElement('div', { className: 'notificationIcon' }),
 	        dismissable === undefined ? _react2['default'].createElement('div', { onClick: this._closeNotification, className: 'close' }) : null,
 	        _react2['default'].createElement(
 	          'div',
 	          { className: 'notificationBody' },
-	          _react2['default'].createElement(
+	          hasTitle ? _react2['default'].createElement(
 	            'h3',
 	            null,
 	            this.props.title
-	          ),
+	          ) : null,
 	          _react2['default'].createElement(
 	            'p',
 	            { className: 'content' },
@@ -20583,6 +20585,8 @@ module.exports =
 	      this.setState({
 	        visible: !visible
 	      });
+
+	      return this.state.visible;
 	    }
 	  }, {
 	    key: 'hide',
