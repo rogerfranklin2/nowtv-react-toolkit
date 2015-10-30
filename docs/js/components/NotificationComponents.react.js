@@ -22,6 +22,20 @@ class Notifications extends React.Component {
           </div>
         </div>
 
+        <h3>Success (no title)</h3>
+        <div className="category row">
+          <div className="col-md-6">
+            <Toolkit.Notification classes='green'>Well done! You made a notification.</Toolkit.Notification>
+          </div>
+          <div className="col-md-6">
+            <pre>
+              <code className="jsx">
+                {"<Toolkit.Notification classes='green'>Well done! You made a notification.</Toolkit.Notification>"}
+              </code>
+            </pre>
+          </div>
+        </div>
+
         <h3>Warning</h3>
 
         <div className="category row">
