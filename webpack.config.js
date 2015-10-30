@@ -15,6 +15,7 @@ module.exports = [
         {test: /\.svg$/, loader: 'url-loader'},
         {test: /\.sass$/, loader: ExtractTextPlugin.extract("css!autoprefixer?browsers=last 2 versions!sass?indentedSyntax")},
         {test: /\.woff(2)?$/, loader: "url-loader?mimetype=application/font-woff"},
+        {test: /\.eot?$/, loader: "url-loader?mimetype=application/font-eot"},
         {test: /\.ttf?$/, loader: "url-loader?limit=100000&mimetype=application/x-font-ttf"},
       ]
     },
