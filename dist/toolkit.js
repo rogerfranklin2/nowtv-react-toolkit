@@ -384,7 +384,9 @@ module.exports =
 	        currentQueue = queue;
 	        queue = [];
 	        while (++queueIndex < len) {
-	            currentQueue[queueIndex].run();
+	            if (currentQueue) {
+	                currentQueue[queueIndex].run();
+	            }
 	        }
 	        queueIndex = -1;
 	        len = queue.length;
@@ -436,7 +438,6 @@ module.exports =
 	    throw new Error('process.binding is not supported');
 	};
 
-	// TODO(shtylman)
 	process.cwd = function () { return '/' };
 	process.chdir = function (dir) {
 	    throw new Error('process.chdir is not supported');
@@ -20602,12 +20603,14 @@ module.exports =
 	  Licensed under the MIT License (MIT), see
 	  http://jedwatson.github.io/classnames
 	*/
+	/* global define */
 
 	(function () {
 		'use strict';
 
-		function classNames () {
+		var hasOwn = {}.hasOwnProperty;
 
+		function classNames () {
 			var classes = '';
 
 			for (var i = 0; i < arguments.length; i++) {
@@ -20616,15 +20619,13 @@ module.exports =
 
 				var argType = typeof arg;
 
-				if ('string' === argType || 'number' === argType) {
+				if (argType === 'string' || argType === 'number') {
 					classes += ' ' + arg;
-
 				} else if (Array.isArray(arg)) {
 					classes += ' ' + classNames.apply(null, arg);
-
-				} else if ('object' === argType) {
+				} else if (argType === 'object') {
 					for (var key in arg) {
-						if (arg.hasOwnProperty(key) && arg[key]) {
+						if (hasOwn.call(arg, key) && arg[key]) {
 							classes += ' ' + key;
 						}
 					}
@@ -20636,15 +20637,14 @@ module.exports =
 
 		if (typeof module !== 'undefined' && module.exports) {
 			module.exports = classNames;
-		} else if (true){
-			// AMD. Register as an anonymous module.
+		} else if (true) {
+			// register as 'classnames', consistent with npm package name
 			!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
 				return classNames;
 			}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 		} else {
 			window.classNames = classNames;
 		}
-
 	}());
 
 
@@ -21221,6 +21221,8 @@ module.exports =
 	    key: 'render',
 	    value: function render() {
 	      var classes = [this.props.classes];
+	      var dismissable = this.props.dismissable;
+
 	      var hasTitle = this.props.title !== undefined;
 
 	      if (!this.state.showNotification) {
@@ -21231,7 +21233,7 @@ module.exports =
 	        'div',
 	        { className: (0, _classnames2['default'])('now-notification', classes, { 'no-title': !hasTitle }) },
 	        _react2['default'].createElement('div', { className: 'notificationIcon' }),
-	        _react2['default'].createElement('div', { onClick: this._closeNotification, className: 'close' }),
+	        dismissable === undefined ? _react2['default'].createElement('div', { onClick: this._closeNotification, className: 'close' }) : null,
 	        _react2['default'].createElement(
 	          'div',
 	          { className: 'notificationBody' },
@@ -21328,6 +21330,7 @@ module.exports =
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
+	      this._giveBodyFocusBack();
 	      _keymaster2['default'].unbind('esc');
 	    }
 	  }, {
@@ -21366,22 +21369,43 @@ module.exports =
 	  }, {
 	    key: 'toggle',
 	    value: function toggle(e) {
-	      if (e && e.currentTarget.className && e.currentTarget.className.includes("close-icon")) {
+	      if (e !== undefined && e.currentTarget.className && e.currentTarget.className.indexOf("close-icon") > -1) {
 	        if (this.props.closeHandler) {
 	          this.props.closeHandler();
 	        }
 	      }
 
+	      var visible = this.state.visible;
+
+	      if (!visible) {
+	        this._giveModalFocus();
+	      } else {
+	        this._giveBodyFocusBack();
+	      }
+
 	      this.setState({
-	        visible: !this.state.visible
+	        visible: !visible
 	      });
+
+	      return this.state.visible;
 	    }
 	  }, {
 	    key: 'hide',
 	    value: function hide() {
+	      this._giveBodyFocusBack();
 	      this.setState({
 	        visible: false
 	      });
+	    }
+	  }, {
+	    key: '_giveModalFocus',
+	    value: function _giveModalFocus() {
+	      document.body.className += 'modal-open';
+	    }
+	  }, {
+	    key: '_giveBodyFocusBack',
+	    value: function _giveBodyFocusBack() {
+	      document.body.className = document.body.className.replace(/ ?modal-open/, '');
 	    }
 	  }]);
 
@@ -21755,7 +21779,7 @@ module.exports =
 	        var newProps = { setVisible: onItemClicked };
 
 	        if (index === _this.state.openItem) {
-	          newProps = Object.assign(newProps, { classes: 'visible' });
+	          newProps['classes'] = 'visible';
 	        }
 
 	        return _reactAddons2['default'].cloneElement(child, _extends({}, newProps));

@@ -12,6 +12,9 @@
   height: 50px;
   line-height: 28px;
   border: 2px solid currentColor; }
+  @media screen and (max-width: 767px) {
+    .now-button {
+      max-width: 100%; } }
   .now-button:hover {
     opacity: 0.9; }
   .now-button:active {
