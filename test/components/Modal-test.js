@@ -34,7 +34,8 @@ describe('Modal component', function(){
     var renderedComponent = TestUtils.renderIntoDocument(<TestComponent/>);
     var modalComponent = TestUtils.findRenderedComponentWithType(renderedComponent, Modal);
 
-    var isVisible = renderedComponent.refs.modal.toggle();
+    renderedComponent.refs.modal.toggle();
+    var isVisible = renderedComponent.refs.modal.state.visible;
 
     React.findDOMNode(modalComponent).className.should.include("visible");
     isVisible.should.be.true
@@ -53,7 +54,8 @@ describe('Modal component', function(){
     renderedComponent.refs.modal.toggle();
     React.findDOMNode(modalComponent).className.should.include("visible");
 
-    var isVisible = renderedComponent.refs.modal.toggle();
+    renderedComponent.refs.modal.toggle();
+    var isVisible = renderedComponent.refs.modal.state.visible;
 
     React.findDOMNode(modalComponent).className.should.not.include("visible");
     isVisible.should.be.false

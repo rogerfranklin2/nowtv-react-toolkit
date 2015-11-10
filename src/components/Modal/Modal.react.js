@@ -7,6 +7,8 @@ class Modals extends React.Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
+    this.hide = this.hide.bind(this);
+    this.show = this.show.bind(this);
 
     this.state = {
       visible: false
@@ -30,7 +32,7 @@ class Modals extends React.Component {
 
         <div className="modal__content">
           <div className="close-container">
-            <div onClick={ this.toggle } className='close-icon'></div>
+            <div onClick={ this.hide } className='close-icon'></div>
           </div>
 
           { this.props.title ?
@@ -45,40 +47,48 @@ class Modals extends React.Component {
     )
   }
 
+  componentDidUpdate() {
+    if (this.state.visible) {
+      this._giveModalFocus()
+    } else {
+      this._giveBodyFocusBack();
+    }
+  }
+
   toggle(e) {
-    if (e !== undefined && e.currentTarget.className && e.currentTarget.className.indexOf("close-icon") > -1) {
+    if (this.state.visible) {
+      this.hide();
+    } else {
+      this.show();
+    }
+  }
+
+  hide(event) {
+    if (event !== undefined && event.currentTarget.className && event.currentTarget.className.indexOf("close-icon") > -1) {
       if (this.props.closeHandler) {
         this.props.closeHandler();
       }
     }
 
-    const { visible } = this.state;
-    if (!visible) {
-      this._giveModalFocus()
-    } else {
-      this._giveBodyFocusBack();
-    }
-
-    this.setState({
-      visible: !visible
-    });
-
-    return this.state.visible;
-  }
-
-  hide() {
-    this._giveBodyFocusBack();
     this.setState({
       visible: false
     });
   }
 
+  show() {
+    this.setState({visible: true});
+  }
+
   _giveModalFocus() {
-    document.body.className += 'modal-open';
+    if (document.body.classList) {
+      document.body.classList.add('modal-open');
+    }
   }
 
   _giveBodyFocusBack() {
-    document.body.className = document.body.className.replace(/ ?modal-open/, '');
+    if (document.body.classList) {
+      document.body.classList.remove('modal-open');
+    }
   }
 }
 
