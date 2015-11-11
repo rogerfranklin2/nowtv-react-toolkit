@@ -21787,7 +21787,10 @@ module.exports =
 	          _this._itemClicked(index);
 	        };
 
-	        var newProps = { setVisible: onItemClicked };
+	        var newProps = {
+	          setVisible: onItemClicked,
+	          isOpen: _this.state.openItem === index
+	        };
 
 	        if (index === _this.state.openItem) {
 	          newProps['classes'] = 'visible';
@@ -24000,7 +24003,7 @@ module.exports =
 	        ),
 	        _react2['default'].createElement(
 	          'div',
-	          { className: 'accordion-item-content' },
+	          { className: 'accordion-item-content', style: { maxHeight: this.props.isOpen ? this.props.maxHeight || 350 : 0 } },
 	          this.props.children
 	        )
 	      );

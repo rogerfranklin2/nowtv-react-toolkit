@@ -22,8 +22,7 @@
       font-family: nowtv-bold
 
     .accordion-item-content
-      transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out
-      max-height: 0px
+      transition: max-height 0.3s linear, margin 0.3s linear
       overflow: hidden
 
   .visible 
@@ -31,9 +30,8 @@
       transform: rotate(-180deg)
 
     .accordion-item-content
-      transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out
+      transition: max-height 0.3s linear, margin 0.3s linear
       display: block
-      max-height: 1000px;
       margin-top: 5px;
      
 @keyframes accordionIn

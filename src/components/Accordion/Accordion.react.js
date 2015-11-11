@@ -17,7 +17,10 @@ class Accordion extends React.Component {
     const newChildren = React.Children.map(this.props.children, (child, index) => {
       const onItemClicked = () => { this._itemClicked(index); };
 
-      let newProps = { setVisible: onItemClicked }
+      let newProps = {
+        setVisible: onItemClicked,
+        isOpen: this.state.openItem === index
+      };
 
       if (index === this.state.openItem) {
         newProps['classes'] = 'visible';

@@ -534,8 +534,7 @@
   .now-accordion .now-accordion-item .accordion-item-title {
     font-family: nowtv-bold; }
   .now-accordion .now-accordion-item .accordion-item-content {
-    transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out;
-    max-height: 0px;
+    transition: max-height 0.3s linear, margin 0.3s linear;
     overflow: hidden; }
 
 .now-accordion .visible.now-accordion-item:before {
@@ -543,9 +542,8 @@
           transform: rotate(-180deg); }
 
 .now-accordion .visible .accordion-item-content {
-  transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out;
+  transition: max-height 0.3s linear, margin 0.3s linear;
   display: block;
-  max-height: 1000px;
   margin-top: 5px; }
 
 @-webkit-keyframes accordionIn {
