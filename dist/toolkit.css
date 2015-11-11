@@ -522,7 +522,7 @@
     height: 16px;
     display: block;
     position: absolute;
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4xLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAxMiA3IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMiA3IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGZpbGw9IiNDQ0NGRDQiIGQ9Ik02LDdDNS43LDcsNS41LDYuOSw1LjMsNi43bC01LTVjLTAuNC0wLjQtMC40LTEsMC0xLjRzMS0wLjQsMS40LDBMNiw0LjZsNC4zLTQuM2MwLjQtMC40LDEtMC40LDEuNCwwDQoJCXMwLjQsMSwwLDEuNGwtNSw1QzYuNSw2LjksNi4zLDcsNiw3eiIvPg0KPC9nPg0KPGc+DQoJPHBhdGggZmlsbD0iIzMwQUYzRiIgZD0iTS0yNS43LDEwLjRjLTAuMywwLTAuNS0wLjEtMC43LTAuM2wtNC44LTQuOGMtMC40LTAuNC0wLjQtMSwwLTEuNHMxLTAuNCwxLjQsMGw0LjEsNC4xbDQuMS00LjENCgkJYzAuNC0wLjQsMS0wLjQsMS40LDBzMC40LDEsMCwxLjRsLTQuOCw0LjhDLTI1LjEsMTAuMy0yNS40LDEwLjQtMjUuNywxMC40eiIvPg0KPC9nPg0KPGc+DQoJPHBhdGggZmlsbD0iI0NDQ0ZENCIgZD0iTTI3LDI0LjRjLTAuMywwLTAuNS0wLjEtMC43LTAuM2wtNC44LTQuOGMtMC40LTAuNC0wLjQtMSwwLTEuNHMxLTAuNCwxLjQsMEwyNywyMmw0LjEtNC4xDQoJCWMwLjQtMC40LDEtMC40LDEuNCwwczAuNCwxLDAsMS40bC00LjgsNC44QzI3LjUsMjQuMywyNy4zLDI0LjQsMjcsMjQuNHoiLz4NCjwvZz4NCjwvc3ZnPg0K);
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4xLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAxMiA3IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMiA3IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGZpbGw9IiMzMEFGM0YiIGQ9Ik02LDdDNS43LDcsNS41LDYuOSw1LjMsNi43bC01LTVjLTAuNC0wLjQtMC40LTEsMC0xLjRzMS0wLjQsMS40LDBMNiw0LjZsNC4zLTQuM2MwLjQtMC40LDEtMC40LDEuNCwwDQoJCXMwLjQsMSwwLDEuNGwtNSw1QzYuNSw2LjksNi4zLDcsNiw3eiIvPg0KPC9nPg0KPGc+DQoJPHBhdGggZmlsbD0iIzMwQUYzRiIgZD0iTS0yNS43LDEwLjRjLTAuMywwLTAuNS0wLjEtMC43LTAuM2wtNC44LTQuOGMtMC40LTAuNC0wLjQtMSwwLTEuNHMxLTAuNCwxLjQsMGw0LjEsNC4xbDQuMS00LjENCgkJYzAuNC0wLjQsMS0wLjQsMS40LDBzMC40LDEsMCwxLjRsLTQuOCw0LjhDLTI1LjEsMTAuMy0yNS40LDEwLjQtMjUuNywxMC40eiIvPg0KPC9nPg0KPGc+DQoJPHBhdGggZmlsbD0iI0NDQ0ZENCIgZD0iTTI3LDI0LjRjLTAuMywwLTAuNS0wLjEtMC43LTAuM2wtNC44LTQuOGMtMC40LTAuNC0wLjQtMSwwLTEuNHMxLTAuNCwxLjQsMEwyNywyMmw0LjEtNC4xDQoJCWMwLjQtMC40LDEtMC40LDEuNCwwczAuNCwxLDAsMS40bC00LjgsNC44QzI3LjUsMjQuMywyNy4zLDI0LjQsMjcsMjQuNHoiLz4NCjwvZz4NCjwvc3ZnPg0K);
     background-repeat: no-repeat;
     background-position: center;
     content: ' ';
@@ -531,8 +531,6 @@
     transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
     transition-timing-function: ease-in-out; }
-  .now-accordion .now-accordion-item .accordion-item-title {
-    font-family: nowtv-bold; }
   .now-accordion .now-accordion-item .accordion-item-content {
     transition: max-height 0.3s linear, margin 0.3s linear;
     overflow: hidden; }
@@ -710,9 +708,21 @@ body, .body-text {
       font-size: 16px;
       line-height: 20px; } }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; }
+
+.nowtv-light, .now-accordion .now-accordion-item .accordion-item-content p {
+  font-family: nowtv-light, Helvetica, Arial, sans-serif; }
+
+.nowtv-regular {
+  font-family: nowtv-regular, Helvetica, Arial, sans-serif; }
+
+.nowtv-bold, .now-accordion .now-accordion-item .accordion-item-title {
+  font-family: nowtv-bold, Helvetica, Arial, sans-serif; }
+
 h1 {
-  font: 48px/48px nowtv-light, Helvetica, Arial, sans-serif;
-  margin: 0 0 20; }
+  font: 48px/52px nowtv-light, Helvetica, Arial, sans-serif;
+  margin: 0 0 20px; }
 
 h2 {
   font: 30px/35px nowtv-regular, Helvetica, Arial, sans-serif;
@@ -735,7 +745,7 @@ h4 {
   margin: 0 0 10px; }
   @media screen and (min-width: 992px) {
     h4 {
-      font: 28px/32px nowtv-bold, Helvetica, Arial, sans-serif; } }
+      font: 28px/32px nowtv-regular, Helvetica, Arial, sans-serif; } }
 
 h5 {
   font: 20px/24px nowtv-regular, Helvetica, Arial, sans-serif;

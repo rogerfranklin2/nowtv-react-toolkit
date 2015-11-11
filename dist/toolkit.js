@@ -24003,7 +24003,7 @@ module.exports =
 	        ),
 	        _react2['default'].createElement(
 	          'div',
-	          { className: 'accordion-item-content', style: { maxHeight: this.props.isOpen ? this.props.maxHeight || 350 : 0 } },
+	          { className: 'accordion-item-content', style: { maxHeight: this.props.isOpen ? this.props.maxHeight || 500 : 0 } },
 	          this.props.children
 	        )
 	      );
