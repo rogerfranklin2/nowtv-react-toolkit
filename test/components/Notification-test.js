@@ -20,7 +20,7 @@ describe('Notification component', function(){
 
   it('should have a title', function () {
     var renderedComponent = TestUtils.renderIntoDocument(<NowNotification title='A Title'></NowNotification>);
-    var component = TestUtils.findRenderedDOMComponentWithTag(renderedComponent, 'h3');
+    var component = TestUtils.findRenderedDOMComponentWithTag(renderedComponent, 'h5');
     assert.equal(React.findDOMNode(component).textContent, "A Title");
   });
 
