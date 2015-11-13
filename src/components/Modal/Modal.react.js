@@ -37,7 +37,7 @@ class Modals extends React.Component {
 
           { this.props.title ?
             <div className="title">
-              <h2>{ this.props.title }</h2>
+              <h5>{ this.props.title }</h5>
             </div>
             : null
           }

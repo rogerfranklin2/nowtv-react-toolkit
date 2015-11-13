@@ -21238,8 +21238,8 @@ module.exports =
 	          'div',
 	          { className: 'notificationBody' },
 	          hasTitle ? _react2['default'].createElement(
-	            'h3',
-	            null,
+	            'h5',
+	            { className: 'notification-title' },
 	            this.props.title
 	          ) : null,
 	          _react2['default'].createElement(
@@ -21355,7 +21355,7 @@ module.exports =
 	            'div',
 	            { className: 'title' },
 	            _react2['default'].createElement(
-	              'h2',
+	              'h5',
 	              null,
 	              this.props.title
 	            )
