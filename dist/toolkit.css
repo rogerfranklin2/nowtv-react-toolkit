@@ -210,7 +210,7 @@
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjEuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxMiAxNiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTIgMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiPgoJPGc+CiAgCQk8Y2lyY2xlIGZpbGw9IiNDQ0NFRDMiIGN4PSI2IiBjeT0iOCIgcj0iNSIgaWQ9InN2Z180Ii8+CiAJPC9nPgo8L3N2Zz4=);
     background-repeat: no-repeat;
     background-position: 0%;
-    background-color: #F7F7F9;
+    background-color: #FFF;
     background-size: 25px;
     border: 1px solid #E5E8ED;
     transition: background-color 0.1s, border 0.1s, background-position 0.3s;
@@ -222,12 +222,12 @@
       background-color: #E5E8ED;
       cursor: default; }
     .now-toggle-container .toggle-button.checked {
-      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjEuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxMiAxNiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTIgMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiPgoJPGc+CiAgCQk8Y2lyY2xlIGZpbGw9IiNGRkZGRkYiIGN4PSI2IiBjeT0iOCIgcj0iNSIgaWQ9InN2Z180Ii8+CiAJPC9nPgo8L3N2Zz4=);
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjEuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxMiAxNiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTIgMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiPgoJPGc+CiAgCQk8Y2lyY2xlIGZpbGw9IiMzMEFGM0YiIGN4PSI2IiBjeT0iOCIgcj0iNSIgaWQ9InN2Z180Ii8+CiAJPC9nPgo8L3N2Zz4=);
       background-repeat: no-repeat;
       background-position: 100%;
-      background-color: #30AF3F;
+      background-color: #FFF;
       background-size: 25px;
-      border: 1px solid #30AF3F; }
+      border: 1px solid #E5E8ED; }
     .now-toggle-container .toggle-button input {
       display: block;
       width: 1px;
@@ -402,7 +402,7 @@
     left: 15px;
     top: 20px; }
   .now-notification.caution.now-notification, .now-notification.yellow.now-notification {
-    background-color: #F3B241;
+    background-color: #F0672B;
     color: #FFF; }
   .now-notification.caution .notificationIcon, .now-notification.yellow .notificationIcon {
     position: absolute;
