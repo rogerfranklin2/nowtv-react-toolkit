@@ -522,6 +522,7 @@
     top: 2px;
     transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
     transition-timing-function: ease-in-out; }
   .now-accordion .now-accordion-item .accordion-item-content {
     transition: max-height 0.3s linear, margin 0.3s linear;

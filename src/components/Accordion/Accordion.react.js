@@ -26,7 +26,7 @@ class Accordion extends React.Component {
         newProps['classes'] = 'visible';
       }
 
-      return React.cloneElement(child, { ...newProps });
+      return React.cloneElement(child,  ...newProps );
     });
 
     return (

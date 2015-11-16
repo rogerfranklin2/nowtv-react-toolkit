@@ -34,7 +34,7 @@ class ToggleButton extends React.Component {
       }
     );
 
-    const {checked, ...other} = this.props;
+    const {checked} = this.props;
 
     return (
       <div className={classNames('now-toggle-container', classes)}>
@@ -43,7 +43,7 @@ class ToggleButton extends React.Component {
           <div className='toggle-button disabled'></div>
           :
           <div className={classNames('toggle-button', checkBoxClasses)} onClick={this.toggleChecked}>
-            <input defaultChecked={this.state.checked} type="checkbox" {...other}/>
+            <input defaultChecked={this.state.checked} type="checkbox" {...this.props.other}/>
           </div>
         }
         { this.props.onText ? <span className='toggle-label on'>{this.props.onText}</span> : null }
