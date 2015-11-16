@@ -31,7 +31,7 @@ class Notification extends React.Component {
 
         <div className='notificationBody'>
           { hasTitle ? <h5 className="notification-title">{this.props.title}</h5> : null }
-          <p className='content'>{this.props.children}</p>
+          <div className='content'>{this.props.children}</div>
 
         </div>
 
