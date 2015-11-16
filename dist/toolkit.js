@@ -21221,7 +21221,8 @@ module.exports =
 	    key: 'render',
 	    value: function render() {
 	      var classes = [this.props.classes];
-	      var dismissable = this.props.dismissable;
+	      var _props$dismissable = this.props.dismissable;
+	      var dismissable = _props$dismissable === undefined ? true : _props$dismissable;
 
 	      var hasTitle = this.props.title !== undefined;
 
@@ -21233,7 +21234,7 @@ module.exports =
 	        'div',
 	        { className: (0, _classnames2['default'])('now-notification', classes, { 'no-title': !hasTitle }) },
 	        _react2['default'].createElement('div', { className: 'notificationIcon' }),
-	        dismissable === undefined ? _react2['default'].createElement('div', { onClick: this._closeNotification, className: 'close' }) : null,
+	        dismissable ? _react2['default'].createElement('div', { onClick: this._closeNotification, className: 'close' }) : null,
 	        _react2['default'].createElement(
 	          'div',
 	          { className: 'notificationBody' },

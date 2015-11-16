@@ -770,3 +770,10 @@ p {
       p.smaller {
         font-size: 13px;
         line-height: 18px; } }
+
+.smaller-text {
+  font: 11px/16px nowtv-regular, Helvetica, Arial, sans-serif; }
+  @media screen and (min-width: 992px) {
+    .smaller-text {
+      font-size: 13px;
+      line-height: 18px; } }

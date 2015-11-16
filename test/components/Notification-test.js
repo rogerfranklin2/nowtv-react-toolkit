@@ -60,7 +60,7 @@ describe('Notification component', function(){
   });
 
   it('should not has a close icon if not dismissable', function() {
-    var renderedComponent = TestUtils.renderIntoDocument(<NowNotification dismissable='false'>Cant close me!</NowNotification>);
+    var renderedComponent = TestUtils.renderIntoDocument(<NowNotification dismissable={false}>Cant close me!</NowNotification>);
     var component = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-notification');
 
     let err;
