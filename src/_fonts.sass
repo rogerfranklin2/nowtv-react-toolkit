@@ -13,32 +13,79 @@
   src: url('assets/fonts/nowtvtext-bold.woff') format('woff'), url('assets/fonts/nowtvtext-bold.woff2') format('woff2'), url('assets/fonts/nowtvtext-bold.ttf') format('truetype'), url('assets/fonts/nowtvtext-bold.eot') format('eot')
 
 
-body
+body, .body-text
+  font: 14px/20px nowtv-regular, Helvetica, Arial, sans-serif
+  +desktop
+    font-size: 16px
+    line-height: 20px
+
+h1, h2, h3, h4, h5, h6
+  margin: 0
+
+.nowtv-light
+  font-family: nowtv-light, Helvetica, Arial, sans-serif
+
+.nowtv-regular
   font-family: nowtv-regular, Helvetica, Arial, sans-serif
 
+.nowtv-bold
+  font-family: nowtv-bold, Helvetica, Arial, sans-serif
+
 h1
-  font: 40px/48px nowtv-light, Helvetica, Arial, sans-serif
+  font: 48px/52px nowtv-light, Helvetica, Arial, sans-serif
   margin: 0 0 20px
 
 h2
-  font: 30px/34px nowtv-regular, Helvetica, Arial, sans-serif
+  font: 30px/35px nowtv-regular, Helvetica, Arial, sans-serif
   margin: 0 0 20px
+  +desktop
+    font-size: 40px
+    line-height: 42px
 
 h3
-  font: 20px/26px nowtv-regular, Helvetica, Arial, sans-serif
+  font: 27px/32px nowtv-regular, Helvetica, Arial, sans-serif
   margin: 0 0 20px
+  +desktop
+    font-size: 36px
+    line-height: 40px
 
 h4
-  font: 18px/24px nowtv-bold, Helvetica, Arial, sans-serif
+  font: 24px/28px nowtv-regular, Helvetica, Arial, sans-serif
   margin: 0 0 10px
+  +desktop
+    font-size: 28px;
+    line-height: 32px;
 
 h5
-  font: 16px/16px nowtv-bold, Helvetica, Arial, sans-serif
+  font: 20px/24px nowtv-regular, Helvetica, Arial, sans-serif
   margin: 0
+  +desktop
+    font-size: 24px
+    line-height: 28px
+
+h6
+  font: 16px/20px nowtv-regular, Helvetica, Arial, sans-serif
+  margin: 0
+  +desktop
+    font-size: 18px;
+    line-height: 24px;
 
 p
-  font: 14px/18px nowtv-regular, Helvetica, Arial, sans-serif
+  font: 14px/20px nowtv-regular, Helvetica, Arial, sans-serif
   margin: 0 0 10px
+  +desktop
+    font-size: 16px
+    line-height: 20px
+
   &.smaller
-    font: 12px/16px nowtv-regular, Helvetica, Arial, sans-serif
+    font: 11px/16px nowtv-regular, Helvetica, Arial, sans-serif
     margin: 0 0 5px
+    +desktop
+      font-size: 13px
+      line-height: 18px
+
+.smaller-text
+  font: 11px/16px nowtv-regular, Helvetica, Arial, sans-serif
+  +desktop
+    font-size: 13px
+    line-height: 18px
