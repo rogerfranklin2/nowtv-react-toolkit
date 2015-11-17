@@ -16,7 +16,7 @@ class Modals extends React.Component {
   }
 
   componentDidMount() {
-    keymaster('esc', () => this.state.visible ? this.toggle() : null);
+    keymaster('esc', () => this.state.visible ? this.hide() : null);
   }
 
   componentWillUnmount() {
