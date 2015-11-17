@@ -25,7 +25,7 @@ describe('Notification component', function(){
   });
 
   it('should have some content', function () {
-    var renderedComponent = TestUtils.renderIntoDocument(<NowNotification>Some Content</NowNotification>);
+    var renderedComponent = TestUtils.renderIntoDocument(<NowNotification><p>Some Content</p></NowNotification>);
     var component = TestUtils.findRenderedDOMComponentWithTag(renderedComponent, 'p');
     assert.equal(React.findDOMNode(component).textContent, "Some Content");
   });
