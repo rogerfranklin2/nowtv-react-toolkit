@@ -30,7 +30,7 @@ class Notification extends React.Component {
         { dismissable ? <div onClick={ this._closeNotification } className='close'></div> : null }
 
         <div className='notificationBody'>
-          { hasTitle ? <h5 className="notification-title">{this.props.title}</h5> : null }
+          { hasTitle ? <h6 className="notification-title">{this.props.title}</h6> : null }
           <div className='content'>{this.props.children}</div>
 
         </div>

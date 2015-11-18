@@ -10,9 +10,9 @@
   .notificationIcon
     position: absolute
     background: url(assets/icons/#{$icon}-icon.svg) no-repeat
-    background-size: 40px
-    width: 40px
-    height: 40px
+    background-size: 24px
+    width: 24px
+    height: 24px
     left: 15px
     top: 20px
 
@@ -20,7 +20,7 @@
   cursor: pointer
   position: absolute
   background: url(assets/icons/close.svg) no-repeat
-  background-size: 20px
+  background-size: 24px
   width: 20px
   height: 20px
   right: 20px
@@ -67,9 +67,12 @@
   .notificationBody
     text-align: left
     margin: 0 50px
+    font-size: 14px;
 
     p:last-child
       margin-bottom: 0
 
   .notification-title
+    @extend .nowtv-bold
+    font-size: 16px;
     margin-bottom: 15px

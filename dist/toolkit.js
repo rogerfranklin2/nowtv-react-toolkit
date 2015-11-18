@@ -21239,7 +21239,7 @@ module.exports =
 	          'div',
 	          { className: 'notificationBody' },
 	          hasTitle ? _react2['default'].createElement(
-	            'h5',
+	            'h6',
 	            { className: 'notification-title' },
 	            this.props.title
 	          ) : null,
