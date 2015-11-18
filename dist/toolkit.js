@@ -105,7 +105,7 @@ module.exports =
 
 	var _componentsSpinnerSpinnerReact2 = _interopRequireDefault(_componentsSpinnerSpinnerReact);
 
-	var _toolkitSass = __webpack_require__(191);
+	var _toolkitSass = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./toolkit.sass\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _toolkitSass2 = _interopRequireDefault(_toolkitSass);
 
@@ -24072,12 +24072,6 @@ module.exports =
 
 	exports['default'] = Spinner;
 	module.exports = exports['default'];
-
-/***/ },
-/* 191 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);
