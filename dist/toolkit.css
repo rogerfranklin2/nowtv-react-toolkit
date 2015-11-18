@@ -488,6 +488,9 @@
     padding: 20px 15px;
     overflow-y: auto;
     overflow-x: hidden; }
+    @media screen and (min-width: 768px) {
+      .now-modal .modal__content {
+        padding: 20px 30px; } }
     .now-modal .modal__content .close-container {
       position: relative; }
     .now-modal .modal__content .close-icon {
