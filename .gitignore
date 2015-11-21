@@ -2,6 +2,5 @@
 node_modules/
 .DS_Store
 .swp
-docs/dist/
 .divshot-cache/
 *.iml

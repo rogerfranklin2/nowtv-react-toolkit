@@ -5,8 +5,8 @@ class Links extends React.Component {
   render() {
     return (
       <section>
-        <h2>Text Links</h2>
-        
+        <h2 className="section-title">Text Links</h2>
+
         <div className="category row">
           <div className="col-md-6">
             <a className="now-link">Standard Link</a>
@@ -33,8 +33,8 @@ class Links extends React.Component {
           </div>
         </div>
       </section>
-     )
-   }
+    )
+  }
 
 }
 
