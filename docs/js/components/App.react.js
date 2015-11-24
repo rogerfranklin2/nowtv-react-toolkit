@@ -22,8 +22,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1>Now TV Ark UI Toolkit</h1>
-        <hr/>
+        <h1 className="title">NowTV React Web Toolkit</h1>
         <GettingStarted className="gettingstarted-doc"/>
         <Grid/>
         <Typography/>
