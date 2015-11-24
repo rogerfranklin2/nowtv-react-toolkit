@@ -47,14 +47,6 @@ class Modals extends React.Component {
     )
   }
 
-  componentDidUpdate() {
-    if (this.state.visible) {
-      this._giveModalFocus()
-    } else {
-      this._giveBodyFocusBack();
-    }
-  }
-
   toggle(e) {
     if (this.state.visible) {
       this.hide();
@@ -64,7 +56,8 @@ class Modals extends React.Component {
   }
 
   hide(event) {
-    document.body.classList.remove('modal-open');
+    this._giveBodyFocusBack();
+
     if (event !== undefined && event.currentTarget.className && event.currentTarget.className.indexOf("close-icon") > -1) {
       if (this.props.closeHandler) {
         this.props.closeHandler();
@@ -77,7 +70,7 @@ class Modals extends React.Component {
   }
 
   show() {
-    document.body.classList.add('modal-open');
+    this._giveModalFocus();
     this.setState({visible: true});
   }
 

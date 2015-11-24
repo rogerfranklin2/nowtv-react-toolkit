@@ -21370,15 +21370,6 @@ module.exports =
 	      );
 	    }
 	  }, {
-	    key: 'componentDidUpdate',
-	    value: function componentDidUpdate() {
-	      if (this.state.visible) {
-	        this._giveModalFocus();
-	      } else {
-	        this._giveBodyFocusBack();
-	      }
-	    }
-	  }, {
 	    key: 'toggle',
 	    value: function toggle(e) {
 	      if (this.state.visible) {
@@ -21390,7 +21381,8 @@ module.exports =
 	  }, {
 	    key: 'hide',
 	    value: function hide(event) {
-	      document.body.classList.remove('modal-open');
+	      this._giveBodyFocusBack();
+
 	      if (event !== undefined && event.currentTarget.className && event.currentTarget.className.indexOf("close-icon") > -1) {
 	        if (this.props.closeHandler) {
 	          this.props.closeHandler();
@@ -21404,7 +21396,7 @@ module.exports =
 	  }, {
 	    key: 'show',
 	    value: function show() {
-	      document.body.classList.add('modal-open');
+	      this._giveModalFocus();
 	      this.setState({ visible: true });
 	    }
 	  }, {
