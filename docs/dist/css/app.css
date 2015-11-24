@@ -1353,7 +1353,8 @@ hr {
 @media screen and (max-width: 767px) {
   body.modal-open {
     position: fixed;
-    overflow: hidden; } }
+    overflow-y: auto;
+    height: 100vh; } }
 
 .now-modal {
   display: none;

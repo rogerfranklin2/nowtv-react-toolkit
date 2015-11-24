@@ -64,6 +64,7 @@ class Modals extends React.Component {
   }
 
   hide(event) {
+    document.body.classList.remove('modal-open');
     if (event !== undefined && event.currentTarget.className && event.currentTarget.className.indexOf("close-icon") > -1) {
       if (this.props.closeHandler) {
         this.props.closeHandler();
@@ -76,6 +77,7 @@ class Modals extends React.Component {
   }
 
   show() {
+    document.body.classList.add('modal-open');
     this.setState({visible: true});
   }
 
