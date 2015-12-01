@@ -1,3 +1,3 @@
 var connect = require('connect');
 var serveStatic = require('serve-static');
-connect().use(serveStatic(__dirname + '/docs/')).listen(8888);
+connect().use(serveStatic('.')).listen(8888);

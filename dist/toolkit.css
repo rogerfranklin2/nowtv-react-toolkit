@@ -531,7 +531,6 @@
     top: 2px;
     transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
-    transition: transform 0.3s, -webkit-transform 0.3s;
     transition-timing-function: ease-in-out; }
   .now-accordion .now-accordion-item .accordion-item-content {
     transition: max-height 0.3s linear, margin 0.3s linear;
@@ -650,11 +649,17 @@
   background: #30B803; }
 
 @-webkit-keyframes throb1 {
+  0%, 100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
   50% {
     -webkit-transform: scale(0.5);
             transform: scale(0.5); } }
 
 @keyframes throb1 {
+  0%, 100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
   50% {
     -webkit-transform: scale(0.5);
             transform: scale(0.5); } }
