@@ -1,8 +1,8 @@
-var React = require('react/addons');
+var React = require('react');
 var assert = require('assert');
 var should = require('chai').should();
 var NowInput = require('../../src/components/Input/Input.react');
-var TestUtils = React.addons.TestUtils;
+var TestUtils = require('react-addons-test-utils');
 
 describe('Input component', function() {
 
@@ -11,13 +11,12 @@ describe('Input component', function() {
             <NowInput />
         );
 
-        var pComponent = TestUtils.findRenderedDOMComponentWithClass( renderedComponent, 'now-input' );
-        this.pElement = pComponent.getDOMNode();
+        this.pComponent = TestUtils.findRenderedDOMComponentWithClass( renderedComponent, 'now-input' );
     });
 
 
     it('should display a form field', function() {
-        should.exist(this.pElement);
+        should.exist(this.pComponent);
     });
 
 
@@ -36,7 +35,7 @@ describe('Input component', function() {
         );
 
         var renderedInput = TestUtils.findRenderedDOMComponentWithClass(inputWithAdditionalId, 'now-input');
-        assert.equal(renderedInput.props.id, "additinalId");
+        assert.equal(renderedInput.id, "additinalId");
     })
 
 });
