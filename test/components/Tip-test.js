@@ -1,8 +1,9 @@
-var React = require('react/addons');
+var React = require('react');
+var ReactDOM = require('react-dom');
 var assert = require('chai').assert;
 var should = require('chai').should();
 var NowTip = require('../../src/components/Tip/Tip.react');
-var TestUtils = React.addons.TestUtils;
+var TestUtils = require('react-addons-test-utils');
 
 describe('Tip component', function(){
     it('should render a tip', function () {
@@ -14,7 +15,7 @@ describe('Tip component', function(){
     it('should contain some content', function () {
         var renderedComponent = TestUtils.renderIntoDocument(<NowTip>this is tip content</NowTip>);
         var component = TestUtils.findRenderedDOMComponentWithTag(renderedComponent, 'p');
-        assert.equal(React.findDOMNode(component).textContent, "this is tip content");
+        assert.equal(ReactDOM.findDOMNode(component).textContent, "this is tip content");
     });
 
     describe('arrow position', function(){
@@ -28,7 +29,7 @@ describe('Tip component', function(){
             it('should render tip with correct class for arrow position', function(){
                 var renderedComponent = TestUtils.renderIntoDocument(<NowTip arrow-position='top-centre'>this is tip content</NowTip>);
                 var component = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-tip');
-                var classNames = component.props.className.split(' ');
+                var classNames = component.className.split(' ');
                 assert.include(classNames, 'top-centre');
             });
         });
@@ -43,7 +44,7 @@ describe('Tip component', function(){
             it('should render tip with correct class for arrow position', function(){
                 var renderedComponent = TestUtils.renderIntoDocument(<NowTip arrow-position='bottom-right'>this is tip content</NowTip>);
                 var component = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-tip');
-                var classNames = component.props.className.split(' ');
+                var classNames = component.className.split(' ');
                 assert.include(classNames, 'bottom-right');
             });
         });
@@ -58,7 +59,7 @@ describe('Tip component', function(){
             it('should render tip with correct class for arrow position', function(){
                 var renderedComponent = TestUtils.renderIntoDocument(<NowTip>this is tip content</NowTip>);
                 var component = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-tip');
-                var classNames = component.props.className.split(' ');
+                var classNames = component.className.split(' ');
                 assert.include(classNames, 'top-centre');
             });
         });
@@ -73,7 +74,7 @@ describe('Tip component', function(){
             it('should render tip with correct class for arrow position', function(){
                 var renderedComponent = TestUtils.renderIntoDocument(<NowTip arrow-position='bottom-left'>this is tip content</NowTip>);
                 var component = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-tip');
-                var classNames = component.props.className.split(' ');
+                var classNames = component.className.split(' ');
                 assert.include(classNames, 'top-centre');
             });
         });
