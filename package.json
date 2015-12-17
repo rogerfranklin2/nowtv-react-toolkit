@@ -7,11 +7,12 @@
     "lint": "eslint src/components"
     "build": "webpack && webpack --config docs/webpack.config.js",
     "serve": "babel-node ./docs/server/index.js",
-    "start": "npm run dev & npm run serve",
+    "start": "npm run build & npm run serve",
     "selenium:install": "selenium-standalone install",
     "selenium:start": "selenium-standalone start",
     "test:functional": "wdio  ./test/wdio.config.js",
-    "test": "mocha test/unit --require test/jsdom.setup.js --compilers js:babel-core/register --recursive && npm run lint"
+    "test:unit": "mocha test/unit --require test/jsdom.setup.js --compilers js:babel-core/register --recursive",
+    "test": "npm run test:unit && npm run lint"
   },
   "pre-commit": [
     "test"

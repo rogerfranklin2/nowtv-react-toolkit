@@ -39,7 +39,4 @@ To see all the avaliable components see the docs which can be found at [http://s
 
 ## Contributing
 
-1. Raise an issue if there is not already one.
-2. Clone the project `git clone git@github.com:sky-uk/nowtv-react-toolkit.git`
-3. Create a branch with your feature or fix and push it to GitHub.
-4. Create a pull request.
+ > [contributing](CONTRIBUTING.md)
