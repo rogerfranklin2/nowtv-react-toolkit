@@ -1,8 +1,11 @@
-const React = require('react'),
-    assert = require('assert'),
-    should = require('chai').should(),
-    NowRadioButton= require('../../src/components/RadioButton/RadioButton.react'),
-    TestUtils = require('react-addons-test-utils');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TestUtils from 'react-addons-test-utils';
+import chai from 'chai';
+const should = chai.should();
+const assert = chai.assert;
+
+import NowRadioButton from '../../src/components/RadioButton/RadioButton.react';
 
 describe('RadioButton component', function() {
     it('should display a radioButton element', function() {

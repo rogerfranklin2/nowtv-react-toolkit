@@ -1,18 +1,13 @@
-var assert = require('chai').assert;
-var should = require('chai').should();
-var React;
-var ReactDOM;
-var TestUtils;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TestUtils from 'react-addons-test-utils';
+import chai from 'chai';
+const should = chai.should();
+const assert = chai.assert;
+import NowNotification from '../../src/components/Notification/Notification.react';
+
 
 describe('Notification component', function(){
-  var NowNotification;
-
-  beforeEach(function() {
-    React = require('react');
-    ReactDOM = require('react-dom');
-    TestUtils = require('react-addons-test-utils');
-    NowNotification = require('../../src/components/Notification/Notification.react');
-  });
 
   it('should render a notification', function () {
     var renderedComponent = TestUtils.renderIntoDocument(<NowNotification/>);

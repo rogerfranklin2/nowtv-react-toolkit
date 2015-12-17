@@ -4,10 +4,12 @@
   "description": "NowTV React ui-toolkit",
   "main": "./dist/toolkit.js",
   "scripts": {
-    "start": "node serve | webpack --watch",
     "lint": "eslint src/components"
-    "start-server": "babel-node ./server/server.js",
-    "test": "mocha --require test/setup.js  --compilers js:babel/register --recursive  && npm run lint"
+    "dev": "webpack --watch & webpack --config docs/webpack.config.js --watch",
+    "build": "webpack && webpack --config docs/webpack.config.js",
+    "serve": "babel-node ./docs/server.js",
+    "start": "npm run dev & npm run serve",
+    "test": "mocha --require test/setup.js --compilers js:babel-core/register --recursive && npm run lint"
   },
   "pre-commit": [
     "test"
@@ -39,7 +41,7 @@
     "express-handlebars": "^2.0.1",
     "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.4",
-    "history": "^1.13.1",
+    "history": "1.13.1",
     "jsdom": "^7.2.1",
     "keymaster": "^1.6.2",
     "mocha": "^2.2.4",

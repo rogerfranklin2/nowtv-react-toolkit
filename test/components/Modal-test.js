@@ -1,17 +1,14 @@
 var assert = require('chai').assert;
 var should = require('chai').should();
-var React;
-var ReactDOM;
-var TestUtils;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TestUtils from 'react-addons-test-utils';
 
 describe('Modal component', function(){
   var Modal;
 
   beforeEach(function() {
-    React = require('react');
-    ReactDOM = require('react-dom');
-    TestUtils = require('react-addons-test-utils');
-    Modal = require('../../src/components/Modal/Modal.react');
+    Modal = require('../../src/components/Modal/Modal.react').default;
   });
 
   it('should render a modal', function () {

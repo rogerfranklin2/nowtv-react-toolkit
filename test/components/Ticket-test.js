@@ -1,8 +1,11 @@
-var React = require('react');
-var assert = require('assert');
-var should = require('chai').should();
-var NowTicket = require('../../src/components/Ticket/Ticket.react');
-var TestUtils = require('react-addons-test-utils');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TestUtils from 'react-addons-test-utils';
+import chai from 'chai';
+const should = chai.should();
+const assert = chai.assert;
+
+import NowTicket from '../../src/components/Ticket/Ticket.react';
 
 describe('Ticket component', function() {
     it('should render a ticket', function() {

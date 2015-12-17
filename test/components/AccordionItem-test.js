@@ -1,7 +1,11 @@
-import { expect } from 'chai';
 import React from 'react';
-import TestUtils from 'react-addons-test-utils';
 import ReactDOM from 'react-dom';
+import TestUtils from 'react-addons-test-utils';
+import chai from 'chai';
+const should = chai.should();
+const assert = chai.assert;
+const expect = chai.expect;
+
 import AccordionItem from '../../src/components/Accordion/AccordionItem.react';
 
 describe('Accordion item component', () => {
@@ -15,7 +19,7 @@ describe('Accordion item component', () => {
   it('should have a title and content', () => {
     const renderedComponent = TestUtils.renderIntoDocument(
       <AccordionItem title="My accordion item">
-        <p>Wooo exciting</p>       
+        <p>Wooo exciting</p>
       </AccordionItem>
     );
 
