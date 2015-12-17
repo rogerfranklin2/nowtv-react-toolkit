@@ -4,3 +4,8 @@ deployment:
     commands:
       - webpack && webpack
       - ./node_modules/.bin/divshot push development --token $DIVSHOT_TOKEN
+machine:
+  timezone:
+    Europe/London
+  node:
+    version: v5.1
