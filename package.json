@@ -4,7 +4,7 @@
   "description": "NowTV React ui-toolkit",
   "main": "./dist/toolkit.js",
   "scripts": {
-    "lint": "eslint src/components"
+    "lint": "eslint src/components",
     "build": "webpack && webpack --config docs/webpack.config.js",
     "serve": "babel-node ./docs/server/index.js",
     "start": "npm run build & npm run serve",

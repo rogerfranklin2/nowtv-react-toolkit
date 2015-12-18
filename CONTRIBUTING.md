@@ -18,5 +18,5 @@ Run unit tests:
  * `npm test`
 
 Run functional tests:
- * `npm selenium:start`
- * `npm test:functional`
+ * `npm run selenium:start`
+ * `npm run test:functional`
