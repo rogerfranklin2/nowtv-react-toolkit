@@ -4,4 +4,4 @@ node_modules/
 .swp
 .divshot-cache/
 *.iml
-server/public
+npm-debug.log

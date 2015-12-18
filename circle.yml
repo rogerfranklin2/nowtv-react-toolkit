@@ -1,8 +1,16 @@
+test:
+  pre:
+    - npm run selenium:install
+    - npm run selenium:start:
+        background: true
+  override:
+    - npm run test
+    - npm run test:functional
 deployment:
   staging:
     branch: master
     commands:
-      - webpack && webpack
+      - npm run build
       - ./node_modules/.bin/divshot push development --token $DIVSHOT_TOKEN
 machine:
   timezone:

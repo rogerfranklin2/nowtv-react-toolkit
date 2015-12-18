@@ -2,9 +2,9 @@ import express from 'express';
 import http from 'http';
 import exphbs from 'express-handlebars';
 import React from 'react';
-import { renderToString } from '../node_modules/react-dom/server';
+import { renderToString } from '../../node_modules/react-dom/server';
 import { match, RoutingContext } from 'react-router';
-import routes from './routes';
+import routes from './../routes';
 
 const app = express();
 
@@ -30,9 +30,4 @@ app.get('*', (req, res) => {
   });
 });
 
-const server = http.createServer(app);
-
-server.listen(3003);
-server.on('listening', () => {
-  console.log('Listening on 3003');
-});
+export default http.createServer(app);
