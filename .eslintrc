@@ -1,0 +1,30 @@
+{
+  "parser": "babel-eslint",
+  "extend": "airbnb",
+  "plugins": [
+    "react"
+  ],
+  "env": {
+    "node": true,
+    "es6": true,
+    "browser": true
+  },
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "rules": {
+    "react/sort-comp": 1,
+    "react/jsx-no-bind": 1,
+    "react/jsx-key": 1,
+    "react/jsx-handler-names": 1,
+    "react/jsx-quotes": 0,
+    "jsx-quotes": [2, "prefer-double"],
+    "react/prop-types": 1,
+    "react/jsx-uses-react": 1,
+    "no-unused-vars": [2, {
+      "vars": "local",
+      "args": "after-used"
+    }]
+  }
+}

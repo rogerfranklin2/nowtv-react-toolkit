@@ -1,17 +1,25 @@
-import React from 'react';
-import assign from 'object-assign';
-import classNames from 'classnames'
+import React from "react";
+import classNames from "classnames"
 
 class Notification extends React.Component {
 
   constructor(props) {
     super(props);
 
-    this._closeNotification = this._closeNotification.bind(this);
+    this._handleClose = this._handleClose.bind(this);
 
     this.state = {
       showNotification: true
     }
+  }
+
+  _handleClose() {
+    if (this.props.onClose) {
+      return this.props.onClose()
+    }
+    this.setState({
+      showNotification: !this.state.showNotification
+    });
   }
 
   render() {
@@ -24,29 +32,28 @@ class Notification extends React.Component {
     }
 
     return (
-      <div className={classNames('now-notification', classes, {'no-title': !hasTitle })}>
+      <div className={classNames("now-notification", classes, {"no-title": !hasTitle })}>
 
-        <div className='notificationIcon'></div>
-        { dismissable ? <div onClick={ this._closeNotification } className='close'></div> : null }
+        <div className="notificationIcon"></div>
+        { dismissable ? <div onClick={ this._handleClose } className="close"></div> : null }
 
-        <div className='notificationBody'>
+        <div className="notificationBody">
           { hasTitle ? <h6 className="notification-title">{this.props.title}</h6> : null }
-          <p className='content'>{this.props.children}</p>
+          <p className="content">{this.props.children}</p>
 
         </div>
 
       </div>
     )
   }
-
-  _closeNotification(){
-    if (this.props.onClose) {
-      return this.props.onClose()
-    }
-    this.setState({
-      showNotification: !this.state.showNotification  
-    });
-  }
 }
+
+Notification.propTypes = {
+	children: React.PropTypes.string,
+  classes: React.PropTypes.string,
+  dismissable: React.PropTypes.bool,
+  onClose: React.PropTypes.func,
+  title: React.PropTypes.string
+};
 
 export default Notification;

@@ -1,5 +1,4 @@
 import React from 'react';
-import assign from 'object-assign';
 import classNames from 'classnames'
 
 class Ticket extends React.Component {
@@ -24,5 +23,11 @@ class Ticket extends React.Component {
         )
     }
 }
+
+Ticket.propTypes = {
+  children: React.PropTypes.string,
+  classes: React.PropTypes.string,
+  title: React.PropTypes.string
+};
 
 export default Ticket;

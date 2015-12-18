@@ -5,10 +5,10 @@ class RadioButton extends React.Component {
     constructor(props){
         super(props);
         this.state = { checked: (this.props.checked || false) };
-        this.toggleChecked = this.toggleChecked.bind(this);
+        this.handleChecked = this.handleChecked.bind(this);
     }
 
-    toggleChecked() {
+    handleChecked() {
         this.setState({
             checked: !this.state.checked
         });
@@ -28,7 +28,7 @@ class RadioButton extends React.Component {
         return (
           <label className={classNames('now-radio-button', classes)}>
               <input
-                onChange={this.toggleChecked}
+                onChange={this.handleChecked}
                 checked={this.state.checked}
                 type="radio"
                 {...this.props}
@@ -37,5 +37,11 @@ class RadioButton extends React.Component {
        );
     }
 }
+
+RadioButton.propTypes = {
+  classes: React.PropTypes.string,
+  checked: React.PropTypes.bool,
+  disabled: React.PropTypes.bool
+};
 
 export default RadioButton;

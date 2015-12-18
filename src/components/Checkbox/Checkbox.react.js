@@ -5,10 +5,10 @@ class Checkbox extends React.Component {
     constructor(props){
         super(props);
         this.state = { checked: (this.props.checked || false) };
-        this.toggleChecked = this.toggleChecked.bind(this);
+        this._handleChecked = this._handleChecked.bind(this);
     }
 
-    toggleChecked() {
+    _handleChecked() {
         this.setState({
             checked: !this.state.checked
         });
@@ -17,18 +17,18 @@ class Checkbox extends React.Component {
     render() {
         var classes = [this.props.classes];
 
-        if(this.state.checked) {
+        if (this.state.checked) {
             classes.push("checked");
         }
 
-        if(this.props.disabled) {
+        if (this.props.disabled) {
             classes.push("disabled");
         }
 
         return (
           <label className={classNames('now-checkbox', classes)}>
               <input
-                onChange={this.toggleChecked}
+                onChange={this._handleChecked}
                 checked={this.state.checked}
                 type="checkbox"
                 {...this.props}
@@ -37,5 +37,11 @@ class Checkbox extends React.Component {
        );
     }
 }
+
+Checkbox.propTypes = {
+  checked: React.PropTypes.bool,
+  classes: React.PropTypes.string,
+  disabled: React.PropTypes.bool
+};
 
 export default Checkbox;

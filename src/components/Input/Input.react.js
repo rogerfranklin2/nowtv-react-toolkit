@@ -13,4 +13,8 @@ class Input extends React.Component {
   }
 }
 
+Input.propTypes = {
+  classes: React.PropTypes.string
+};
+
 export default Input;

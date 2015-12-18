@@ -3,7 +3,7 @@ import React from 'react';
 class Spinner extends React.Component {
 
   render() {
-    let {size = 'medium'} = this.props;
+    let {size = "medium"} = this.props;
 
     return (
       <div className={`spinner spinner-${size}`}>
@@ -15,5 +15,9 @@ class Spinner extends React.Component {
     );
   }
 }
+
+Spinner.propTypes = {
+  size: React.PropTypes.string
+};
 
 export default Spinner;

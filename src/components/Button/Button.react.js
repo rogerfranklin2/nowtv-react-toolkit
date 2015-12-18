@@ -1,5 +1,4 @@
 import React from 'react';
-import assign from 'object-assign';
 import classNames from 'classnames'
 
 class Button extends React.Component {
@@ -13,5 +12,10 @@ class Button extends React.Component {
 		)
 	}
 }
+
+Button.propTypes = {
+	children: React.PropTypes.string,
+  classes: React.PropTypes.string
+};
 
 export default Button;
