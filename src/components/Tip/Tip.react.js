@@ -1,36 +1,36 @@
 import React from 'react';
-import classNames from 'classnames'
+import classNames from 'classnames';
 
 const supportedPositions = ['top-centre', 'bottom-right'];
 
 class Tip extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    isPositionSupported(position) {
-        return supportedPositions.indexOf(position) < 0
-    }
+  isPositionSupported(position) {
+    return supportedPositions.indexOf(position) < 0;
+  }
 
-    render() {
-        var classes = [this.props.classes],
-            position = this.props['arrow-position'],
-            arrowPosition =  this.isPositionSupported(position) ? 'top-centre' : position;
+  render() {
+    const classes = [this.props.classes];
+    const position = this.props['arrow-position'];
+    const arrowPosition = this.isPositionSupported(position) ? 'top-centre' : position;
 
-        return (
-            <div className={classNames('now-tip', classes, arrowPosition)}>
-                <div className={"arrow-" + arrowPosition}></div>
-                <p className="content">{this.props.children}</p>
-            </div>
-        )
-    }
+    return (
+      <div className={classNames('now-tip', classes, arrowPosition)}>
+        <div className={'arrow-' + arrowPosition}></div>
+        <p className="content">{this.props.children}</p>
+      </div>
+    );
+  }
 }
 
 Tip.propTypes = {
   children: React.PropTypes.string,
   classes: React.PropTypes.string,
-  "arrow-position": React.PropTypes.string
+  'arrow-position': React.PropTypes.string
 };
 
 export default Tip;

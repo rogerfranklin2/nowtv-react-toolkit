@@ -1,6 +1,6 @@
-import React from "react";
-import classNames from "classnames";
-import keymaster from "keymaster";
+import React from 'react';
+import classNames from 'classnames';
+import keymaster from 'keymaster';
 
 class Modals extends React.Component {
   constructor(props) {
@@ -11,16 +11,16 @@ class Modals extends React.Component {
 
     this.state = {
       visible: false
-    }
+    };
   }
 
   componentDidMount() {
-    keymaster("esc", () => this.state.visible ? this.handleHide() : null);
+    keymaster('esc', () => this.state.visible ? this.handleHide() : null);
   }
 
   componentWillUnmount() {
     this._giveBodyFocusBack();
-    keymaster.unbind("esc");
+    keymaster.unbind('esc');
   }
 
   toggle() {
@@ -34,7 +34,7 @@ class Modals extends React.Component {
   handleHide(event) {
     this._giveBodyFocusBack();
 
-    if (event !== undefined && event.currentTarget.className && event.currentTarget.className.indexOf("close-icon") > -1) {
+    if (event !== undefined && event.currentTarget.className && event.currentTarget.className.indexOf('close-icon') > -1) {
       if (this.props.closeHandler) {
         this.props.closeHandler();
       }
@@ -47,23 +47,23 @@ class Modals extends React.Component {
 
   show() {
     this._giveModalFocus();
-    this.setState({visible: true});
+    this.setState({ visible: true });
   }
 
   _giveModalFocus() {
     if (document.body.classList) {
-      document.body.classList.add("modal-open");
+      document.body.classList.add('modal-open');
     }
   }
 
   _giveBodyFocusBack() {
     if (document.body.classList) {
-      document.body.classList.remove("modal-open");
+      document.body.classList.remove('modal-open');
     }
   }
 
   render() {
-    const classes = classNames("now-modal", [this.props.classes], { "visible": this.state.visible });
+    const classes = classNames('now-modal', [this.props.classes], { 'visible': this.state.visible });
 
     return (
       <div className={classes}>
@@ -82,12 +82,12 @@ class Modals extends React.Component {
           <p>{this.props.children}</p>
         </div>
       </div>
-    )
+    );
   }
 }
 
 Modals.propTypes = {
-	children: React.PropTypes.string,
+  children: React.PropTypes.string,
   classes: React.PropTypes.string,
   closeHandler: React.PropTypes.func,
   title: React.PropTypes.string

@@ -2,21 +2,21 @@ import React from 'react';
 import classNames from 'classnames';
 
 class Dropdown extends React.Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
   }
 
   render() {
     return (
-        <select {...this.props} className={classNames('now-dropdown', this.props.classes)}>
-            {this.props.children}
-        </select>
-    )
+      <select {...this.props} className={ classNames('now-dropdown', this.props.classes)}>
+        {this.props.children}
+      </select>
+    );
   }
 }
 
 Dropdown.propTypes = {
-	children: React.PropTypes.string,
+  children: React.PropTypes.string,
   classes: React.PropTypes.string
 };
 

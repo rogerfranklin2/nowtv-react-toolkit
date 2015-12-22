@@ -2,30 +2,30 @@ import React from 'react';
 import classNames from 'classnames';
 
 class RadioButton extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = { checked: (this.props.checked || false) };
-        this.handleChecked = this.handleChecked.bind(this);
+    constructor(props) {
+      super(props);
+      this.state = { checked: (this.props.checked || false) };
+      this.handleChecked = this.handleChecked.bind(this);
     }
 
     handleChecked() {
-        this.setState({
-            checked: !this.state.checked
-        });
+      this.setState({
+        checked: !this.state.checked
+      });
     }
 
     render() {
-        var classes = [this.props.classes];
+      const classes = [this.props.classes];
 
-        if(this.state.checked) {
-            classes.push("checked");
-        }
+      if (this.state.checked) {
+        classes.push('checked');
+      }
 
-        if(this.props.disabled) {
-            classes.push("disabled");
-        }
+      if (this.props.disabled) {
+        classes.push('disabled');
+      }
 
-        return (
+      return (
           <label className={classNames('now-radio-button', classes)}>
               <input
                 onChange={this.handleChecked}

@@ -13,7 +13,7 @@ class AccordionItem extends React.Component {
       <div className={classes} onClick={this.props.handleVisiblity}>
         <span className="accordion-item-title">{this.props.title}</span>
 
-        <div className="accordion-item-content" style={{maxHeight: this.props.isOpen ? (this.props.maxHeight || 500) : 0}}>
+        <div className="accordion-item-content" style={{ maxHeight: this.props.isOpen ? (this.props.maxHeight || 500) : 0 }}>
           {this.props.children}
         </div>
       </div>

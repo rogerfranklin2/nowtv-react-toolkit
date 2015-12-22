@@ -1,9 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extend": "airbnb",
-  "plugins": [
-    "react"
-  ],
+  "extends": "airbnb/base",
   "env": {
     "node": true,
     "es6": true,
@@ -14,17 +11,9 @@
     "modules": true
   },
   "rules": {
-    "react/sort-comp": 1,
-    "react/jsx-no-bind": 1,
-    "react/jsx-key": 1,
-    "react/jsx-handler-names": 1,
-    "react/jsx-quotes": 0,
-    "jsx-quotes": [2, "prefer-double"],
-    "react/prop-types": 1,
-    "react/jsx-uses-react": 1,
-    "no-unused-vars": [2, {
-      "vars": "local",
-      "args": "after-used"
-    }]
+    "no-unused-vars": 0,
+    "comma-dangle": 0,
+    "id-length": [2, {"exceptions": ["e"]}]
   }
 }
+

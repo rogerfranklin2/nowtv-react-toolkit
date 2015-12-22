@@ -1,5 +1,5 @@
-import React from "react";
-import classNames from "classnames"
+import React from 'react';
+import classNames from 'classnames';
 
 class Notification extends React.Component {
 
@@ -10,12 +10,12 @@ class Notification extends React.Component {
 
     this.state = {
       showNotification: true
-    }
+    };
   }
 
   _handleClose() {
     if (this.props.onClose) {
-      return this.props.onClose()
+      return this.props.onClose();
     }
     this.setState({
       showNotification: !this.state.showNotification
@@ -23,7 +23,7 @@ class Notification extends React.Component {
   }
 
   render() {
-    const classes = [this.props.classes]
+    const classes = [this.props.classes];
     const { dismissable = true } = this.props;
     const hasTitle = this.props.title !== undefined;
 
@@ -32,7 +32,7 @@ class Notification extends React.Component {
     }
 
     return (
-      <div className={classNames("now-notification", classes, {"no-title": !hasTitle })}>
+      <div className={ classNames('now-notification', classes, { 'no-title': !hasTitle }) }>
 
         <div className="notificationIcon"></div>
         { dismissable ? <div onClick={ this._handleClose } className="close"></div> : null }
@@ -44,12 +44,12 @@ class Notification extends React.Component {
         </div>
 
       </div>
-    )
+    );
   }
 }
 
 Notification.propTypes = {
-	children: React.PropTypes.string,
+  children: React.PropTypes.string,
   classes: React.PropTypes.string,
   dismissable: React.PropTypes.bool,
   onClose: React.PropTypes.func,

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node serve | webpack --watch",
     "test": "mocha --require test/setup.js  --compilers js:babel/register --recursive && npm run lint",
-    "lint": "./node_modules/eslint/bin/eslint.js src/components"
+    "lint": "eslint src/components"
   },
   "pre-commit": [
     "test"

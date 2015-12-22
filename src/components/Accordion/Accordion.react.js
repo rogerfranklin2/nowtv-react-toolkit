@@ -7,7 +7,7 @@ class Accordion extends React.Component {
 
     this.state = {
       openItem: null
-    }
+    };
   }
 
   _itemClicked(id) {
@@ -28,13 +28,13 @@ class Accordion extends React.Component {
     const newChildren = React.Children.map(this.props.children, (child, index) => {
       const onItemClicked = () => { this._itemClicked(index); };
 
-      let newProps = {
+      const newProps = {
         handleVisiblity: onItemClicked,
         isOpen: this.state.openItem === index
       };
 
       if (index === this.state.openItem) {
-        newProps['classes'] = 'visible';
+        newProps.classes = 'visible';
       }
 
       return React.cloneElement(child, { ...newProps });
@@ -44,7 +44,7 @@ class Accordion extends React.Component {
       <div className={classes}>
         {newChildren}
       </div>
-    )
+    );
   }
 }
 

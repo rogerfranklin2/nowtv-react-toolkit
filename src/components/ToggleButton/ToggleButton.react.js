@@ -1,10 +1,10 @@
-import React from "react";
-import classNames from "classnames";
+import React from 'react';
+import classNames from 'classnames';
 
 class ToggleButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {checked: (this.props.checked || false)};
+    this.state = { checked: (this.props.checked || false) };
     this.handleChecked = this.handleChecked.bind(this);
     this.onChange = this.onChange.bind(this);
   }
@@ -34,15 +34,15 @@ class ToggleButton extends React.Component {
       }
     );
 
-    const {checked, ...other} = this.props;
+    const { checked, ...other } = this.props;
 
     return (
-      <div className={classNames("now-toggle-container", classes)}>
+      <div className={classNames('now-toggle-container', classes)}>
         { this.props.offText ? <span className="toggle-label off">{this.props.offText}</span> : null }
         {this.props.disabled ?
           <div className="toggle-button disabled"></div>
           :
-          <div className={classNames("toggle-button", checkBoxClasses)} onClick={this.handleChecked}>
+          <div className={classNames('toggle-button', checkBoxClasses)} onClick={this.handleChecked}>
             <input defaultChecked={this.state.checked} type="checkbox" {...other}/>
           </div>
         }

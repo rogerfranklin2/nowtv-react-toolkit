@@ -3,7 +3,7 @@ import React from 'react';
 class Spinner extends React.Component {
 
   render() {
-    let {size = "medium"} = this.props;
+    const { size = 'medium' } = this.props;
 
     return (
       <div className={`spinner spinner-${size}`}>
