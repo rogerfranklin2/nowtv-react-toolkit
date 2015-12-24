@@ -2,33 +2,33 @@ import React from 'react';
 import classNames from 'classnames';
 
 class RadioButton extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = { checked: (this.props.checked || false) };
-        this.toggleChecked = this.toggleChecked.bind(this);
+    constructor(props) {
+      super(props);
+      this.state = { checked: (this.props.checked || false) };
+      this.handleChecked = this.handleChecked.bind(this);
     }
 
-    toggleChecked() {
-        this.setState({
-            checked: !this.state.checked
-        });
+    handleChecked() {
+      this.setState({
+        checked: !this.state.checked
+      });
     }
 
     render() {
-        var classes = [this.props.classes];
+      const classes = [this.props.classes];
 
-        if(this.state.checked) {
-            classes.push("checked");
-        }
+      if (this.state.checked) {
+        classes.push('checked');
+      }
 
-        if(this.props.disabled) {
-            classes.push("disabled");
-        }
+      if (this.props.disabled) {
+        classes.push('disabled');
+      }
 
-        return (
+      return (
           <label className={classNames('now-radio-button', classes)}>
               <input
-                onChange={this.toggleChecked}
+                onChange={this.handleChecked}
                 checked={this.state.checked}
                 type="radio"
                 {...this.props}
@@ -37,5 +37,11 @@ class RadioButton extends React.Component {
        );
     }
 }
+
+RadioButton.propTypes = {
+  classes: React.PropTypes.string,
+  checked: React.PropTypes.bool,
+  disabled: React.PropTypes.bool
+};
 
 export default RadioButton;

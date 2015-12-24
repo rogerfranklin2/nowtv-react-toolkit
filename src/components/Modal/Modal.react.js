@@ -1,5 +1,4 @@
 import React from 'react';
-import assign from 'object-assign';
 import classNames from 'classnames';
 import keymaster from 'keymaster';
 
@@ -7,16 +6,16 @@ class Modals extends React.Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
-    this.hide = this.hide.bind(this);
+    this.handleHide = this.handleHide.bind(this);
     this.show = this.show.bind(this);
 
     this.state = {
       visible: false
-    }
+    };
   }
 
   componentDidMount() {
-    keymaster('esc', () => this.state.visible ? this.hide() : null);
+    keymaster('esc', () => this.state.visible ? this.handleHide() : null);
   }
 
   componentWillUnmount() {
@@ -24,41 +23,18 @@ class Modals extends React.Component {
     keymaster.unbind('esc');
   }
 
-  render() {
-    const classes = classNames('now-modal', [this.props.classes], { 'visible': this.state.visible });
-
-    return (
-      <div className={classes}>
-
-        <div className="modal__content">
-          <div className="close-container">
-            <div onClick={ this.hide } className='close-icon'></div>
-          </div>
-
-          { this.props.title ?
-            <div className="title">
-              <h5>{ this.props.title }</h5>
-            </div>
-            : null
-          }
-          <p>{this.props.children}</p>
-        </div>
-      </div>
-    )
-  }
-
-  toggle(e) {
+  toggle() {
     if (this.state.visible) {
-      this.hide();
+      this.handleHide();
     } else {
       this.show();
     }
   }
 
-  hide(event) {
+  handleHide(event) {
     this._giveBodyFocusBack();
 
-    if (event !== undefined && event.currentTarget.className && event.currentTarget.className.indexOf("close-icon") > -1) {
+    if (event !== undefined && event.currentTarget.className && event.currentTarget.className.indexOf('close-icon') > -1) {
       if (this.props.closeHandler) {
         this.props.closeHandler();
       }
@@ -71,7 +47,7 @@ class Modals extends React.Component {
 
   show() {
     this._giveModalFocus();
-    this.setState({visible: true});
+    this.setState({ visible: true });
   }
 
   _giveModalFocus() {
@@ -85,6 +61,36 @@ class Modals extends React.Component {
       document.body.classList.remove('modal-open');
     }
   }
+
+  render() {
+    const classes = classNames('now-modal', [this.props.classes], { 'visible': this.state.visible });
+
+    return (
+      <div className={classes}>
+
+        <div className="modal__content">
+          <div className="close-container">
+            <div onClick={ this.handleHide } className="close-icon"></div>
+          </div>
+
+          { this.props.title ?
+            <div className="title">
+              <h5>{ this.props.title }</h5>
+            </div>
+            : null
+          }
+          <p>{this.props.children}</p>
+        </div>
+      </div>
+    );
+  }
 }
+
+Modals.propTypes = {
+  children: React.PropTypes.string,
+  classes: React.PropTypes.string,
+  closeHandler: React.PropTypes.func,
+  title: React.PropTypes.string
+};
 
 export default Modals;

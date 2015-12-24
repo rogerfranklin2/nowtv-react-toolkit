@@ -1,5 +1,4 @@
 import React from 'react/addons';
-import assign from 'object-assign';
 import classNames from 'classnames';
 
 class Accordion extends React.Component {
@@ -8,32 +7,7 @@ class Accordion extends React.Component {
 
     this.state = {
       openItem: null
-    }
-  }
-
-  render() {
-    const classes = classNames('now-accordion', [this.props.classes]);
-
-    const newChildren = React.Children.map(this.props.children, (child, index) => {
-      const onItemClicked = () => { this._itemClicked(index); };
-
-      let newProps = {
-        setVisible: onItemClicked,
-        isOpen: this.state.openItem === index
-      };
-
-      if (index === this.state.openItem) {
-        newProps['classes'] = 'visible';
-      }
-
-      return React.cloneElement(child, { ...newProps });
-    });
-
-    return (
-      <div className={classes}>
-        { newChildren }
-      </div>
-    )
+    };
   }
 
   _itemClicked(id) {
@@ -47,6 +21,36 @@ class Accordion extends React.Component {
       openItem
     });
   }
+
+  render() {
+    const classes = classNames('now-accordion', [this.props.classes]);
+
+    const newChildren = React.Children.map(this.props.children, (child, index) => {
+      const onItemClicked = () => { this._itemClicked(index); };
+
+      const newProps = {
+        handleVisiblity: onItemClicked,
+        isOpen: this.state.openItem === index
+      };
+
+      if (index === this.state.openItem) {
+        newProps.classes = 'visible';
+      }
+
+      return React.cloneElement(child, { ...newProps });
+    });
+
+    return (
+      <div className={classes}>
+        {newChildren}
+      </div>
+    );
+  }
 }
+
+Accordion.propTypes = {
+  children: React.PropTypes.arrayOf(React.PropTypes.object),
+  classes: React.PropTypes.string
+};
 
 export default Accordion;
