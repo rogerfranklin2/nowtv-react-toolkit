@@ -11,6 +11,8 @@
 
 ## Testing
 
+ > [PhantomJS v2](http://phantomjs.org/download.html) is required for headless testing
+
 Run unit tests:
  * `npm test`
 
@@ -23,3 +25,4 @@ Run functional tests:
 
  * if the tests or serer don't run, try :
    * `rm -rf node_modules && npm i`
+
