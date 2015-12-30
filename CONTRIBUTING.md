@@ -5,13 +5,18 @@
 3. Create a branch with your feature or fix and push it to GitHub.
 4. Create a pull request.
 
+## Prerequisites
+
+PhantomJS v2 i required for tests.  If you haven't already got it installed please do the following:
+
+ * `brew install upx`
+ * `npm run phantom:install`
+
 ## Developing
 
  * `npm start`
 
 ## Testing
-
- > [PhantomJS v2](http://phantomjs.org/download.html) is required for headless testing
 
 Run unit tests:
  * `npm test`
@@ -23,6 +28,6 @@ Run functional tests:
 
 ## Troubleshooting
 
- * if the tests or serer don't run, try :
+ * if the tests or server don't run, try :
    * `rm -rf node_modules && npm i`
 
