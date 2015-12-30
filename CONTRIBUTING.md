@@ -11,12 +11,15 @@
 
 ## Testing
 
-You will need selenium server installed locally.  If you do not have this already, please run :
-  * `npm run selenium:install`
-
 Run unit tests:
  * `npm test`
 
 Run functional tests:
  * `npm run selenium:start`
  * `npm run test:functional`
+
+
+## Troubleshooting
+
+ * if the tests or serer don't run, try :
+   * `rm -rf node_modules && npm i`

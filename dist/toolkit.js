@@ -55,55 +55,55 @@ module.exports =
 
 	var _Button2 = _interopRequireDefault(_Button);
 
-	var _Input = __webpack_require__(161);
+	var _Input = __webpack_require__(160);
 
 	var _Input2 = _interopRequireDefault(_Input);
 
-	var _Dropdown = __webpack_require__(162);
+	var _Dropdown = __webpack_require__(161);
 
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 
-	var _Checkbox = __webpack_require__(163);
+	var _Checkbox = __webpack_require__(162);
 
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
-	var _RadioButton = __webpack_require__(164);
+	var _RadioButton = __webpack_require__(163);
 
 	var _RadioButton2 = _interopRequireDefault(_RadioButton);
 
-	var _ToggleButton = __webpack_require__(165);
+	var _ToggleButton = __webpack_require__(164);
 
 	var _ToggleButton2 = _interopRequireDefault(_ToggleButton);
 
-	var _Ticket = __webpack_require__(166);
+	var _Ticket = __webpack_require__(165);
 
 	var _Ticket2 = _interopRequireDefault(_Ticket);
 
-	var _Tip = __webpack_require__(167);
+	var _Tip = __webpack_require__(166);
 
 	var _Tip2 = _interopRequireDefault(_Tip);
 
-	var _Notification = __webpack_require__(168);
+	var _Notification = __webpack_require__(167);
 
 	var _Notification2 = _interopRequireDefault(_Notification);
 
-	var _Modal = __webpack_require__(169);
+	var _Modal = __webpack_require__(168);
 
 	var _Modal2 = _interopRequireDefault(_Modal);
 
-	var _Accordion = __webpack_require__(171);
+	var _Accordion = __webpack_require__(170);
 
 	var _Accordion2 = _interopRequireDefault(_Accordion);
 
-	var _AccordionItem = __webpack_require__(172);
+	var _AccordionItem = __webpack_require__(171);
 
 	var _AccordionItem2 = _interopRequireDefault(_AccordionItem);
 
-	var _Spinner = __webpack_require__(173);
+	var _Spinner = __webpack_require__(172);
 
 	var _Spinner2 = _interopRequireDefault(_Spinner);
 
-	var _toolkit = __webpack_require__(174);
+	var _toolkit = __webpack_require__(173);
 
 	var _toolkit2 = _interopRequireDefault(_toolkit);
 
@@ -136,18 +136,14 @@ module.exports =
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
 
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _objectAssign = __webpack_require__(159);
-
-	var _objectAssign2 = _interopRequireDefault(_objectAssign);
-
-	var _classnames = __webpack_require__(160);
+	var _classnames = __webpack_require__(159);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -160,27 +156,32 @@ module.exports =
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Button = (function (_React$Component) {
-		_inherits(Button, _React$Component);
+	  _inherits(Button, _React$Component);
 
-		function Button(props) {
-			_classCallCheck(this, Button);
+	  function Button(props) {
+	    _classCallCheck(this, Button);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Button).call(this, props));
-		}
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Button).call(this, props));
+	  }
 
-		_createClass(Button, [{
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'button',
-					_extends({}, this.props, { className: (0, _classnames2.default)('now-button', this.props.classes) }),
-					this.props.children
-				);
-			}
-		}]);
+	  _createClass(Button, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'button',
+	        _extends({}, this.props, { className: (0, _classnames2.default)('now-button', this.props.classes) }),
+	        this.props.children
+	      );
+	    }
+	  }]);
 
-		return Button;
+	  return Button;
 	})(_react2.default.Component);
+
+	Button.propTypes = {
+	  children: _react2.default.PropTypes.string,
+	  classes: _react2.default.PropTypes.string
+	};
 
 	exports.default = Button;
 
@@ -1199,7 +1200,7 @@ module.exports =
 	 * will remain to ensure logic does not differ in production.
 	 */
 
-	var invariant = function (condition, format, a, b, c, d, e, f) {
+	function invariant(condition, format, a, b, c, d, e, f) {
 	  if (process.env.NODE_ENV !== 'production') {
 	    if (format === undefined) {
 	      throw new Error('invariant requires an error message argument');
@@ -1213,15 +1214,16 @@ module.exports =
 	    } else {
 	      var args = [a, b, c, d, e, f];
 	      var argIndex = 0;
-	      error = new Error('Invariant Violation: ' + format.replace(/%s/g, function () {
+	      error = new Error(format.replace(/%s/g, function () {
 	        return args[argIndex++];
 	      }));
+	      error.name = 'Invariant Violation';
 	    }
 
 	    error.framesToPop = 1; // we don't care about invariant's own frame
 	    throw error;
 	  }
-	};
+	}
 
 	module.exports = invariant;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
@@ -10648,8 +10650,8 @@ module.exports =
 	     */
 	    // autoCapitalize and autoCorrect are supported in Mobile Safari for
 	    // keyboard hints.
-	    autoCapitalize: null,
-	    autoCorrect: null,
+	    autoCapitalize: MUST_USE_ATTRIBUTE,
+	    autoCorrect: MUST_USE_ATTRIBUTE,
 	    // autoSave allows WebKit/Blink to persist values of input fields on page reloads
 	    autoSave: null,
 	    // color is for Safari mask-icon link
@@ -10680,9 +10682,7 @@ module.exports =
 	    httpEquiv: 'http-equiv'
 	  },
 	  DOMPropertyNames: {
-	    autoCapitalize: 'autocapitalize',
 	    autoComplete: 'autocomplete',
-	    autoCorrect: 'autocorrect',
 	    autoFocus: 'autofocus',
 	    autoPlay: 'autoplay',
 	    autoSave: 'autosave',
@@ -13761,7 +13761,7 @@ module.exports =
 	    var value = LinkedValueUtils.getValue(props);
 
 	    if (value != null) {
-	      updateOptions(this, props, value);
+	      updateOptions(this, Boolean(props.multiple), value);
 	    }
 	  }
 	}
@@ -16800,15 +16800,11 @@ module.exports =
 	 * Same as document.activeElement but wraps in a try-catch block. In IE it is
 	 * not safe to call document.activeElement if there is nothing focused.
 	 *
-	 * The activeElement will be null only if the document or document body is not yet defined.
+	 * The activeElement will be null only if the document body is not yet defined.
 	 */
-	'use strict';
+	"use strict";
 
 	function getActiveElement() /*?DOMElement*/{
-	  if (typeof document === 'undefined') {
-	    return null;
-	  }
-
 	  try {
 	    return document.activeElement || document.body;
 	  } catch (e) {
@@ -18548,7 +18544,9 @@ module.exports =
 	  'setValueForProperty': 'update attribute',
 	  'setValueForAttribute': 'update attribute',
 	  'deleteValueForProperty': 'remove attribute',
-	  'dangerouslyReplaceNodeWithMarkupByID': 'replace'
+	  'setValueForStyles': 'update styles',
+	  'replaceNodeWithMarkup': 'replace',
+	  'updateTextContent': 'set textContent'
 	};
 
 	function getTotalTime(measurements) {
@@ -18740,18 +18738,23 @@ module.exports =
 	'use strict';
 
 	var performance = __webpack_require__(146);
-	var curPerformance = performance;
+
+	var performanceNow;
 
 	/**
 	 * Detect if we can use `window.performance.now()` and gracefully fallback to
 	 * `Date.now()` if it doesn't exist. We need to support Firefox < 15 for now
 	 * because of Facebook's testing infrastructure.
 	 */
-	if (!curPerformance || !curPerformance.now) {
-	  curPerformance = Date;
+	if (performance.now) {
+	  performanceNow = function () {
+	    return performance.now();
+	  };
+	} else {
+	  performanceNow = function () {
+	    return Date.now();
+	  };
 	}
-
-	var performanceNow = curPerformance.now.bind(curPerformance);
 
 	module.exports = performanceNow;
 
@@ -18800,7 +18803,7 @@ module.exports =
 
 	'use strict';
 
-	module.exports = '0.14.3';
+	module.exports = '0.14.5';
 
 /***/ },
 /* 148 */
@@ -19764,51 +19767,6 @@ module.exports =
 
 /***/ },
 /* 159 */
-/***/ function(module, exports) {
-
-	/* eslint-disable no-unused-vars */
-	'use strict';
-	var hasOwnProperty = Object.prototype.hasOwnProperty;
-	var propIsEnumerable = Object.prototype.propertyIsEnumerable;
-
-	function toObject(val) {
-		if (val === null || val === undefined) {
-			throw new TypeError('Object.assign cannot be called with null or undefined');
-		}
-
-		return Object(val);
-	}
-
-	module.exports = Object.assign || function (target, source) {
-		var from;
-		var to = toObject(target);
-		var symbols;
-
-		for (var s = 1; s < arguments.length; s++) {
-			from = Object(arguments[s]);
-
-			for (var key in from) {
-				if (hasOwnProperty.call(from, key)) {
-					to[key] = from[key];
-				}
-			}
-
-			if (Object.getOwnPropertySymbols) {
-				symbols = Object.getOwnPropertySymbols(from);
-				for (var i = 0; i < symbols.length; i++) {
-					if (propIsEnumerable.call(from, symbols[i])) {
-						to[symbols[i]] = from[symbols[i]];
-					}
-				}
-			}
-		}
-
-		return to;
-	};
-
-
-/***/ },
-/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -19862,7 +19820,7 @@ module.exports =
 
 
 /***/ },
-/* 161 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -19879,7 +19837,7 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(160);
+	var _classnames = __webpack_require__(159);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -19903,17 +19861,21 @@ module.exports =
 	  _createClass(Input, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement('input', _extends({}, this.props, { className: (0, _classnames2.default)("now-input", this.props.classes) }));
+	      return _react2.default.createElement('input', _extends({}, this.props, { className: (0, _classnames2.default)('now-input', this.props.classes) }));
 	    }
 	  }]);
 
 	  return Input;
 	})(_react2.default.Component);
 
+	Input.propTypes = {
+	  classes: _react2.default.PropTypes.string
+	};
+
 	exports.default = Input;
 
 /***/ },
-/* 162 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -19930,7 +19892,7 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(160);
+	var _classnames = __webpack_require__(159);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -19965,170 +19927,15 @@ module.exports =
 	  return Dropdown;
 	})(_react2.default.Component);
 
+	Dropdown.propTypes = {
+	  children: _react2.default.PropTypes.string,
+	  classes: _react2.default.PropTypes.string
+	};
+
 	exports.default = Dropdown;
 
 /***/ },
-/* 163 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _classnames = __webpack_require__(160);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Checkbox = (function (_React$Component) {
-	    _inherits(Checkbox, _React$Component);
-
-	    function Checkbox(props) {
-	        _classCallCheck(this, Checkbox);
-
-	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Checkbox).call(this, props));
-
-	        _this.state = { checked: _this.props.checked || false };
-	        _this.toggleChecked = _this.toggleChecked.bind(_this);
-	        return _this;
-	    }
-
-	    _createClass(Checkbox, [{
-	        key: 'toggleChecked',
-	        value: function toggleChecked() {
-	            this.setState({
-	                checked: !this.state.checked
-	            });
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            var classes = [this.props.classes];
-
-	            if (this.state.checked) {
-	                classes.push("checked");
-	            }
-
-	            if (this.props.disabled) {
-	                classes.push("disabled");
-	            }
-
-	            return _react2.default.createElement(
-	                'label',
-	                { className: (0, _classnames2.default)('now-checkbox', classes) },
-	                _react2.default.createElement('input', _extends({
-	                    onChange: this.toggleChecked,
-	                    checked: this.state.checked,
-	                    type: 'checkbox'
-	                }, this.props))
-	            );
-	        }
-	    }]);
-
-	    return Checkbox;
-	})(_react2.default.Component);
-
-	exports.default = Checkbox;
-
-/***/ },
-/* 164 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _classnames = __webpack_require__(160);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var RadioButton = (function (_React$Component) {
-	    _inherits(RadioButton, _React$Component);
-
-	    function RadioButton(props) {
-	        _classCallCheck(this, RadioButton);
-
-	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(RadioButton).call(this, props));
-
-	        _this.state = { checked: _this.props.checked || false };
-	        _this.toggleChecked = _this.toggleChecked.bind(_this);
-	        return _this;
-	    }
-
-	    _createClass(RadioButton, [{
-	        key: 'toggleChecked',
-	        value: function toggleChecked() {
-	            this.setState({
-	                checked: !this.state.checked
-	            });
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            var classes = [this.props.classes];
-
-	            if (this.state.checked) {
-	                classes.push("checked");
-	            }
-
-	            if (this.props.disabled) {
-	                classes.push("disabled");
-	            }
-
-	            return _react2.default.createElement(
-	                'label',
-	                { className: (0, _classnames2.default)('now-radio-button', classes) },
-	                _react2.default.createElement('input', _extends({
-	                    onChange: this.toggleChecked,
-	                    checked: this.state.checked,
-	                    type: 'radio'
-	                }, this.props))
-	            );
-	        }
-	    }]);
-
-	    return RadioButton;
-	})(_react2.default.Component);
-
-	exports.default = RadioButton;
-
-/***/ },
-/* 165 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20145,7 +19952,179 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(160);
+	var _classnames = __webpack_require__(159);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Checkbox = (function (_React$Component) {
+	  _inherits(Checkbox, _React$Component);
+
+	  function Checkbox(props) {
+	    _classCallCheck(this, Checkbox);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Checkbox).call(this, props));
+
+	    _this.state = { checked: _this.props.checked || false };
+	    _this._handleChecked = _this._handleChecked.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(Checkbox, [{
+	    key: '_handleChecked',
+	    value: function _handleChecked() {
+	      this.setState({
+	        checked: !this.state.checked
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var classes = [this.props.classes];
+
+	      if (this.state.checked) {
+	        classes.push('checked');
+	      }
+
+	      if (this.props.disabled) {
+	        classes.push('disabled');
+	      }
+
+	      return _react2.default.createElement(
+	        'label',
+	        { className: (0, _classnames2.default)('now-checkbox', classes) },
+	        _react2.default.createElement('input', _extends({
+	          onChange: this._handleChecked,
+	          checked: this.state.checked,
+	          type: 'checkbox'
+	        }, this.props))
+	      );
+	    }
+	  }]);
+
+	  return Checkbox;
+	})(_react2.default.Component);
+
+	Checkbox.propTypes = {
+	  checked: _react2.default.PropTypes.bool,
+	  classes: _react2.default.PropTypes.string,
+	  disabled: _react2.default.PropTypes.bool
+	};
+
+	exports.default = Checkbox;
+
+/***/ },
+/* 163 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(159);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var RadioButton = (function (_React$Component) {
+	  _inherits(RadioButton, _React$Component);
+
+	  function RadioButton(props) {
+	    _classCallCheck(this, RadioButton);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(RadioButton).call(this, props));
+
+	    _this.state = { checked: _this.props.checked || false };
+	    _this.handleChecked = _this.handleChecked.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(RadioButton, [{
+	    key: 'handleChecked',
+	    value: function handleChecked() {
+	      this.setState({
+	        checked: !this.state.checked
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var classes = [this.props.classes];
+
+	      if (this.state.checked) {
+	        classes.push('checked');
+	      }
+
+	      if (this.props.disabled) {
+	        classes.push('disabled');
+	      }
+
+	      return _react2.default.createElement(
+	        'label',
+	        { className: (0, _classnames2.default)('now-radio-button', classes) },
+	        _react2.default.createElement('input', _extends({
+	          onChange: this.handleChecked,
+	          checked: this.state.checked,
+	          type: 'radio'
+	        }, this.props))
+	      );
+	    }
+	  }]);
+
+	  return RadioButton;
+	})(_react2.default.Component);
+
+	RadioButton.propTypes = {
+	  classes: _react2.default.PropTypes.string,
+	  checked: _react2.default.PropTypes.bool,
+	  disabled: _react2.default.PropTypes.bool
+	};
+
+	exports.default = RadioButton;
+
+/***/ },
+/* 164 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(159);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -20168,14 +20147,14 @@ module.exports =
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ToggleButton).call(this, props));
 
 	    _this.state = { checked: _this.props.checked || false };
-	    _this.toggleChecked = _this.toggleChecked.bind(_this);
+	    _this.handleChecked = _this.handleChecked.bind(_this);
 	    _this.onChange = _this.onChange.bind(_this);
 	    return _this;
 	  }
 
 	  _createClass(ToggleButton, [{
-	    key: 'toggleChecked',
-	    value: function toggleChecked() {
+	    key: 'handleChecked',
+	    value: function handleChecked() {
 	      if (!this.props.disableToggleOnClick) {
 	        this.setState({ checked: !this.state.checked });
 	      }
@@ -20215,7 +20194,7 @@ module.exports =
 	        ) : null,
 	        this.props.disabled ? _react2.default.createElement('div', { className: 'toggle-button disabled' }) : _react2.default.createElement(
 	          'div',
-	          { className: (0, _classnames2.default)('toggle-button', checkBoxClasses), onClick: this.toggleChecked },
+	          { className: (0, _classnames2.default)('toggle-button', checkBoxClasses), onClick: this.handleChecked },
 	          _react2.default.createElement('input', _extends({ defaultChecked: this.state.checked, type: 'checkbox' }, other))
 	        ),
 	        this.props.onText ? _react2.default.createElement(
@@ -20230,160 +20209,20 @@ module.exports =
 	  return ToggleButton;
 	})(_react2.default.Component);
 
+	ToggleButton.propTypes = {
+	  classes: _react2.default.PropTypes.string,
+	  checked: _react2.default.PropTypes.bool,
+	  disabled: _react2.default.PropTypes.bool,
+	  disableToggleOnClick: _react2.default.PropTypes.bool,
+	  onClick: _react2.default.PropTypes.func,
+	  offText: _react2.default.PropTypes.string,
+	  onText: _react2.default.PropTypes.string
+	};
+
 	exports.default = ToggleButton;
 
 /***/ },
-/* 166 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _objectAssign = __webpack_require__(159);
-
-	var _objectAssign2 = _interopRequireDefault(_objectAssign);
-
-	var _classnames = __webpack_require__(160);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Ticket = (function (_React$Component) {
-	    _inherits(Ticket, _React$Component);
-
-	    function Ticket(props) {
-	        _classCallCheck(this, Ticket);
-
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Ticket).call(this, props));
-	    }
-
-	    _createClass(Ticket, [{
-	        key: 'render',
-	        value: function render() {
-	            var classes = [this.props.classes];
-
-	            return _react2.default.createElement(
-	                'div',
-	                null,
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: (0, _classnames2.default)('now-ticket', classes) },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: (0, _classnames2.default)('content') },
-	                        _react2.default.createElement(
-	                            'h3',
-	                            null,
-	                            this.props.title
-	                        ),
-	                        _react2.default.createElement(
-	                            'p',
-	                            null,
-	                            this.props.children
-	                        )
-	                    )
-	                ),
-	                _react2.default.createElement('div', { className: (0, _classnames2.default)('tearoff', classes) })
-	            );
-	        }
-	    }]);
-
-	    return Ticket;
-	})(_react2.default.Component);
-
-	exports.default = Ticket;
-
-/***/ },
-/* 167 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _objectAssign = __webpack_require__(159);
-
-	var _objectAssign2 = _interopRequireDefault(_objectAssign);
-
-	var _classnames = __webpack_require__(160);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var supportedPositions = ['top-centre', 'bottom-right'];
-
-	var Tip = (function (_React$Component) {
-	    _inherits(Tip, _React$Component);
-
-	    function Tip(props) {
-	        _classCallCheck(this, Tip);
-
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Tip).call(this, props));
-	    }
-
-	    _createClass(Tip, [{
-	        key: 'isPositionSupported',
-	        value: function isPositionSupported(position) {
-	            return supportedPositions.indexOf(position) < 0;
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            var classes = [this.props.classes],
-	                position = this.props['arrow-position'],
-	                arrowPosition = this.isPositionSupported(position) ? 'top-centre' : position;
-
-	            return _react2.default.createElement(
-	                'div',
-	                { className: (0, _classnames2.default)('now-tip', classes, arrowPosition) },
-	                _react2.default.createElement('div', { className: "arrow-" + arrowPosition }),
-	                _react2.default.createElement(
-	                    'p',
-	                    { className: 'content' },
-	                    this.props.children
-	                )
-	            );
-	        }
-	    }]);
-
-	    return Tip;
-	})(_react2.default.Component);
-
-	exports.default = Tip;
-
-/***/ },
-/* 168 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20398,11 +20237,161 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _objectAssign = __webpack_require__(159);
+	var _classnames = __webpack_require__(159);
 
-	var _objectAssign2 = _interopRequireDefault(_objectAssign);
+	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _classnames = __webpack_require__(160);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Ticket = (function (_React$Component) {
+	  _inherits(Ticket, _React$Component);
+
+	  function Ticket(props) {
+	    _classCallCheck(this, Ticket);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Ticket).call(this, props));
+	  }
+
+	  _createClass(Ticket, [{
+	    key: 'render',
+	    value: function render() {
+	      var classes = [this.props.classes];
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: (0, _classnames2.default)('now-ticket', classes) },
+	          _react2.default.createElement(
+	            'div',
+	            { className: (0, _classnames2.default)('content') },
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              this.props.title
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              this.props.children
+	            )
+	          )
+	        ),
+	        _react2.default.createElement('div', { className: (0, _classnames2.default)('tearoff', classes) })
+	      );
+	    }
+	  }]);
+
+	  return Ticket;
+	})(_react2.default.Component);
+
+	Ticket.propTypes = {
+	  children: _react2.default.PropTypes.string,
+	  classes: _react2.default.PropTypes.string,
+	  title: _react2.default.PropTypes.string
+	};
+
+	exports.default = Ticket;
+
+/***/ },
+/* 166 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(159);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var supportedPositions = ['top-centre', 'bottom-right'];
+
+	var Tip = (function (_React$Component) {
+	  _inherits(Tip, _React$Component);
+
+	  function Tip(props) {
+	    _classCallCheck(this, Tip);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Tip).call(this, props));
+	  }
+
+	  _createClass(Tip, [{
+	    key: 'isPositionSupported',
+	    value: function isPositionSupported(position) {
+	      return supportedPositions.indexOf(position) < 0;
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var classes = [this.props.classes];
+	      var position = this.props['arrow-position'];
+	      var arrowPosition = this.isPositionSupported(position) ? 'top-centre' : position;
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: (0, _classnames2.default)('now-tip', classes, arrowPosition) },
+	        _react2.default.createElement('div', { className: 'arrow-' + arrowPosition }),
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'content' },
+	          this.props.children
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Tip;
+	})(_react2.default.Component);
+
+	Tip.propTypes = {
+	  children: _react2.default.PropTypes.string,
+	  classes: _react2.default.PropTypes.string,
+	  'arrow-position': _react2.default.PropTypes.string
+	};
+
+	exports.default = Tip;
+
+/***/ },
+/* 167 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(159);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -20422,7 +20411,7 @@ module.exports =
 
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Notification).call(this, props));
 
-	    _this._closeNotification = _this._closeNotification.bind(_this);
+	    _this._handleClose = _this._handleClose.bind(_this);
 
 	    _this.state = {
 	      showNotification: true
@@ -20431,6 +20420,16 @@ module.exports =
 	  }
 
 	  _createClass(Notification, [{
+	    key: '_handleClose',
+	    value: function _handleClose() {
+	      if (this.props.onClose) {
+	        return this.props.onClose();
+	      }
+	      this.setState({
+	        showNotification: !this.state.showNotification
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var classes = [this.props.classes];
@@ -20447,7 +20446,7 @@ module.exports =
 	        'div',
 	        { className: (0, _classnames2.default)('now-notification', classes, { 'no-title': !hasTitle }) },
 	        _react2.default.createElement('div', { className: 'notificationIcon' }),
-	        dismissable ? _react2.default.createElement('div', { onClick: this._closeNotification, className: 'close' }) : null,
+	        dismissable ? _react2.default.createElement('div', { onClick: this._handleClose, className: 'close' }) : null,
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'notificationBody' },
@@ -20464,25 +20463,23 @@ module.exports =
 	        )
 	      );
 	    }
-	  }, {
-	    key: '_closeNotification',
-	    value: function _closeNotification() {
-	      if (this.props.onClose) {
-	        return this.props.onClose();
-	      }
-	      this.setState({
-	        showNotification: !this.state.showNotification
-	      });
-	    }
 	  }]);
 
 	  return Notification;
 	})(_react2.default.Component);
 
+	Notification.propTypes = {
+	  children: _react2.default.PropTypes.string,
+	  classes: _react2.default.PropTypes.string,
+	  dismissable: _react2.default.PropTypes.bool,
+	  onClose: _react2.default.PropTypes.func,
+	  title: _react2.default.PropTypes.string
+	};
+
 	exports.default = Notification;
 
 /***/ },
-/* 169 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20497,11 +20494,7 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _objectAssign = __webpack_require__(159);
-
-	var _objectAssign2 = _interopRequireDefault(_objectAssign);
-
-	var _classnames = __webpack_require__(160);
+	var _classnames = __webpack_require__(159);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -20524,7 +20517,7 @@ module.exports =
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Modals).call(this, props));
 
 	    _this.toggle = _this.toggle.bind(_this);
-	    _this.hide = _this.hide.bind(_this);
+	    _this.handleHide = _this.handleHide.bind(_this);
 	    _this.show = _this.show.bind(_this);
 
 	    _this.state = {
@@ -20538,9 +20531,9 @@ module.exports =
 	    value: function componentDidMount() {
 	      var _this2 = this;
 
-	      keymaster = __webpack_require__(170);
+	      keymaster = __webpack_require__(169);
 	      keymaster('esc', function () {
-	        return _this2.state.visible ? _this2.hide() : null;
+	        return _this2.state.visible ? _this2.handleHide() : null;
 	      });
 	    }
 	  }, {
@@ -20550,53 +20543,20 @@ module.exports =
 	      keymaster.unbind('esc');
 	    }
 	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var classes = (0, _classnames2.default)('now-modal', [this.props.classes], { 'visible': this.state.visible });
-
-	      return _react2.default.createElement(
-	        'div',
-	        { className: classes },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'modal__content' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'close-container' },
-	            _react2.default.createElement('div', { onClick: this.hide, className: 'close-icon' })
-	          ),
-	          this.props.title ? _react2.default.createElement(
-	            'div',
-	            { className: 'title' },
-	            _react2.default.createElement(
-	              'h5',
-	              null,
-	              this.props.title
-	            )
-	          ) : null,
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            this.props.children
-	          )
-	        )
-	      );
-	    }
-	  }, {
 	    key: 'toggle',
-	    value: function toggle(e) {
+	    value: function toggle() {
 	      if (this.state.visible) {
-	        this.hide();
+	        this.handleHide();
 	      } else {
 	        this.show();
 	      }
 	    }
 	  }, {
-	    key: 'hide',
-	    value: function hide(event) {
+	    key: 'handleHide',
+	    value: function handleHide(event) {
 	      this._giveBodyFocusBack();
 
-	      if (event !== undefined && event.currentTarget.className && event.currentTarget.className.indexOf("close-icon") > -1) {
+	      if (event !== undefined && event.currentTarget.className && event.currentTarget.className.indexOf('close-icon') > -1) {
 	        if (this.props.closeHandler) {
 	          this.props.closeHandler();
 	        }
@@ -20626,15 +20586,55 @@ module.exports =
 	        document.body.classList.remove('modal-open');
 	      }
 	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var classes = (0, _classnames2.default)('now-modal', [this.props.classes], { 'visible': this.state.visible });
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: classes },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'modal__content' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'close-container' },
+	            _react2.default.createElement('div', { onClick: this.handleHide, className: 'close-icon' })
+	          ),
+	          this.props.title ? _react2.default.createElement(
+	            'div',
+	            { className: 'title' },
+	            _react2.default.createElement(
+	              'h5',
+	              null,
+	              this.props.title
+	            )
+	          ) : null,
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            this.props.children
+	          )
+	        )
+	      );
+	    }
 	  }]);
 
 	  return Modals;
 	})(_react2.default.Component);
 
+	Modals.propTypes = {
+	  children: _react2.default.PropTypes.string,
+	  classes: _react2.default.PropTypes.string,
+	  closeHandler: _react2.default.PropTypes.func,
+	  title: _react2.default.PropTypes.string
+	};
+
 	exports.default = Modals;
 
 /***/ },
-/* 170 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//     keymaster.js
@@ -20936,7 +20936,7 @@ module.exports =
 
 
 /***/ },
-/* 171 */
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20953,11 +20953,7 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _objectAssign = __webpack_require__(159);
-
-	var _objectAssign2 = _interopRequireDefault(_objectAssign);
-
-	var _classnames = __webpack_require__(160);
+	var _classnames = __webpack_require__(159);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -20984,36 +20980,6 @@ module.exports =
 	  }
 
 	  _createClass(Accordion, [{
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-
-	      var classes = (0, _classnames2.default)('now-accordion', [this.props.classes]);
-
-	      var newChildren = _react2.default.Children.map(this.props.children, function (child, index) {
-	        var onItemClicked = function onItemClicked() {
-	          _this2._itemClicked(index);
-	        };
-
-	        var newProps = {
-	          setVisible: onItemClicked,
-	          isOpen: _this2.state.openItem === index
-	        };
-
-	        if (index === _this2.state.openItem) {
-	          newProps['classes'] = 'visible';
-	        }
-
-	        return _react2.default.cloneElement(child, _extends({}, newProps));
-	      });
-
-	      return _react2.default.createElement(
-	        'div',
-	        { className: classes },
-	        newChildren
-	      );
-	    }
-	  }, {
 	    key: '_itemClicked',
 	    value: function _itemClicked(id) {
 	      var openItem = id;
@@ -21026,15 +20992,50 @@ module.exports =
 	        openItem: openItem
 	      });
 	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      var classes = (0, _classnames2.default)('now-accordion', [this.props.classes]);
+
+	      var newChildren = _react2.default.Children.map(this.props.children, function (child, index) {
+	        var onItemClicked = function onItemClicked() {
+	          _this2._itemClicked(index);
+	        };
+
+	        var newProps = {
+	          handleVisiblity: onItemClicked,
+	          isOpen: _this2.state.openItem === index
+	        };
+
+	        if (index === _this2.state.openItem) {
+	          newProps.classes = 'visible';
+	        }
+
+	        return _react2.default.cloneElement(child, _extends({}, newProps));
+	      });
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: classes },
+	        newChildren
+	      );
+	    }
 	  }]);
 
 	  return Accordion;
 	})(_react2.default.Component);
 
+	Accordion.propTypes = {
+	  children: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.object),
+	  classes: _react2.default.PropTypes.string
+	};
+
 	exports.default = Accordion;
 
 /***/ },
-/* 172 */
+/* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21049,11 +21050,7 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _objectAssign = __webpack_require__(159);
-
-	var _objectAssign2 = _interopRequireDefault(_objectAssign);
-
-	var _classnames = __webpack_require__(160);
+	var _classnames = __webpack_require__(159);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -21081,7 +21078,7 @@ module.exports =
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: classes, onClick: this.props.setVisible },
+	        { className: classes, onClick: this.props.handleVisiblity },
 	        _react2.default.createElement(
 	          'span',
 	          { className: 'accordion-item-title' },
@@ -21099,10 +21096,19 @@ module.exports =
 	  return AccordionItem;
 	})(_react2.default.Component);
 
+	AccordionItem.propTypes = {
+	  children: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.object),
+	  classes: _react2.default.PropTypes.string,
+	  handleVisiblity: _react2.default.PropTypes.func,
+	  isOpen: _react2.default.PropTypes.bool,
+	  maxHeight: _react2.default.PropTypes.number,
+	  title: _react2.default.PropTypes.string
+	};
+
 	exports.default = AccordionItem;
 
 /***/ },
-/* 173 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21154,10 +21160,14 @@ module.exports =
 	  return Spinner;
 	})(_react2.default.Component);
 
+	Spinner.propTypes = {
+	  size: _react2.default.PropTypes.string
+	};
+
 	exports.default = Spinner;
 
 /***/ },
-/* 174 */
+/* 173 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
