@@ -15,7 +15,7 @@ class Modal extends React.Component {
         <h3>Title and content</h3>
         <div className="category row">
           <div className="col-md-6">
-            <Toolkit.Button classes='primary green' onClick={ this._toggleModal.bind(this, 'modal1') }>Show modal</Toolkit.Button>
+            <Toolkit.Button classes='primary green' id="modalCta" onClick={ this._toggleModal.bind(this, 'modal1') }>Show modal</Toolkit.Button>
             <Toolkit.Modal title="Do you really want to have a modal?" ref="modal1">
               <Toolkit.Button classes='primary green' onClick={ this._toggleModal.bind(this, 'modal1') }>Yes</Toolkit.Button>
               <Toolkit.Button classes='primary default' onClick={ this._toggleModal.bind(this, 'modal1') }>No</Toolkit.Button>
@@ -37,7 +37,7 @@ class Modal extends React.Component {
             <Toolkit.Modal classes="custom-modal" ref="modal2">
               <div className="header">
                 <h2>Hi, I am a custom modal</h2>
-              </div>  
+              </div>
               <div className="content">
                 <p>Do what ya want with ma body</p>
                 <p>Do what ya want with ma body</p>

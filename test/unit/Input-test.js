@@ -1,8 +1,11 @@
-var React = require('react');
-var assert = require('assert');
-var should = require('chai').should();
-var NowInput = require('../../src/components/Input/Input.react');
-var TestUtils = require('react-addons-test-utils');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TestUtils from 'react-addons-test-utils';
+import chai from 'chai';
+const should = chai.should();
+const assert = chai.assert;
+
+import NowInput from '../../src/components/Input/Input.react';
 
 describe('Input component', function() {
 

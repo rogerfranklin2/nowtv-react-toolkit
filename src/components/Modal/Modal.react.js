@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import keymaster from 'keymaster';
+let keymaster;
 
 class Modals extends React.Component {
   constructor(props) {
@@ -15,6 +15,7 @@ class Modals extends React.Component {
   }
 
   componentDidMount() {
+    keymaster = require('keymaster');
     keymaster('esc', () => this.state.visible ? this.handleHide() : null);
   }
 

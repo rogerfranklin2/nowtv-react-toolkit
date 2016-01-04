@@ -1,8 +1,11 @@
-const React = require('react'),
-    assert = require('assert'),
-    should = require('chai').should(),
-    NowCheckbox = require('../../src/components/Checkbox/Checkbox.react'),
-    TestUtils = require('react-addons-test-utils');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TestUtils from 'react-addons-test-utils';
+import chai from 'chai';
+const should = chai.should();
+const assert = chai.assert;
+
+import NowCheckbox from '../../src/components/Checkbox/Checkbox.react';
 
 describe('Checkbox component', function() {
     it('should display a checkbox element', function() {

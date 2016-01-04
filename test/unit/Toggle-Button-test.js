@@ -1,9 +1,11 @@
-const assert = require('assert'),
-      React = require('react'),
-      ReactDOM = require('react-dom'),
-      should = require('chai').should(),
-      TestUtils = require('react-addons-test-utils'),
-      NowToggleButton = require('../../src/components/ToggleButton/ToggleButton.react');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TestUtils from 'react-addons-test-utils';
+import chai from 'chai';
+const should = chai.should();
+const assert = chai.assert;
+
+import NowToggleButton from '../../src/components/ToggleButton/ToggleButton.react';
 
 describe('ToggleButton component', function() {
   it('should display a toggle button element', function() {

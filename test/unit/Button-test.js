@@ -1,8 +1,11 @@
-const assert = require('assert'),
-      should = require('chai').should(),
-      React = require('react'),
-      TestUtils = require('react-addons-test-utils'),
-      NowButton = require('../../src/components/Button/Button.react');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TestUtils from 'react-addons-test-utils';
+import chai from 'chai';
+const should = chai.should();
+const assert = chai.assert;
+
+import NowButton from '../../src/components/Button/Button.react';
 
 describe('Button component', function() {
     it('should display text', function() {
