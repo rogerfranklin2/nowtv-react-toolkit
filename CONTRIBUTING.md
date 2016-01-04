@@ -18,6 +18,9 @@ PhantomJS v2 i required for tests.  If you haven't already got it installed plea
 
 ## Testing
 
+You will need selenium server installed locally.  If you do not have this already, please run :
+ * `npm run selenium:install`
+
 Run unit tests:
  * `npm test`
 
