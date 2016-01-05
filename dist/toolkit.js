@@ -55,7 +55,7 @@ module.exports =
 
 	var _Button2 = _interopRequireDefault(_Button);
 
-	var _Input = __webpack_require__(160);
+	var _Input = __webpack_require__(159);
 
 	var _Input2 = _interopRequireDefault(_Input);
 
@@ -143,10 +143,6 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(159);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -158,18 +154,20 @@ module.exports =
 	var Button = (function (_React$Component) {
 	  _inherits(Button, _React$Component);
 
-	  function Button(props) {
+	  function Button() {
 	    _classCallCheck(this, Button);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Button).call(this, props));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Button).apply(this, arguments));
 	  }
 
 	  _createClass(Button, [{
 	    key: 'render',
 	    value: function render() {
+	      var baseClass = 'now-button';
+	      var className = baseClass + '_' + this.props.type + '_' + this.props.color;
 	      return _react2.default.createElement(
 	        'button',
-	        _extends({}, this.props, { className: (0, _classnames2.default)('now-button', this.props.classes) }),
+	        _extends({ className: className }, this.props),
 	        this.props.children
 	      );
 	    }
@@ -178,11 +176,13 @@ module.exports =
 	  return Button;
 	})(_react2.default.Component);
 
-	Button.propTypes = {
-	  children: _react2.default.PropTypes.string,
-	  classes: _react2.default.PropTypes.string
+	Button.defaultProps = {
+	  type: 'primary'
 	};
-
+	Button.propTypes = {
+	  type: _react.PropTypes.oneOf(['primary', 'secondary']).isRequired,
+	  color: _react.PropTypes.oneOf(['red', 'yellow', 'green', 'blue']).isRequired
+	};
 	exports.default = Button;
 
 /***/ },
@@ -19769,60 +19769,6 @@ module.exports =
 /* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	  Copyright (c) 2015 Jed Watson.
-	  Licensed under the MIT License (MIT), see
-	  http://jedwatson.github.io/classnames
-	*/
-	/* global define */
-
-	(function () {
-		'use strict';
-
-		var hasOwn = {}.hasOwnProperty;
-
-		function classNames () {
-			var classes = '';
-
-			for (var i = 0; i < arguments.length; i++) {
-				var arg = arguments[i];
-				if (!arg) continue;
-
-				var argType = typeof arg;
-
-				if (argType === 'string' || argType === 'number') {
-					classes += ' ' + arg;
-				} else if (Array.isArray(arg)) {
-					classes += ' ' + classNames.apply(null, arg);
-				} else if (argType === 'object') {
-					for (var key in arg) {
-						if (hasOwn.call(arg, key) && arg[key]) {
-							classes += ' ' + key;
-						}
-					}
-				}
-			}
-
-			return classes.substr(1);
-		}
-
-		if (typeof module !== 'undefined' && module.exports) {
-			module.exports = classNames;
-		} else if (true) {
-			// register as 'classnames', consistent with npm package name
-			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
-				return classNames;
-			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-		} else {
-			window.classNames = classNames;
-		}
-	}());
-
-
-/***/ },
-/* 160 */
-/***/ function(module, exports, __webpack_require__) {
-
 	'use strict';
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -19837,7 +19783,7 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(159);
+	var _classnames = __webpack_require__(160);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -19875,6 +19821,60 @@ module.exports =
 	exports.default = Input;
 
 /***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2016 Jed Watson.
+	  Licensed under the MIT License (MIT), see
+	  http://jedwatson.github.io/classnames
+	*/
+	/* global define */
+
+	(function () {
+		'use strict';
+
+		var hasOwn = {}.hasOwnProperty;
+
+		function classNames () {
+			var classes = [];
+
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (!arg) continue;
+
+				var argType = typeof arg;
+
+				if (argType === 'string' || argType === 'number') {
+					classes.push(arg);
+				} else if (Array.isArray(arg)) {
+					classes.push(classNames.apply(null, arg));
+				} else if (argType === 'object') {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				}
+			}
+
+			return classes.join(' ');
+		}
+
+		if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else if (true) {
+			// register as 'classnames', consistent with npm package name
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+				return classNames;
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else {
+			window.classNames = classNames;
+		}
+	}());
+
+
+/***/ },
 /* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -19892,7 +19892,7 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(159);
+	var _classnames = __webpack_require__(160);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -19952,7 +19952,7 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(159);
+	var _classnames = __webpack_require__(160);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -20038,7 +20038,7 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(159);
+	var _classnames = __webpack_require__(160);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -20124,7 +20124,7 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(159);
+	var _classnames = __webpack_require__(160);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -20237,7 +20237,7 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(159);
+	var _classnames = __webpack_require__(160);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -20316,7 +20316,7 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(159);
+	var _classnames = __webpack_require__(160);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -20391,7 +20391,7 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(159);
+	var _classnames = __webpack_require__(160);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -20494,7 +20494,7 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(159);
+	var _classnames = __webpack_require__(160);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -20953,7 +20953,7 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(159);
+	var _classnames = __webpack_require__(160);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -21050,7 +21050,7 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(159);
+	var _classnames = __webpack_require__(160);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
