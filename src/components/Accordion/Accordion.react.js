@@ -49,7 +49,7 @@ class Accordion extends React.Component {
 }
 
 Accordion.propTypes = {
-  children: React.PropTypes.arrayOf(React.PropTypes.object),
+  children: React.PropTypes.node,
   classes: React.PropTypes.string
 };
 
