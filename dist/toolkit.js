@@ -19770,7 +19770,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	  Copyright (c) 2015 Jed Watson.
+	  Copyright (c) 2016 Jed Watson.
 	  Licensed under the MIT License (MIT), see
 	  http://jedwatson.github.io/classnames
 	*/
@@ -19782,7 +19782,7 @@ module.exports =
 		var hasOwn = {}.hasOwnProperty;
 
 		function classNames () {
-			var classes = '';
+			var classes = [];
 
 			for (var i = 0; i < arguments.length; i++) {
 				var arg = arguments[i];
@@ -19791,19 +19791,19 @@ module.exports =
 				var argType = typeof arg;
 
 				if (argType === 'string' || argType === 'number') {
-					classes += ' ' + arg;
+					classes.push(arg);
 				} else if (Array.isArray(arg)) {
-					classes += ' ' + classNames.apply(null, arg);
+					classes.push(classNames.apply(null, arg));
 				} else if (argType === 'object') {
 					for (var key in arg) {
 						if (hasOwn.call(arg, key) && arg[key]) {
-							classes += ' ' + key;
+							classes.push(key);
 						}
 					}
 				}
 			}
 
-			return classes.substr(1);
+			return classes.join(' ');
 		}
 
 		if (typeof module !== 'undefined' && module.exports) {
@@ -21028,7 +21028,7 @@ module.exports =
 	})(_react2.default.Component);
 
 	Accordion.propTypes = {
-	  children: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.object),
+	  children: _react2.default.PropTypes.node,
 	  classes: _react2.default.PropTypes.string
 	};
 
@@ -21097,7 +21097,7 @@ module.exports =
 	})(_react2.default.Component);
 
 	AccordionItem.propTypes = {
-	  children: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.object),
+	  children: _react2.default.PropTypes.node,
 	  classes: _react2.default.PropTypes.string,
 	  handleVisiblity: _react2.default.PropTypes.func,
 	  isOpen: _react2.default.PropTypes.bool,
