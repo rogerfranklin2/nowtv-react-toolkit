@@ -1,4 +1,4 @@
-# NowTV React Toolkit
+# NowTV React Toolkit [![Circle CI](https://circleci.com/gh/sky-uk/nowtv-react-toolkit.svg?style=svg)](https://circleci.com/gh/sky-uk/nowtv-react-toolkit)
 
 This is a tookit of NowTV React UI components.
 
