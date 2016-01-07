@@ -32,6 +32,23 @@ describe('Button component', () => {
       expect(button.className).to.equal('now-button_primary_red');
       expect(button.disabled).to.equal(true);
     });
+
+    it('onClick is passed', () => {
+      const mockProps = {
+        color: 'red'
+      };
+      function onClick(e) {
+        e.currentTarget.innerHTML = 'woah, i was clicked!';
+      }
+      const component = TestUtils.renderIntoDocument(<Button {...mockProps} onClick={onClick}>I am a button</Button>);
+      const button = TestUtils.findRenderedDOMComponentWithTag(component, 'button');
+
+      TestUtils.Simulate.click(button);
+
+      expect(errors().length).to.equal(0, errors().join('\n'));
+      expect(button.textContent).to.equal('woah, i was clicked!');
+      expect(button.className).to.equal('now-button_primary_red');
+    });
   });
 
   context('should error', () => {
