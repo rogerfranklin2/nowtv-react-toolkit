@@ -19978,7 +19978,7 @@ module.exports =
 
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Checkbox).call(this, props));
 
-	    _this.state = { checked: _this.props.checked || false };
+	    _this.state = { checked: props.checked || false };
 	    _this._handleChecked = _this._handleChecked.bind(_this);
 	    return _this;
 	  }
@@ -20064,7 +20064,7 @@ module.exports =
 
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(RadioButton).call(this, props));
 
-	    _this.state = { checked: _this.props.checked || false };
+	    _this.state = { checked: props.checked || false };
 	    _this.handleChecked = _this.handleChecked.bind(_this);
 	    return _this;
 	  }
@@ -20152,7 +20152,7 @@ module.exports =
 
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ToggleButton).call(this, props));
 
-	    _this.state = { checked: _this.props.checked || false };
+	    _this.state = { checked: props.checked || false };
 	    _this.handleChecked = _this.handleChecked.bind(_this);
 	    _this.onChange = _this.onChange.bind(_this);
 	    return _this;
@@ -21006,7 +21006,8 @@ module.exports =
 	      var classes = (0, _classnames2.default)('now-accordion', [this.props.classes]);
 
 	      var newChildren = _react2.default.Children.map(this.props.children, function (child, index) {
-	        var onItemClicked = function onItemClicked() {
+	        var onItemClicked = function onItemClicked(event) {
+	          event.preventDefault();
 	          _this2._itemClicked(index);
 	        };
 
@@ -21080,14 +21081,18 @@ module.exports =
 	  _createClass(AccordionItem, [{
 	    key: 'render',
 	    value: function render() {
+	      var _arguments = arguments;
+
 	      var classes = (0, _classnames2.default)('now-accordion-item', [this.props.classes]);
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: classes, onClick: this.props.handleVisiblity },
+	        { className: classes, onClick: function onClick() {
+	            console.log(_arguments);
+	          } },
 	        _react2.default.createElement(
-	          'span',
-	          { className: 'accordion-item-title' },
+	          'a',
+	          { className: 'accordion-item-title', onClick: this.props.handleVisiblity },
 	          this.props.title
 	        ),
 	        _react2.default.createElement(
