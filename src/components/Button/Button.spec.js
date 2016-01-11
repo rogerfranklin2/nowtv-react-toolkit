@@ -28,8 +28,6 @@ describe('Button component', () => {
       const button = TestUtils.findRenderedDOMComponentWithTag(component, 'button');
 
       expect(errors().length).to.equal(0, errors().join('\n'));
-      expect(button.textContent).to.equal('I am a button');
-      expect(button.className).to.equal('now-button_primary_red');
       expect(button.disabled).to.equal(true);
     });
 
@@ -47,7 +45,31 @@ describe('Button component', () => {
 
       expect(errors().length).to.equal(0, errors().join('\n'));
       expect(button.textContent).to.equal('woah, i was clicked!');
-      expect(button.className).to.equal('now-button_primary_red');
+    });
+
+    it('as a button', () => {
+      const mockProps = {
+        color: 'red'
+      };
+      const component = TestUtils.renderIntoDocument(<Button {...mockProps} >I am a button</Button>);
+      const buttons = TestUtils.scryRenderedDOMComponentsWithTag(component, 'button');
+
+      expect(buttons.length).to.equal(1);
+      expect(errors().length).to.equal(0, errors().join('\n'));
+      expect(buttons[0].href).to.equal(undefined);
+    });
+
+    it('as a link', () => {
+      const mockProps = {
+        color: 'red',
+        href: 'http://www.google.com'
+      };
+      const component = TestUtils.renderIntoDocument(<Button {...mockProps} >I am a link</Button>);
+      const buttons = TestUtils.scryRenderedDOMComponentsWithTag(component, 'a');
+
+      expect(buttons.length).to.equal(1);
+      expect(errors().length).to.equal(0, errors().join('\n'));
+      expect(buttons[0].href).to.equal('http://www.google.com/');
     });
   });
 

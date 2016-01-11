@@ -24749,7 +24749,7 @@
 	/******/__webpack_require__.m=modules; /******/ // expose the module cache
 	/******/__webpack_require__.c=installedModules; /******/ // __webpack_public_path__
 	/******/__webpack_require__.p=""; /******/ // Load entry module and return exports
-	/******/return __webpack_require__(0); /******/}( /************************************************************************/ /******/[ /* 0 */ /***/function(module,exports,__webpack_require__){'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _Button=__webpack_require__(1);var _Button2=_interopRequireDefault(_Button);var _Input=__webpack_require__(159);var _Input2=_interopRequireDefault(_Input);var _Dropdown=__webpack_require__(161);var _Dropdown2=_interopRequireDefault(_Dropdown);var _Checkbox=__webpack_require__(162);var _Checkbox2=_interopRequireDefault(_Checkbox);var _RadioButton=__webpack_require__(163);var _RadioButton2=_interopRequireDefault(_RadioButton);var _ToggleButton=__webpack_require__(164);var _ToggleButton2=_interopRequireDefault(_ToggleButton);var _Ticket=__webpack_require__(165);var _Ticket2=_interopRequireDefault(_Ticket);var _Tip=__webpack_require__(166);var _Tip2=_interopRequireDefault(_Tip);var _Notification=__webpack_require__(167);var _Notification2=_interopRequireDefault(_Notification);var _Modal=__webpack_require__(168);var _Modal2=_interopRequireDefault(_Modal);var _Accordion=__webpack_require__(170);var _Accordion2=_interopRequireDefault(_Accordion);var _AccordionItem=__webpack_require__(171);var _AccordionItem2=_interopRequireDefault(_AccordionItem);var _Spinner=__webpack_require__(172);var _Spinner2=_interopRequireDefault(_Spinner);var _toolkit=__webpack_require__(173);var _toolkit2=_interopRequireDefault(_toolkit);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}exports.default={Button:_Button2.default,Input:_Input2.default,Dropdown:_Dropdown2.default,Checkbox:_Checkbox2.default,RadioButton:_RadioButton2.default,ToggleButton:_ToggleButton2.default,Ticket:_Ticket2.default,Tip:_Tip2.default,Notification:_Notification2.default,Modal:_Modal2.default,Accordion:_Accordion2.default,AccordionItem:_AccordionItem2.default,Spinner:_Spinner2.default}; /***/}, /* 1 */ /***/function(module,exports,__webpack_require__){'use strict';var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value" in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&((typeof call==="undefined"?"undefined":_typeof(call))==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+(typeof superClass==="undefined"?"undefined":_typeof(superClass)));}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var Button=function(_React$Component){_inherits(Button,_React$Component);function Button(){_classCallCheck(this,Button);return _possibleConstructorReturn(this,Object.getPrototypeOf(Button).apply(this,arguments));}_createClass(Button,[{key:'render',value:function render(){var baseClass='now-button';var className=baseClass+'_'+this.props.type+'_'+this.props.color;return _react2.default.createElement('button',_extends({className:className},this.props),this.props.children);}}]);return Button;}(_react2.default.Component);Button.defaultProps={type:'primary'};Button.propTypes={type:_react.PropTypes.oneOf(['primary','secondary']).isRequired,color:_react.PropTypes.oneOf(['red','yellow','green','blue','grey']).isRequired};exports.default=Button; /***/}, /* 2 */ /***/function(module,exports,__webpack_require__){'use strict';module.exports=__webpack_require__(3); /***/}, /* 3 */ /***/function(module,exports,__webpack_require__){ /**
+	/******/return __webpack_require__(0); /******/}( /************************************************************************/ /******/[ /* 0 */ /***/function(module,exports,__webpack_require__){'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _Button=__webpack_require__(1);var _Button2=_interopRequireDefault(_Button);var _Input=__webpack_require__(159);var _Input2=_interopRequireDefault(_Input);var _Dropdown=__webpack_require__(161);var _Dropdown2=_interopRequireDefault(_Dropdown);var _Checkbox=__webpack_require__(162);var _Checkbox2=_interopRequireDefault(_Checkbox);var _RadioButton=__webpack_require__(163);var _RadioButton2=_interopRequireDefault(_RadioButton);var _ToggleButton=__webpack_require__(164);var _ToggleButton2=_interopRequireDefault(_ToggleButton);var _Ticket=__webpack_require__(165);var _Ticket2=_interopRequireDefault(_Ticket);var _Tip=__webpack_require__(166);var _Tip2=_interopRequireDefault(_Tip);var _Notification=__webpack_require__(167);var _Notification2=_interopRequireDefault(_Notification);var _Modal=__webpack_require__(168);var _Modal2=_interopRequireDefault(_Modal);var _Accordion=__webpack_require__(170);var _Accordion2=_interopRequireDefault(_Accordion);var _AccordionItem=__webpack_require__(171);var _AccordionItem2=_interopRequireDefault(_AccordionItem);var _Spinner=__webpack_require__(172);var _Spinner2=_interopRequireDefault(_Spinner);var _toolkit=__webpack_require__(173);var _toolkit2=_interopRequireDefault(_toolkit);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}exports.default={Button:_Button2.default,Input:_Input2.default,Dropdown:_Dropdown2.default,Checkbox:_Checkbox2.default,RadioButton:_RadioButton2.default,ToggleButton:_ToggleButton2.default,Ticket:_Ticket2.default,Tip:_Tip2.default,Notification:_Notification2.default,Modal:_Modal2.default,Accordion:_Accordion2.default,AccordionItem:_AccordionItem2.default,Spinner:_Spinner2.default}; /***/}, /* 1 */ /***/function(module,exports,__webpack_require__){'use strict';var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value" in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&((typeof call==="undefined"?"undefined":_typeof(call))==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+(typeof superClass==="undefined"?"undefined":_typeof(superClass)));}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var Button=function(_React$Component){_inherits(Button,_React$Component);function Button(){_classCallCheck(this,Button);return _possibleConstructorReturn(this,Object.getPrototypeOf(Button).apply(this,arguments));}_createClass(Button,[{key:'render',value:function render(){var baseClass='now-button';var className=baseClass+'_'+this.props.type+'_'+this.props.color;return this.props.href&&!this.props.disabled?_react2.default.createElement('a',_extends({className:className},this.props),this.props.children):_react2.default.createElement('button',_extends({className:className},this.props),this.props.children);}}]);return Button;}(_react2.default.Component);Button.defaultProps={type:'primary'};Button.propTypes={color:_react.PropTypes.oneOf(['red','yellow','green','blue','grey']).isRequired,type:_react.PropTypes.oneOf(['primary','secondary']),href:_react.PropTypes.string};exports.default=Button; /***/}, /* 2 */ /***/function(module,exports,__webpack_require__){'use strict';module.exports=__webpack_require__(3); /***/}, /* 3 */ /***/function(module,exports,__webpack_require__){ /**
 		 * Copyright 2013-2015, Facebook, Inc.
 		 * All rights reserved.
 		 *
@@ -30712,7 +30712,7 @@
 	        _react2.default.createElement(
 	          _toolkit2.default.Button,
 	          { color: 'green' },
-	          'Im a button :)'
+	          'I\'m a green button :)'
 	        ),
 	        _react2.default.createElement(
 	          'pre',
@@ -30720,14 +30720,29 @@
 	          _react2.default.createElement(
 	            'code',
 	            { className: 'jsx' },
-	            "<Toolkit.Button color='green'>Inactive state</Toolkit.Button>",
+	            "<Toolkit.Button color='green'>I'm a green button :)</Toolkit.Button>",
+	            _react2.default.createElement('br', null)
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _toolkit2.default.Button,
+	          { color: 'green', href: 'http://www.google.com' },
+	          'I\'m a link :D'
+	        ),
+	        _react2.default.createElement(
+	          'pre',
+	          null,
+	          _react2.default.createElement(
+	            'code',
+	            { className: 'jsx' },
+	            "<Toolkit.Button color='green' href='http://www.google.com'>I'm a link :D</Toolkit.Button>",
 	            _react2.default.createElement('br', null)
 	          )
 	        ),
 	        _react2.default.createElement(
 	          _toolkit2.default.Button,
 	          { color: 'blue' },
-	          'Im a button :)'
+	          'I\'m a blue button :)'
 	        ),
 	        _react2.default.createElement(
 	          'pre',
@@ -30735,14 +30750,14 @@
 	          _react2.default.createElement(
 	            'code',
 	            { className: 'jsx' },
-	            "<Toolkit.Button color='blue'>Inactive state</Toolkit.Button>",
+	            "<Toolkit.Button color='blue'>I'm a blue button :)</Toolkit.Button>",
 	            _react2.default.createElement('br', null)
 	          )
 	        ),
 	        _react2.default.createElement(
 	          _toolkit2.default.Button,
 	          { color: 'red' },
-	          'Im a button :)'
+	          'I\'m a red button :)'
 	        ),
 	        _react2.default.createElement(
 	          'pre',
@@ -30750,14 +30765,14 @@
 	          _react2.default.createElement(
 	            'code',
 	            { className: 'jsx' },
-	            "<Toolkit.Button color='red'>Inactive state</Toolkit.Button>",
+	            "<Toolkit.Button color='red'>I'm a red button :)</Toolkit.Button>",
 	            _react2.default.createElement('br', null)
 	          )
 	        ),
 	        _react2.default.createElement(
 	          _toolkit2.default.Button,
 	          { color: 'yellow' },
-	          'Im a button :)'
+	          'I\'m a yellow button :)'
 	        ),
 	        _react2.default.createElement(
 	          'pre',
@@ -30765,7 +30780,7 @@
 	          _react2.default.createElement(
 	            'code',
 	            { className: 'jsx' },
-	            "<Toolkit.Button color='yellow'>Inactive state</Toolkit.Button>",
+	            "<Toolkit.Button color='yellow'>I'm a yellow button :)</Toolkit.Button>",
 	            _react2.default.createElement('br', null)
 	          )
 	        ),
@@ -30786,6 +30801,20 @@
 	            'code',
 	            { className: 'jsx' },
 	            "<Toolkit.Button color='green' disabled>Disabled state</Toolkit.Button>"
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _toolkit2.default.Button,
+	          { color: 'green', disabled: true, href: 'http://www.google.com' },
+	          'Disabled link state'
+	        ),
+	        _react2.default.createElement(
+	          'pre',
+	          null,
+	          _react2.default.createElement(
+	            'code',
+	            { className: 'jsx' },
+	            '<Toolkit.Button color=\'green\' disabled href="http://www.google.com">Disabled link state</Toolkit.Button>'
 	          )
 	        ),
 	        _react2.default.createElement(
