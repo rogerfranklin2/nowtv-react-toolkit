@@ -21103,7 +21103,7 @@ module.exports =
 	}(_react2.default.Component);
 
 	AccordionItem.propTypes = {
-	  children: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.object),
+	  children: _react2.default.PropTypes.node,
 	  classes: _react2.default.PropTypes.string,
 	  handleVisiblity: _react2.default.PropTypes.func,
 	  isOpen: _react2.default.PropTypes.bool,
