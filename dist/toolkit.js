@@ -165,7 +165,11 @@ module.exports =
 	    value: function render() {
 	      var baseClass = 'now-button';
 	      var className = baseClass + '_' + this.props.type + '_' + this.props.color;
-	      return _react2.default.createElement(
+	      return this.props.href && !this.props.disabled ? _react2.default.createElement(
+	        'a',
+	        _extends({ className: className }, this.props),
+	        this.props.children
+	      ) : _react2.default.createElement(
 	        'button',
 	        _extends({ className: className }, this.props),
 	        this.props.children
@@ -180,8 +184,9 @@ module.exports =
 	  type: 'primary'
 	};
 	Button.propTypes = {
-	  type: _react.PropTypes.oneOf(['primary', 'secondary']).isRequired,
-	  color: _react.PropTypes.oneOf(['red', 'yellow', 'green', 'blue', 'grey']).isRequired
+	  color: _react.PropTypes.oneOf(['red', 'yellow', 'green', 'blue', 'grey']).isRequired,
+	  type: _react.PropTypes.oneOf(['primary', 'secondary']),
+	  href: _react.PropTypes.string
 	};
 	exports.default = Button;
 
@@ -21103,7 +21108,7 @@ module.exports =
 	}(_react2.default.Component);
 
 	AccordionItem.propTypes = {
-	  children: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.object),
+	  children: _react2.default.PropTypes.node,
 	  classes: _react2.default.PropTypes.string,
 	  handleVisiblity: _react2.default.PropTypes.func,
 	  isOpen: _react2.default.PropTypes.bool,
