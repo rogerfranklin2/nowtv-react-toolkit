@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint src/components",
     "build": "webpack && webpack --config docs/webpack.config.js",
-    "serve": "babel-node ./docs/server/index.js",
+    "serve": "node ./docs/server/index.js",
     "start": "npm run build & npm run serve",
     "phantom:install": "npm i phantomjs2 && upx -d ./node_modules/phantomjs2/lib/phantom/bin/phantomjs",
     "selenium:install": "selenium-standalone install",
@@ -38,7 +38,6 @@
     "classnames": "^2.1.1",
     "css-loader": "^0.23.0",
     "divshot-cli": "^1.10.5",
-    "enzyme": "^1.2.0",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^2.1.1",
     "eslint-plugin-react": "^3.11.3",
@@ -47,12 +46,10 @@
     "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.4",
     "history": "1.13.1",
-    "jsdom": "^7.2.1",
-    "keymaster": "^1.6.2",
+    "jsdom": "^7.2.2",
     "mocha": "^2.2.4",
     "node-sass": "^3.1.2",
-    "null-loader": "^0.1.1",
-    "object-assign": "^4.0.0",
+    "nowtv-grid": "git+https://github.com/nowarkdev/grid.git",
     "react": "^0.14.3",
     "react-addons-test-utils": "^0.14.3",
     "react-dom": "^0.14.3",
@@ -64,12 +61,10 @@
     "url-loader": "^0.5.6",
     "webdriverio": "^3.3.0",
     "webpack": "^1.7.3",
-    "webpack-dev-server": "^1.9.0",
-    "connect": "^3.3.5",
-    "nowtv-grid": "git+https://github.com/nowarkdev/grid.git",
-    "serve-static": "^1.9.3"
+    "webpack-dev-server": "^1.9.0"
   },
   "dependencies": {
+    "keymaster": "^1.6.2",
     "nowtv-toolkit": "https://github.com/sky-uk/nowtv-toolkit.git#v0.0.5"
   }
 }
