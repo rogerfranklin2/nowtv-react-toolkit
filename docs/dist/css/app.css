@@ -1487,71 +1487,6 @@ hr {
   font-size: 16px;
   margin-bottom: 15px; }
 
-@media screen and (max-width: 767px) {
-  body.modal-open {
-    position: fixed;
-    overflow-y: auto;
-    height: 100vh; } }
-
-.now-modal {
-  display: none;
-  content: '';
-  background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
-
-.now-modal.visible {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; }
-
-.now-modal .modal__content {
-  background: #fefefe;
-  border-radius: 10px;
-  z-index: 11;
-  width: 420px;
-  padding: 20px 15px;
-  overflow-y: auto;
-  overflow-x: hidden; }
-
-@media screen and (min-width: 768px) {
-  .now-modal .modal__content {
-    padding: 20px 30px; } }
-
-.now-modal .modal__content .close-container {
-  position: relative; }
-
-.now-modal .modal__content .close-icon {
-  position: absolute;
-  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjE4cHgiIGhlaWdodD0iMThweCIgdmlld0JveD0iMCAwIDE4IDE4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4zLjMgKDEyMDgxKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5kaXNtaXNzLW5vdGlmaWNhdGlvbi1pY29uPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IkdVSS1TdHlsZWd1aWRlIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4KICAgICAgICA8ZyBpZD0iSWNvbnMtLS1EZXZpY2VzLUNvcHktNCIgc2tldGNoOnR5cGU9Ik1TQXJ0Ym9hcmRHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTQxMy4wMDAwMDAsIC0zMjQuMDAwMDAwKSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik00MTQsMzI1IEw0MzAsMzQxIE00MzAsMzI1IEw0MTQsMzQxIiBpZD0iZGlzbWlzcy1ub3RpZmljYXRpb24taWNvbiIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+);
-  background-repeat: no-repeat;
-  background-size: 20px;
-  width: 20px;
-  height: 20px;
-  right: 0;
-  top: 0;
-  cursor: pointer; }
-
-@media screen and (max-width: 767px) {
-  .now-modal .modal__content {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
-    overflow-y: auto;
-    position: fixed;
-    left: 0; } }
-
 .now-accordion .now-accordion-item {
   position: relative;
   padding-left: 27px;
@@ -1988,11 +1923,3 @@ pre {
 
 .spinner-container.large {
   height: 500px; }
-
-.custom-modal .header {
-  background-color: #37AC47;
-  margin: -30px -20px 20px;
-  padding: 20px;
-  color: #fff; }
-  .custom-modal .header h2 {
-    margin: 0; }

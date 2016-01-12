@@ -9,28 +9,37 @@ class Buttons extends React.Component {
         <h2 className="section-title">Buttons</h2>
         <h3>Primary</h3>
 
-        <Toolkit.Button color="green">Im a button :)</Toolkit.Button>
+        <Toolkit.Button color="green">I'm a green button :)</Toolkit.Button>
         <pre>
           <code className="jsx">
-            {"<Toolkit.Button color='green'>Inactive state</Toolkit.Button>"}<br/>
+            {"<Toolkit.Button color='green'>I'm a green button :)</Toolkit.Button>"}<br/>
           </code>
         </pre>
-        <Toolkit.Button color="blue">Im a button :)</Toolkit.Button>
+
+
+        <Toolkit.Button color="green" href="http://www.google.com">I'm a link :D</Toolkit.Button>
         <pre>
           <code className="jsx">
-            {"<Toolkit.Button color='blue'>Inactive state</Toolkit.Button>"}<br/>
+            {"<Toolkit.Button color='green' href='http://www.google.com'>I'm a link :D</Toolkit.Button>"}<br/>
           </code>
         </pre>
-        <Toolkit.Button color="red">Im a button :)</Toolkit.Button>
+
+        <Toolkit.Button color="blue">I'm a blue button :)</Toolkit.Button>
         <pre>
           <code className="jsx">
-            {"<Toolkit.Button color='red'>Inactive state</Toolkit.Button>"}<br/>
+            {"<Toolkit.Button color='blue'>I'm a blue button :)</Toolkit.Button>"}<br/>
           </code>
         </pre>
-        <Toolkit.Button color="yellow">Im a button :)</Toolkit.Button>
+        <Toolkit.Button color="red">I'm a red button :)</Toolkit.Button>
         <pre>
           <code className="jsx">
-            {"<Toolkit.Button color='yellow'>Inactive state</Toolkit.Button>"}<br/>
+            {"<Toolkit.Button color='red'>I'm a red button :)</Toolkit.Button>"}<br/>
+          </code>
+        </pre>
+        <Toolkit.Button color="yellow">I'm a yellow button :)</Toolkit.Button>
+        <pre>
+          <code className="jsx">
+            {"<Toolkit.Button color='yellow'>I'm a yellow button :)</Toolkit.Button>"}<br/>
           </code>
         </pre>
 
@@ -40,6 +49,13 @@ class Buttons extends React.Component {
         <pre>
           <code className="jsx">
             {"<Toolkit.Button color='green' disabled>Disabled state</Toolkit.Button>"}
+          </code>
+        </pre>
+
+        <Toolkit.Button color='green' disabled href="http://www.google.com">Disabled link state</Toolkit.Button>
+        <pre>
+          <code className="jsx">
+            {`<Toolkit.Button color='green' disabled href="http://www.google.com">Disabled link state</Toolkit.Button>`}
           </code>
         </pre>
 
