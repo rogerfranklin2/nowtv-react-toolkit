@@ -1553,7 +1553,6 @@ hr {
     left: 0; } }
 
 .now-accordion .now-accordion-item {
-  cursor: pointer;
   position: relative;
   padding-left: 27px;
   z-index: 0; }
@@ -1929,7 +1928,6 @@ p.smaller {
     line-height: 18px; } }
 
 .no-select {
-  -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

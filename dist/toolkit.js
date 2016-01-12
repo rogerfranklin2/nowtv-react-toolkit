@@ -21081,18 +21081,14 @@ module.exports =
 	  _createClass(AccordionItem, [{
 	    key: 'render',
 	    value: function render() {
-	      var _arguments = arguments;
-
 	      var classes = (0, _classnames2.default)('now-accordion-item', [this.props.classes]);
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: classes, onClick: function onClick() {
-	            console.log(_arguments);
-	          } },
+	        { className: classes },
 	        _react2.default.createElement(
 	          'a',
-	          { className: 'accordion-item-title', onClick: this.props.handleVisiblity },
+	          { href: '#', className: 'accordion-item-title', 'data-tracking-context': this.props.isOpen ? 'closing' : 'opening', onClick: this.props.handleVisiblity },
 	          this.props.title
 	        ),
 	        _react2.default.createElement(
