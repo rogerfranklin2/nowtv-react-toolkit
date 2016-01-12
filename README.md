@@ -5,7 +5,7 @@ This is a tookit of NowTV React UI components.
 ## Installation
 
 ```bash
-npm install @nowtv/nowtv-react-tookit --save
+npm install @nowtv/nowtv-react-toolkit --save
 ```
 
 ## Usage
