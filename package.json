@@ -1,6 +1,6 @@
 {
   "name": "@nowtv/nowtv-react-toolkit",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "NowTV React ui-toolkit",
   "main": "./dist/toolkit.js",
   "scripts": {
@@ -65,6 +65,7 @@
   },
   "dependencies": {
     "keymaster": "^1.6.2",
-    "nowtv-toolkit": "https://github.com/sky-uk/nowtv-toolkit.git#v0.0.5"
+    "nowtv-toolkit": "https://github.com/sky-uk/nowtv-toolkit.git#v0.0.5",
+    "sinon": "^1.17.2"
   }
 }
