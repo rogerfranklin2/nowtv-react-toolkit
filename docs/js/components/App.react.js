@@ -11,7 +11,6 @@ import Links from './LinksComponents.react';
 import RadioButtons from './RadioButtonComponents.react';
 import ToggleButtons from './ToggleButtonComponents.react';
 import Notifications from './NotificationComponents.react';
-import Modal from './ModalComponents.react';
 import Accordion from './AccordionComponents.react';
 import Spinner from './SpinnerComponents.react';
 import Typography from './Typography.react';
@@ -36,7 +35,6 @@ class App extends React.Component {
         <Tickets className="tickets-doc"/>
         <Tips className="tips-doc"/>
         <Notifications className="notifications-doc"/>
-        <Modal classNames="modals-doc" />
         <Accordion classNames="accordions-doc" />
         <Spinner classNames="spinner-doc" />
       </div>
