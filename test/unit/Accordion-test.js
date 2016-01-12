@@ -31,7 +31,7 @@ describe('Accordion component', () => {
     expect(accordionItem.className.trim()).to.equal('now-accordion-item');
   });
 
-  it('should open an accordion item when clicked', () => {
+  it('should open an accordion item when clicked on title', () => {
     const renderedComponent = TestUtils.renderIntoDocument(
       <Accordion>
         <AccordionItem />
@@ -46,13 +46,14 @@ describe('Accordion component', () => {
     const accordionItem2 = ReactDOM.findDOMNode(accordionItems[1]);
     const accordionItem3 = ReactDOM.findDOMNode(accordionItems[2]);
 
-    TestUtils.Simulate.click(accordionItem);
+    TestUtils.Simulate.click(accordionItem.firstChild);
+
     expect(accordionItem.className.trim()).to.include('visible');
     expect(accordionItem2.className.trim()).to.not.include('visible');
     expect(accordionItem3.className.trim()).to.not.include('visible');
   });
 
-  it('should close an open accordion item when it is clicked again', () => {
+  it('should close an open accordion item when it is clicked on the title again', () => {
     const renderedComponent = TestUtils.renderIntoDocument(
       <Accordion>
         <AccordionItem />
@@ -67,12 +68,12 @@ describe('Accordion component', () => {
     const accordionItem2 = ReactDOM.findDOMNode(accordionItems[1]);
     const accordionItem3 = ReactDOM.findDOMNode(accordionItems[2]);
 
-    TestUtils.Simulate.click(accordionItem);
+    TestUtils.Simulate.click(accordionItem.firstChild);
     expect(accordionItem.className.trim()).to.include('visible');
     expect(accordionItem2.className.trim()).to.not.include('visible');
     expect(accordionItem2.className.trim()).to.not.include('visible');
-    
-    TestUtils.Simulate.click(accordionItem);
+
+    TestUtils.Simulate.click(accordionItem.firstChild);
     expect(accordionItem.className.trim()).to.not.include('visible');
     expect(accordionItem2.className.trim()).to.not.include('visible');
     expect(accordionItem2.className.trim()).to.not.include('visible');
