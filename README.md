@@ -1,11 +1,11 @@
 # NowTV React Toolkit [![Circle CI](https://circleci.com/gh/sky-uk/nowtv-react-toolkit.svg?style=svg)](https://circleci.com/gh/sky-uk/nowtv-react-toolkit)
 
-This is a tookit of NowTV React UI components.
+This is a toolkit of NowTV React UI components.
 
 ## Installation
 
 ```bash
-npm install @nowtv/nowtv-react-tookit --save
+npm install @nowtv/nowtv-react-toolkit --save
 ```
 
 ## Usage
@@ -14,10 +14,10 @@ npm install @nowtv/nowtv-react-tookit --save
 
 ```javascript
 // ES5
-var Toolkit = require('nowtv-react-tookit');
+var Toolkit = require('nowtv-react-toolkit');
 
 // ES6
-import Tookit from 'nowtv-react-toolkit';
+import Toolkit from 'nowtv-react-toolkit';
 ```
 
 ### CSS
