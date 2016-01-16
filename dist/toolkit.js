@@ -176,7 +176,8 @@ module.exports =
 	}(_react2.default.Component);
 
 	Button.defaultProps = {
-	  type: 'primary'
+	  type: 'primary',
+	  color: 'green'
 	};
 	Button.propTypes = {
 	  color: _react.PropTypes.oneOf(['red', 'yellow', 'green', 'blue', 'grey']).isRequired,

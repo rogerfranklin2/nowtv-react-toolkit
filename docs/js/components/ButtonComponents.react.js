@@ -30,16 +30,25 @@ class Buttons extends React.Component {
             {"<Toolkit.Button color='blue'>I'm a blue button :)</Toolkit.Button>"}<br/>
           </code>
         </pre>
+
         <Toolkit.Button color="red">I'm a red button :)</Toolkit.Button>
         <pre>
           <code className="jsx">
             {"<Toolkit.Button color='red'>I'm a red button :)</Toolkit.Button>"}<br/>
           </code>
         </pre>
+
         <Toolkit.Button color="yellow">I'm a yellow button :)</Toolkit.Button>
         <pre>
           <code className="jsx">
             {"<Toolkit.Button color='yellow'>I'm a yellow button :)</Toolkit.Button>"}<br/>
+          </code>
+        </pre>
+
+        <Toolkit.Button color="grey">I'm a grey button :)</Toolkit.Button>
+        <pre>
+          <code className="jsx">
+            {"<Toolkit.Button color='grey'>I'm a grey button :)</Toolkit.Button>"}<br/>
           </code>
         </pre>
 
