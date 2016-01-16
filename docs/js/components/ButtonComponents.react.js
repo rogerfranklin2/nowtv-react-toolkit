@@ -9,13 +9,19 @@ class Buttons extends React.Component {
         <h2 className="section-title">Buttons</h2>
         <h3>Primary</h3>
 
+        <Toolkit.Button>I'm a default colour button :)</Toolkit.Button>
+        <pre>
+          <code className="jsx">
+            {"<Toolkit.Button>I'm a default colour button :)</Toolkit.Button>"}<br/>
+          </code>
+        </pre>
+
         <Toolkit.Button color="green">I'm a green button :)</Toolkit.Button>
         <pre>
           <code className="jsx">
             {"<Toolkit.Button color='green'>I'm a green button :)</Toolkit.Button>"}<br/>
           </code>
         </pre>
-
 
         <Toolkit.Button color="green" href="http://www.google.com">I'm a link :D</Toolkit.Button>
         <pre>

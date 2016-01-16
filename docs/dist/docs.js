@@ -30789,6 +30789,21 @@
 	        ),
 	        _react2.default.createElement(
 	          _toolkit2.default.Button,
+	          null,
+	          'I\'m a default colour button :)'
+	        ),
+	        _react2.default.createElement(
+	          'pre',
+	          null,
+	          _react2.default.createElement(
+	            'code',
+	            { className: 'jsx' },
+	            "<Toolkit.Button>I'm a default colour button :)</Toolkit.Button>",
+	            _react2.default.createElement('br', null)
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _toolkit2.default.Button,
 	          { color: 'green' },
 	          'I\'m a green button :)'
 	        ),
