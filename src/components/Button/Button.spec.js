@@ -73,14 +73,16 @@ describe('Button component', () => {
     });
   });
 
-  context('should error', () => {
+  context('should not error', () => {
     it('when props are omitted', () => {
       const component = TestUtils.renderIntoDocument(<Button >I am a button</Button>);
       const button = TestUtils.findRenderedDOMComponentWithTag(component, 'button');
 
-      expect(errors().length).to.equal(1, errors().join('\n'));
+      expect(errors().length).to.equal(0, errors().join('\n'));
     });
+  });
 
+  context('should error', () => {
     it('when the colour prop is invalid', () => {
       const mockProps = {
         color: 'invalid-color'
