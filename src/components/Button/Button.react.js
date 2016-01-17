@@ -3,7 +3,8 @@ import React, { PropTypes } from 'react';
 export default class Button extends React.Component {
 
   static defaultProps = {
-    type: 'primary'
+    type: 'primary',
+    color: 'green'
   };
 
   static propTypes = {
