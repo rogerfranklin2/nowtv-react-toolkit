@@ -33,4 +33,10 @@ describe('Ticket component', () => {
         const renderedTicket = classesTicket.find('.now-ticket')
         assert.equal(renderedTicket.props().className, "now-ticket testClass")
     })
+    
+    it('should pass classes to tear off', () => {
+        const classesTearoff = shallow(<NowTicket classes="testClass"/>)
+        const renderedTicket = classesTicket.find('.tearoff')
+        assert.equal(renderedTicket.props().className, "tearoff testClass")
+    })
 });
