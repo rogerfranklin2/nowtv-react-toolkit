@@ -1,74 +1,72 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import TestUtils from 'react-addons-test-utils';
-import chai from 'chai';
-const should = chai.should();
-const assert = chai.assert;
+import { shallow } from 'enzyme'
+import { assert } from 'chai';
 
 import NowCheckbox from '../../src/components/Checkbox/Checkbox.react';
 
 describe('Checkbox component', function() {
     it('should display a checkbox element', function() {
-        var renderedComponent = TestUtils.renderIntoDocument(<NowCheckbox/>);
-        var component = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-checkbox');
-        should.exist(component);
+        var renderedComponent = shallow(<NowCheckbox/>);
+        var component = renderedComponent.find('.now-checkbox');
+        assert.ok(component);
     });
 
     it('should add addtional classes to the label', function(){
-        var checkboxWithClass = TestUtils.renderIntoDocument(<NowCheckbox classes="extraClass"/>);
-        var renderedCheckbox = TestUtils.findRenderedDOMComponentWithTag(checkboxWithClass, 'label');
+        var checkboxWithClass = shallow(<NowCheckbox classes="extraClass"/>);
+        var renderedCheckbox = checkboxWithClass.find('label');
+        console.log('renderedCheckbox')
 
-        assert.equal(renderedCheckbox.className, "now-checkbox extraClass");
+        assert.equal(renderedCheckbox.props().className, "now-checkbox extraClass");
     });
 
     it('should not add addtional classes to the input', function(){
-        var checkboxWithClass = TestUtils.renderIntoDocument(<NowCheckbox classes="extraClass"/>);
-        var renderedCheckbox = TestUtils.findRenderedDOMComponentWithTag(checkboxWithClass, 'input');
+        var checkboxWithClass = shallow(<NowCheckbox classes="extraClass"/>);
+        var renderedCheckbox = checkboxWithClass.find('input');
 
-        assert.equal(renderedCheckbox.className, "");
+        assert.equal(renderedCheckbox.props().className, null);
     });
 
     it('should add any additional props to the input', function(){
-        var checkboxWithAdditionalProp = TestUtils.renderIntoDocument(<NowCheckbox name="name"/>);
-        var renderedCheckbox = TestUtils.findRenderedDOMComponentWithTag(checkboxWithAdditionalProp, 'input');
+        var checkboxWithAdditionalProp = shallow(<NowCheckbox name="name"/>);
+        var renderedCheckbox = checkboxWithAdditionalProp.find('input');
 
-        assert.equal(renderedCheckbox.name, "name");
+        assert.equal(renderedCheckbox.props().name, "name");
     });
 
     it('should not add any additional props to the label', function(){
-        var checkboxWithAdditionalProp = TestUtils.renderIntoDocument(<NowCheckbox name="name"/>);
-        var renderedCheckbox = TestUtils.findRenderedDOMComponentWithTag(checkboxWithAdditionalProp, 'label');
+        var checkboxWithAdditionalProp = shallow(<NowCheckbox name="name"/>);
+        var renderedCheckbox = checkboxWithAdditionalProp.find('label');
 
-        assert.equal(renderedCheckbox.name, null);
+        assert.equal(renderedCheckbox.props().name, null);
     });
 
     it('should render its children', function() {
-        var checkboxWithChildren = TestUtils.renderIntoDocument(
+        var checkboxWithChildren = shallow(
             <NowCheckbox>Checkbox 1</NowCheckbox>
         );
-        var renderedCheckbox = TestUtils.findRenderedDOMComponentWithClass(checkboxWithChildren, 'now-checkbox');
+        var renderedCheckbox = checkboxWithChildren.find('.now-checkbox');
 
-        assert.equal(renderedCheckbox.textContent, "Checkbox 1");
+        assert.equal(renderedCheckbox.text(), "Checkbox 1");
     });
 
     it('should check the checkbox if it is passed as a prop', function(){
-        var checkboxWithProp = TestUtils.renderIntoDocument(
+        var checkboxWithProp = shallow(
             <NowCheckbox checked={true}>Checkbox 1</NowCheckbox>
         );
-        var renderedCheckboxLabel = TestUtils.findRenderedDOMComponentWithTag(checkboxWithProp, 'label');
-        var renderedCheckboxInput = TestUtils.findRenderedDOMComponentWithTag(checkboxWithProp, 'input');
+        var renderedCheckboxLabel = checkboxWithProp.find('label');
+        var renderedCheckboxInput = checkboxWithProp.find('input');
 
-        assert.equal(renderedCheckboxLabel.className, "now-checkbox checked");
-        assert.equal(renderedCheckboxInput.checked, true);
+        assert.equal(renderedCheckboxLabel.props().className, "now-checkbox checked");
+        assert.equal(renderedCheckboxInput.props().checked, true);
     });
 
     it('should add disabled class when disabled is passed as a prop', function(){
-        var checkboxWithDisabled = TestUtils.renderIntoDocument(<NowCheckbox disabled />);
-        var disabledCheckboxLabel = TestUtils.findRenderedDOMComponentWithTag(checkboxWithDisabled, 'label');
-        var disabledCheckboxInput = TestUtils.findRenderedDOMComponentWithTag(checkboxWithDisabled, 'input');
+        var checkboxWithDisabled = shallow(<NowCheckbox disabled />);
+        var disabledCheckboxLabel = checkboxWithDisabled.find('label');
+        var disabledCheckboxInput = checkboxWithDisabled.find('input');
 
-        assert.equal(disabledCheckboxLabel.className, "now-checkbox disabled");
-        assert.equal(disabledCheckboxInput.disabled, true);
+        assert.equal(disabledCheckboxLabel.props().className, "now-checkbox disabled");
+        assert.equal(disabledCheckboxInput.props().disabled, true);
     })
 
 });
