@@ -1,9 +1,8 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import { assert } from 'chai';
+import React from 'react'
+import { shallow } from 'enzyme'
+import { assert } from 'chai'
 
-
-import NowTicket from '../../src/components/Ticket/Ticket.react';
+import NowTicket from '../../src/components/Ticket/Ticket.react'
 
 describe('Ticket component', () => {
     it('should render a ticket', function() {
@@ -29,14 +28,14 @@ describe('Ticket component', () => {
     })
     
     it('passed classes through', () =>{
-        const classesTicket = shallow(<NowTicket classes="testClass"/>)
-        const renderedTicket = classesTicket.find('.now-ticket')
-        assert.equal(renderedTicket.props().className, "now-ticket testClass")
+        const classesTicket = shallow(<NowTicket classes="testClass"/>);
+        const renderedTicket = classesTicket.find('.now-ticket');
+        assert.equal(renderedTicket.props().className, "now-ticket testClass");
     })
     
     it('should pass classes to tear off', () => {
-        const classesTearoff = shallow(<NowTicket classes="testClass"/>)
-        const renderedTicket = classesTicket.find('.tearoff')
-        assert.equal(renderedTicket.props().className, "tearoff testClass")
+        const classesTearoff = shallow(<NowTicket classes="testClass"/>);
+        const renderedTearoff = classesTearoff.find('.tearoff');
+        assert.equal(renderedTearoff.props().className, "tearoff testClass");
     })
 });
