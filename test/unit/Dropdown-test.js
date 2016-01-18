@@ -27,7 +27,7 @@ describe('Dropdown component', () => {
         assert.equal(renderedDropdown.props().id, "anId");
     })
 
-    it.only('should render its children', function() {
+    it('should render its children', function() {
         var dropdownWithChildren = shallow(
             <NowDropdown>
                 <option value="value">Value</option>
