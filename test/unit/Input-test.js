@@ -1,44 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TestUtils from 'react-addons-test-utils';
-import chai from 'chai';
-const should = chai.should();
-const assert = chai.assert;
+import React from 'react'
+import { shallow } from 'enzyme'
+import { assert } from 'chai'
 
-import NowInput from '../../src/components/Input/Input.react';
+import NowInput from '../../src/components/Input/Input.react'
 
-describe('Input component', function() {
+describe('Input component', () => {
 
-    before('render and locate element', function() {
-        var renderedComponent = TestUtils.renderIntoDocument(
-            <NowInput />
-        );
-
-        this.pComponent = TestUtils.findRenderedDOMComponentWithClass( renderedComponent, 'now-input' );
+    it('should display a form field', () => {
+        const renderedComponent = shallow(<NowInput />);
+        assert.ok(renderedComponent.find('.now-input'));
     });
 
 
-    it('should display a form field', function() {
-        should.exist(this.pComponent);
-    });
-
-
-    it('should add addtional classes', function(){
-        var inputWithClass = TestUtils.renderIntoDocument(
+    it('should add addtional classes', () => {
+        const inputWithClass = shallow(
             <NowInput classes="extraClass"/>
         );
 
-        var renderedInput = TestUtils.findRenderedDOMComponentWithClass(inputWithClass, 'extraClass');
-        should.exist(renderedInput);
+        const renderedInput = inputWithClass.find('.extraClass');
+        assert.ok(renderedInput);
     })
 
-    it('should add any addtionalitional props', function(){
-        var inputWithAdditionalId = TestUtils.renderIntoDocument(
+    it('should add any addtionalitional props', () => {
+        const inputWithAdditionalId = shallow(
             <NowInput id="additinalId"/>
         );
 
-        var renderedInput = TestUtils.findRenderedDOMComponentWithClass(inputWithAdditionalId, 'now-input');
-        assert.equal(renderedInput.id, "additinalId");
+        const renderedInput = inputWithAdditionalId.find('.now-input');
+        assert.equal(renderedInput.props().id, "additinalId");
     })
 
 });
