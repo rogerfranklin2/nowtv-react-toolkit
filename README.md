@@ -28,10 +28,6 @@ You will need to require the CSS into your project which can be done in two ways
 ```scss
 @import '[path-to-node_modules]/nowtv-react-toolkit/dist/toolkit';
 ```
-#### Pull from CDN.
-```html
-<link type="text/html" rel="stylesheet" href="//development.toolkit.divshot.io/dist/toolkit.css"/>`
-```
 
 ### Importing Individual ES6 Components Directly
 

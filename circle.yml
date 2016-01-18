@@ -17,7 +17,7 @@ deployment:
     branch: master
     commands:
       - npm run build
-      - ./node_modules/.bin/divshot push development --token $DIVSHOT_TOKEN
+
 machine:
   timezone:
     Europe/London

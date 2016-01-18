@@ -26,10 +26,10 @@ class App extends React.Component {
           <p>To obtain the toolkit css and js, include the following:</p>
           <pre>
             <code className="html">
-              http://development.toolkit.divshot.io/dist/toolkit.js
+              /node_modules/nowtv-toolkit/dist/toolkit.js
             </code>
             <code className="html">
-              http://development.toolkit.divshot.io/dist/toolkit.css
+              /node_modules/nowtv-toolkit/dist/toolkit.css
             </code>
           </pre>
         </section>
