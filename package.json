@@ -7,7 +7,7 @@
     "lint": "eslint src/components",
     "build": "webpack && webpack --config docs/webpack.config.js",
     "serve": "node ./docs/server/index.js",
-    "start": "npm run build & npm run serve",
+    "start": "npm run build && npm run serve",
     "phantom:install": "npm i phantomjs2",
     "selenium:install": "selenium-standalone install",
     "selenium:start": "selenium-standalone start",
