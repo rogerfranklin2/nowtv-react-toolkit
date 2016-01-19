@@ -1,44 +1,40 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import TestUtils from 'react-addons-test-utils';
-import chai from 'chai';
-const should = chai.should();
-const assert = chai.assert;
+import { shallow } from 'enzyme'
+import { assert } from 'chai';
 
 import NowDropdown from '../../src/components/Dropdown/Dropdown.react';
 
-describe('Dropdown component', function() {
+describe('Dropdown component', () => {
 
-    it('should display a dropdown element', function() {
-        var renderedComponent = TestUtils.renderIntoDocument(<NowDropdown/>);
-        var component = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-dropdown');
-        should.exist(component);
+    it('should display a dropdown element', () => {
+        var renderedComponent = shallow(<NowDropdown/>);
+        var component = renderedComponent.find('.now-dropdown');
+        assert.ok(component);
     });
 
 
     it('should add addtional classes', function(){
-        var dropdownWithClass = TestUtils.renderIntoDocument(<NowDropdown classes="extraClass"/>);
-        var renderedDropdown = TestUtils.findRenderedDOMComponentWithClass(dropdownWithClass, 'extraClass');
+        var dropdownWithClass = shallow(<NowDropdown classes="extraClass"/>);
+        var renderedDropdown = dropdownWithClass.find('.extraClass');
 
-        should.exist(renderedDropdown);
+        assert.ok(renderedDropdown);
     })
 
     it('should add any addtionalitional props', function(){
-        var dropdownWithAdditionalProp = TestUtils.renderIntoDocument(<NowDropdown id="anId"/>);
-        var renderedDropdown = TestUtils.findRenderedDOMComponentWithClass(dropdownWithAdditionalProp, 'now-dropdown');
+        var dropdownWithAdditionalProp = shallow(<NowDropdown id="anId"/>);
+        var renderedDropdown = dropdownWithAdditionalProp.find('.now-dropdown');
 
-        assert.equal(renderedDropdown.id, "anId");
+        assert.equal(renderedDropdown.props().id, "anId");
     })
 
     it('should render its children', function() {
-        var dropdownWithChildren = TestUtils.renderIntoDocument(
+        var dropdownWithChildren = shallow(
             <NowDropdown>
                 <option value="value">Value</option>
                 <option value="value2">Value2</option>
             </NowDropdown>
         );
-        var renderedDropdown = TestUtils.findRenderedDOMComponentWithClass(dropdownWithChildren, 'now-dropdown');
-
-        assert.equal(renderedDropdown.children.length, 2);
+        var renderedDropdown = dropdownWithChildren.find('.now-dropdown');
+        assert.equal(renderedDropdown.props().children.length, 2);
     });
 });

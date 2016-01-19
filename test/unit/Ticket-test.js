@@ -1,30 +1,41 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TestUtils from 'react-addons-test-utils';
-import chai from 'chai';
-const should = chai.should();
-const assert = chai.assert;
+import React from 'react'
+import { shallow } from 'enzyme'
+import { assert } from 'chai'
 
-import NowTicket from '../../src/components/Ticket/Ticket.react';
+import NowTicket from '../../src/components/Ticket/Ticket.react'
 
-describe('Ticket component', function() {
+describe('Ticket component', () => {
     it('should render a ticket', function() {
-        var renderComponent = TestUtils.renderIntoDocument(<NowTicket/>);
-        var component = TestUtils.findRenderedDOMComponentWithClass(renderComponent, 'now-ticket');
-        should.exist(component);
+        const emptyTicket = shallow(<NowTicket/>);
+        assert.ok(emptyTicket.find('.now-ticket'));
     });
 
-    it('should contain a title', function() {
-        var renderComponent = TestUtils.renderIntoDocument(<NowTicket title="HelloIamATitle"/>);
-        var component = TestUtils.findRenderedDOMComponentWithTag(renderComponent, 'h3');
-        assert.equal((component).textContent, "HelloIamATitle");
-        should.exist(component);
+    it('should contain a title', () => {
+        const titleTicket = shallow(<NowTicket title="HelloIamATitle"/>);
+        const ticketTitle = titleTicket.find('h3');
+        assert.equal(ticketTitle.text(), "HelloIamATitle");
     });
 
     it('should contain some content', function() {
-        var renderComponent = TestUtils.renderIntoDocument(<NowTicket title="HelloIamATitle">This is content woo!</NowTicket>);
-        var component = TestUtils.findRenderedDOMComponentWithTag(renderComponent, 'p');
-        assert.equal(component.textContent, "This is content woo!");
-        should.exist(component);
+        var fullTicket = shallow(<NowTicket title="HelloIamATitle">This is content woo!</NowTicket>);
+        var ticketContent = fullTicket.find('p')
+        assert.equal(ticketContent.text(), "This is content woo!");
     });
+    
+    it('should contain a tearoff', () =>{
+        const emptyTicket = shallow(<NowTicket/>);
+        assert.ok(emptyTicket.find('.tearoff'));
+    })
+    
+    it('passed classes through', () =>{
+        const classesTicket = shallow(<NowTicket classes="testClass"/>);
+        const renderedTicket = classesTicket.find('.now-ticket');
+        assert.equal(renderedTicket.props().className, "now-ticket testClass");
+    })
+    
+    it('should pass classes to tear off', () => {
+        const classesTearoff = shallow(<NowTicket classes="testClass"/>);
+        const renderedTearoff = classesTearoff.find('.tearoff');
+        assert.equal(renderedTearoff.props().className, "tearoff testClass");
+    })
 });
