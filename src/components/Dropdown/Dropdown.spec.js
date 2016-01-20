@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme'
 import { assert } from 'chai';
 
-import NowDropdown from '../../src/components/Dropdown/Dropdown.react';
+import NowDropdown from './Dropdown.react';
 
 describe('Dropdown component', () => {
 

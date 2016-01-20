@@ -6,7 +6,7 @@ const should = chai.should();
 const assert = chai.assert;
 const expect = chai.expect;
 
-import AccordionItem from '../../src/components/Accordion/AccordionItem.react';
+import AccordionItem from './AccordionItem.react';
 
 describe('Accordion item component', () => {
   it('should display an AccordionItem', () => {

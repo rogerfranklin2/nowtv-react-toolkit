@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import { assert } from 'chai'
 
-import NowTicket from '../../src/components/Ticket/Ticket.react'
+import NowTicket from './Ticket.react'
 
 describe('Ticket component', () => {
     it('should render a ticket', function() {

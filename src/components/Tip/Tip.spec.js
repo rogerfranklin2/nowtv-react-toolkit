@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 import { assert } from 'chai';
 
 
-import NowTip from '../../src/components/Tip/Tip.react';
+import NowTip from './Tip.react';
 
 describe('Tip component', function(){
     it('should render a tip', function () {
