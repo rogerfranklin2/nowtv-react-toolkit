@@ -10,6 +10,7 @@ test:
     - npm run selenium:start:
         background: true
   override:
+    - npm run build
     - npm run test
     - npm run test:functional
 deployment:
