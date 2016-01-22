@@ -1,14 +1,12 @@
-@import '../../colours'
-
 =input_icon($icon)
   background-image: url(assets/icons/#{$icon}.svg)
   background-repeat: no-repeat
   background-size: 5%
-  background-position: 95% 
+  background-position: 95%
   padding-right: 40px
 
 .now-input
-  border: 1px solid $dark_grey
+  border: 1px solid $athens-gray
   color: black
   border-radius: 4px
   width: 100%
@@ -26,22 +24,13 @@
 
   &.error
     background-color: $white
-    +input_icon("error") 
+    +input_icon("error")
     color: $red
     border-color: $red
 
   &:disabled
-    background-color: $dark_grey
+    background-color: $athens-gray
 
   &.confirmation
-    +input_icon("green-tick") 
+    +input_icon("green-tick")
     color: $black
-
-
-
-
-
-
-
-
-

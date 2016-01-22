@@ -64,8 +64,8 @@
     "webpack-dev-server": "^1.9.0"
   },
   "dependencies": {
+    "@nowtv/nowtv-styleguide": "^2.0.0",
     "keymaster": "^1.6.2",
-    "nowtv-toolkit": "https://github.com/sky-uk/nowtv-toolkit.git#v0.0.5",
     "sinon": "^1.17.2"
   }
 }
