@@ -4,7 +4,7 @@
   "description": "NowTV React ui-toolkit",
   "main": "./dist/toolkit.js",
   "scripts": {
-    "lint": "eslint src/components",
+    "lint": "eslint src/components/**/*.react.js",
     "build": "webpack && webpack --config docs/webpack.config.js",
     "serve": "node ./docs/server/index.js",
     "start": "npm run build && npm run serve",
@@ -12,7 +12,7 @@
     "selenium:install": "selenium-standalone install",
     "selenium:start": "selenium-standalone start",
     "test:functional": "wdio  ./test/wdio.config.js",
-    "test:unit": "mocha 'test/unit/**/*-test.js' 'src/**/*.spec.js' --require test/jsdom.setup.js --compilers js:babel-core/register --recursive",
+    "test:unit": "mocha 'src/**/*.spec.js' --require test/jsdom.setup.js --compilers js:babel-core/register --recursive",
     "test": "npm run test:unit && npm run lint"
   },
   "pre-commit": [

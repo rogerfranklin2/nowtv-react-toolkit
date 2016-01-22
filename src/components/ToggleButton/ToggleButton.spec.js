@@ -5,7 +5,7 @@ import chai from 'chai';
 const should = chai.should();
 const assert = chai.assert;
 
-import NowToggleButton from '../../src/components/ToggleButton/ToggleButton.react';
+import NowToggleButton from './ToggleButton.react';
 
 describe('ToggleButton component', function() {
   it('should display a toggle button element', function() {

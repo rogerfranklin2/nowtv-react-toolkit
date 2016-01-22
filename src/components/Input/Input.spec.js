@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import { assert } from 'chai'
 
-import NowInput from '../../src/components/Input/Input.react'
+import NowInput from './Input.react'
 
 describe('Input component', () => {
 

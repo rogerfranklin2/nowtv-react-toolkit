@@ -2,8 +2,8 @@ import { expect } from 'chai';
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 import ReactDOM from 'react-dom';
-import Accordion from '../../src/components/Accordion/Accordion.react';
-import AccordionItem from '../../src/components/Accordion/AccordionItem.react';
+import Accordion from './Accordion.react';
+import AccordionItem from './AccordionItem.react';
 
 describe('Accordion component', () => {
   it('should display an accordion', () => {
