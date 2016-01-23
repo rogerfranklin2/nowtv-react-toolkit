@@ -11,7 +11,7 @@ describe('Accordion component', () => {
     const accordion = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-accordion');
     const element = ReactDOM.findDOMNode(accordion);
 
-    expect(element).to.exist;
+    expect(element).to.exist();
   });
 
   it('should render accordion items', () => {

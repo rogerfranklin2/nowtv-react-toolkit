@@ -1,72 +1,66 @@
 import React from 'react';
-import { shallow } from 'enzyme'
+import { shallow } from 'enzyme';
 import { assert } from 'chai';
 
 import NowCheckbox from '../../src/components/Checkbox/Checkbox.react';
 
-describe('Checkbox component', function() {
-    it('should display a checkbox element', function() {
-        var renderedComponent = shallow(<NowCheckbox/>);
-        var component = renderedComponent.find('.now-checkbox');
-        assert.ok(component);
-    });
+describe('Checkbox component', function () {
+  it('should display a checkbox element', function () {
+    const renderedComponent = shallow(<NowCheckbox/>);
+    const component = renderedComponent.find('.now-checkbox');
+    assert.ok(component);
+  });
 
-    it('should add addtional classes to the label', function(){
-        var checkboxWithClass = shallow(<NowCheckbox classes="extraClass"/>);
-        var renderedCheckbox = checkboxWithClass.find('label');
-        console.log('renderedCheckbox')
+  it('should add addtional classes to the label', function () {
+    const checkboxWithClass = shallow(<NowCheckbox classes="extraClass"/>);
+    const renderedCheckbox = checkboxWithClass.find('label');
 
-        assert.equal(renderedCheckbox.props().className, "now-checkbox extraClass");
-    });
+    assert.equal(renderedCheckbox.props().className, 'now-checkbox extraClass');
+  });
 
-    it('should not add addtional classes to the input', function(){
-        var checkboxWithClass = shallow(<NowCheckbox classes="extraClass"/>);
-        var renderedCheckbox = checkboxWithClass.find('input');
+  it('should not add addtional classes to the input', function () {
+    const checkboxWithClass = shallow(<NowCheckbox classes="extraClass"/>);
+    const renderedCheckbox = checkboxWithClass.find('input');
 
-        assert.equal(renderedCheckbox.props().className, null);
-    });
+    assert.equal(renderedCheckbox.props().className, null);
+  });
 
-    it('should add any additional props to the input', function(){
-        var checkboxWithAdditionalProp = shallow(<NowCheckbox name="name"/>);
-        var renderedCheckbox = checkboxWithAdditionalProp.find('input');
+  it('should add any additional props to the input', function () {
+    const checkboxWithAdditionalProp = shallow(<NowCheckbox name="name"/>);
+    const renderedCheckbox = checkboxWithAdditionalProp.find('input');
 
-        assert.equal(renderedCheckbox.props().name, "name");
-    });
+    assert.equal(renderedCheckbox.props().name, 'name');
+  });
 
-    it('should not add any additional props to the label', function(){
-        var checkboxWithAdditionalProp = shallow(<NowCheckbox name="name"/>);
-        var renderedCheckbox = checkboxWithAdditionalProp.find('label');
+  it('should not add any additional props to the label', function () {
+    const checkboxWithAdditionalProp = shallow(<NowCheckbox name="name"/>);
+    const renderedCheckbox = checkboxWithAdditionalProp.find('label');
 
-        assert.equal(renderedCheckbox.props().name, null);
-    });
+    assert.equal(renderedCheckbox.props().name, null);
+  });
 
-    it('should render its children', function() {
-        var checkboxWithChildren = shallow(
-            <NowCheckbox>Checkbox 1</NowCheckbox>
-        );
-        var renderedCheckbox = checkboxWithChildren.find('.now-checkbox');
+  it('should render its children', function () {
+    const checkboxWithChildren = shallow(<NowCheckbox>Checkbox 1</NowCheckbox>);
+    const renderedCheckbox = checkboxWithChildren.find('.now-checkbox');
 
-        assert.equal(renderedCheckbox.text(), "Checkbox 1");
-    });
+    assert.equal(renderedCheckbox.text(), 'Checkbox 1');
+  });
 
-    it('should check the checkbox if it is passed as a prop', function(){
-        var checkboxWithProp = shallow(
-            <NowCheckbox checked={true}>Checkbox 1</NowCheckbox>
-        );
-        var renderedCheckboxLabel = checkboxWithProp.find('label');
-        var renderedCheckboxInput = checkboxWithProp.find('input');
+  it('should check the checkbox if it is passed as a prop', function () {
+    const checkboxWithProp = shallow(<NowCheckbox checked={true}>Checkbox 1</NowCheckbox>);
+    const renderedCheckboxLabel = checkboxWithProp.find('label');
+    const renderedCheckboxInput = checkboxWithProp.find('input');
 
-        assert.equal(renderedCheckboxLabel.props().className, "now-checkbox checked");
-        assert.equal(renderedCheckboxInput.props().checked, true);
-    });
+    assert.equal(renderedCheckboxLabel.props().className, 'now-checkbox checked');
+    assert.equal(renderedCheckboxInput.props().checked, true);
+  });
 
-    it('should add disabled class when disabled is passed as a prop', function(){
-        var checkboxWithDisabled = shallow(<NowCheckbox disabled />);
-        var disabledCheckboxLabel = checkboxWithDisabled.find('label');
-        var disabledCheckboxInput = checkboxWithDisabled.find('input');
+  it('should add disabled class when disabled is passed as a prop', function () {
+    const checkboxWithDisabled = shallow(<NowCheckbox disabled />);
+    const disabledCheckboxLabel = checkboxWithDisabled.find('label');
+    const disabledCheckboxInput = checkboxWithDisabled.find('input');
 
-        assert.equal(disabledCheckboxLabel.props().className, "now-checkbox disabled");
-        assert.equal(disabledCheckboxInput.props().disabled, true);
-    })
-
+    assert.equal(disabledCheckboxLabel.props().className, 'now-checkbox disabled');
+    assert.equal(disabledCheckboxInput.props().disabled, true);
+  });
 });

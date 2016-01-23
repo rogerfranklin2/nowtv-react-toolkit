@@ -4,9 +4,9 @@ import chai from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import TestUtils from 'react-addons-test-utils';
-import chaiAsPromised from "chai-as-promised";
+import chaiAsPromised from 'chai-as-promised';
 
-let { assert, expect } = chai;
+const { assert, expect } = chai;
 chai.should();
 chai.expect();
 chai.use(sinonChai);
@@ -20,22 +20,22 @@ function shallowRenderComponent(Component, mockProps) {
 
 function catchConsoleErrors() {
   let savedErrors = [];
-  beforeEach(()=>{
+  beforeEach(() => {
     savedErrors = [];
 
     sinon.stub(console, 'error', function () {
-      var stack = new Error(Array.prototype.slice.call(arguments).join(' ')).stack;
+      const stack = new Error(Array.prototype.slice.call(arguments).join(' ')).stack;
       return savedErrors.push(arguments);
     });
   });
 
-  afterEach(()=>{
+  afterEach(() => {
     console.error.restore();
   });
 
-  return function (){
+  return function () {
     return savedErrors;
-  }
+  };
 }
 
 export {
@@ -49,4 +49,4 @@ export {
   TestUtils,
   shallowRenderComponent,
   catchConsoleErrors,
-}
+};
