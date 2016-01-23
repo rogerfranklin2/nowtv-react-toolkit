@@ -13,7 +13,7 @@ describe('Accordion item component', () => {
     const renderedComponent = TestUtils.renderIntoDocument(<AccordionItem />);
     const accordionItem = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-accordion-item');
 
-    expect(accordionItem).to.exist();
+    expect(accordionItem).to.exist;
   });
 
   it('should have a title and content', () => {

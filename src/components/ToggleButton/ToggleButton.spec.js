@@ -42,7 +42,7 @@ describe('ToggleButton component', function () {
     const toggleLabel = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'toggle-label on');
 
     should.exist(toggleLabel);
-    assert.equal(toggleLabel.textContent, 'custom on');
+    assert.equal(toggleLabel.textContent, 'custom one');
   });
 
   it('should toggle component state on click event', function () {
@@ -71,7 +71,7 @@ describe('ToggleButton component', function () {
     TestUtils.Simulate.click(toggleButton);
 
     ReactDOM.findDOMNode(toggleButton).className.should.include('checked');
-    myVar.should.be.true();
+    myVar.should.be.true;
   });
 
   it('should check the input if checked is passed', () => {
@@ -83,7 +83,7 @@ describe('ToggleButton component', function () {
     const input = TestUtils.findRenderedDOMComponentWithTag(renderedComponent, 'input');
 
     ReactDOM.findDOMNode(toggleButton).className.should.include('checked');
-    ReactDOM.findDOMNode(input).checked.should.be.true();
+    ReactDOM.findDOMNode(input).checked.should.eq(true);
   });
 
   it('should add additional classes to the toggle button', function () {
@@ -138,6 +138,6 @@ describe('ToggleButton component', function () {
     TestUtils.Simulate.click(toggleButton);
 
     ReactDOM.findDOMNode(toggleButton).className.should.not.include('checked');
-    myVar.should.be.true();
+    myVar.should.eq(true);
   });
 });
