@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { assert } from 'chai';
 
-import NowNotification from '../../src/components/Notification/Notification.react';
+import NowNotification from './Notification.react';
 
 describe('Notification component', () => {
   it('should render a notification', () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { assert } from 'chai';
 
-import NowRadioButton from '../../src/components/RadioButton/RadioButton.react';
+import NowRadioButton from './RadioButton.react';
 
 describe('RadioButton component', () => {
   it('should display a radioButton element', () => {

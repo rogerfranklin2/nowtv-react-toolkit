@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { assert } from 'chai';
 
-import NowCheckbox from '../../src/components/Checkbox/Checkbox.react';
+import NowCheckbox from './Checkbox.react';
 
 describe('Checkbox component', function () {
   it('should display a checkbox element', function () {
