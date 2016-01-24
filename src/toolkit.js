@@ -14,8 +14,8 @@ import Spinner from './components/Spinner/Spinner.react';
 import Styles from './toolkit.sass';
 
 export default {
-	Button,
-	Input,
+  Button,
+  Input,
   Dropdown,
   Checkbox,
   RadioButton,

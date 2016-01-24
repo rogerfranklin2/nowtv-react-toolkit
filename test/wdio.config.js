@@ -11,7 +11,7 @@ exports.config = {
   // need to define host and port information because WebdriverIO can figure that our
   // according to your user and key information. However if you are using a private Selenium
   // backend you should define the host address, port, and path here.
-  //
+
   host: '127.0.0.1',
   port: 4444,
   path: '/wd/hub',
@@ -23,7 +23,7 @@ exports.config = {
   capabilities: [{
     browserName: 'phantomjs',
   }],
-  logLevel: 'silent', //verbose | silent | command | data | result
+  logLevel: 'silent', // verbose | silent | command | data | result
   coloredLogs: true,
   baseUrl: 'http://localhost:3004',
   waitforTimeout: 1000,
