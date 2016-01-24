@@ -43,11 +43,11 @@ npm install @nowtv/nowtv-react-toolkit --save
 
 **Note: When installing onto external services such as heroku, you will need to ensure that the app has correct NPM scope access using an NPM_TOKEN env variable.**
 
-2. Use the nowtv-toolkit css
+2. Use the @nowtv/nowtv-styleguide css
 
 E.g.
 ```html
-<link rel="stylesheet" href="/node_modules/nowtv-toolkit/dist/toolkit.css">
+<link rel="stylesheet" href="/node_modules/@nowtv/nowtv-styleguide/dist/toolkit.css">
 ```
 
 3. Make sure you're compiling `nowtv-react-toolkit` that lives in `node_modules` during your project's build.

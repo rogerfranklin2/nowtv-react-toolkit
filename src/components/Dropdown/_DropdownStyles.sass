@@ -1,8 +1,6 @@
-@import '../../colours'
-
 .now-dropdown
   background-color: white
-  border: 1px solid $dark_grey
+  border: 1px solid $athens-gray
   color: black
   border-radius: 4px
   width: 300px
@@ -12,13 +10,12 @@
   font-size: 14px
   box-sizing: border-box
   outline: none
-  +input_icon("green-chevron-down") 
+  +input_icon("green-chevron-down")
   background-size: 5%
   -moz-appearance: window
   -webkit-appearance: none
 
   &:disabled
-    background-color: $dark_grey
-    +input_icon("grey-chevron-down") 
+    background-color: $athens-gray
+    +input_icon("grey-chevron-down")
     background-size: 5%
-

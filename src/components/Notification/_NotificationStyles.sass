@@ -1,5 +1,3 @@
-@import '../../colours'
-
 @mixin notificationColor($backcolor, $color)
   &.now-notification
     background-color: $backcolor
@@ -28,7 +26,7 @@
 
 .now-notification
   position: relative
-  background-color: $dark_grey
+  background-color: $athens-gray
   width: 100%
   border-radius: 10px
   padding: 20px
@@ -44,7 +42,7 @@
     +notificationColor($green, $white)
     +notification_icon('positive-notification')
   &.caution, &.yellow
-    +notificationColor($dark-orange, $white)
+    +notificationColor($orange, $white)
     +notification_icon('warning-notification')
   &.success-icon
     +notification_icon('positive-notification')
