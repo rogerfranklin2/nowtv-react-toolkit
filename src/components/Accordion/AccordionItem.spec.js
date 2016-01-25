@@ -1,56 +1,52 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import TestUtils from 'react-addons-test-utils';
-import chai from 'chai';
-const should = chai.should();
-const assert = chai.assert;
-const expect = chai.expect;
+import { expect } from 'chai';
+import { shallow } from 'enzyme';
 
 import AccordionItem from './AccordionItem.react';
 
 describe('Accordion item component', () => {
   it('should display an AccordionItem', () => {
-    const renderedComponent = TestUtils.renderIntoDocument(<AccordionItem />);
-    const accordionItem = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-accordion-item');
+    const renderedComponent = shallow(<AccordionItem />);
+    const accordionItem = renderedComponent.find('.now-accordion-item');
 
     expect(accordionItem).to.exist;
   });
 
   it('should have a title and content', () => {
-    const renderedComponent = TestUtils.renderIntoDocument(
+    const renderedComponent = shallow(
       <AccordionItem title="My accordion item">
         <p>Wooo exciting</p>
       </AccordionItem>
     );
 
-    const accordionTitle = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'accordion-item-title');
-    const accordionContent = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'accordion-item-content');
+    const accordionTitle = renderedComponent.find('.accordion-item-title');
+    const accordionContent = renderedComponent.find('.accordion-item-content');
 
-    expect(accordionTitle.textContent).to.equal('My accordion item');
-    expect(accordionContent.textContent).to.equal('Wooo exciting');
+    expect(accordionTitle.text()).to.equal('My accordion item');
+    expect(accordionContent.text()).to.equal('Wooo exciting');
   });
 
   it('tracks accordion as closing when opened', () => {
-    const renderedComponent = TestUtils.renderIntoDocument(
+    const renderedComponent = shallow(
       <AccordionItem title="My accordion item" isOpen={true}>
         <p>Wooo exciting</p>
       </AccordionItem>
     );
 
-    const accordionTitle = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'accordion-item-title');
+    const accordionTitle = renderedComponent.find('.accordion-item-title');
 
-    expect(accordionTitle.getAttribute('data-tracking-context')).to.equal('closing');
+    expect(accordionTitle.props()['data-tracking-context']).to.equal('closing');
   });
 
   it('tracks accordion as opening when closed', () => {
-    const renderedComponent = TestUtils.renderIntoDocument(
+    const renderedComponent = shallow(
       <AccordionItem title="My accordion item" isOpen={false}>
         <p>Wooo exciting</p>
       </AccordionItem>
     );
 
-    const accordionTitle = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'accordion-item-title');
+    const accordionTitle = renderedComponent.find('.accordion-item-title');
 
-    expect(accordionTitle.getAttribute('data-tracking-context')).to.equal('opening');
+    expect(accordionTitle.props()['data-tracking-context']).to.equal('opening');
   });
 });
