@@ -16,12 +16,13 @@ class RadioButton extends React.Component {
 
     render() {
       const classes = [this.props.classes];
+      const { disabled, children, ...other } = this.props;
 
       if (this.state.checked) {
         classes.push('checked');
       }
 
-      if (this.props.disabled) {
+      if (disabled) {
         classes.push('disabled');
       }
 
@@ -31,8 +32,10 @@ class RadioButton extends React.Component {
                 onChange={this.handleChecked}
                 checked={this.state.checked}
                 type="radio"
-                {...this.props}
+                disabled={ disabled }
+                { ...other }
               />
+              { children }
           </label>
        );
     }

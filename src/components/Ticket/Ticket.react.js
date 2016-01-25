@@ -25,7 +25,7 @@ class Ticket extends React.Component {
 }
 
 Ticket.propTypes = {
-  children: React.PropTypes.string,
+  children: React.PropTypes.node,
   classes: React.PropTypes.string,
   title: React.PropTypes.string
 };
