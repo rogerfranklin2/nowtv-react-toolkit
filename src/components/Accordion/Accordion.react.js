@@ -10,7 +10,7 @@ class Accordion extends React.Component {
     };
   }
 
-  itemClicked(id, maxHeight) {
+  _itemClicked(id, maxHeight) {
     let openItem = id;
 
     if (id === this.state.openItem) {
@@ -30,7 +30,7 @@ class Accordion extends React.Component {
       const onItemClicked = (event) => {
         event.preventDefault();
         const maxHeight = event.target.nextElementSibling.scrollHeight;
-        this.itemClicked(index, maxHeight);
+        this._itemClicked(index, maxHeight);
       };
 
       const newProps = {
