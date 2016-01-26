@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import React from 'react';
 import Accordion from './Accordion.react';
 import AccordionItem from './AccordionItem.react';
-import { describeWithDOM, mount, shallow } from 'enzyme'
+import { describeWithDOM, mount, shallow } from 'enzyme';
 
 describeWithDOM('Accordion component', () => {
   it('should display an accordion', () => {
@@ -36,14 +36,14 @@ describeWithDOM('Accordion component', () => {
       </Accordion>
     );
 
-    let accordionItems = renderedComponent.find(AccordionItem)
+    let accordionItems = renderedComponent.find(AccordionItem);
     let accordionItem = accordionItems.first();
 
 
     accordionItem.find('.accordion-item-title').simulate('click');
     renderedComponent.update();
 
-    accordionItems = renderedComponent.find(AccordionItem)
+    accordionItems = renderedComponent.find(AccordionItem);
     accordionItem = accordionItems.first();
     const accordionItem2 = accordionItems.at(1);
     const accordionItem3 = accordionItems.at(2);
@@ -76,7 +76,6 @@ describeWithDOM('Accordion component', () => {
 
     accordionItem.find('.accordion-item-title').simulate('click');
     renderedComponent.update();
-    
 
     expect(accordionItem.props().classes).to.be.undefined;
     expect(accordionItem2.props().classes).to.be.undefined;

@@ -1,60 +1,58 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import TestUtils from 'react-addons-test-utils';
-import chai from 'chai';
-const should = chai.should();
-const assert = chai.assert;
+import { expect, should } from 'chai';
+import { shallow, mount, describeWithDOM } from 'enzyme';
+import { input } from 'react-dom';
 
 import NowToggleButton from './ToggleButton.react';
 
-describe('ToggleButton component', function () {
+describeWithDOM('ToggleButton component', function () {
   it('should display a toggle button element', function () {
-    const renderedComponent = TestUtils.renderIntoDocument(<NowToggleButton />);
-    const toggleButton = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'toggle-button');
+    const renderedComponent = shallow(<NowToggleButton />);
+    const toggleButton = renderedComponent.find('.toggle-button');
 
-    should.exist(toggleButton);
+    expect(toggleButton).to.exist;
   });
 
   it('should not display an off toggle label by default', function () {
-    const renderedComponent = TestUtils.renderIntoDocument(<NowToggleButton />);
-    const toggleLabel = TestUtils.scryRenderedDOMComponentsWithClass(renderedComponent, 'toggle-label off');
+    const renderedComponent = shallow(<NowToggleButton />);
+    const toggleLabel = renderedComponent.find('.off');
 
-    assert.equal(toggleLabel.length, 0);
+    expect(toggleLabel.length).to.eq(0);
   });
 
   it('should not display an on toggle label by default', function () {
-    const renderedComponent = TestUtils.renderIntoDocument(<NowToggleButton />);
-    const toggleLabel = TestUtils.scryRenderedDOMComponentsWithClass(renderedComponent, 'toggle-label on');
+    const renderedComponent = shallow(<NowToggleButton />);
+    const toggleLabel = renderedComponent.find('.on');
 
-    assert.equal(toggleLabel.length, 0);
+    expect(toggleLabel.length).to.equal(0);
   });
 
   it('should display a toggle label element with custom off text', function () {
-    const renderedComponent = TestUtils.renderIntoDocument(<NowToggleButton offText="custom off"/>);
-    const toggleLabel = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'toggle-label off');
+    const renderedComponent = shallow(<NowToggleButton offText="custom off"/>);
+    const toggleLabel = renderedComponent.find('.off');
 
-    should.exist(toggleLabel);
-    assert.equal(toggleLabel.textContent, 'custom off');
+    expect(toggleLabel.text()).to.eq('custom off');
   });
 
   it('should display a toggle label element with custom on text', function () {
-    const renderedComponent = TestUtils.renderIntoDocument(<NowToggleButton onText="custom one"/>);
-    const toggleLabel = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'toggle-label on');
+    const renderedComponent = shallow(<NowToggleButton onText="custom one"/>);
+    const toggleLabel = renderedComponent.find('.on');
 
-    should.exist(toggleLabel);
-    assert.equal(toggleLabel.textContent, 'custom one');
+    expect(toggleLabel.text()).to.eq('custom one');
   });
 
   it('should toggle component state on click event', function () {
-    const renderedComponent = TestUtils.renderIntoDocument(
+    const renderedComponent = shallow(
       <NowToggleButton/>
       );
 
-    const toggleButton = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'toggle-button');
+    const toggleButton = renderedComponent.find('.toggle-button');
 
-    TestUtils.Simulate.click(toggleButton);
+    toggleButton.simulate('click');
+    renderedComponent.update();
 
-    ReactDOM.findDOMNode(toggleButton).className.should.include('checked');
+    const clickedButton = renderedComponent.find('.toggle-button');
+    expect(clickedButton.props().className).to.include('checked');
   });
 
   it('should toggle component state on click event and call props click event', function () {
@@ -62,65 +60,66 @@ describe('ToggleButton component', function () {
     const setTrue = function () {
       myVar = true;
     };
-    const renderedComponent = TestUtils.renderIntoDocument(
+    const renderedComponent = shallow(
       <NowToggleButton onClick={setTrue()}/>
       );
 
-    const toggleButton = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'toggle-button');
+    const toggleButton = renderedComponent.find('.toggle-button');
 
-    TestUtils.Simulate.click(toggleButton);
+    toggleButton.simulate('click');
+    renderedComponent.update();
 
-    ReactDOM.findDOMNode(toggleButton).className.should.include('checked');
-    myVar.should.be.true;
+    const clickedButton = renderedComponent.find('.toggle-button');
+
+    expect(clickedButton.props().className).to.contain('checked');
+    expect(myVar).to.be.true;
   });
 
   it('should check the input if checked is passed', () => {
-    const renderedComponent = TestUtils.renderIntoDocument(
-      <NowToggleButton checked={true}/>
+    const renderedComponent = shallow(
+      <NowToggleButton checked={true} blah="Baz"/>
       );
 
-    const toggleButton = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'toggle-button');
-    const input = TestUtils.findRenderedDOMComponentWithTag(renderedComponent, 'input');
+    const toggleButton = renderedComponent.find('.toggle-button');
+    const domInput = renderedComponent.find('input');
 
-    ReactDOM.findDOMNode(toggleButton).className.should.include('checked');
-    ReactDOM.findDOMNode(input).checked.should.eq(true);
+    expect(toggleButton.props().className).to.include('checked');
+    expect(domInput.props().defaultChecked).to.eq(true);
   });
 
   it('should add additional classes to the toggle button', function () {
-    const renderedComponent = TestUtils.renderIntoDocument(
+    const renderedComponent = shallow(
       <NowToggleButton classes="extraClass"/>
       );
 
-    const toggleButton = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-toggle-container');
+    const toggleButton = renderedComponent.find('.now-toggle-container');
 
-    ReactDOM.findDOMNode(toggleButton).className.should.include('extraClass');
+    expect(toggleButton.props().className).to.include('extraClass');
   });
 
   it('should not add addtional classes to the input', function () {
-    const renderedComponent = TestUtils.renderIntoDocument(
+    const renderedComponent = shallow(
       <NowToggleButton classes="extraClass"/>
       );
-
-    const input = TestUtils.findRenderedDOMComponentWithTag(renderedComponent, 'input');
-
-    ReactDOM.findDOMNode(input).className.should.not.include('extraClass');
+    const domInput = renderedComponent.find('input');
+    expect(domInput.props().className).to.be.undefined;
   });
 
   it('should disabled the input is disabled is passed', function () {
-    const renderedComponent = TestUtils.renderIntoDocument(
+    const renderedComponent = shallow(
       <NowToggleButton disabled={true}/>
       );
 
-    const toggleButton = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'toggle-button');
+    const toggleButton = renderedComponent.find('.toggle-button');
 
-    ReactDOM.findDOMNode(toggleButton).className.should.include('disabled');
+    expect(toggleButton.props().className).to.include('disabled');
   });
 
   it('should add any additional props to the input', function () {
-    const renderedComponent = TestUtils.renderIntoDocument(<NowToggleButton name="name"/>);
-    const toggleInput = TestUtils.findRenderedDOMComponentWithTag(renderedComponent, 'input');
+    const renderedComponent = shallow(<NowToggleButton name="name"/>);
+    const toggleInput = renderedComponent.find('input');
 
-    assert.equal(toggleInput.name, 'name');
+    expect(toggleInput.props().name).to.eq('name');
   });
 
   it('should not toggle when disableToggleOnClick is passed but should still call the onClick handler', () => {
@@ -129,15 +128,18 @@ describe('ToggleButton component', function () {
       myVar = true;
     };
 
-    const renderedComponent = TestUtils.renderIntoDocument(
+    const renderedComponent = shallow(
       <NowToggleButton disableToggleOnClick={true} onClick={setTrue}/>
       );
 
-    const toggleButton = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'toggle-button');
+    const toggleButton = renderedComponent.find('.toggle-button');
 
-    TestUtils.Simulate.click(toggleButton);
+    toggleButton.simulate('click');
+    renderedComponent.update();
 
-    ReactDOM.findDOMNode(toggleButton).className.should.not.include('checked');
+    const clickedButton = renderedComponent.find('.toggle-button');
+
+    expect(clickedButton.props().className).to.not.contain('checked');
     myVar.should.eq(true);
   });
 });

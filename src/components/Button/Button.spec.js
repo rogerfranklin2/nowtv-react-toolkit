@@ -1,6 +1,6 @@
 import { expect, sinon, catchConsoleErrors } from '../../../test/test.helper.js';
-import React from 'react'
-import {shallow} from 'enzyme'
+import React from 'react';
+import { shallow } from 'enzyme';
 import Button from './Button.react';
 
 describe('Button component', () => {
@@ -18,7 +18,7 @@ describe('Button component', () => {
       expect(errors().length).to.equal(0, errors().join('\n'));
       expect(button.text()).to.equal('I am a button');
       expect(button.props().className).to.equal('now-button_primary_red');
-      expect(button.props().disabled).to.equal(false);
+      expect(button.props().disabled).to.equal(undefined);
     });
 
     it('disabled when disabled prop is passed', () => {
@@ -34,20 +34,21 @@ describe('Button component', () => {
     });
 
     it('onClick is passed', () => {
+      let clicked = false;
       const mockProps = {
         color: 'red'
       };
       function onClick(e) {
-        e.currentTarget.innerHTML = 'woah, i was clicked!';
+        clicked = true;
       }
       const component = shallow(<Button {...mockProps} onClick={onClick}>I am a button</Button>);
       const button = component.find('button');
 
-      component.find(button).simulate('click');
-      button.update();
+      button.simulate('click');
+      component.update();
 
       expect(errors().length).to.equal(0, errors().join('\n'));
-      expect(button.textContent).to.equal('woah, i was clicked!');
+      expect(clicked).to.equal(true);
     });
 
     it('as a button', () => {

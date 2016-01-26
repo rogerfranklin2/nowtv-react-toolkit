@@ -43,7 +43,7 @@ class ToggleButton extends React.Component {
           <div className="toggle-button disabled"></div>
           :
           <div className={classNames('toggle-button', checkBoxClasses)} onClick={this.handleChecked}>
-            <input defaultChecked={this.state.checked} type="checkbox" {...other}/>
+            <input defaultChecked={this.state.checked} type="checkbox" {...other} />
           </div>
         }
         { this.props.onText ? <span className="toggle-label on">{this.props.onText}</span> : null }
