@@ -1,6 +1,6 @@
 {
   "name": "@nowtv/nowtv-react-toolkit",
-  "version": "0.0.11",
+  "version": "0.1.1",
   "description": "NowTV React ui-toolkit",
   "main": "./dist/toolkit.js",
   "scripts": {
@@ -64,7 +64,7 @@
     "webpack-dev-server": "^1.9.0"
   },
   "dependencies": {
-    "@nowtv/nowtv-styleguide": "^2.0.0",
+    "@nowtv/nowtv-styleguide": "^2.0.1",
     "keymaster": "^1.6.2",
     "sinon": "^1.17.2"
   }

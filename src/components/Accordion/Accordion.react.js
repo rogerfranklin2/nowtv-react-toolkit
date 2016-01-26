@@ -10,7 +10,7 @@ class Accordion extends React.Component {
     };
   }
 
-  _itemClicked(id) {
+  _itemClicked(id, maxHeight) {
     let openItem = id;
 
     if (id === this.state.openItem) {
@@ -18,7 +18,8 @@ class Accordion extends React.Component {
     }
 
     this.setState({
-      openItem
+      openItem,
+      maxHeight
     });
   }
 
@@ -28,12 +29,14 @@ class Accordion extends React.Component {
     const newChildren = React.Children.map(this.props.children, (child, index) => {
       const onItemClicked = (event) => {
         event.preventDefault();
-        this._itemClicked(index);
+        const maxHeight = event.target.nextElementSibling.scrollHeight;
+        this._itemClicked(index, maxHeight);
       };
 
       const newProps = {
         handleVisiblity: onItemClicked,
-        isOpen: this.state.openItem === index
+        isOpen: this.state.openItem === index,
+        maxHeight: this.state.openItem === index ? this.state.maxHeight : 0
       };
 
       if (index === this.state.openItem) {
