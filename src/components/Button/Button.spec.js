@@ -1,4 +1,6 @@
-import { React, ReactDOM, TestUtils, expect, sinon, catchConsoleErrors } from '../../../test/test.helper.js';
+import { expect, sinon, catchConsoleErrors } from '../../../test/test.helper.js';
+import React from 'react';
+import { shallow } from 'enzyme';
 import Button from './Button.react';
 
 describe('Button component', () => {
@@ -10,13 +12,13 @@ describe('Button component', () => {
         color: 'red'
       };
 
-      const component = TestUtils.renderIntoDocument(<Button {...mockProps} >I am a button</Button>);
-      const button = TestUtils.findRenderedDOMComponentWithTag(component, 'button');
+      const component = shallow(<Button {...mockProps} >I am a button</Button>);
+      const button = component.find('button');
 
       expect(errors().length).to.equal(0, errors().join('\n'));
-      expect(button.textContent).to.equal('I am a button');
-      expect(button.className).to.equal('now-button_primary_red');
-      expect(button.disabled).to.equal(false);
+      expect(button.text()).to.equal('I am a button');
+      expect(button.props().className).to.equal('now-button_primary_red');
+      expect(button.props().disabled).to.equal(undefined);
     });
 
     it('disabled when disabled prop is passed', () => {
@@ -24,39 +26,41 @@ describe('Button component', () => {
         color: 'red'
       };
 
-      const component = TestUtils.renderIntoDocument(<Button {...mockProps} disabled>I am a button</Button>);
-      const button = TestUtils.findRenderedDOMComponentWithTag(component, 'button');
+      const component = shallow(<Button {...mockProps} disabled>I am a button</Button>);
+      const button = component.find('button');
 
       expect(errors().length).to.equal(0, errors().join('\n'));
-      expect(button.disabled).to.equal(true);
+      expect(button.props().disabled).to.equal(true);
     });
 
     it('onClick is passed', () => {
+      let clicked = false;
       const mockProps = {
         color: 'red'
       };
       function onClick(e) {
-        e.currentTarget.innerHTML = 'woah, i was clicked!';
+        clicked = true;
       }
-      const component = TestUtils.renderIntoDocument(<Button {...mockProps} onClick={onClick}>I am a button</Button>);
-      const button = TestUtils.findRenderedDOMComponentWithTag(component, 'button');
+      const component = shallow(<Button {...mockProps} onClick={onClick}>I am a button</Button>);
+      const button = component.find('button');
 
-      TestUtils.Simulate.click(button);
+      button.simulate('click');
+      component.update();
 
       expect(errors().length).to.equal(0, errors().join('\n'));
-      expect(button.textContent).to.equal('woah, i was clicked!');
+      expect(clicked).to.equal(true);
     });
 
     it('as a button', () => {
       const mockProps = {
         color: 'red'
       };
-      const component = TestUtils.renderIntoDocument(<Button {...mockProps} >I am a button</Button>);
-      const buttons = TestUtils.scryRenderedDOMComponentsWithTag(component, 'button');
+      const component = shallow(<Button {...mockProps} >I am a button</Button>);
+      const buttons = component.find('button');
 
       expect(buttons.length).to.equal(1);
       expect(errors().length).to.equal(0, errors().join('\n'));
-      expect(buttons[0].href).to.equal(undefined);
+      expect(buttons.first().props().href).to.be.undefined;
     });
 
     it('as a link', () => {
@@ -64,19 +68,19 @@ describe('Button component', () => {
         color: 'red',
         href: 'http://www.google.com'
       };
-      const component = TestUtils.renderIntoDocument(<Button {...mockProps} >I am a link</Button>);
-      const buttons = TestUtils.scryRenderedDOMComponentsWithTag(component, 'a');
+      const component = shallow(<Button {...mockProps} >I am a link</Button>);
+      const buttons = component.find('a');
 
       expect(buttons.length).to.equal(1);
       expect(errors().length).to.equal(0, errors().join('\n'));
-      expect(buttons[0].href).to.equal('http://www.google.com/');
+      expect(buttons.first().props().href).to.equal('http://www.google.com');
     });
   });
 
   context('should not error', () => {
     it('when props are omitted', () => {
-      const component = TestUtils.renderIntoDocument(<Button >I am a button</Button>);
-      const button = TestUtils.findRenderedDOMComponentWithTag(component, 'button');
+      const component = shallow(<Button >I am a button</Button>);
+      const button = component.find('button');
 
       expect(errors().length).to.equal(0, errors().join('\n'));
     });
@@ -88,12 +92,12 @@ describe('Button component', () => {
         color: 'invalid-color'
       };
 
-      const component = TestUtils.renderIntoDocument(<Button {...mockProps} >I am a button</Button>);
-      const button = TestUtils.findRenderedDOMComponentWithTag(component, 'button');
+      const component = shallow(<Button {...mockProps} >I am a button</Button>);
+      const button = component.find('button');
 
       expect(errors().length).to.equal(1, errors().join('\n'));
-      expect(button.textContent).to.equal('I am a button');
-      expect(button.className).to.equal('now-button_primary_invalid-color');
+      expect(button.text()).to.equal('I am a button');
+      expect(button.props().className).to.equal('now-button_primary_invalid-color');
     });
 
     it('when the type prop is invalid', () => {
@@ -102,12 +106,12 @@ describe('Button component', () => {
         color: 'red'
       };
 
-      const component = TestUtils.renderIntoDocument(<Button {...mockProps} >I am a button</Button>);
-      const button = TestUtils.findRenderedDOMComponentWithTag(component, 'button');
+      const component = shallow(<Button {...mockProps} >I am a button</Button>);
+      const button = component.find('button');
 
       expect(errors().length).to.equal(1, errors().join('\n'));
-      expect(button.textContent).to.equal('I am a button');
-      expect(button.className).to.equal('now-button_invalid-type_red');
+      expect(button.text()).to.equal('I am a button');
+      expect(button.props().className).to.equal('now-button_invalid-type_red');
     });
   });
 });

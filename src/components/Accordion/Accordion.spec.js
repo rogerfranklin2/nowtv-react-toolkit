@@ -1,21 +1,19 @@
 import { expect } from 'chai';
 import React from 'react';
-import TestUtils from 'react-addons-test-utils';
-import ReactDOM from 'react-dom';
 import Accordion from './Accordion.react';
 import AccordionItem from './AccordionItem.react';
+import { describeWithDOM, mount, shallow } from 'enzyme';
 
-describe('Accordion component', () => {
+describeWithDOM('Accordion component', () => {
   it('should display an accordion', () => {
-    const renderedComponent = TestUtils.renderIntoDocument(<Accordion />);
-    const accordion = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-accordion');
-    const element = ReactDOM.findDOMNode(accordion);
+    const renderedComponent = shallow(<Accordion />);
+    const accordion = renderedComponent.find('.now-accordion');
 
-    expect(element).to.exist;
+    expect(accordion).to.exist;
   });
 
   it('should render accordion items', () => {
-    const renderedComponent = TestUtils.renderIntoDocument(
+    const renderedComponent = shallow(
       <Accordion>
         <AccordionItem />
         <AccordionItem />
@@ -23,16 +21,14 @@ describe('Accordion component', () => {
       </Accordion>
     );
 
-    const accordion = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-accordion');
-    const accordionItems = ReactDOM.findDOMNode(accordion).children;
-    const accordionItem = ReactDOM.findDOMNode(accordionItems[0]);
+    const accordion = renderedComponent.find('.now-accordion');
+    const accordionItems = accordion.find(AccordionItem);
 
     expect(accordionItems.length).to.equal(3);
-    expect(accordionItem.className.trim()).to.equal('now-accordion-item');
   });
 
   it('should open an accordion item when clicked on title', () => {
-    const renderedComponent = TestUtils.renderIntoDocument(
+    const renderedComponent = mount(
       <Accordion>
         <AccordionItem />
         <AccordionItem />
@@ -40,21 +36,25 @@ describe('Accordion component', () => {
       </Accordion>
     );
 
-    const accordion = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-accordion');
-    const accordionItems = ReactDOM.findDOMNode(accordion).children;
-    const accordionItem = ReactDOM.findDOMNode(accordionItems[0]);
-    const accordionItem2 = ReactDOM.findDOMNode(accordionItems[1]);
-    const accordionItem3 = ReactDOM.findDOMNode(accordionItems[2]);
+    let accordionItems = renderedComponent.find(AccordionItem);
+    let accordionItem = accordionItems.first();
 
-    TestUtils.Simulate.click(accordionItem.firstChild);
 
-    expect(accordionItem.className.trim()).to.include('visible');
-    expect(accordionItem2.className.trim()).to.not.include('visible');
-    expect(accordionItem3.className.trim()).to.not.include('visible');
+    accordionItem.find('.accordion-item-title').simulate('click');
+    renderedComponent.update();
+
+    accordionItems = renderedComponent.find(AccordionItem);
+    accordionItem = accordionItems.first();
+    const accordionItem2 = accordionItems.at(1);
+    const accordionItem3 = accordionItems.at(2);
+
+    expect(accordionItem.props().classes).to.include('visible');
+    expect(accordionItem2.props().classes).to.be.undefined;
+    expect(accordionItem3.props().classes).to.be.undefined;
   });
 
   it('should close an open accordion item when it is clicked on the title again', () => {
-    const renderedComponent = TestUtils.renderIntoDocument(
+    const renderedComponent = mount(
       <Accordion>
         <AccordionItem />
         <AccordionItem />
@@ -62,20 +62,23 @@ describe('Accordion component', () => {
       </Accordion>
     );
 
-    const accordion = TestUtils.findRenderedDOMComponentWithClass(renderedComponent, 'now-accordion');
-    const accordionItems = ReactDOM.findDOMNode(accordion).children;
-    const accordionItem = ReactDOM.findDOMNode(accordionItems[0]);
-    const accordionItem2 = ReactDOM.findDOMNode(accordionItems[1]);
-    const accordionItem3 = ReactDOM.findDOMNode(accordionItems[2]);
+    const accordionItems = renderedComponent.find(AccordionItem);
+    const accordionItem = accordionItems.first();
+    const accordionItem2 = accordionItems.at(1);
+    const accordionItem3 = accordionItems.at(2);
 
-    TestUtils.Simulate.click(accordionItem.firstChild);
-    expect(accordionItem.className.trim()).to.include('visible');
-    expect(accordionItem2.className.trim()).to.not.include('visible');
-    expect(accordionItem2.className.trim()).to.not.include('visible');
+    accordionItem.find('.accordion-item-title').simulate('click');
+    renderedComponent.update();
 
-    TestUtils.Simulate.click(accordionItem.firstChild);
-    expect(accordionItem.className.trim()).to.not.include('visible');
-    expect(accordionItem2.className.trim()).to.not.include('visible');
-    expect(accordionItem2.className.trim()).to.not.include('visible');
+    expect(accordionItem.props().classes).to.include('visible');
+    expect(accordionItem2.props().classes).to.be.undefined;
+    expect(accordionItem3.props().classes).to.be.undefined;
+
+    accordionItem.find('.accordion-item-title').simulate('click');
+    renderedComponent.update();
+
+    expect(accordionItem.props().classes).to.be.undefined;
+    expect(accordionItem2.props().classes).to.be.undefined;
+    expect(accordionItem3.props().classes).to.be.undefined;
   });
 });
