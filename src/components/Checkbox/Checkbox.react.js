@@ -16,26 +16,28 @@ class Checkbox extends React.Component {
 
   render() {
     const classes = [this.props.classes];
+    const { disabled, children, ...other } = this.props;
 
     if (this.state.checked) {
       classes.push('checked');
     }
 
-    if (this.props.disabled) {
+    if (disabled) {
       classes.push('disabled');
     }
 
     return (
       <div>
-      <input
+        <input
           className={classNames('now-checkbox', classes)}
           onChange={this._handleChecked}
           checked={this.state.checked}
           type="checkbox"
           name={this.props.name}
-          {...this.props}
+          disabled={ disabled }
+          { ...other }
         />
-      <label for={this.props.name}/>
+        <label for={this.props.name}>{ children }</label>
       </div>
     );
   }

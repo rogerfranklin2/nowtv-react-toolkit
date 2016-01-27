@@ -1,4 +1,4 @@
-.now-radio-button
+.now-checkbox
   display: block
   position: relative
   padding-left: 30px
@@ -18,10 +18,10 @@
     display: none
 
   &:hover:after
-    background-image: url(assets/icons/hover-radio-no-bg.svg)
+    background-image: url(assets/icons/hover-tick-no-bg.svg)
     background-repeat: no-repeat
     background-position: center
-    background-size: 70%
+    background-size: 80%
 
   &:after
     display: block
@@ -31,12 +31,12 @@
     content: " "
     background-color: $athens-grey-zeus
     border: 1px solid $athens-grey
-    border-radius: 50%
+    border-radius: 4px
     width: 18px
     height: 18px
 
   &.checked:after
-    background-image: url(assets/icons/green-radio-no-bg.svg)
+    background-image: url(assets/icons/green-tick-no-bg.svg)
     background-repeat: no-repeat
     background-position: center
-    background-size: 70%
+    background-size: 80%
