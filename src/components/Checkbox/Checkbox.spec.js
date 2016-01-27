@@ -11,18 +11,18 @@ describe('Checkbox component', function () {
     assert.ok(component);
   });
 
-  it('should add addtional classes to the label', function () {
+  it('should not add addtional classes to the label', function () {
     const checkboxWithClass = shallow(<NowCheckbox classes="extraClass"/>);
     const renderedCheckbox = checkboxWithClass.find('label');
 
-    assert.equal(renderedCheckbox.props().className, 'now-checkbox extraClass');
+    assert.equal(renderedCheckbox.props().className, null);
   });
 
-  it('should not add addtional classes to the input', function () {
+  it('should add addtional classes to the input', function () {
     const checkboxWithClass = shallow(<NowCheckbox classes="extraClass"/>);
     const renderedCheckbox = checkboxWithClass.find('input');
 
-    assert.equal(renderedCheckbox.props().className, null);
+    assert.equal(renderedCheckbox.props().className, 'now-checkbox extraClass');
   });
 
   it('should add any additional props to the input', function () {
@@ -48,19 +48,17 @@ describe('Checkbox component', function () {
 
   it('should check the checkbox if it is passed as a prop', function () {
     const checkboxWithProp = shallow(<NowCheckbox checked={true}>Checkbox 1</NowCheckbox>);
-    const renderedCheckboxLabel = checkboxWithProp.find('label');
     const renderedCheckboxInput = checkboxWithProp.find('input');
 
-    assert.equal(renderedCheckboxLabel.props().className, 'now-checkbox checked');
+    assert.equal(renderedCheckboxInput.props().className, 'now-checkbox checked');
     assert.equal(renderedCheckboxInput.props().checked, true);
   });
 
   it('should add disabled class when disabled is passed as a prop', function () {
     const checkboxWithDisabled = shallow(<NowCheckbox disabled />);
-    const disabledCheckboxLabel = checkboxWithDisabled.find('label');
     const disabledCheckboxInput = checkboxWithDisabled.find('input');
 
-    assert.equal(disabledCheckboxLabel.props().className, 'now-checkbox disabled');
+    assert.equal(disabledCheckboxInput.props().className, 'now-checkbox disabled');
     assert.equal(disabledCheckboxInput.props().disabled, true);
   });
 });

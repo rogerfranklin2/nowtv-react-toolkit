@@ -26,14 +26,17 @@ class Checkbox extends React.Component {
     }
 
     return (
-      <label className={classNames('now-checkbox', classes)}>
-        <input
+      <div>
+      <input
+          className={classNames('now-checkbox', classes)}
           onChange={this._handleChecked}
           checked={this.state.checked}
           type="checkbox"
+          name={this.props.name}
           {...this.props}
         />
-      </label>
+      <label for={this.props.name}/>
+      </div>
     );
   }
 }
