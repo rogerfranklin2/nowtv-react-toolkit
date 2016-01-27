@@ -1,6 +1,9 @@
 # Contributing
 
 1. Raise an issue if there is not already one.
+  1. Ensure you raise the issue under *your* github username
+  2. Failing this, ensure that you tag yourself and your team in the comments
+  3. Also include any screenshots within the comment that might help explain.
 2. Clone the project `git clone git@github.com:sky-uk/nowtv-react-toolkit.git`
 3. Create a branch with your feature or fix and push it to GitHub.
 4. Create a pull request.
