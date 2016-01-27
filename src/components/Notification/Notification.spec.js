@@ -24,13 +24,17 @@ describe('Notification component', () => {
   });
 
   it('should have the right colour background', () => {
-    const renderedComponent = shallow(<NowNotification classes="green">Some Content</NowNotification>);
+    const renderedComponent = shallow(
+      <NowNotification classes="green">Some Content</NowNotification>
+    );
     const component = renderedComponent.find('.now-notification');
     assert.include(component.props().className, 'green');
   });
 
   it('should override the icon if the icon class is passed in', () => {
-    const renderedComponent = shallow(<NowNotification classes="green warning-icon">Some Content</NowNotification>);
+    const renderedComponent = shallow(
+      <NowNotification classes="green warning-icon">Some Content</NowNotification>
+    );
     const component = renderedComponent.find('.now-notification');
     assert.include(component.props().className, 'warning-icon');
   });
@@ -48,7 +52,9 @@ describe('Notification component', () => {
   });
 
   it('should not has a close icon if not dismissable', () => {
-    const renderedComponent = shallow(<NowNotification dismissable={false}>Cant close me!</NowNotification>);
+    const renderedComponent = shallow(
+      <NowNotification dismissable={false}>Cant close me!</NowNotification>
+    );
     const component = renderedComponent.find('.now-notification');
 
     assert.equal(component.find('.close').length, 0);
