@@ -39,9 +39,9 @@ describe('Checkbox component', function () {
     assert.equal(renderedCheckbox.props().name, null);
   });
 
-  it('should render its children', function () {
+  it('should render its children in the label', function () {
     const checkboxWithChildren = shallow(<NowCheckbox>Checkbox 1</NowCheckbox>);
-    const renderedCheckbox = checkboxWithChildren.find('.now-checkbox');
+    const renderedCheckbox = checkboxWithChildren.find('label');
 
     assert.equal(renderedCheckbox.text(), 'Checkbox 1');
   });
@@ -50,7 +50,6 @@ describe('Checkbox component', function () {
     const checkboxWithProp = shallow(<NowCheckbox checked={true}>Checkbox 1</NowCheckbox>);
     const renderedCheckboxInput = checkboxWithProp.find('input');
 
-    assert.equal(renderedCheckboxInput.props().className, 'now-checkbox checked');
     assert.equal(renderedCheckboxInput.props().checked, true);
   });
 

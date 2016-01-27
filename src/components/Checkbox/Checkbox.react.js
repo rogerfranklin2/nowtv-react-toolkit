@@ -15,7 +15,7 @@ class Checkbox extends React.Component {
   }
 
   render() {
-    let classes = [this.props.classes];
+    const classes = [this.props.classes];
     const { disabled, children, ...other } = this.props;
 
     if (disabled) {
