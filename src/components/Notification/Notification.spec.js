@@ -50,11 +50,11 @@ describe('Notification component', () => {
 
   it('should call onClose prop if passed in when dismissable', () => {
     const spy = sinon.spy();
-    const renderedComponent = shallow(<NowNotification onClose={spy}>Content</NowNotification>)
-    
-    renderedComponent.instance()._handleClose(); 
+    const renderedComponent = shallow(<NowNotification onClose={spy}>Content</NowNotification>);
 
-    expect(spy.called).to.eq(true); 
+    renderedComponent.instance()._handleClose();
+
+    expect(spy.called).to.eq(true);
     expect(renderedComponent.state('showNotification')).to.eq(false);
   });
 
