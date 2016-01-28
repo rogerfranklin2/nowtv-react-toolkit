@@ -1,8 +1,13 @@
 require('babel-core/register')({
   only: [/src/, /docs/, /server/]
 });
-var server = require('./server');
-var port = process.env.PORT || 3003;
+const nodeHook = require('node-hook');
+['.sass', '.svg'].map(extension => {
+  // returning the filename as a string for testing purposes
+  nodeHook.hook(extension, (_, filename) => `"${filename}"`);
+});
+const server = require('./server');
+const port = process.env.PORT || 3003;
 
 server.default.listen(port);
 server.default.on('listening', () => {
