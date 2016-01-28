@@ -110,6 +110,21 @@ class Notifications extends React.Component {
             </pre>
           </div>
         </div>
+
+        <h3>Dismissable with callback</h3>
+
+        <div className="category row">
+          <div className="col-md-6">
+            <Toolkit.Notification classes='info' title="Title" onClose={function() {alert('called on dismiss')}}>Content</Toolkit.Notification>
+          </div>
+          <div className="col-md-6">
+            <pre>
+              <code className="jsx">
+                {"<Toolkit.Notification classes='info' title='Title' onClose={function() {alert('called on dismiss')}}>Content</Toolkit.Notification>"}
+              </code>
+            </pre>
+          </div>
+        </div>
       </section>
     )
   }
