@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { assert } from 'chai';
+import { assert, expect } from 'chai';
+import sinon from 'sinon';
 
 import NowNotification from './Notification.react';
 
@@ -45,6 +46,16 @@ describe('Notification component', () => {
     renderedComponent.update();
 
     assert.equal(renderedComponent.find('.now-notification').length, 0);
+  });
+
+  it('should call onClose prop if passed in when dismissable', () => {
+    const spy = sinon.spy();
+    const renderedComponent = shallow(<NowNotification onClose={spy}>Content</NowNotification>)
+    
+    renderedComponent.instance()._handleClose(); 
+
+    expect(spy.called).to.eq(true); 
+    expect(renderedComponent.state('showNotification')).to.eq(false);
   });
 
   it('should not has a close icon if not dismissable', () => {
