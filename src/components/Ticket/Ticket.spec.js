@@ -5,7 +5,7 @@ import { assert } from 'chai';
 import NowTicket from './Ticket.react';
 
 describe('Ticket component', () => {
-  it('should render a ticket', function () {
+  it('should render a ticket', () => {
     const emptyTicket = shallow(<NowTicket/>);
     assert.ok(emptyTicket.find('.now-ticket'));
   });
@@ -16,7 +16,7 @@ describe('Ticket component', () => {
     assert.equal(ticketTitle.text(), 'HelloIamATitle');
   });
 
-  it('should contain some content', function () {
+  it('should contain some content', () => {
     const fullTicket = shallow(<NowTicket title="HelloIamATitle">This is content woo!</NowTicket>);
     const ticketContent = fullTicket.find('p');
     assert.equal(ticketContent.text(), 'This is content woo!');

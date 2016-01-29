@@ -8,7 +8,7 @@ describe('Accordion', () => {
   before((done) => {
     client
       .init()
-      .url(wdio.baseURL + '/').then(() => { done(); });
+      .url(`${wdio.baseURL}/`).then(() => { done(); });
   });
 
   after((done) => {

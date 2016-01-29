@@ -20,7 +20,7 @@ class Tip extends React.Component {
 
     return (
       <div className={classNames('now-tip', classes, arrowPosition)}>
-        <div className={'arrow-' + arrowPosition}></div>
+        <div className={`arrow-${arrowPosition}`}></div>
         <p className="content">{this.props.children}</p>
       </div>
     );

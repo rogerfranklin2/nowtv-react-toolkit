@@ -23,19 +23,17 @@ function catchConsoleErrors() {
   beforeEach(() => {
     savedErrors = [];
 
-    sinon.stub(console, 'error', function () {
+    sinon.stub(console, 'error', () => {
       const stack = new Error(Array.prototype.slice.call(arguments).join(' ')).stack;
       return savedErrors.push(arguments);
     });
   });
 
   afterEach(() => {
-    console.error.restore();
+    console.error.restore();   // eslint-disable-line
   });
 
-  return function () {
-    return savedErrors;
-  };
+  return () => savedErrors;
 }
 
 export {

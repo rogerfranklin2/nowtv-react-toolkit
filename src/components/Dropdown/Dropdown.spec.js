@@ -12,21 +12,21 @@ describe('Dropdown component', () => {
     assert.ok(component);
   });
 
-  it('should add addtional classes', function () {
+  it('should add addtional classes', () => {
     const dropdownWithClass = shallow(<NowDropdown classes="extraClass"/>);
 
     const renderedDropdown = dropdownWithClass.find('.extraClass');
     assert.ok(renderedDropdown);
   });
 
-  it('should add any addtionalitional props', function () {
+  it('should add any addtionalitional props', () => {
     const dropdownWithAdditionalProp = shallow(<NowDropdown id="anId"/>);
 
     const renderedDropdown = dropdownWithAdditionalProp.find('.now-dropdown');
     assert.equal(renderedDropdown.props().id, 'anId');
   });
 
-  it('should render its children', function () {
+  it('should render its children', () => {
     const dropdownWithChildren = shallow(
       <NowDropdown>
         <option value="value">Value</option>

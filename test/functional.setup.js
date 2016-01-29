@@ -14,7 +14,7 @@ const client = webdriverio.remote(options);
 server.listen(3004);
 
 server.on('listening', () => {
-  console.log('Listening on 3004');
+  console.log('Listening on 3004');  // eslint-disable-line
 });
 
 export default {

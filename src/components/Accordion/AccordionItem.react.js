@@ -8,12 +8,20 @@ class AccordionItem extends React.Component {
 
   render() {
     const classes = classNames('now-accordion-item', [this.props.classes]);
+    const context = this.props.isOpen ? 'closing' : 'opening';
+    const style = { maxHeight: this.props.isOpen ? (this.props.maxHeight || 500) : 0 };
 
     return (
       <div className={classes}>
-        <a href="#" className="accordion-item-title" data-tracking-context={this.props.isOpen ? 'closing' : 'opening'} onClick={this.props.handleVisiblity}>{this.props.title}</a>
+        <a href="#"
+           className="accordion-item-title"
+           data-tracking-context={context}
+           onClick={this.props.handleVisiblity}
+        >
+          {this.props.title}
+        </a>
 
-        <div className="accordion-item-content" style={{ maxHeight: this.props.isOpen ? (this.props.maxHeight || 500) : 0 }}>
+        <div className="accordion-item-content" style={style}>
           {this.props.children}
         </div>
       </div>
