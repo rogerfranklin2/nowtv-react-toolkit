@@ -4,16 +4,15 @@
   "description": "NowTV React ui-toolkit",
   "main": "./dist/toolkit.js",
   "scripts": {
-    "lint": "eslint src/ test/ ",
+    "lint": "eslint src/ test/",
     "build": "webpack && webpack --config docs/webpack.config.js",
     "serve": "node ./docs/server/index.js",
     "start": "npm run build && npm run serve",
-    "phantom:install": "npm i phantomjs2",
-    "selenium:install": "selenium-standalone install",
-    "selenium:start": "selenium-standalone start",
-    "test:functional": "wdio  ./test/wdio.config.js",
     "test:unit": "mocha 'src/**/*.spec.js' --compilers js:babel-core/register --recursive",
-    "test": "npm run test:unit && npm run lint"
+    "test": "npm run test:unit && npm run lint",
+    "test:feature": "npm run nightwatch -- --env local",
+    "test:feature-bs": "npm run nightwatch -- --env chrome_win,chrome_osx,firefox_win,firefox_osx,IE10,IE11,edge",
+    "nightwatch": "nightwatch -o ./test/feature/tests_output -c ./test/config/nightwatch.conf.js"
   },
   "pre-commit": [
     "test"
@@ -47,6 +46,7 @@
     "file-loader": "^0.8.4",
     "jsdom": "^7.2.1",
     "mocha": "^2.2.4",
+    "nightwatch": "^0.8.15",
     "node-hook": "^0.2.0",
     "node-sass": "^3.1.2",
     "nowtv-grid": "git+https://github.com/nowarkdev/grid.git",
@@ -55,16 +55,14 @@
     "react-dom": "^0.14.3",
     "react-router": "^2.0.0-rc5",
     "sass-loader": "^3.1.2",
-    "selenium-standalone": "^4.8.0",
     "sinon-chai": "^2.8.0",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.6",
-    "webdriverio": "^3.3.0",
     "webpack": "^1.12.12",
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "@nowtv/nowtv-styleguide": "2.0.3",
+    "@nowtv/nowtv-styleguide": "2.1.0",
     "keymaster": "^1.6.2",
     "sinon": "^1.17.2"
   }
