@@ -1,7 +1,8 @@
-import { expect, sinon, catchConsoleErrors } from '../../../test/test.helper.js';
+import { catchConsoleErrors } from '../../../test/test.helper.js';
 import React from 'react';
 import { shallow } from 'enzyme';
 import Button from './Button.react';
+import { expect } from 'chai';
 
 describe('Button component', () => {
   const errors = catchConsoleErrors();
