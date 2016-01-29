@@ -41,8 +41,6 @@ If you're running an ES6 project and wish to only import specific components tha
 npm install @nowtv/nowtv-react-toolkit --save
 ```
 
-**Note: When installing onto external services such as heroku, you will need to ensure that the app has correct NPM scope access using an NPM_TOKEN env variable.**
-
 2. Use the @nowtv/nowtv-styleguide css
 
 E.g.
