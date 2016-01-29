@@ -1,6 +1,6 @@
 module.exports = {
 
-  'before': function (browser) {
+  'beforeEach': function (browser) {
     browser.url(browser.globals.TARGET_PATH);
     browser.waitForElementVisible('.accordion-item-title', 5000);
   },
@@ -10,12 +10,10 @@ module.exports = {
   },
 
   'It should start closed': function (browser) {
-    browser.url(browser.globals.TARGET_PATH);
     browser.assert.hidden('.accordion-item-content');
   },
 
   'It should open when the title is clicked': function (browser) {
-    browser.url(browser.globals.TARGET_PATH);
     browser.assert.hidden('.accordion-item-content');
     browser.click('.accordion-item-title', function () {
       browser.pause(500);
@@ -25,7 +23,6 @@ module.exports = {
   },
 
   'It should close when title clicked and open': function (browser) {
-    browser.url(browser.globals.TARGET_PATH);
     browser.assert.hidden('.accordion-item-content');
     browser.click('.accordion-item-title', function () {
       browser.pause(500);
@@ -40,7 +37,6 @@ module.exports = {
   },
 
   'It should not close the accordion item when content is clicked': function (browser) {
-    browser.url(browser.globals.TARGET_PATH);
     browser.assert.hidden('.accordion-item-content');
     browser.click('.accordion-item-title', function () {
       browser.pause(500);

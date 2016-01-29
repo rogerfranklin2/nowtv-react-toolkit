@@ -27,6 +27,44 @@ describeWithDOM('Accordion component', () => {
     expect(accordionItems.length).to.equal(3);
   });
 
+  it('should add "now-accordion--standard" class to root element', () => {
+    const renderedComponent = shallow(
+      <Accordion>
+        <AccordionItem />
+      </Accordion>
+    );
+
+    const accordion = renderedComponent.find('.now-accordion');
+
+    expect(accordion.props().className).to.contain('now-accordion--standard');
+  });
+
+  it('should add "now-accordion--extended" class to root element when type is "extended"', () => {
+    const renderedComponent = shallow(
+      <Accordion type="extended">
+        <AccordionItem />
+      </Accordion>
+    );
+
+    const accordion = renderedComponent.find('.now-accordion');
+
+    expect(accordion.props().className).to.contain('now-accordion--extended');
+  });
+
+  it('should set type prop on all children', () => {
+    const renderedComponent = shallow(
+      <Accordion type="extended">
+        <AccordionItem />
+        <AccordionItem />
+        <AccordionItem />
+        <AccordionItem />
+      </Accordion>
+    );
+    renderedComponent.props().children.forEach((child) => {
+      expect(child.props.type).to.eql('extended');
+    });
+  });
+
   it('should open an accordion item when clicked on title', () => {
     const renderedComponent = mount(
       <Accordion>

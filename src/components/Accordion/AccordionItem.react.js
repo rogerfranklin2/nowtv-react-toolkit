@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 
-class AccordionItemContent extends React.Component {
+export class AccordionItemContent extends React.Component {
   getMaxHeight() {
     return ReactDOM.findDOMNode(this.refs.me).scrollHeight || 500;
   }
@@ -56,8 +56,7 @@ AccordionItem.propTypes = {
   classes: React.PropTypes.string,
   handleVisiblity: React.PropTypes.func,
   isOpen: React.PropTypes.bool,
-  maxHeight: React.PropTypes.number,
-  title: React.PropTypes.string,
+  title: React.PropTypes.node,
   type: React.PropTypes.oneOf(['extended', 'standard'])
 };
 AccordionItem.defaultProps = {
