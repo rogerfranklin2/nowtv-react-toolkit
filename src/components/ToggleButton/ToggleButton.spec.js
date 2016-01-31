@@ -137,6 +137,6 @@ describeWithDOM('ToggleButton component', () => {
     const clickedButton = renderedComponent.find('.toggle-button');
 
     expect(clickedButton.props().className).to.not.contain('checked');
-    myVar.should.eq(true);
+    expect(myVar).to.eq(true);
   });
 });

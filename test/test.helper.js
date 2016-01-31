@@ -1,22 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import chai from 'chai';
 import sinon from 'sinon';
-import sinonChai from 'sinon-chai';
-import TestUtils from 'react-addons-test-utils';
-import chaiAsPromised from 'chai-as-promised';
-
-const { assert, expect } = chai;
-chai.should();
-chai.expect();
-chai.use(sinonChai);
-chai.use(chaiAsPromised);
-
-function shallowRenderComponent(Component, mockProps) {
-  const shallowRenderer = TestUtils.createRenderer();
-  shallowRenderer.render(<Component {...mockProps} />);
-  return shallowRenderer.getRenderOutput();
-}
 
 function catchConsoleErrors() {
   let savedErrors = [];
@@ -37,14 +19,5 @@ function catchConsoleErrors() {
 }
 
 export {
-  React,
-  ReactDOM,
-  chai,
-  sinon,
-  sinonChai,
-  assert,
-  expect,
-  TestUtils,
-  shallowRenderComponent,
-  catchConsoleErrors,
+  catchConsoleErrors
 };
