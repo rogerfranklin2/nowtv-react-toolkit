@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router } from 'react-router';
-import createBrowserHistory from '../node_modules/history/lib/createBrowserHistory';
+import { Router, browserHistory } from 'react-router';
 
 import routes from './routes';
 import Styles from "./css/app.scss";
 
 ReactDOM.render(
-  <Router routes={routes} history={createBrowserHistory()}  />,
+  <Router routes={routes} history={browserHistory}  />,
   document.getElementById('app')
 )

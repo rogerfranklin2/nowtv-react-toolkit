@@ -5,4 +5,5 @@ dist
 .swp
 .divshot-cache/
 *.iml
-npm-debug.log
+*.log
+tests_output

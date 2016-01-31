@@ -1,5 +1,4 @@
 import React from 'react';
-import Toolkit from '../../../dist/toolkit';
 import Buttons from './ButtonComponents.react';
 import Inputs from './InputComponents.react';
 import Dropdowns from './DropdownComponents.react';

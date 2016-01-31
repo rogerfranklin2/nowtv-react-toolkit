@@ -41,8 +41,6 @@ If you're running an ES6 project and wish to only import specific components tha
 npm install @nowtv/nowtv-react-toolkit --save
 ```
 
-**Note: When installing onto external services such as heroku, you will need to ensure that the app has correct NPM scope access using an NPM_TOKEN env variable.**
-
 2. Use the @nowtv/nowtv-styleguide css
 
 E.g.
@@ -91,6 +89,27 @@ import Button from '@nowtv/nowtv-react-toolkit/src/components/Button/Button.reac
 ## Components
 
 To see all the avaliable components see the docs which can be found at [http://sky-uk.github.io/nowtv-react-toolkit](http://sky-uk.github.io/nowtv-react-toolkit)
+
+## Running Feature Tests
+
+To run the feature tests, you have 2 options, run chrome locally, or all tests through browserstack.
+
+For both of these options, you will need to start the docs server first
+```
+npm run start
+```
+
+To run only chrome locally, you can simply run: `npm run test:feature`
+
+To run the full browserstack suite of feature tests.
+
+First start browserstack supplying the browserstack-key
+```
+./bin/BrowserStackLocal-osx <PUT-THE-BROWSERSTACK-KEY-HERE>
+```
+
+Next, run `npm run test:feature-bs -- --bskey=<PUT-THE-BROWSERSTACK-KEY-HERE>`, also supplying the same broserstack-key.
+
 
 ## Contributing
 

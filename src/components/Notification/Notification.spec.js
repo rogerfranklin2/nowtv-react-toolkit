@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { assert } from 'chai';
+import { assert, expect } from 'chai';
+import sinon from 'sinon';
 
 import NowNotification from './Notification.react';
 
@@ -24,13 +25,17 @@ describe('Notification component', () => {
   });
 
   it('should have the right colour background', () => {
-    const renderedComponent = shallow(<NowNotification classes="green">Some Content</NowNotification>);
+    const renderedComponent = shallow(
+      <NowNotification classes="green">Some Content</NowNotification>
+    );
     const component = renderedComponent.find('.now-notification');
     assert.include(component.props().className, 'green');
   });
 
   it('should override the icon if the icon class is passed in', () => {
-    const renderedComponent = shallow(<NowNotification classes="green warning-icon">Some Content</NowNotification>);
+    const renderedComponent = shallow(
+      <NowNotification classes="green warning-icon">Some Content</NowNotification>
+    );
     const component = renderedComponent.find('.now-notification');
     assert.include(component.props().className, 'warning-icon');
   });
@@ -47,8 +52,20 @@ describe('Notification component', () => {
     assert.equal(renderedComponent.find('.now-notification').length, 0);
   });
 
+  it('should call onClose prop if passed in when dismissable', () => {
+    const spy = sinon.spy();
+    const renderedComponent = shallow(<NowNotification onClose={spy}>Content</NowNotification>);
+
+    renderedComponent.instance()._handleClose();
+
+    expect(spy.called).to.eq(true);
+    expect(renderedComponent.state('showNotification')).to.eq(false);
+  });
+
   it('should not has a close icon if not dismissable', () => {
-    const renderedComponent = shallow(<NowNotification dismissable={false}>Cant close me!</NowNotification>);
+    const renderedComponent = shallow(
+      <NowNotification dismissable={false}>Cant close me!</NowNotification>
+    );
     const component = renderedComponent.find('.now-notification');
 
     assert.equal(component.find('.close').length, 0);
