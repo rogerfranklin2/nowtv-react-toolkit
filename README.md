@@ -110,6 +110,13 @@ First start browserstack supplying the browserstack-key
 
 Next, run `npm run test:feature-bs -- --bskey=<PUT-THE-BROWSERSTACK-KEY-HERE>`, also supplying the same broserstack-key.
 
+## Releasing to NPM
+
+In order to release to NPM you need to be logged in as NowTV. You can release by running the following:
+
+```
+  npm run release:[major|minor|patch]
+```
 
 ## Contributing
 
