@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 
 export class AccordionItemContent extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      maxHeight: 0
+    };
+  }
+
   getMaxHeight() {
     return ReactDOM.findDOMNode(this.refs.me).scrollHeight || 500;
   }
 
+  componentDidMount() {
+    this.setState({ maxHeight: this.getMaxHeight() });
+  }
+
   render() {
-    const style = { maxHeight: this.props.isOpen ? (this.props.maxHeight || 500) : 0 };
     return (
       <div ref="me"
            className="accordion-item-content now-accordion__content--transition"
-           style={style}>
+           style={{ maxHeight: this.props.isOpen ? this.state.maxHeight : 0 }}
+           >
         {this.props.children}
       </div>
     );
@@ -20,6 +32,19 @@ export class AccordionItemContent extends React.Component {
 }
 
 class AccordionItem extends React.Component {
+  static propTypes = {
+    children: PropTypes.node,
+    classes: PropTypes.string,
+    handleVisiblity: PropTypes.func,
+    isOpen: PropTypes.bool,
+    title: PropTypes.node,
+    type: PropTypes.oneOf(['extended', 'standard'])
+  };
+
+  static defaultProps = {
+    type: 'standard'
+  };
+
   constructor(props) {
     super(props);
   }
@@ -50,17 +75,5 @@ class AccordionItem extends React.Component {
     );
   }
 }
-
-AccordionItem.propTypes = {
-  children: React.PropTypes.node,
-  classes: React.PropTypes.string,
-  handleVisiblity: React.PropTypes.func,
-  isOpen: React.PropTypes.bool,
-  title: React.PropTypes.node,
-  type: React.PropTypes.oneOf(['extended', 'standard'])
-};
-AccordionItem.defaultProps = {
-  type: 'standard'
-};
 
 export default AccordionItem;
