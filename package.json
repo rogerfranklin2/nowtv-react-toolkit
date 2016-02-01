@@ -14,9 +14,9 @@
     "test:feature-bs": "npm run nightwatch -- --env chrome_win,chrome_osx,firefox_win,firefox_osx,IE10,IE11,edge",
     "nightwatch": "nightwatch -o ./test/feature/tests_output -c ./test/config/nightwatch.conf.js",
     "checkLoggedIn": "if [[ \"$(npm whoami)\" == \"nowtv\" ]] ; then echo \"Logged In\" ; else echo \"You are not logged in to NPM as NowTV!\" ; exit 1 ; fi ;",
-    "release:major": "npm run checkLoggedIn && npm version major && npm publish",
-    "release:minor": "npm run checkLoggedIn && npm version minor && npm publish",
-    "release:patch": "npm run checkLoggedIn && npm version patch && npm publish"
+    "release:major": "npm run checkLoggedIn && npm version major && npm publish && git push",
+    "release:minor": "npm run checkLoggedIn && npm version minor && npm publish && git push",
+    "release:patch": "npm run checkLoggedIn && npm version patch && npm publish && git push"
   },
   "pre-commit": [
     "test"
