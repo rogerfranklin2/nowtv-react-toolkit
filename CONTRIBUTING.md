@@ -37,3 +37,11 @@ Run functional tests:
  * if the tests or server don't run, try :
    * `rm -rf node_modules && npm i`
 
+## Releasing to NPM
+
+In order to release to NPM you need to be logged in as NowTV. You can release by running the following:
+
+```
+  npm run release:[major|minor|patch]
+```
+
