@@ -21,7 +21,6 @@ describe('Checkbox component', () => {
 
 
   it('should not add addtional classes to the input', () => {
-
     const checkboxWithClass = shallow(<NowCheckbox classes="extraClass"/>);
     const renderedCheckbox = checkboxWithClass.find('input');
 
