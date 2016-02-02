@@ -61,7 +61,7 @@
     "sinon": "^1.17.2"
   },
   "dependencies": {
-    "@nowtv/nowtv-styleguide": "^2.1.2",
+    "@nowtv/nowtv-styleguide": "^2.1.5",
     "keymaster": "^1.6.2"
   }
 }
