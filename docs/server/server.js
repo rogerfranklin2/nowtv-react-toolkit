@@ -3,7 +3,7 @@ import http from 'http';
 import exphbs from 'express-handlebars';
 import React from 'react';
 import { renderToString } from '../../node_modules/react-dom/server';
-import { match, RoutingContext } from 'react-router';
+import { match, RouterContext } from 'react-router';
 import routes from './../routes';
 
 const app = express();
@@ -22,7 +22,7 @@ app.get('*', (req, res) => {
     } else if (redirectLocation) {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search);
     } else if (props) {
-      const markup = renderToString(<RoutingContext {...props} />);
+      const markup = renderToString(<RouterContext {...props} />);
       res.render('index', { markup })
     } else {
       res.sendStatus(404);

@@ -1,33 +1,79 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 
+export class AccordionItemContent extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      maxHeight: 0
+    };
+  }
+
+  getMaxHeight() {
+    return ReactDOM.findDOMNode(this.refs.me).scrollHeight || 500;
+  }
+
+  componentDidMount() {
+    this.setState({ maxHeight: this.getMaxHeight() });
+  }
+
+  render() {
+    return (
+      <div ref="me"
+           className="accordion-item-content now-accordion__content--transition"
+           style={{ maxHeight: this.props.isOpen ? this.state.maxHeight : 0 }}
+           >
+        {this.props.children}
+      </div>
+    );
+  }
+}
+
 class AccordionItem extends React.Component {
+  static propTypes = {
+    children: PropTypes.node,
+    classes: PropTypes.string,
+    handleVisiblity: PropTypes.func,
+    isOpen: PropTypes.bool,
+    title: PropTypes.node,
+    type: PropTypes.oneOf(['extended', 'standard'])
+  };
+
+  static defaultProps = {
+    type: 'standard'
+  };
+
   constructor(props) {
     super(props);
   }
 
   render() {
     const classes = classNames('now-accordion-item', [this.props.classes]);
+    const context = this.props.isOpen ? 'closing' : 'opening';
 
     return (
       <div className={classes}>
-        <a href="#" className="accordion-item-title" data-tracking-context={this.props.isOpen ? 'closing' : 'opening'} onClick={this.props.handleVisiblity}>{this.props.title}</a>
+        <a href="#"
+           className="accordion-item-title"
+           data-tracking-context={context}
+           onClick={this.props.handleVisiblity}>
+          {this.props.title}
+        </a>
 
-        <div className="accordion-item-content" style={{ maxHeight: this.props.isOpen ? (this.props.maxHeight || 500) : 0 }}>
+        <AccordionItemContent isOpen={this.props.isOpen}>
           {this.props.children}
-        </div>
+        </AccordionItemContent>
+
+        {this.props.type === 'extended' ?
+          <a href="#" className="now-accordion__item-footer"
+            onClick={this.props.handleVisiblity} />
+          : null
+        }
       </div>
     );
   }
 }
-
-AccordionItem.propTypes = {
-  children: React.PropTypes.node,
-  classes: React.PropTypes.string,
-  handleVisiblity: React.PropTypes.func,
-  isOpen: React.PropTypes.bool,
-  maxHeight: React.PropTypes.number,
-  title: React.PropTypes.string
-};
 
 export default AccordionItem;

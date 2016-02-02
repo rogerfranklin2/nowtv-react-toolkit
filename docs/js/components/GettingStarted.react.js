@@ -1,5 +1,5 @@
 import React from 'react';
-import Toolkit from '../../../dist/toolkit';
+import Toolkit from '../../../src/toolkit';
 
 class App extends React.Component {
 
@@ -11,14 +11,14 @@ class App extends React.Component {
         <h3>Installation</h3>
         <pre>
           <code className="sh">
-            npm install sky-uk/nowtv-web-toolkit --save
+            npm install @nowtv/nowtv-web-toolkit --save
           </code>
         </pre>
 
         <h3>Usage</h3>
         <pre>
           <code className="javascript">
-            import Toolkit from 'nowtv-web-toolkit';
+            import Toolkit from '@nowtv/nowtv-web-toolkit';
           </code>
         </pre>
 

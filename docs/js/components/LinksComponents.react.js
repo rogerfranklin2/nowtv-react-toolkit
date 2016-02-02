@@ -1,5 +1,5 @@
 import React from 'react';
-import Toolkit from '../../../dist/toolkit';
+import Toolkit from '../../../src/toolkit';
 
 class Links extends React.Component {
   render() {

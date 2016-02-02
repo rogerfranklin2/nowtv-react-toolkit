@@ -10,7 +10,7 @@ class Accordion extends React.Component {
     };
   }
 
-  _itemClicked(id, maxHeight) {
+  _itemClicked(id) {
     let openItem = id;
 
     if (id === this.state.openItem) {
@@ -18,25 +18,26 @@ class Accordion extends React.Component {
     }
 
     this.setState({
-      openItem,
-      maxHeight
+      openItem
     });
   }
 
   render() {
-    const classes = classNames('now-accordion', [this.props.classes]);
+    const classes = classNames('now-accordion',
+      [this.props.classes],
+      `now-accordion--${this.props.type}`
+    );
 
     const newChildren = React.Children.map(this.props.children, (child, index) => {
       const onItemClicked = (event) => {
         event.preventDefault();
-        const maxHeight = event.target.nextElementSibling.scrollHeight;
-        this._itemClicked(index, maxHeight);
+        this._itemClicked(index);
       };
 
       const newProps = {
         handleVisiblity: onItemClicked,
         isOpen: this.state.openItem === index,
-        maxHeight: this.state.openItem === index ? this.state.maxHeight : 0
+        type: this.props.type
       };
 
       if (index === this.state.openItem) {
@@ -56,7 +57,11 @@ class Accordion extends React.Component {
 
 Accordion.propTypes = {
   children: React.PropTypes.node,
-  classes: React.PropTypes.string
+  classes: React.PropTypes.string,
+  type: React.PropTypes.oneOf(['standard', 'extended'])
 };
 
+Accordion.defaultProps = {
+  type: 'standard'
+};
 export default Accordion;

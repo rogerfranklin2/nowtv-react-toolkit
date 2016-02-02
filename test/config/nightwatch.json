@@ -1,0 +1,103 @@
+{
+  "src_folders" : ["test/feature/specs"],
+  "test_workers": {
+    "enabled": true,
+    "workers": "auto"
+  },
+  "selenium" : {
+    "start_process" : true,
+    "server_path" : "./bin/selenium-server-standalone-2.48.2.jar"
+  },
+  "test_settings" : {
+    "default" : {
+      "launch_url" : "http://hub.browserstack.com",
+      "selenium_port"  : 80,
+      "selenium_host"  : "hub.browserstack.com",
+      "silent": true,
+      "screenshots" : {
+        "enabled" : false,
+        "path" : ""
+      },
+      "desiredCapabilities": {
+        "project": "nowtv-Toolkit",
+        "build": "build local",
+        "browserName": "firefox",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "browserstack.local" : true,
+        "browserstack.user": "john.sibly@sky.uk",
+        "browserstack.key": ""
+      }
+    },
+    "local": {
+      "launch_url" : "http://localhost",
+      "silent": true,
+      "selenium_port"  : 4444,
+      "selenium_host"  : "127.0.0.1",
+      "screenshots" : {
+        "enabled" : false,
+        "path" : ""
+      },
+      "desiredCapabilities": {
+        "build": "build local",
+        "browserName": "chrome",
+        "browserstack.local" : false,
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
+      }
+    },
+    "chrome_win" : {
+      "desiredCapabilities": {
+        "os": "Windows",
+        "os_version": "7",
+        "browserName": "chrome"
+      }
+    },
+    "chrome_osx" : {
+      "desiredCapabilities": {
+        "os": "OS X",
+        "os_version": "El Capitan",
+        "browserName": "chrome"
+      }
+    },
+    "firefox_win" : {
+      "desiredCapabilities": {
+        "os": "Windows",
+        "os_version": "7",
+        "browserName": "firefox"
+      }
+    },
+    "firefox_osx" : {
+      "desiredCapabilities": {
+        "os": "OS X",
+        "os_version": "El Capitan",
+        "browserName": "firefox"
+      }
+    },
+    "IE10" : {
+      "desiredCapabilities": {
+        "os": "Windows",
+        "os_version": "7",
+        "browserName": "IE",
+        "browser_version": "10.0"
+      }
+    },
+    "IE11" : {
+      "desiredCapabilities": {
+        "os": "Windows",
+        "os_version": "10",
+        "browserName": "IE",
+        "browser_version": "11.0"
+      }
+    },
+    "edge": {
+      "desiredCapabilities": {
+        "browser": "Edge",
+        "browser_version": "12.0",
+        "os": "Windows",
+        "os_version": "10",
+        "resolution": "1024x768"
+      }
+    }
+  }
+}

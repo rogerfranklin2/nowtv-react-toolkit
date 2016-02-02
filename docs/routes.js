@@ -14,7 +14,7 @@ class Bugs extends React.Component {
       <div>
         <h2>Bugs</h2>
         <ul>
-          <li><Link to='/bugs/accordionWithButtons'>AccordionWithButtons</Link></li>
+          <li><Link to='/bugs/accordionWithButtons'>{'AccordionWithButtons'}</Link></li>
         </ul>
       </div>
     );

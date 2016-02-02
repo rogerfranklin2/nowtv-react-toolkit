@@ -1,5 +1,5 @@
 import React from 'react';
-import Toolkit from '../../../dist/toolkit';
+import Toolkit from '../../../src/toolkit';
 
 class Notifications extends React.Component {
 
@@ -106,6 +106,21 @@ class Notifications extends React.Component {
             <pre>
               <code className="jsx">
                 {"<Toolkit.Notification classes='warning' title='You can\'t ignore me' dismissable={ false }>You must change your card details as your card is now expired.</Toolkit.Notification>"}
+              </code>
+            </pre>
+          </div>
+        </div>
+
+        <h3>Dismissable with callback</h3>
+
+        <div className="category row">
+          <div className="col-md-6">
+            <Toolkit.Notification classes='info' title="Title" onClose={function() {alert('called on dismiss')}}>Content</Toolkit.Notification>
+          </div>
+          <div className="col-md-6">
+            <pre>
+              <code className="jsx">
+                {"<Toolkit.Notification classes='info' title='Title' onClose={function() {alert('called on dismiss')}}>Content</Toolkit.Notification>"}
               </code>
             </pre>
           </div>
