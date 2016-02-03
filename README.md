@@ -110,7 +110,6 @@ First start browserstack supplying the browserstack-key
 
 Next, run `npm run test:feature-bs -- --bskey=<PUT-THE-BROWSERSTACK-KEY-HERE>`, also supplying the same broserstack-key.
 
-
 ## Contributing
 
  > [contributing](CONTRIBUTING.md)
