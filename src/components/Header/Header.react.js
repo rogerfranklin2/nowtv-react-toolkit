@@ -30,7 +30,7 @@ class Header extends Component {
         <header>
           <div className="header-circle">
             <div className="header-circle-background"></div>
-            <i className={classNames("header-circle-icon", icon)}></i>
+            <i className={classNames('header-circle-icon', icon)}></i>
           </div>
           {heading ? <h1 className="header-heading">{heading}</h1> : null}
           {subheading ? <p className="header-subheading">{subheading}</p> : null}
@@ -40,4 +40,4 @@ class Header extends Component {
   }
 }
 
-export default Header
+export default Header;
