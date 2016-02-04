@@ -5,9 +5,9 @@ class Header extends Component {
 
   static propTypes = {
     classes: PropTypes.string,
-    colour: PropTypes.oneOf(['blue', 'green']),
+    colour: PropTypes.string,
     heading: PropTypes.string,
-    icon: PropTypes.oneOf(['icon-confirm', 'icon-content-passes']),
+    icon: PropTypes.string,
     subheading: PropTypes.string
   };
 
