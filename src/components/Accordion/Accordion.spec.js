@@ -51,17 +51,19 @@ describeWithDOM('Accordion component', () => {
     expect(accordion.props().className).to.contain('now-accordion--extended');
   });
 
-  it('should set type prop on all children', () => {
+  it('should set prop type + id on all children', () => {
     const renderedComponent = shallow(
-      <Accordion type="extended">
-        <AccordionItem />
-        <AccordionItem />
-        <AccordionItem />
-        <AccordionItem />
+      <Accordion type="extended" id="top-id">
+        <AccordionItem id="id0" />
+        <AccordionItem id="id1" />
+        <AccordionItem id="id2" />
+        <AccordionItem id="id3" />
       </Accordion>
     );
-    renderedComponent.props().children.forEach((child) => {
+    expect(renderedComponent.props().id).to.eql(`top-id`);
+    renderedComponent.props().children.forEach((child, index) => {
       expect(child.props.type).to.eql('extended');
+      expect(child.props.id).to.eql(`id${index}`);
     });
   });
 

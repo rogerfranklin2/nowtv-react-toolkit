@@ -54,7 +54,7 @@ class AccordionItem extends React.Component {
     const context = this.props.isOpen ? 'closing' : 'opening';
 
     return (
-      <div className={classes}>
+      <div className={classes} id={this.props.id}>
         <a href="#"
            className="accordion-item-title"
            data-tracking-context={context}

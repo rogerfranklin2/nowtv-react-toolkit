@@ -48,7 +48,7 @@ class Accordion extends React.Component {
     });
 
     return (
-      <div className={classes}>
+      <div className={classes} id={this.props.id}>
         {newChildren}
       </div>
     );
