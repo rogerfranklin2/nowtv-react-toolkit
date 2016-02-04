@@ -11,6 +11,7 @@ import ToggleButtons from './ToggleButtonComponents.react';
 import Notifications from './NotificationComponents.react';
 import Accordion from './AccordionComponents.react';
 import Spinner from './SpinnerComponents.react';
+import Headers from './HeaderComponents.react';
 
 class App extends React.Component {
 
@@ -30,6 +31,7 @@ class App extends React.Component {
         <Notifications className="notifications-doc"/>
         <Accordion classNames="accordions-doc" />
         <Spinner classNames="spinner-doc" />
+        <Headers classNames="header-doc" />
       </div>
     )
   }
