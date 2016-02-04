@@ -35,7 +35,6 @@ class Links extends React.Component {
       </section>
     )
   }
-
 }
 
 export default Links;

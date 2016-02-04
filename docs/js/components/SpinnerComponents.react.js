@@ -1,7 +1,7 @@
 import React from 'react';
-import Toolkit from '../../../src/toolkit';
+import Spinner from '../../../src/components/Spinner/Spinner.react';
 
-class Spinner extends React.Component {
+class Spinners extends React.Component {
 
   render() {
 
@@ -11,13 +11,13 @@ class Spinner extends React.Component {
 
         <div className="category row">
             <div className="col-md-3 spinner-container medium">
-              <Toolkit.Spinner />
+              <Spinner />
             </div>
           <div className="col-md-9">
             <pre>
               <code className="jsx">
-                {"<Toolkit.Spinner/> default no size set"}<br/>
-                {'<Toolkit.Spinner size="medium"/>'}<br/>
+                {"<Spinner/> default no size set"}<br/>
+                {'<Spinner size="medium"/>'}<br/>
               </code>
             </pre>
           </div>
@@ -25,12 +25,12 @@ class Spinner extends React.Component {
 
         <div className="category row">
           <div className="col-md-3 spinner-container small">
-            <Toolkit.Spinner size="small"/>
+            <Spinner size="small"/>
           </div>
           <div className="col-md-9">
             <pre>
               <code className="jsx">
-                {'<Toolkit.Spinner size="small"/>'}<br/>
+                {'<Spinner size="small"/>'}<br/>
               </code>
             </pre>
           </div>
@@ -38,12 +38,12 @@ class Spinner extends React.Component {
 
         <div className="category row">
           <div className="col-md-3 spinner-container large">
-            <Toolkit.Spinner size="large"/>
+            <Spinner size="large"/>
           </div>
           <div className="col-md-9">
             <pre>
               <code className="jsx">
-                {'<Toolkit.Spinner size="large"/>'}<br/>
+                {'<Spinner size="large"/>'}<br/>
               </code>
             </pre>
           </div>

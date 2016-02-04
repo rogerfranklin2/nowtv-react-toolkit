@@ -1,5 +1,5 @@
 import React from 'react';
-import Toolkit from '../../../src/toolkit';
+import Button from '../../../src/components/Button/Button.react';
 
 class Buttons extends React.Component {
 
@@ -9,86 +9,86 @@ class Buttons extends React.Component {
         <h2 className="section-title">Buttons</h2>
         <h3>Primary</h3>
 
-        <Toolkit.Button>I'm a default colour button :)</Toolkit.Button>
+        <Button>I'm a default colour button :)</Button>
         <pre>
           <code className="jsx">
-            {"<Toolkit.Button>I'm a default colour button :)</Toolkit.Button>"}<br/>
+            {"<Button>I'm a default colour button :)</Button>"}<br/>
           </code>
         </pre>
 
-        <Toolkit.Button color="green">I'm a green button :)</Toolkit.Button>
+        <Button color="green">I'm a green button :)</Button>
         <pre>
           <code className="jsx">
-            {"<Toolkit.Button color='green'>I'm a green button :)</Toolkit.Button>"}<br/>
+            {"<Button color='green'>I'm a green button :)</Button>"}<br/>
           </code>
         </pre>
 
-        <Toolkit.Button color="green" href="http://www.google.com">I'm a link :D</Toolkit.Button>
+        <Button color="green" href="http://www.google.com">I'm a link :D</Button>
         <pre>
           <code className="jsx">
-            {"<Toolkit.Button color='green' href='http://www.google.com'>I'm a link :D</Toolkit.Button>"}<br/>
+            {"<Button color='green' href='http://www.google.com'>I'm a link :D</Button>"}<br/>
           </code>
         </pre>
 
-        <Toolkit.Button color="blue">I'm a blue button :)</Toolkit.Button>
+        <Button color="blue">I'm a blue button :)</Button>
         <pre>
           <code className="jsx">
-            {"<Toolkit.Button color='blue'>I'm a blue button :)</Toolkit.Button>"}<br/>
+            {"<Button color='blue'>I'm a blue button :)</Button>"}<br/>
           </code>
         </pre>
 
-        <Toolkit.Button color="red">I'm a red button :)</Toolkit.Button>
+        <Button color="red">I'm a red button :)</Button>
         <pre>
           <code className="jsx">
-            {"<Toolkit.Button color='red'>I'm a red button :)</Toolkit.Button>"}<br/>
+            {"<Button color='red'>I'm a red button :)</Button>"}<br/>
           </code>
         </pre>
 
-        <Toolkit.Button color="yellow">I'm a yellow button :)</Toolkit.Button>
+        <Button color="yellow">I'm a yellow button :)</Button>
         <pre>
           <code className="jsx">
-            {"<Toolkit.Button color='yellow'>I'm a yellow button :)</Toolkit.Button>"}<br/>
+            {"<Button color='yellow'>I'm a yellow button :)</Button>"}<br/>
           </code>
         </pre>
 
-        <Toolkit.Button color="grey">I'm a grey button :)</Toolkit.Button>
+        <Button color="grey">I'm a grey button :)</Button>
         <pre>
           <code className="jsx">
-            {"<Toolkit.Button color='grey'>I'm a grey button :)</Toolkit.Button>"}<br/>
+            {"<Button color='grey'>I'm a grey button :)</Button>"}<br/>
           </code>
         </pre>
 
         <h3>Primary Disabled</h3>
 
-        <Toolkit.Button color='green' disabled>Disabled state</Toolkit.Button>
+        <Button color='green' disabled>Disabled state</Button>
         <pre>
           <code className="jsx">
-            {"<Toolkit.Button color='green' disabled>Disabled state</Toolkit.Button>"}
+            {"<Button color='green' disabled>Disabled state</Button>"}
           </code>
         </pre>
 
-        <Toolkit.Button color='green' disabled href="http://www.google.com">Disabled link state</Toolkit.Button>
+        <Button color='green' disabled href="http://www.google.com">Disabled link state</Button>
         <pre>
           <code className="jsx">
-            {`<Toolkit.Button color='green' disabled href="http://www.google.com">Disabled link state</Toolkit.Button>`}
+            {`<Button color='green' disabled href="http://www.google.com">Disabled link state</Button>`}
           </code>
         </pre>
 
         <h3>Secondary</h3>
 
-        <Toolkit.Button type="secondary" color="blue">Build your bundle</Toolkit.Button>
+        <Button type="secondary" color="blue">Build your bundle</Button>
         <pre>
           <code className="jsx">
-            {`<Toolkit.Button type="secondary" color="blue">Build your bundle</Toolkit.Button>`}
+            {`<Button type="secondary" color="blue">Build your bundle</Button>`}
           </code>
         </pre>
 
         <h3>Secondary Disabled</h3>
 
-        <Toolkit.Button  type="secondary" color="green" disabled>Build your bundle</Toolkit.Button>
+        <Button  type="secondary" color="green" disabled>Build your bundle</Button>
         <pre>
           <code className="jsx">
-            {`<Toolkit.Button  type="secondary" color="green" disabled>Build your bundle</Toolkit.Button>`}
+            {`<Button  type="secondary" color="green" disabled>Build your bundle</Button>`}
           </code>
         </pre>
 

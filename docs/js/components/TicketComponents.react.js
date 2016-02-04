@@ -1,5 +1,5 @@
 import React from 'react';
-import Toolkit from '../../../src/toolkit';
+import Ticket from '../../../src/components/Ticket/Ticket.react';
 
 class Tickets extends React.Component {
 
@@ -11,14 +11,14 @@ class Tickets extends React.Component {
 
               <div className="category row">
                 <div className="col-md-3">
-                  <Toolkit.Ticket title="Check this out!" classes="blue">
+                  <Ticket title="Check this out!" classes="blue">
                       Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.
-                  </Toolkit.Ticket>
+                  </Ticket>
                 </div>
                 <div className="col-md-9">
                   <pre>
                     <code className="jsx">
-                      {"<Toolkit.Ticket title='Check this out!' classes='blue'>Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.</Toolkit.Ticket>"}
+                      {"<Ticket title='Check this out!' classes='blue'>Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.</Ticket>"}
                     </code>
                   </pre>
                 </div>
@@ -28,14 +28,14 @@ class Tickets extends React.Component {
 
               <div className="category row">
                 <div className="col-md-3">
-                  <Toolkit.Ticket title="Check this out!" classes="red">
+                  <Ticket title="Check this out!" classes="red">
                       <img width="100%" src="https://raw.githubusercontent.com/wiki/facebook/react/react-logo-1000-transparent.png" />
-                  </Toolkit.Ticket>
+                  </Ticket>
                 </div>
                 <div className="col-md-9">
                   <pre>
                     <code className="jsx">
-                      {"<Toolkit.Ticket title='Check this out!' classes='red'><img width='100%' src='https://raw.githubusercontent.com/wiki/facebook/react/react-logo-1000-transparent.png' /></Toolkit.Ticket>"}
+                      {"<Ticket title='Check this out!' classes='red'><img width='100%' src='https://raw.githubusercontent.com/wiki/facebook/react/react-logo-1000-transparent.png' /></Ticket>"}
                     </code>
                   </pre>
                 </div>

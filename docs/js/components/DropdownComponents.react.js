@@ -1,5 +1,5 @@
 import React from 'react';
-import Toolkit from '../../../src/toolkit';
+import Dropdown from '../../../src/components/Dropdown/Dropdown.react';
 
 class Dropdowns extends React.Component {
 
@@ -11,20 +11,20 @@ class Dropdowns extends React.Component {
 
               <div className="category row">
                 <div className="col-md-6">
-                  <Toolkit.Dropdown>
+                  <Dropdown>
                       <option value="movies">Movies</option>
                       <option value="sports">Sports</option>
                       <option value="entertainment">Entertainment</option>
-                  </Toolkit.Dropdown>
+                  </Dropdown>
                 </div>
                 <div className="col-md-6">
                   <pre>
                     <code className="jsx">
-                      {"<Toolkit.Dropdown>"}<br/>
+                      {"<Dropdown>"}<br/>
                       &nbsp;&nbsp;&nbsp;&nbsp;{"<option value='movies'>Movies</option>"}<br/>
                       &nbsp;&nbsp;&nbsp;&nbsp;{"<option value='sports'>Sports</option>"}<br/>
                       &nbsp;&nbsp;&nbsp;&nbsp;{"<option value='entertainment'>Entertainment</option>"}<br/>
-                      {"</Toolkit.Dropdown>"}
+                      {"</Dropdown>"}
                     </code>
                   </pre>
                 </div>
@@ -34,16 +34,16 @@ class Dropdowns extends React.Component {
 
               <div className="category row">
                 <div className="col-md-6">
-                  <Toolkit.Dropdown disabled>
+                  <Dropdown disabled>
                       <option value="disabled">Disabled</option>
-                  </Toolkit.Dropdown>
+                  </Dropdown>
                 </div>
                 <div className="col-md-6">
                   <pre>
                     <code className="jsx">
-                      {"<Toolkit.Dropdown disabled>"}<br/>
+                      {"<Dropdown disabled>"}<br/>
                       &nbsp;&nbsp;&nbsp;&nbsp;{"<option value='disabled'>Disabled</option>"}<br/>
-                      {"</Toolkit.Dropdown>"}
+                      {"</Dropdown>"}
                     </code>
                   </pre>
                 </div>

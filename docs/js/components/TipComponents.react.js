@@ -1,5 +1,5 @@
 import React from 'react';
-import Toolkit from '../../../src/toolkit';
+import Tip from '../../../src/components/Tip/Tip.react';
 
 class Tips extends React.Component {
     render() {
@@ -10,14 +10,14 @@ class Tips extends React.Component {
 
               <div className="category row">
                 <div className="col-md-4">
-                  <Toolkit.Tip>
+                  <Tip>
                       Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.
-                  </Toolkit.Tip>
+                  </Tip>
                 </div>
                 <div className="col-md-8">
                   <pre>
                     <code className="jsx">
-                      {"<Toolkit.Tip>Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.</Toolkit.Tip>"}
+                      {"<Tip>Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.</Tip>"}
                     </code>
                   </pre>
                 </div>
@@ -27,14 +27,14 @@ class Tips extends React.Component {
 
               <div className="category row">
                 <div className="col-md-4">
-                  <Toolkit.Tip arrow-position='top-centre' classes='blue' >
+                  <Tip arrow-position='top-centre' classes='blue' >
                       Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.
-                  </Toolkit.Tip>
+                  </Tip>
                 </div>
                 <div className="col-md-8">
                   <pre>
                     <code className="jsx">
-                      {"<Toolkit.Tip arrow-position='top-centre' classes='blue'>Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.</Toolkit.Tip>"}
+                      {"<Tip arrow-position='top-centre' classes='blue'>Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.</Tip>"}
                     </code>
                   </pre>
                 </div>
@@ -44,14 +44,14 @@ class Tips extends React.Component {
 
               <div className="category row">
                 <div className="col-md-4">
-                  <Toolkit.Tip arrow-position='bottom-right' classes='red'>
+                  <Tip arrow-position='bottom-right' classes='red'>
                       Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.
-                  </Toolkit.Tip>
+                  </Tip>
                 </div>
                 <div className="col-md-8">
                   <pre>
                     <code className="jsx">
-                      {"<Toolkit.Tip arrow-position='bottom-right' classes='red'>Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.</Toolkit.Tip>"}
+                      {"<Tip arrow-position='bottom-right' classes='red'>Lorem ipsum dol or sit amet, con sectetur adipiscing elit.Aenean euis mod biben laoreet.</Tip>"}
                     </code>
                   </pre>
                 </div>
