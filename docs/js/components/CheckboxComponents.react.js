@@ -1,5 +1,5 @@
 import React from 'react';
-import Toolkit from '../../../src/toolkit';
+import Checkbox from '../../../src/components/Checkbox/Checkbox.react';
 
 class Checkboxes extends React.Component {
 
@@ -10,18 +10,18 @@ class Checkboxes extends React.Component {
 
               <div className="category row">
                 <div className="col-md-3">
-                  <Toolkit.Checkbox name="Available" value="available">Available</Toolkit.Checkbox>
-                  <Toolkit.Checkbox className="hover" name="Available" value="available">Hover</Toolkit.Checkbox>
-                  <Toolkit.Checkbox name="Selected" checked={true} value="selected">Selected - Pre checked</Toolkit.Checkbox>
-                  <Toolkit.Checkbox name="Disabled" value="disabled" disabled>Disabled</Toolkit.Checkbox>
+                  <Checkbox name="Available" value="available">Available</Checkbox>
+                  <Checkbox className="hover" name="Available" value="available">Hover</Checkbox>
+                  <Checkbox name="Selected" checked={true} value="selected">Selected - Pre checked</Checkbox>
+                  <Checkbox name="Disabled" value="disabled" disabled>Disabled</Checkbox>
                 </div>
                 <div className="col-md-9">
                   <pre>
                     <code className="jsx">
-                      {"<Toolkit.Checkbox name='available' value='available'>Available</Toolkit.Checkbox>"}<br/>
-                      {"<Toolkit.Checkbox name='hover' value='hover'>Hover</Toolkit.Checkbox>"}<br/>
-                      {"<Toolkit.Checkbox name='selected' checked={true} value='selected'>Selected - Pre checked</Toolkit.Checkbox>"}<br/>
-                      {"<Toolkit.Checkbox name='disabled' value='disabled' disabled>Disabled</Toolkit.Checkbox>"}<br/>
+                      {"<Checkbox name='available' value='available'>Available</Checkbox>"}<br/>
+                      {"<Checkbox name='hover' value='hover'>Hover</Checkbox>"}<br/>
+                      {"<Checkbox name='selected' checked={true} value='selected'>Selected - Pre checked</Checkbox>"}<br/>
+                      {"<Checkbox name='disabled' value='disabled' disabled>Disabled</Checkbox>"}<br/>
                     </code>
                   </pre>
                 </div>

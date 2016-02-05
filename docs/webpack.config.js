@@ -7,6 +7,10 @@ module.exports = {
     path: './docs/dist/',
     filename: 'docs.js'
   },
+  externals: {
+    "react": "React",
+    "react-dom": "ReactDOM"
+  },
   module: {
     loaders: [
       {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
