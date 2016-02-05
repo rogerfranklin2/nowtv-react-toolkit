@@ -23,32 +23,31 @@ class Accordion extends React.Component {
   }
 
   render() {
-    const classes = classNames('now-accordion',
-      [this.props.classes],
-      `now-accordion--${this.props.type}`
-    );
+    // todo: deprecate classes
+    const { classes, className: cName, type, children, ...props } = this.props;
+    const className = classNames('now-accordion', [classes, cName], `now-accordion--${type}`);
 
-    const newChildren = React.Children.map(this.props.children, (child, index) => {
+    const newChildren = React.Children.map(children, (child, index) => {
       const onItemClicked = (event) => {
         event.preventDefault();
         this._itemClicked(index);
       };
 
-      const newProps = {
+      const childProps = {
         handleVisiblity: onItemClicked,
         isOpen: this.state.openItem === index,
-        type: this.props.type
+        type
       };
 
       if (index === this.state.openItem) {
-        newProps.classes = 'visible';
+        childProps.classes = 'visible';
       }
 
-      return React.cloneElement(child, { ...newProps });
+      return React.cloneElement(child, { ...childProps });
     });
 
     return (
-      <div className={classes} id={this.props.id}>
+      <div className={className} {...props}>
         {newChildren}
       </div>
     );
