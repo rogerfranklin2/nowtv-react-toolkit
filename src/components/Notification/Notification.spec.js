@@ -70,4 +70,16 @@ describe('Notification component', () => {
 
     assert.equal(component.find('.close').length, 0);
   });
+
+  it('should render a button', () => {
+    const renderedComponent = shallow(
+      <NowNotification buttonText="Try again" buttonHref="http://buttonHref.com">Notification with button</NowNotification>
+    );
+    const component = renderedComponent.find('.now-notification');
+
+    const button = component.find('.notification-button');
+
+    expect(button.text()).to.contain('Try again');
+    expect(button.props().href).to.eq('http://buttonHref.com');
+  });
 });
