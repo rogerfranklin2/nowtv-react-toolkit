@@ -10,8 +10,7 @@ module.exports = {
     libraryTarget: "commonjs2"
   },
   externals: {
-    "react": "React",
-    "react-dom": "ReactDOM"
+    "react": "react"
   },
   module: {
     loaders: [
