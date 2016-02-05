@@ -4,6 +4,7 @@
   "description": "NowTV React ui-toolkit",
   "main": "./dist/toolkit.js",
   "scripts": {
+    "prepublish": "npm run build",
     "lint": "eslint src/ test/",
     "build": "webpack && webpack --config docs/webpack.config.js",
     "serve": "node ./docs/server/index.js",
@@ -65,7 +66,6 @@
     "sinon": "^1.17.2"
   },
   "dependencies": {
-    "@nowtv/nowtv-styleguide": "^2.1.5",
-    "keymaster": "^1.6.2"
+    "@nowtv/nowtv-styleguide": "^2.3.0"
   }
 }
