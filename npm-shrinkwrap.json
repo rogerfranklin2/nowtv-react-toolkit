@@ -1,6 +1,6 @@
 {
   "name": "@nowtv/nowtv-react-toolkit",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "dependencies": {
     "@nowtv/nowtv-styleguide": {
       "version": "2.3.0",
