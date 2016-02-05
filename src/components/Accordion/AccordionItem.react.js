@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 
 export class AccordionItemContent extends React.Component {
@@ -12,7 +11,7 @@ export class AccordionItemContent extends React.Component {
   }
 
   getMaxHeight() {
-    return ReactDOM.findDOMNode(this.refs.me).scrollHeight || 500;
+    return this.refs.me.scrollHeight || 500;
   }
 
   componentDidMount() {
