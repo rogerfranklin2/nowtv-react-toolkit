@@ -55,4 +55,4 @@ class Spinners extends React.Component {
 
 }
 
-export default Spinner;
+export default Spinners;
