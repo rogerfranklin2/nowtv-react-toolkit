@@ -43,7 +43,7 @@ class Notification extends React.Component {
           { hasTitle ? <h6 className="notification-title">{this.props.title}</h6> : null }
           <p className="content">{this.props.children}</p>
           { notificationButton ?
-            <a className="notification-button" href={this.props.buttonHref}>
+            <a className={classNames('notification-button', 'now-button', classes)} href={this.props.buttonHref}>
               {this.props.buttonText}
             </a> :
             null
