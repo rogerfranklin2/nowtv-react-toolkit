@@ -31,6 +31,25 @@ Run functional tests:
  * `npm run selenium:start`
  * `npm run test:functional`
 
+## Running Feature Tests
+
+To run the feature tests, you have 2 options, run chrome locally, or all tests through browserstack.
+
+For both of these options, you will need to start the docs server first
+```
+npm run start
+```
+
+To run only chrome locally, you can simply run: `npm run test:feature`
+
+To run the full browserstack suite of feature tests.
+
+First start browserstack supplying the browserstack-key
+```
+./bin/BrowserStackLocal-osx <PUT-THE-BROWSERSTACK-KEY-HERE>
+```
+
+Next, run `npm run test:feature-bs -- --bskey=<PUT-THE-BROWSERSTACK-KEY-HERE>`, also supplying the same broserstack-key.
 
 ## Troubleshooting
 
