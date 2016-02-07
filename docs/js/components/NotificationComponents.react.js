@@ -125,6 +125,22 @@ class Notifications extends React.Component {
             </pre>
           </div>
         </div>
+
+
+        <h3>Notification with button</h3>
+
+        <div className="category row">
+          <div className="col-md-6">
+            <Notification classes='info' title="Title" buttonText="Try Again" buttonHref="http://somewhere.nowtv.com">Notification which has a button underneath it</Notification>
+          </div>
+          <div className="col-md-6">
+            <pre>
+              <code className="jsx">
+                {"<Notification classes='info' title='Title' buttonText='Try Again' buttonHref='http://somewhere.nowtv.com'>Content</Notification>"}
+              </code>
+            </pre>
+          </div>
+        </div>
       </section>
     )
   }
