@@ -50,7 +50,7 @@ class Notification extends React.Component {
 }
 
 Notification.propTypes = {
-  children: React.PropTypes.string,
+  children: React.PropTypes.node,
   classes: React.PropTypes.string,
   dismissable: React.PropTypes.bool,
   onClose: React.PropTypes.func,
