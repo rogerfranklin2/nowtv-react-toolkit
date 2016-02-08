@@ -1,5 +1,6 @@
 import React from 'react';
 import Notification from '../../../src/components/Notification/Notification.react';
+import Button from '../../../src/components/Button/Button.react';
 
 class Notifications extends React.Component {
 
