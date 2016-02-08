@@ -4,6 +4,7 @@ import { assert, expect } from 'chai';
 import sinon from 'sinon';
 
 import NowNotification from './Notification.react';
+import Button from '../Button/Button.react';
 
 describe('Notification component', () => {
   it('should render a notification', () => {
@@ -73,13 +74,14 @@ describe('Notification component', () => {
 
   it('should render a button', () => {
     const renderedComponent = shallow(
-      <NowNotification buttonText="Try again" buttonHref="http://buttonHref.com">Notification with button</NowNotification>
+      <NowNotification>
+        <Button href="http://nowtv.com">Try again</Button>
+      </NowNotification>
     );
-    const component = renderedComponent.find('.now-notification');
 
-    const button = component.find('.notification-button');
+    const button = renderedComponent.find(Button);
 
-    expect(button.text()).to.contain('Try again');
-    expect(button.props().href).to.eq('http://buttonHref.com');
+    expect(button.props().children).to.contain('Try again');
+    expect(button.props().href).to.eq('http://nowtv.com');
   });
 });
