@@ -90,25 +90,6 @@ import Button from '@nowtv/nowtv-react-toolkit/src/components/Button/Button.reac
 
 To see all the avaliable components see the docs which can be found at [http://sky-uk.github.io/nowtv-react-toolkit](http://sky-uk.github.io/nowtv-react-toolkit)
 
-## Running Feature Tests
-
-To run the feature tests, you have 2 options, run chrome locally, or all tests through browserstack.
-
-For both of these options, you will need to start the docs server first
-```
-npm run start
-```
-
-To run only chrome locally, you can simply run: `npm run test:feature`
-
-To run the full browserstack suite of feature tests.
-
-First start browserstack supplying the browserstack-key
-```
-./bin/BrowserStackLocal-osx <PUT-THE-BROWSERSTACK-KEY-HERE>
-```
-
-Next, run `npm run test:feature-bs -- --bskey=<PUT-THE-BROWSERSTACK-KEY-HERE>`, also supplying the same broserstack-key.
 
 ## Contributing
 
