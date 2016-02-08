@@ -1,5 +1,6 @@
 import React from 'react';
 import Notification from '../../../src/components/Notification/Notification.react';
+import Button from '../../../src/components/Button/Button.react';
 
 class Notifications extends React.Component {
 
@@ -121,6 +122,25 @@ class Notifications extends React.Component {
             <pre>
               <code className="jsx">
                 {"<Notification classes='info' title='Title' onClose={function() {alert('called on dismiss')}}>Content</Notification>"}
+              </code>
+            </pre>
+          </div>
+        </div>
+
+
+        <h3>Notification with button</h3>
+
+        <div className="category row">
+          <div className="col-md-6">
+            <Notification classes='info' title="Title">
+              Notification which has a button underneath it
+              <Button>A button</Button>
+            </Notification>
+          </div>
+          <div className="col-md-6">
+            <pre>
+              <code className="jsx">
+                {"<Notification classes='info' title='Title'>Notification which has a button underneath it<Button>A button</Button></Notification>"}
               </code>
             </pre>
           </div>

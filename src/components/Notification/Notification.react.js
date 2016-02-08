@@ -41,7 +41,6 @@ class Notification extends React.Component {
         <div className="notificationBody">
           { hasTitle ? <h6 className="notification-title">{this.props.title}</h6> : null }
           <p className="content">{this.props.children}</p>
-
         </div>
 
       </div>
@@ -50,7 +49,7 @@ class Notification extends React.Component {
 }
 
 Notification.propTypes = {
-  children: React.PropTypes.string,
+  children: React.PropTypes.node,
   classes: React.PropTypes.string,
   dismissable: React.PropTypes.bool,
   onClose: React.PropTypes.func,
