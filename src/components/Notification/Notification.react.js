@@ -27,7 +27,6 @@ class Notification extends React.Component {
     const classes = [this.props.classes];
     const { dismissable = true } = this.props;
     const hasTitle = this.props.title !== undefined;
-    const notificationButton = this.props.buttonText !== undefined;
 
     if (!this.state.showNotification) {
       return null;
