@@ -1,5 +1,5 @@
 import React from 'react';
-import Toolkit from '../../../src/toolkit';
+import Checkbox from '../../../src/components/Checkbox/Checkbox.react';
 
 class Checkboxes extends React.Component {
 

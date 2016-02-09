@@ -6,14 +6,12 @@ import Checkboxes from './CheckboxComponents.react';
 import GettingStarted from './GettingStarted.react';
 import Tickets from './TicketComponents.react';
 import Tips from './TipComponents.react';
-import Links from './LinksComponents.react';
 import RadioButtons from './RadioButtonComponents.react';
 import ToggleButtons from './ToggleButtonComponents.react';
 import Notifications from './NotificationComponents.react';
 import Accordion from './AccordionComponents.react';
-import Spinner from './SpinnerComponents.react';
-import Typography from './Typography.react';
-import Grid from './Grid.react';
+import Spinners from './SpinnerComponents.react';
+import Headers from './HeaderComponents.react';
 
 class App extends React.Component {
 
@@ -22,10 +20,7 @@ class App extends React.Component {
       <div className="container">
         <h1 className="title">NowTV React Web Toolkit</h1>
         <GettingStarted className="gettingstarted-doc"/>
-        <Grid/>
-        <Typography/>
         <Buttons className="buttons-doc"/>
-        <Links className="links-doc" />
         <Inputs className="inputs-doc"/>
         <Dropdowns className="dropdowns-doc"/>
         <Checkboxes className="checkboxes-doc"/>
@@ -35,7 +30,8 @@ class App extends React.Component {
         <Tips className="tips-doc"/>
         <Notifications className="notifications-doc"/>
         <Accordion classNames="accordions-doc" />
-        <Spinner classNames="spinner-doc" />
+        <Spinners classNames="spinner-doc" />
+        <Headers classNames="header-doc" />
       </div>
     )
   }

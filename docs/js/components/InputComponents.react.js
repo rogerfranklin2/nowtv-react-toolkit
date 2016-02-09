@@ -1,5 +1,5 @@
 import React from 'react';
-import Toolkit from '../../../src/toolkit';
+import Input from '../../../src/components/Input/Input.react';
 
 class Inputs extends React.Component {
 
@@ -10,37 +10,37 @@ class Inputs extends React.Component {
 
         <h3>Inactive / Active</h3>
 
-        <Toolkit.Input placeholder="An input box"/>
+        <Input placeholder="An input box"/>
         <pre>
           <code className="jsx">
-            {"<Toolkit.Input placeholder='An input box'/>"}
+            {"<Input placeholder='An input box'/>"}
           </code>
         </pre>
 
         <h3>Error</h3>
 
-        <Toolkit.Input defaultValue="An error" placeholder="An Error" classes="error"/>
+        <Input defaultValue="An error" placeholder="An Error" classes="error"/>
         <pre>
           <code className="jsx">
-            {"<Toolkit.Input defaultValue='An error' placeholder='An Error' classes='error'/>"}
+            {"<Input defaultValue='An error' placeholder='An Error' classes='error'/>"}
           </code>
         </pre>
 
         <h3>Disabled</h3>
 
-        <Toolkit.Input defaultValue="Some uneditable text" placeholder="Uneditable" disabled/>
+        <Input defaultValue="Some uneditable text" placeholder="Uneditable" disabled/>
         <pre>
           <code className="jsx">
-            {"<Toolkit.Input defaultValue='Some uneditable text' placeholder='Uneditable' disabled/>"}
+            {"<Input defaultValue='Some uneditable text' placeholder='Uneditable' disabled/>"}
           </code>
         </pre>
 
         <h3>Confirmation</h3>
 
-        <Toolkit.Input defaultValue="test@test.com" placeholder="Confirmation" classes="confirmation"/>
+        <Input defaultValue="test@test.com" placeholder="Confirmation" classes="confirmation"/>
         <pre>
           <code className="jsx">
-            {"<Toolkit.Input defaultValue='test@test.com' placeholder='Confirmation' classes='confirmation'/>"}
+            {"<Input defaultValue='test@test.com' placeholder='Confirmation' classes='confirmation'/>"}
           </code>
         </pre>
       </section>

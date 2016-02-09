@@ -1,5 +1,5 @@
 import React from 'react';
-import Toolkit from '../../../src/toolkit';
+import ToggleButton from '../../../src/components/ToggleButton/ToggleButton.react';
 
 class ToggleButtons extends React.Component {
   constructor() {
@@ -18,20 +18,20 @@ class ToggleButtons extends React.Component {
 
               <div className="category row">
                 <div className="col-md-3">
-                  <Toolkit.ToggleButton name='available' value='available' />
-                  <Toolkit.ToggleButton name="Available" value="available" offText="Off" onText="On" />
-                  <Toolkit.ToggleButton name="Selected" checked={true} value="selected" offText="Off" onText="On" />
-                  <Toolkit.ToggleButton name="Disabled" value="disabled" disabled  offText="Off" onText="On" />
-                  <Toolkit.ToggleButton name='onClick' checked={this.state.checked} value='onClick' onClick={this.performParentOnClick}  />
+                  <ToggleButton name='available' value='available' />
+                  <ToggleButton name="Available" value="available" offText="Off" onText="On" />
+                  <ToggleButton name="Selected" checked={true} value="selected" offText="Off" onText="On" />
+                  <ToggleButton name="Disabled" value="disabled" disabled  offText="Off" onText="On" />
+                  <ToggleButton name='onClick' checked={this.state.checked} value='onClick' onClick={this.performParentOnClick}  />
                 </div>
                 <div className="col-md-9">
                   <pre>
                     <code className="jsx">
-                      {"<Toolkit.ToggleButton name='available' value='available' />"}<br/>
-                      {"<Toolkit.ToggleButton name='available' value='available' offText='Off' onText='On' />"}<br/>
-                      {"<Toolkit.ToggleButton name='selected' checked={true} value='selected' offText='Off' onText='On'/>"}<br/>
-                      {"<Toolkit.ToggleButton name='disabled' value='disabled' offText='Off' onText='On' disabled/>"}<br/>
-                      {"<Toolkit.ToggleButton name='onClick' value='onClick' checked={this.state.checked} onClick={this.performParentOnClick()}/>"}<br/>
+                      {"<ToggleButton name='available' value='available' />"}<br/>
+                      {"<ToggleButton name='available' value='available' offText='Off' onText='On' />"}<br/>
+                      {"<ToggleButton name='selected' checked={true} value='selected' offText='Off' onText='On'/>"}<br/>
+                      {"<ToggleButton name='disabled' value='disabled' offText='Off' onText='On' disabled/>"}<br/>
+                      {"<ToggleButton name='onClick' value='onClick' checked={this.state.checked} onClick={this.performParentOnClick()}/>"}<br/>
                     </code>
                   </pre>
                 </div>

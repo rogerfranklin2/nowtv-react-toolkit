@@ -9,6 +9,9 @@ module.exports = {
     filename: "toolkit.js",
     libraryTarget: "commonjs2"
   },
+  externals: {
+    "react": "react"
+  },
   module: {
     loaders: [
       {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},

@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 
 export class AccordionItemContent extends React.Component {
@@ -12,7 +11,7 @@ export class AccordionItemContent extends React.Component {
   }
 
   getMaxHeight() {
-    return ReactDOM.findDOMNode(this.refs.me).scrollHeight || 500;
+    return this.refs.me.scrollHeight || 500;
   }
 
   componentDidMount() {
@@ -50,25 +49,30 @@ class AccordionItem extends React.Component {
   }
 
   render() {
-    const classes = classNames('now-accordion-item', [this.props.classes]);
-    const context = this.props.isOpen ? 'closing' : 'opening';
+    // todo: deprecate classes
+    const {
+      classes, className: cName, isOpen, handleVisiblity, title, children, type,
+      ...props
+    } = this.props;
+    const className = classNames('now-accordion-item', [classes, cName]);
+    const context = isOpen ? 'closing' : 'opening';
 
     return (
-      <div className={classes}>
+      <div className={className} {...props}>
         <a href="#"
            className="accordion-item-title"
            data-tracking-context={context}
-           onClick={this.props.handleVisiblity}>
-          {this.props.title}
+           onClick={handleVisiblity}>
+          {title}
         </a>
 
-        <AccordionItemContent isOpen={this.props.isOpen}>
-          {this.props.children}
+        <AccordionItemContent isOpen={isOpen}>
+          {children}
         </AccordionItemContent>
 
-        {this.props.type === 'extended' ?
+        {type === 'extended' ?
           <a href="#" className="now-accordion__item-footer"
-            onClick={this.props.handleVisiblity} />
+            onClick={handleVisiblity} />
           : null
         }
       </div>
